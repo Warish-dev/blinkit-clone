@@ -1,0 +1,117 @@
+
+
+.container{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    padding: 30px;
+}
+
+.imgContainer{
+    width: 50%;
+    height: 100%;
+}
+
+.imgContainer img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.productInfoContainer{
+    margin-top: 50px;
+}
+
+.productInfoContainer>p{
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.priceContainer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    font-size: 18px;
+    font-weight: 600;
+    padding: 10px 0px;
+    margin: 10px 0px;
+
+    border-top: 2px solid rgb(226, 226, 226);
+}
+
+.btnContainer{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.buyBtn {
+    background-color: #28a745;
+    color: white;
+    font-size: 800;
+    font-size: 1rem;
+    padding: 0.75rem 2rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    box-shadow: 5px 5px 10px rgba(128, 128, 128, 0.5);
+}
+
+.buyBtn:hover {
+    background-color: #218838;
+}
+
+.addCartBtn {
+    background-color: rgb(231, 231, 38);
+    color: white;
+    font-size: 800;
+    font-size: 1rem;
+    padding: 0.75rem 2rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    box-shadow: 5px 5px 10px rgba(128, 128, 128, 0.5);
+}
+
+.addCartBtn:hover {
+    background-color: rgb(221, 221, 23);
+}
+
+
+.backBtnContainer{
+    position: absolute;
+    border-radius: 100%;
+    background-color: rgb(228, 228, 228);
+    padding: 10px;
+    font-size: 25px;
+
+    color: #28a745;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.backBtnContainer:hover .backBtn{
+    animation: 1s 1 backBtnAnimation;
+}
+
+@keyframes backBtnAnimation {
+    from{
+        transform: translateX(30px);
+    }
+    to{
+        transform: translateX(0px);
+    }
+}

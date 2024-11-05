@@ -1,0 +1,114 @@
+
+
+.wraper{
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+
+    padding: 10px;
+}
+
+.itemContainer{
+    width: 100%;
+}
+
+.itemCard{
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+
+    margin: 10px;
+    padding: 10px;
+
+    background-color: rgb(218, 218, 218);
+    border-radius: 10px;
+}
+
+.imgContainer{
+    width: 200px;
+}
+
+.imgContainer img {
+    width: 100%;
+    object-fit: cover;
+
+    border-radius: 10px;
+}
+
+.itemDetails{
+    margin: 10px 0px;
+}
+
+.priceContainer{
+    display: flex;
+    font-weight: 600;
+    margin: 10px 0px;
+}
+
+
+.priceContainer :first-child{
+    border-right: 2px solid rgb(199, 199, 199);
+    padding-right: 6px;
+}
+
+.priceContainer :nth-child(2){
+    padding-left: 6px;
+}
+
+.deleteContainer{
+    margin-left: auto;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+
+
+.totalContainer{
+    width: 500px;
+    max-height: min-content;
+    background-color: rgb(211, 211, 211);
+
+    padding: 20px;
+    border-radius: 10px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.totalItemContainer, .totalItemContainer, .totalItemContainer, .totalItemContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.separator{
+    width: 100%;
+    height: 2px;
+    background-color: rgb(194, 194, 194);
+}
+
+
+
+.noItemWraper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 50px;
+}
+
+.noItemWraper p {
+    font-size: 40px;
+    font-weight: 600;
+}
+
+.noItemWraper a {
+    text-decoration: underline;
+}
