@@ -1,0 +1,97 @@
+.wrapper {
+    width: 100%;
+    height: 100vh;
+    background: rgb(230, 230, 230);
+    overflow-y: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.formContainer {
+    width: 100%;
+    max-width: 500px;
+    background-color: rgb(230, 230, 230);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px rgba(143, 143, 143, 0.8);
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+}
+
+.formContainer input{
+    width: 100%;
+    background: transparent;
+    outline: none;
+    border: 2px solid rgb(185, 185, 185);
+    border-radius: 5px;
+    padding: 6px;
+}
+
+.formContainer label{
+    width: 100%;
+    margin-top: 10px;
+}
+
+.formContainer label p {
+    color: rgb(63, 63, 63);
+    margin: 2px 0;
+}
+
+
+.formContainer>p {
+    text-align: center;
+    font-size: 20px;
+}
+.formContainer span {
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 12px;
+}
+
+.formContainer span a {
+    font-style: italic;
+    color: blue;
+    text-decoration: underline;
+}
+
+
+.nameConatiner, .passConatiner{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-direction: row;
+}
+
+
+.signUpButton {
+    display: block;
+    width: 100%;
+    background-color: #28a745;
+    color: white;
+    font-size: 800;
+    font-size: 1rem;
+    padding: 0.5rem 2rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    box-shadow: 5px 5px 10px rgba(128, 128, 128, 0.5);
+
+    margin-top: 10px;
+}
+
+.signUpButton:hover {
+    background-color: #218838;
+}

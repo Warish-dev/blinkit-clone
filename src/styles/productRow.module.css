@@ -1,0 +1,52 @@
+
+.container{
+    width: 100%;
+    padding: 10px 20px;
+}
+
+.categoryTitle{
+    margin: 10px 0px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.categoryTitle p {
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.scrollBtnContainer{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.scrollBtnContainer span{
+    padding: 8px 15px;
+    border-radius: 10px;
+    background-color: rgb(218, 218, 218);
+    color: #28a745;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.productContainer{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+
+.productContainer::-webkit-scrollbar{
+    display: none;
+}
