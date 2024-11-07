@@ -7,6 +7,7 @@ import { Toaster } from 'react-hot-toast'
 import Login from './pages/Login'
 import SignUp from './pages/SignUp'
 import SearchProduct from './pages/SearchProduct'
+import Admin from './pages/Admin'
 
 const App = () => {
   return (
@@ -19,6 +20,8 @@ const App = () => {
         <Route path={'/login'} element={<Login/>}/>
         <Route path={'/signup'} element={<SignUp/>}/>
         <Route path={'/search'} element={<SearchProduct/>}/>
+        <Route path={'/admin'} element={<Admin/>}/>
+
       </Routes>
     </div>
   )
