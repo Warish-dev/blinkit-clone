@@ -6,8 +6,7 @@ import styles from '../../styles/productSection.module.css'
 
 const ProductSection = () => {
 
-    
-
+  
   return (
     <div className={styles.wrapper}>
         {
