@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
-import Layout from '../component/Layout'
+import Layout from '../component/Sheared/Layout'
 import MyContext from '../context/MyContext'
 import styles from '../styles/cart.module.css'
 import { RxCross2 } from "react-icons/rx";

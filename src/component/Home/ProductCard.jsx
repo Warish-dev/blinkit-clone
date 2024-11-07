@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
-import styles from '../styles/productCard.module.css'
+import styles from '../../styles/productCard.module.css'
 import { Link } from 'react-router-dom'
-import MyContext from '../context/MyContext'
+import MyContext from '../../context/MyContext'
 import toast from 'react-hot-toast'
 
 const ProductCard = ({ product }) => {

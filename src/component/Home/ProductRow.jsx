@@ -1,6 +1,6 @@
 import React, { useRef } from 'react'
 import ProductCard from './ProductCard'
-import styles from '../styles/productRow.module.css'
+import styles from '../../styles/productRow.module.css'
 import { BiSolidLeftArrow } from "react-icons/bi";
 import { BiSolidRightArrow } from "react-icons/bi";
 
