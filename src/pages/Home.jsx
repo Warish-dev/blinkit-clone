@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import HeroSection from '../component/Home/HeroSection'
-import ProductSection from '../component/Home/ProductSection'
-import Layout from '../component/Sheared/Layout'
+import Header from '../component/Header'
+import HeroSection from '../component/HeroSection'
+import ProductSection from '../component/ProductSection'
+import Layout from '../component/Layout'
 import { FaArrowUpLong } from "react-icons/fa6";
 import styles from '../styles/home.module.css'
 
@@ -46,6 +47,7 @@ const Home = () => {
           <FaArrowUpLong className={styles.toTopBtn}/>
         </div>
       }
+      
     </Layout>
   )
 }
