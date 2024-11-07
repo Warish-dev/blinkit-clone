@@ -1,10 +1,10 @@
 import React, { useContext, useEffect, useState } from 'react'
-import styles from '../styles/header.module.css'
-import logo from '../assets/logo.png'
+import styles from '../../styles/header.module.css'
+import logo from '../../assets/logo.png'
 import { IoSearch } from "react-icons/io5";
 import { FaRegUserCircle } from "react-icons/fa";
 import { FaCartShopping } from "react-icons/fa6";
-import MyContext from '../context/MyContext';
+import MyContext from '../../context/MyContext';
 import { Link } from 'react-router-dom';
 
 

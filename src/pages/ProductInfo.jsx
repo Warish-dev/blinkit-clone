@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import { productData } from '../utils/cardData'
 import { useNavigate, useParams } from 'react-router-dom'
 import styles from '../styles/productInfo.module.css'
-import Layout from '../component/Layout'
+import Layout from '../component/Sheared/Layout'
 import { BiLeftArrowAlt } from "react-icons/bi";
 import MyContext from '../context/MyContext'
 

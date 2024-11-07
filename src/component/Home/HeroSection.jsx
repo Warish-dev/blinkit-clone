@@ -1,7 +1,7 @@
 import React from 'react'
-import styles from '../styles/hero.module.css'
-import HeroSecImg from '../assets/HeroSec.png'
-import bgHomeImg from '../assets/bghome.svg'
+import styles from '../../styles/hero.module.css'
+import HeroSecImg from '../../assets/HeroSec.png'
+import bgHomeImg from '../../assets/bghome.svg'
 
 const HeroSection = () => {
     return (
