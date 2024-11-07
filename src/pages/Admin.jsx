@@ -13,7 +13,7 @@ const Admin = () => {
     }
     return (
 
-        <div className={styles.grid-container}>
+        <div className={styles.gridContainer}>
             <Header OpenSidebar={OpenSidebar} />
             <Sidebar openSidebarToggle={openSidebarToggle} OpenSidebar={OpenSidebar} />
             <AdminPanel />

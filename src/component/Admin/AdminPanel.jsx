@@ -5,6 +5,8 @@ import
  import 
  { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, LineChart, Line } 
  from 'recharts';
+import styles from '../../styles/admin.module.css'
+
 
 function AdminPanel() {
 
@@ -55,43 +57,43 @@ function AdminPanel() {
      
 
   return (
-    <main className='main-container'>
-        <div className='main-title'>
+    <main className={styles.mainContainer}>
+        <div className={styles.mainTitle}>
             <h3>DASHBOARD</h3>
         </div>
 
-        <div className='main-cards'>
-            <div className='card'>
-                <div className='card-inner'>
+        <div className={styles.mainCards}>
+            <div className={styles.card}>
+                <div className={styles.cardInner}>
                     <h3>PRODUCTS</h3>
-                    <BsFillArchiveFill className='card_icon'/>
+                    <BsFillArchiveFill className={styles.cardIcon}/>
                 </div>
                 <h1>300</h1>
             </div>
-            <div className='card'>
-                <div className='card-inner'>
+            <div className={styles.card}>
+                <div className={styles.cardInner}>
                     <h3>CATEGORIES</h3>
-                    <BsFillGrid3X3GapFill className='card_icon'/>
+                    <BsFillGrid3X3GapFill className={styles.cardIcon}/>
                 </div>
                 <h1>12</h1>
             </div>
-            <div className='card'>
-                <div className='card-inner'>
+            <div className={styles.card}>
+                <div className={styles.cardInner}>
                     <h3>CUSTOMERS</h3>
-                    <BsPeopleFill className='card_icon'/>
+                    <BsPeopleFill className={styles.cardIcon}/>
                 </div>
                 <h1>33</h1>
             </div>
-            <div className='card'>
-                <div className='card-inner'>
+            <div className={styles.card}>
+                <div className={styles.cardInner}>
                     <h3>ALERTS</h3>
-                    <BsFillBellFill className='card_icon'/>
+                    <BsFillBellFill className={styles.cardIcon}/>
                 </div>
                 <h1>42</h1>
             </div>
         </div>
 
-        <div className='charts'>
+        <div className={styles.charts}>
             <ResponsiveContainer width="100%" height="100%">
             <BarChart
             width={500}
