@@ -2,7 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 import Header from '../component/Admin/Header'
 import Sidebar from '../component/Admin/Sidebar'
-import Home from '../component/Admin/Home'
+import AdminPanel from '../component/Admin/AdminPanel'
 import styles from '../styles/admin.module.css'
 
 const Admin = () => {
@@ -16,7 +16,7 @@ const Admin = () => {
         <div className={styles.grid-container}>
             <Header OpenSidebar={OpenSidebar} />
             <Sidebar openSidebarToggle={openSidebarToggle} OpenSidebar={OpenSidebar} />
-            <Home />
+            <AdminPanel />
         </div>
     )
 }
