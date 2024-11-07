@@ -10,6 +10,7 @@ import UserLogin from '../component/Home/UserLogin'
 const Home = () => {
 
   const [showBtn, setShowBtn] = useState(false);
+  const [isLogin, setIsLogin] = useState(true);
 
 
   useEffect(() => {
@@ -28,6 +29,7 @@ const Home = () => {
   }, []);
 
 
+
   const gotoTop = () => {
     window.scrollTo({
       top: 0,
@@ -38,7 +40,10 @@ const Home = () => {
 
   return (
     <div>
-      <UserLogin />
+      {
+        isLogin &&
+        <UserLogin />
+      }
       <Layout>
         <HeroSection />
         <ProductSection />
