@@ -42,7 +42,7 @@ const Home = () => {
     <div>
       {
         isLogin &&
-        <UserLogin />
+        <UserLogin setIsLogin={setIsLogin}/>
       }
       <Layout>
         <HeroSection />
