@@ -6,7 +6,6 @@
 
 .categoryTitle{
     margin: 10px 0px;
-
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -49,4 +48,10 @@
 
 .productContainer::-webkit-scrollbar{
     display: none;
+}
+
+@media screen and (max-width: 850px) {
+    .container{
+        padding: 10px;
+    }
 }

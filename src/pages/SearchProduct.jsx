@@ -10,16 +10,18 @@ const SearchProduct = () => {
     <div className={styles.wrapper}>
       <div className={styles.header}>
 
+        <div className={styles.container}>
           <Link to={'/'} className={styles.logo}>
             <img src={logo} alt="Logo" />
           </Link>
 
           <div className={styles.searchContainer}>
-            <input type="text" placeholder='Search product here...'/>
+            <input type="text" placeholder='Search product here...' />
           </div>
+        </div>
 
-        <button className={styles.cartButton}><FaCartShopping/> My Cart</button>
-        
+        <button className={styles.cartButton}><FaCartShopping /> My Cart</button>
+
       </div>
     </div>
   )

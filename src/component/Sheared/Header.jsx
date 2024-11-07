@@ -35,6 +35,7 @@ const Header = () => {
         'Search "laundry detergent"',
         'Search "dish soap"'
     ];
+
     const [currentIndex, setCurrentIndex] = useState(0);
     const [animateKey, setAnimateKey] = useState(0);
 
@@ -43,7 +44,7 @@ const Header = () => {
         const interval = setInterval(() => {
             setCurrentIndex((prevIndex) => (prevIndex + 1) % texts.length);
             setAnimateKey((prevKey) => (prevKey + 1) % texts.length);
-        }, 2000); // Change text every 2 seconds
+        }, 2000);
 
         return () => clearInterval(interval);
     }, [texts.length]);
@@ -51,33 +52,40 @@ const Header = () => {
 
     return (
         <header className={styles.header}>
-            <Link to={'/'} className={styles.logo}>
-                <img src={logo} alt="Logo" />
-            </Link>
 
-            <div className={styles.location}>
-                <p>Delivery in 10 minutes</p>
-                <span className={styles.blink}>address</span> {/* Optional blink effect */}
+            <div className={styles.firstContainer}>
+
+                <Link to={'/'} className={styles.logo}>
+                    <img src={logo} alt="Logo" />
+                </Link>
+
+                <div className={styles.location}>
+                    <p>Delivery in 10 minutes</p>
+                    <span className={styles.blink}>address</span> {/* Optional blink effect */}
+                </div>
+
             </div>
 
-            <Link to={'./search'} className={styles.search}>
-                <IoSearch />
-                <div>
-                    <p key={animateKey}>{texts[currentIndex]}</p>
+            <div className={styles.secondContainer}>
+
+                <Link to={'./search'} className={styles.search}>
+                    <IoSearch />
+                    <div>
+                        <p key={animateKey}>{texts[currentIndex]}</p>
+                    </div>
+                </Link>
+
+                <Link to={'/cart'} className={styles.cartContainer}>
+                    <FaCartShopping />
+                    {
+                        cart?.length > 0 &&
+                        <span className={styles.totalItems}>{cart?.length}</span>
+                    }
+                </Link>
+
+                <div className={styles.profileIcon}>
+                    <FaRegUserCircle />
                 </div>
-            </Link>
-            
-
-            <Link to={'/cart'} className={styles.cartContainer}>
-                <FaCartShopping />
-                {
-                    cart?.length > 0 &&
-                    <span className={styles.totalItems}>{cart?.length}</span>
-                }
-            </Link>
-
-            <div className={styles.profileIcon}>
-                <FaRegUserCircle />
             </div>
         </header>
     )
