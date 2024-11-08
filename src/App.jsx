@@ -8,6 +8,9 @@ import Login from './pages/Login'
 import SignUp from './pages/SignUp'
 import SearchProduct from './pages/SearchProduct'
 import Admin from './pages/Admin'
+import AdminPanel from './component/Admin/AdminPanel'
+import Users from './component/Admin/Users'
+import Shops from './component/Admin/Shops'
 
 const App = () => {
   return (
@@ -20,7 +23,14 @@ const App = () => {
         <Route path={'/login'} element={<Login/>}/>
         <Route path={'/signup'} element={<SignUp/>}/>
         <Route path={'/search'} element={<SearchProduct/>}/>
-        <Route path={'/admin'} element={<Admin/>}/>
+        
+        <Route path={'/admin/'} element={<Admin />}>
+          <Route path={'dashboard'} element={<AdminPanel />} />
+          <Route path={'users'} element={<Users />} />
+          <Route path={'shops'} element={<Shops />} />
+        </Route>
+
+
       </Routes>
     </div>
   )
