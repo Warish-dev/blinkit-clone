@@ -159,6 +159,7 @@ const Shops = () => {
                     <tbody>
                         {currentShops.map((shop) => (
                             <tr key={shop.id}>
+                                <td>{shop.id}</td>
                                 <td>{shop.name}</td>
                                 <td>{shop.owner}</td>
                                 <td>{shop.email}</td>
