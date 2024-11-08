@@ -65,7 +65,7 @@ const Footer = () => {
        
            <div className={styles.wrapper}>
              <div className={styles.categoryContainer1}> 
-            <img src={logo} alt=""/>  
+            <img  src={logo} alt=""/>  
             <div className={styles.categorycontainer1a}>
                 <p>Shop on the go and get anything delivered in minutes. Buy everything from groceries to fresh fruits & vegetables, cakes and bakery items, to meats & seafood, cosmetics, mobiles & accessories, electronics, baby care products and much more. We get it delivered at your doorstep in the fastest and the safest way possible..</p>
                <Link className={styles.links} ><FiInstagram /></Link> 
