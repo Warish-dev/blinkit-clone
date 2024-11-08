@@ -91,7 +91,7 @@
     cursor: pointer;
   }
   
-  .sidebarListItem > a {
+  .sidebarList > a {
     text-decoration: none;
     color: #9e9ea4;
   }
@@ -111,7 +111,7 @@
   
   
   /* Main  */  
-  .mainContainer {
+  .mainContainer{
     grid-area: main;
     overflow-y: auto;
     padding: 20px 20px;

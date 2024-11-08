@@ -1,0 +1,179 @@
+.container {
+    height: 100%;
+    grid-area: main;
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+
+    overflow-y: auto;
+}
+
+.container h2 {
+    font-size: 30px;
+    margin: 10px 0px;
+}
+
+.addShopForm {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.inputField {
+    flex: 1;
+    min-width: 180px;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.addButton {
+    padding: 8px 15px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+
+
+.searchContainer {
+    width: 500px;
+    max-width: 300px;
+    margin-bottom: 10px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 5px 10px;
+
+    font-size: 22px;
+}
+
+.searchBox {
+    width: 100%;
+    padding: 8px;
+    border: none;
+    outline: none;
+
+    font-size: 16px;
+}
+
+.tableContainer {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.shopTable {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.shopTable th,
+.shopTable td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+.actionButton {
+    padding: 6px 10px;
+    border: none;
+    cursor: pointer;
+    margin-right: 5px;
+    border-radius: 4px;
+}
+
+.block {
+    background-color: #f44336;
+    color: white;
+}
+
+.unblock {
+    background-color: #4caf50;
+    color: white;
+}
+
+.deleteButton {
+    background-color: #ff5722;
+    color: white;
+    padding: 6px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.pagination {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.pageButton {
+    padding: 8px;
+    margin: 0 5px;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    background-color: #ddd;
+}
+
+.activePage {
+    background-color: #4caf50;
+    color: white;
+}  
+
+.actionCell {
+    display: flex;
+    align-items: center;
+}
+
+.actionMenuButton {
+    position: relative;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.actionMenuButton:hover .actionMenu {
+    display: block;
+}
+
+.actionMenu {
+    display: none;
+    width: 150px;
+    position: absolute;
+    right: 15px;
+    bottom: 0;
+    background-color: white;
+    box-shadow: 0px 5px 25px 2px rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+.actionMenu ul {
+    list-style: none;
+}
+
+.actionMenu li {
+    padding: 5px 10px;
+    margin: 5px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.actionMenu li:hover {
+    background-color: rgb(212, 212, 212);
+}
+
+@media (max-width: 768px) {
+
+    .userTable td, .userTable th{
+        text-wrap: nowrap;
+    }
+
+}
