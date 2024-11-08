@@ -1,8 +1,12 @@
 .wrapper{
     width: 100%;
-    height: 100%;
+    height:100%;
     background-color: rgb(226, 226, 226);
-    padding: 20px;
+    padding: 0;
+    margin: 0;
+   /* box-sizing: border-box;*/
+    /* scrollbar-width: ; */
+    
 }
 
 
@@ -10,6 +14,8 @@
     display: flex;
     align-items: center;
     gap: 10px;
+    position: relative;
+    left:100px;
 }
 .heading h3{
     font-size: 25px;
@@ -19,19 +25,94 @@
     font-weight: 700;
     text-decoration: underline;
 }
+.categoryContainer1{
+   display: flex;
+   width: 60%;
+   height: 100%;
+   float: left;
+   flex-direction: row;
+   background-color: transparent;
 
-.categoryContainer{
+   margin: 30px 0px;
+
+}
+.categorycontainer1a{
+    height: 100%;
+    width: 50%;
+    position: relative;
+    /* background-color: transparent; */
+    top:90px;
+    right: 150px;
+}
+.categorycontainer1a p{
+    font-size: .8em;
+    text-align: justify;
+    line-height: 200%;
+    position: relative;
+    left: 50px;
+}
+.links{
+    font-size: 20px;
+    left: 50px;
+    top: 20px;
+    position: relative;
+    margin:2%;
+}
+.categoryContainer1 img{
+    width:130px;
+    position: relative;
+    height:20vh;
+    left:25px;
+    bottom: 40px;
+    object-fit: contain;
+}
+.usefulLinks{
+    font-weight: 100;
+    font-size: 12px;
+    position: relative;
+    /* bottom: 30px; */
+    /* right: 20px; */
+    /* margin: 20px; */
+    padding: 20px;
+    text-decoration: none;
+}
+.categoryList2 :hover{
+    
+    color: #28a745;
+    cursor: pointer;
+}
+
+
+.categoryContainer2{
     display: flex;
     flex-direction: row;
+    background-color: transparent;
+    width: 40%;
+    height: 100%;
+    float: right;
     gap: 20px;
     margin: 30px 0px;
-    /* justify-content: space-between; */
 }
 
 .categoryList{
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 10px;
+    font-size:.8em;
+    position: relative;
+    left:100px;
+    
+}
+.categoryList2{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size:12px;
+    position: relative;
+    top: 45px;
+    
+    
+
 }
 
 .categoryList a{
@@ -39,4 +120,28 @@
 }
 .categoryList a:hover{
     color: #28a745;
+}
+
+/* responsive  */
+@media screen and (max-width:750px){
+    .wrapper{
+    /* width: 100%; */
+    min-height:750%;
+    background-color:red;
+    padding: 0;
+    margin: 0;
+
+        
+    }
+    .heading{
+        display: flex-box;
+        align-items: center;
+        gap: 10px;
+        position: relative;
+        left:100px;
+        color: red;
+    }
+
+    
+    
 }
