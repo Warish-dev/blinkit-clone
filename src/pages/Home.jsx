@@ -5,6 +5,8 @@ import Layout from '../component/Sheared/Layout'
 import { FaArrowUpLong } from "react-icons/fa6";
 import styles from '../styles/home.module.css'
 import UserLogin from '../component/Home/UserLogin'
+import Review from '../component/Home/review';
+
 
 
 const Home = () => {
@@ -47,6 +49,8 @@ const Home = () => {
       <Layout>
         <HeroSection />
         <ProductSection />
+       <Review />
+
         {
           showBtn &&
           <div onClick={gotoTop} className={styles.moveToTopBtn}>
