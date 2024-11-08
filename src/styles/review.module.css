@@ -9,6 +9,7 @@
    margin-bottom: 40px;
    /* padding: 20px */
    flex-wrap: wrap;
+  
     
 
 }
@@ -58,3 +59,9 @@
     color: orange;
     
 }
+.fix p
+{
+    color: rgb(173, 168, 168);
+    font-size: 12px;
+}
+
