@@ -9,6 +9,31 @@
     overflow-y: auto;
 }
 
+.topContainer{
+    display: flex;
+    justify-content: space-between;
+}
+
+.topContainer button {
+    max-height: max-content;
+    background-color: #28a745;
+    color: white;
+    font-size: 800;
+    font-size: 1rem;
+    padding: 0.7rem 1rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    box-shadow: 5px 5px 10px rgba(128, 128, 128, 0.5);
+}
+
+.topContainer button:hover {
+    background-color: #218838;
+}
+
+
 .container h2 {
     font-size: 30px;
     margin: 10px 0px;
@@ -60,7 +85,7 @@
     padding: 8px;
     border: none;
     outline: none;
-
+    background-color: transparent;
     font-size: 16px;
 }
 
@@ -80,6 +105,9 @@
     padding: 12px;
     text-align: left;
     border: 1px solid #ddd;
+}
+.shopTable th{
+    text-wrap: nowrap;
 }
 
 .actionButton {
@@ -170,10 +198,3 @@
     background-color: rgb(212, 212, 212);
 }
 
-@media (max-width: 768px) {
-
-    .userTable td, .userTable th{
-        text-wrap: nowrap;
-    }
-
-}

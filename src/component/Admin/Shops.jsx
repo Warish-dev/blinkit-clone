@@ -49,7 +49,7 @@ const Shops = () => {
     const [totalProducts, setTotalProducts] = useState('');
     const [location, setLocation] = useState('');
     const [currentPage, setCurrentPage] = useState(1);
-    const shopsPerPage = 5;
+    const shopsPerPage = 10;
 
     const addShop = () => {
         if (shopName && ownerName && email && phone && totalProducts && location) {
@@ -110,17 +110,21 @@ const Shops = () => {
     return (
         <div className={styles.container}>
 
-            <h2>Users List</h2>
+            <h2>Shops List</h2>
 
-            <div className={styles.searchContainer}>
-                <IoSearch />
-                <input
-                    type="text"
-                    placeholder="Search by shop name"
-                    className={styles.searchBox}
-                    value={searchTerm}
-                    onChange={handleSearch}
-                />
+            <div className={styles.topContainer}>
+                <div className={styles.searchContainer}>
+                    <IoSearch />
+                    <input
+                        type="text"
+                        placeholder="Search by shop name"
+                        className={styles.searchBox}
+                        value={searchTerm}
+                        onChange={handleSearch}
+                    />
+                </div>
+
+                <button>Add Shop</button>
             </div>
 
             {/* Add New Shop Form */}
@@ -140,6 +144,7 @@ const Shops = () => {
                 <table className={styles.shopTable}>
                     <thead>
                         <tr>
+                            <th>Sr No.</th>
                             <th>Shop Name</th>
                             <th>Owner</th>
                             <th>Email</th>
