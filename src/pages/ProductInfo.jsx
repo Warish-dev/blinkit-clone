@@ -25,7 +25,11 @@ const ProductInfo = () => {
                 })
             })
         })()
-    }, [id])
+    }, [id]);
+
+    useEffect(() => {
+        window.scrollTo(0,0);
+    },[]);
 
 
     const addToCart = (e) => {

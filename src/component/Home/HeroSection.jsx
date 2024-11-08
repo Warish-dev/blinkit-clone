@@ -36,6 +36,7 @@ const HeroSection = () => {
                         className={styles.heroImage}
                     />
                 </div>
+                
             </div>
 
             <img src={bgHomeImg} className={styles.bgImg}/>
