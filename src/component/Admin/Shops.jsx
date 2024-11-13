@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import styles from '../../styles/shops.module.css';
 import { IoSearch } from 'react-icons/io5';
 import { HiOutlineDotsVertical } from 'react-icons/hi';
+import AddShopForm from './AddShopForm';
+// import AddShopForm from './AddShopForm';
 
 const initialShops = [
     { id: 1, name: 'Shop One', owner: 'Alice', email: 'alice@shopone.com', phone: '1111111111', totalProducts: 120, location: 'New York', registrationDate: '2023-01-12', status: 'Active', blocked: false },
@@ -105,7 +107,12 @@ const Shops = () => {
     const goToPage = (pageNumber) => {
         setCurrentPage(pageNumber);
     };
+    
+    
 
+     const addShopForm = () =>{
+        
+     }
 
     return (
         <div className={styles.container}>
@@ -124,7 +131,7 @@ const Shops = () => {
                     />
                 </div>
 
-                <button>Add Shop</button>
+                <button onClick={addShopForm}>Add Shop</button>
             </div>
 
             {/* Add New Shop Form */}
@@ -202,6 +209,8 @@ const Shops = () => {
                     </button>
                 ))}
             </div>
+
+            <AddShopForm/>
         </div>
     )
 }
