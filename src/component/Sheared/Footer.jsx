@@ -78,16 +78,16 @@ const Footer = () => {
                 <div className={styles.categoryList2}>
                     {
                         categoryArr5.map((category, index) => (
-                            <Link>{category}</Link>
+                            <Link key={index}>{category}</Link>
                         ))
                     }
                 </div>
 
             </div>
             <div className={styles.usefulLinks}> 
-                <h3>Useful Links</h3>
+                {/* <h3>Useful Links</h3> */}
                 <div className={styles.categoryList2}>
-                    <p> <b>Office Location </b></p>
+                    {/* <p> <b>Office Location </b></p> */}
                     <p>H 59 D Block noida(up)</p> <br />
                     <p><b>send a message</b> </p>
                     <p>bcloud@gmail.com</p><br />
@@ -106,21 +106,21 @@ const Footer = () => {
                 <div className={styles.categoryList}>
                     {
                         categoryArr1.map((category, index) => (
-                            <Link>{category}</Link>
+                            <Link key={index}>{category}</Link>
                         ))
                     }
                 </div>
                 <div className={styles.categoryList}>
                     {
                         categoryArr2.map((category, index) => (
-                            <Link>{category}</Link>
+                            <Link key={index}>{category}</Link>
                         ))
                     }
                 </div>
                 <div className={styles.categoryList}>
                     {
                         categoryArr3.map((category, index) => (
-                            <Link>{category}</Link>
+                            <Link key={index}>{category}</Link>
                         ))
                     }
                 </div>
