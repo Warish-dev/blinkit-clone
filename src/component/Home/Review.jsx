@@ -37,8 +37,8 @@ function Review() {
                 {
 
 
-                    data.map((user) => (
-                        <div className={styles.container}>
+                    data.map((user,index) => (
+                        <div key={index} className={styles.container}>
                             <div className={styles.container2}>
 
                                 <div className={styles.image}>

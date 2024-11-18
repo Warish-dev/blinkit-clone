@@ -1,36 +1,45 @@
 import React from 'react'
 import styles from "../../styles/footer.module.css"
 import { Link } from 'react-router-dom'
+import logo from '../../assets/images/logo.png';
+import facebook from '../../assets/images/facebook.png';
+import twitter from '../../assets/images/twitter.png';
+import whatsapp from '../../assets/images/whatsapp.png';
+import instagram from '../../assets/images/instagram.png';
+
 
 
 const Footer = () => {
     return (
-      <footer className={`${styles.sectiondark} `}>
-        <div className={styles.container}>
-          <div className={`${styles.rowgxfive}`}>
+        
+      <footer className={`${styles.main} `}>
+        <div className={`${styles.container}`}>
+            
+          <div className={`${styles.containerone}`}>
             {/* Column 1 */}
-            <div className="collgcolsm">
-  
-              <img src={`${process.env.PUBLIC_URL}/bijli_logo.png`} alt="Bijli Logo" />
-  
-              <div className={`${styles.spacestwenty}`}></div>
+            <div className={`${styles.columnone}`}>    
+              <div className={`${styles.logo}`}>
+              <img src={logo} alt="Bijli Logo" />
+              </div>
+                    
               <p>
-                Bijli provides fast and reliable delivery services to meet all your needs. Our platform ensures instant deliveries, offering a seamless experience from order to doorstep. Whether it’s essentials or special items, we guarantee speed and efficiency with every delivery            </p>
-              <div className={`${socialicons}`}>
-                <img src={`${process.env.PUBLIC_URL}/twitter.png`} alt="X_logo" />
-                <img src={`${process.env.PUBLIC_URL}/whatsapp.png`} alt="WhatsApp_logo" />
-                <img src={`${process.env.PUBLIC_URL}/instagram.png`} alt="instagram" />
-                <img src={`${process.env.PUBLIC_URL}/facebook.png`} alt="facebook" />
-                
+                Bijli provides fast and reliable delivery services to meet all your needs. Our platform ensures instant deliveries, offering a seamless experience from order to doorstep. Whether it’s essentials or special items, we guarantee speed and efficiency with every delivery.          </p>
+
+              <div className={`${styles.socialicons}`}> 
+                 <img src={facebook} alt="facebook" />
+                 <img src={twitter} alt="twitter" />
+                 <img src={whatsapp} alt="whatsapp" />
+                 <img src={instagram} alt="instagram" />   
               </div>
   
             </div>
   
             {/* Column 2 */}
-            <div className={`${collgcolsmorderlgordersm}`}>
-              <div className={`${row}`}>
-                <div className={`${collgcolsm}`}>
-                  <div className={`${widget}`}>
+            <div className={`${styles.columntwo}`}>
+              
+                
+                 
+                  <div className={`${styles.columncompany}`}>
                     <h5>Company</h5>
                     <ul>
                       <li><a href="about.html">About Us</a></li>
@@ -40,13 +49,13 @@ const Footer = () => {
                       <li><a href="contact.html">Contact</a></li>
                     </ul>
                   </div>
-                </div>
+
+                
   
-                <div className={`${collgcolsm}`}>
-                  <div className={`${widget}`}>
+                
+                  <div className={`${styles.columncompany}`}>
                     <h5>Partners</h5>
                     <ul>
-                      {/* <li><a href="about.html">Partners</a></li> */}
                       <li><a href="history.html">Franchise</a></li>
                       <li><a href="history.html">Seller</a></li>
                       <li><a href="testimonials.html">Warehouse</a></li>
@@ -54,10 +63,8 @@ const Footer = () => {
                       <li><a href="contact.html">Resourses</a></li>
                     </ul>
                   </div>
-                </div>
-  
-                <div className={`${collgcolsm}`}>
-                  <div className={`${widget}`}>
+                
+                  <div className={`${styles.columncompany}`}>
                     <h5>Categories</h5>
                     <ul>
                       <li><a href="vehicle-single-1.html">Vegetables & Fruits</a></li>
@@ -65,15 +72,12 @@ const Footer = () => {
                       <li><a href="vehicle-single-3.html">Bakery & Biscuits</a></li>
                       <li><a href="vehicles.html">Pharma & Wellness</a></li>
                       <li><a href="review.html">Cleaning Essentials</a></li>
-                      <li><a href="vehicle-single-3.html">Atta, Coffee & Health Drinks</a></li>
+                      <li><a href="vehicle-single-3.html">Coffee & Health Drinks</a></li>
                       <li><a href="vehicles.html">Baby Care</a></li>
-  
                     </ul>
                   </div>
-                </div>
-  
-                <div className={`${collgcolsm}`}>
-                  <div className={`${widget}`}>
+              
+                  <div className={`${styles.columncompany}`}>
                     <h5>More</h5>
                     <ul>
                       <li><a href="vehicle-single-1.html">Dairy & and Breakfast</a></li>
@@ -87,33 +91,26 @@ const Footer = () => {
   
                     </ul>
                   </div>
-                </div>
+                
   
               </div>
             </div>
   
-            {/* Column 3 */}
   
-          </div>
+         
         </div>
   
         {/* Subfooter */}
-        <div className={`${subfooter}`}>
-          <div className={`${container}`}>
-            <div className={`${row}`}>
-              <div className={`${colmd12}`}>
-                <div className={`${deflex}`}>
-                  <div className= {`${deflexcol}`}>
+        
+                <div className={`${styles.subfooter}`}>
+                  <div className= {`${styles.copyright}`}>
                     Copyright 2024 - Bijli by Designesia
                   </div>
-                  <ul className={`${menusimple}`}>
+                  <ul className={`${styles.subpolicy}`}>
                     <li><a href="#">Terms &amp; Conditions</a></li>
                     <li><a href="#">Privacy Policy</a></li>
                   </ul>
-                </div>
-              </div>
-            </div>
-          </div>
+  
         </div>
       </footer>
     );

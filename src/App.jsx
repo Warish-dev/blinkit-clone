@@ -11,6 +11,8 @@ import Admin from './pages/Admin'
 import AdminPanel from './component/Admin/AdminPanel'
 import Users from './component/Admin/Users'
 import Shops from './component/Admin/Shops'
+import PosterItem from './pages/PosterItem'
+
 
 const App = () => {
   return (
@@ -23,11 +25,14 @@ const App = () => {
         <Route path={'/login'} element={<Login/>}/>
         <Route path={'/signup'} element={<SignUp/>}/>
         <Route path={'/search'} element={<SearchProduct/>}/>
-        
+        <Route path={'/PosterItem'} element={<PosterItem />} />
         <Route path={'/admin/'} element={<Admin />}>
           <Route path={'dashboard'} element={<AdminPanel />} />
           <Route path={'users'} element={<Users />} />
           <Route path={'shops'} element={<Shops />} />
+
+          
+
         </Route>
 
 

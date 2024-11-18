@@ -6,6 +6,7 @@ import { FaArrowUpLong } from "react-icons/fa6";
 import styles from '../styles/home.module.css'
 import UserLogin from '../component/Home/UserLogin'
 import Review from '../component/Home/review';
+import PosterSection from '../component/Home/PosterSection';
 
 
 
@@ -14,6 +15,7 @@ const Home = () => {
   const [showBtn, setShowBtn] = useState(false);
   const [isLogin, setIsLogin] = useState(true);
 
+  
 
   useEffect(() => {
     const handleVisibilityOfBtn = () => {
@@ -47,9 +49,12 @@ const Home = () => {
         <UserLogin setIsLogin={setIsLogin}/>
       }
       <Layout>
+        
         <HeroSection />
+        <PosterSection />
         <ProductSection />
        <Review />
+       
 
         {
           showBtn &&
@@ -58,6 +63,11 @@ const Home = () => {
           </div>
         }
       </Layout>
+      
+
+
+
+
     </div>
   )
 }

@@ -45,10 +45,24 @@ const ProductInfo = () => {
 
                 <div className={styles.productInfoContainer}>
                     <p>{showProduct?.title}</p>
+                   <div className={styles.headingContainer}><p> <strong>Product Details</strong> </p></div>
+                    <div className={styles.detailContainer}>
+                        <div>
+                            <strong></strong>
+                        
+                        </div>
+                        <strong>Key Features</strong> <p> <span>{showProduct?.key?.description}</span> </p>
+                        <strong>Type</strong> <p> <span>{showProduct?.key?.ptype}</span></p>
+                        <strong>Shelf Life</strong> <p><span>{showProduct?.key?.life}</span></p>   
+                        <strong>Seller</strong> <p><span>{showProduct?.key?.seller}</span></p> 
+                        <strong>Return Policy</strong> <p><span>{showProduct?.key?.return}</span></p>
+                    </div>
+                    
 
                     <div className={styles.priceContainer}>
                         <p>Rs. {showProduct?.price}</p>
                         <p>{showProduct?.quantity}</p>
+                        
                     </div>
 
                     <div className={styles.btnContainer}>
