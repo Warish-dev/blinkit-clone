@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from "../styles/login_signup.module.css";
 // import { AiOutlineEyeInvisible } from 'react-icons/ai';
-import resturant from '../assets/login-img.png'
+import resturant from '../assets/logo3.png'
 
 
 const preventRefresh = (e) => {
@@ -36,7 +36,7 @@ export default function Login() {
 							</button>
 						</form>
 						<p>
-							Don't have an account ? <Link to="/signup"> Sign In </Link>
+							Don't have an account ? <Link to="/signup2"> Sign In </Link>
 						</p>
 					</div>
 				</div>

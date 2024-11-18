@@ -12,6 +12,7 @@ import AdminPanel from './component/Admin/AdminPanel'
 import Users from './component/Admin/Users'
 import Shops from './component/Admin/Shops'
 import Login from './pages/Login'
+import ProductByCategory from './pages/ProductByCategory'
 // import Error from './component/Error2'
 // import Login2 from './component/Admin/Login2'
 // import Error2 from './component/Admin/Error2'
@@ -27,7 +28,9 @@ const App = () => {
         <Route path={'/login'} element={<Login/>}/>
         <Route path={'/signup2'} element={<Signup2/>}/>
         <Route path={'/search'} element={<SearchProduct/>}/>
-          <Route path={'/Login2'} element={<Login2/>} />
+        <Route path={'/Login2'} element={<Login2/>} />
+        <Route path={'/category/:id'} element={<ProductByCategory/>} />
+
         
         <Route path={'/admin/'} element={<Admin />}>
           <Route path={'dashboard'} element={<AdminPanel />} />

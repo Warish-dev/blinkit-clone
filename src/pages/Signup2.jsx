@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from 'react-router-dom';
 import styles from "../styles/login_signup.module.css";
-import resturant from '../assets/login-img.png'
+import resturant from '../assets/logo3.png'
 
 
 
@@ -44,7 +44,7 @@ export default function Signup() {
           </h2>
         </form>
         <p>
-          Have an account ? <Link to="/"> Login </Link>
+          Have an account ? <Link to="/Login2"> Login </Link>
         </p>
       </div>
       </div>

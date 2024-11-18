@@ -7,7 +7,7 @@ import MyContext from '../../context/MyContext'
 const ProductCard = ({ product }) => {
 
 
-  const {cart, setCart} = useContext(MyContext);
+  const { cart, setCart } = useContext(MyContext);
 
 
   const addToCart = (e) => {
@@ -22,29 +22,29 @@ const ProductCard = ({ product }) => {
   return (
     <Link to={`/productInfo/${product.id}`}>
 
-    <div className={styles.container}>
+      <div className={styles.container}>
 
-      <div className={styles.imgContainer}>
-        <img src={product.img} alt="" />
-      </div>
-
-      <div className={styles.productDeatils}>
-        <p>{product.title}</p>
-
-        <div className={styles.line}></div>
-
-        <div className={styles.priceConatiner}>
-          <p>{product.quantity}</p>
-          <p>Rs. {product.price}</p>
+        <div className={styles.imgContainer}>
+          <img src={product.img} alt="" />
         </div>
 
-        <div className={styles.line}></div>
+        <div className={styles.productDeatils}>
+          <p>{product.title}</p>
 
-        <button onClick={addToCart} className={styles.actionButton}>Add</button>
+          <div className={styles.line}></div>
+
+          <div className={styles.priceConatiner}>
+            <p>{product.quantity}</p>
+            <p>Rs. {product.price}</p>
+          </div>
+
+          <div className={styles.line}></div>
+
+          <button onClick={addToCart} className={styles.actionButton}>Add</button>
 
 
+        </div>
       </div>
-    </div>
     </Link>
   )
 }

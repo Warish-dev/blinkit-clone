@@ -5,7 +5,8 @@ import Layout from '../component/Sheared/Layout'
 import { FaArrowUpLong } from "react-icons/fa6";
 import styles from '../styles/home.module.css'
 import UserLogin from '../component/Home/UserLogin'
-import Review from '../component/Home/review';
+import Review from '../component/Home/Review';
+import CategoryComponent from '../component/Home/CategoryComponent';
 
 
 
@@ -48,6 +49,7 @@ const Home = () => {
       }
       <Layout>
         <HeroSection />
+        <CategoryComponent/>
         <ProductSection />
        <Review />
 
