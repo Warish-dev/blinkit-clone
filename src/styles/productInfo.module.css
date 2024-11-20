@@ -102,10 +102,10 @@
     cursor: pointer;
     overflow: hidden;
 }
-
 .backBtnContainer:hover .backBtn{
     animation: 1s 1 backBtnAnimation;
 }
+
 
 @keyframes backBtnAnimation {
     from{
@@ -143,4 +143,5 @@
     .imgContainer {
         width: 100%;
     }
+
 }
