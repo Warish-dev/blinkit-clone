@@ -5,6 +5,21 @@ import styles from '../../styles/categoryComponent.module.css'
 // import masalas2 from '../assets/logo2.png'
 // import masala from '../assets/logo2.jpg'
 import masala from '../../assets/categoryimages/masala.jpeg'
+import paan from '../../assets/categoryimages/paan.jpg'
+import fruits from '../../assets/categoryimages/fruits.jpg'
+import colddrinks from '../../assets/categoryimages/colddrinks.jpg'
+import snacks from '../../assets/categoryimages/snacks.jpg'
+import tea from '../../assets/categoryimages/tea.jpg'
+import sweet from '../../assets/categoryimages/sweet.jpg'
+import bakery from '../../assets/categoryimages/bakery.jpg'
+import breakfast from '../../assets/categoryimages/breakfast.jpg'
+import groceries from '../../assets/categoryimages/groceries.jpg'
+import home from '../../assets/categoryimages/home.jpg'
+import cleaning from '../../assets/categoryimages/cleaning.jpg'
+import pharma from '../../assets/categoryimages/pharma.jpg'
+import pet from '../../assets/categoryimages/pet.jpg'
+
+
 
 
 
@@ -14,25 +29,25 @@ import masala from '../../assets/categoryimages/masala.jpeg'
 
 function CategoryComponent() {
     const data = [
-        { name: 'milk', image: masala },
-        { name: 'milk', image: masala },
-        { name: 'milk', image: masala },
-        { name: 'milk', image: masala },
-        { name: 'milk', image: masala },
-        { name: 'milk', image: masala },
-        { name: 'milk', image: masala },
-        { name: 'milk', image: masala },
-        { name: 'milk', image: masala },
+        { name: 'masala,oil and more', image: masala },
+        { name: 'paan', image: paan },
+        { name: 'fruits & vegetables', image: fruits },
+        { name: 'cold drinks & juices', image: colddrinks },
+        { name: 'snacks & munchies', image: snacks },
+        { name: 'tea, coffee', image: tea },
+        { name: 'breakfast & instant food', image: breakfast },
+        { name: 'sweet tooth', image:sweet  },
+        { name: 'Bakery and biscuits', image: bakery },
         
 
     ];
 
     const data2 = [
-        { name2: 'milk', image2: masala },
-        { name2: 'milk', image2: masala },
-        { name2: 'milk', image2: masala },
-        { name2: 'milk', image2: masala },
-        { name2: 'milk', image2: masala },
+        { name2: 'groceries', image2: groceries },
+        { name2: 'Home & office', image2: home },
+        { name2: 'cleaning essentials', image2: cleaning },
+        { name2: 'Pharma & wellness', image2: pharma },
+        { name2: 'pet care', image2: pet },
         { name2: 'milk', image2: masala },
         { name2: 'milk', image2: masala },
         { name2: 'milk', image2: masala },

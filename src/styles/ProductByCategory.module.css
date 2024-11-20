@@ -1,19 +1,66 @@
 /* Page wrapper with Flexbox */
-.wrapper {
+.container {
     display: flex;
-    background-color: #f8f8f8;
+    background-color:none;
+
     height: 100vh; /* Full height to ensure both sidebar and product section are aligned */
+    width: 95%;
+    margin-left: 2%;
+    margin-right: 2%;
   }
+  /* menubar  */
+  .menubar{
+    
+      width: 100%; /* Ensures the menubar takes up the full width */
+      height: 50px;
+      /* box-shadow: 2px gray; */
+      background-color:none; /* Add a background color to the menubar */
+      padding: 20px 0;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      position: relative;
+      bottom: 0; /* Keeps the menubar below the wrapper */
+  }
+    
+      .linkname {
+       margin: 0 35px; /*  Adds spacing between menu items */
+        text-align: center; /* Centers text inside the menu items */
+        /* display: flex; */
+        /* margin: auto; */
+        /* background-color: red; */
+        /* margin: auto; */
+      }
+      
+      .linkname p {
+        font-size: 16px;
+        font-weight: lighter;
+        color: gray; /* Adjust text color */
+        cursor: pointer;
+        /* background-color: red; */
+        height: 100%;
+        /* width: ; */
+        float:left;
+        margin-left:35px;
+        /* text-wrap: wrap; */
+        text-align: center;
+        /* display: flexbox; */
+      }
+      
+  
   
   /* Sidebar styles */
   .sidebar {
+    /* background-color: #333; */
     margin-left: 50px;
     width: 250px; /* Default width for larger screens */
     max-height:80vh; /* Match the height of the content section */
-    border-left: 1px solid lightgray;
+    /* border-left: 1px solid lightgray;
     border-top: 1px solid lightgray;
     border-bottom: 1px solid lightgray;
+    border-right: 1px solid lightgray; */
+    /* border: 1px solid black; */
     overflow-y: auto; /* Make sidebar scrollable */
+    /* padding: ; */
     
     scrollbar-width: thin; /* For Firefox */
     scrollbar-color: transparent transparent;
@@ -35,8 +82,13 @@
   .categoryName {
     display: flex;
     align-items: center;
+    /* width: 100%; */
     border-bottom: 1px solid lightgray;
-    /* padding: 10px; */
+    border-left:5px solid #28a745;
+    /* border-radius: 1px; */
+        /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+
+    padding: 10px;
   }
   
   .categoryName:hover {
@@ -54,7 +106,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 20%;
+    border-radius: 10%;
   }
   
   /* Product Section Styles */
@@ -63,6 +115,7 @@
     grid-template-columns: repeat(4, 1fr); /* 5 columns by default */
     gap: 20px;
     height: 80vh;
+    /* border :2px solid red; */
     flex-grow: 1;
     margin: 10px;
     overflow-y: auto;
@@ -74,9 +127,10 @@
   /* Product Card Styles */
   .productCard {
     height: 250px; /* Fixed height for the product card */
-    background-color: white;
+    /* background-color: white; */
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); */
+    /* border: 1px solid red; */
     overflow: hidden;
     padding: 15px;
     text-align: center;

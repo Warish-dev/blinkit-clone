@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from 'react-router-dom';
 import styles from "../styles/login_signup.module.css";
-import resturant from '../assets/logo3.png'
+// import resturant from '../assets/logo3.png'
 
 
 
@@ -10,13 +10,10 @@ export default function Signup() {
   return (
 
   <div className={styles.main}>
-      <div className={styles.main2}>
-      {/* <img  src={logo} alt=""/>   */}
 
 
 		 <div className={`${styles.wrapped} ${styles.Signup}`}>
       <div className={styles.illustration}>
-      {/* <img src={img} /> */}
 
       </div>
       <div className={styles.form2}>
@@ -39,22 +36,18 @@ export default function Signup() {
             />
           </div>
           <button type="submit">Submit</button>
-          <h2 align="center" class="or">
+          {/* <h2 align="center" class="or">
             OR
-          </h2>
+          </h2> */}
         </form>
-        <p>
+        <p className="forgot">
           Have an account ? <Link to="/Login2"> Login </Link>
         </p>
       </div>
       </div>
     </div>
-    <div className={styles.main3}>   
-    <img src={resturant} alt="" />
-  
-    </div>
+    
 
-    </div>
 
       
   );

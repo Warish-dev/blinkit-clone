@@ -1,3 +1,4 @@
+/* Basic reset and general styles */
 * {
   margin: 0;
   padding: 0;
@@ -8,62 +9,36 @@
 
 .main {
   height: 100vh;
+  background: url(../assets/login.jpeg) no-repeat center center fixed;
   width: 100%;
-  margin: auto;
   display: flex;
   flex-direction: row;
-  align-items: center;
   justify-content: center;
-  gap: 30px;
-}
-
-.main2 {
-  height: 100%;
-}
-
-.main3 {
-  height: 100%;
-  width: 500px;
-  display: flex;
-}
-
-.main3 img {
-  width: 100%;
-  height: 95%;
   object-fit: cover;
-  mix-blend-mode:hard-light;
-  /* margin-top: 10px; */
+  background-size: cover;
 }
 
 .wrapped {
   display: flex;
   height: 100%;
   align-items: center;
-}
-
-.wrapped p {
-  font-size: 0.85rem;
-  margin-top: 1rem;
+  justify-content: center;
+  width: 100%;
 }
 
 .form2 {
   padding: 1.5rem;
-  width: 500px;
+  width: 350px;
+  background: rgba(255, 255, 255, 0.8); /* Optional: Add background to form */
+  border-radius: 8px;
+  margin-left: 300px;
 }
 
 .form2 .heading2 {
   font-size: 1.5rem;
   font-weight: bold;
   text-align: center;
-}
-
-.or {
-  margin: 1rem 0;
-}
-
-.form2 label {
-  display: block;
-  margin: 1.25rem 0 1rem 0;
+  margin-bottom: 1rem;
 }
 
 .input_container {
@@ -75,61 +50,26 @@
   width: 100%;
   padding: 15px;
   background-color: transparent;
-  border: 2px solid #18b649;
-  border-radius: 10px;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  border-bottom: 1px solid #232b2b;
+  outline: none;
 }
 
-.form2 button {
+.btn {
   height: 40px;
   width: 100%;
-  background-color: #18b649;
+  background-color: #232b2b;
   color: white;
   text-transform: uppercase;
   letter-spacing: 1px;
   border: none;
   display: block;
-  margin: 0 auto;
+  margin: 1.5rem 0;
   font-weight: bold;
-  margin-top: 1.5rem;
   border-radius: 8px;
-}
-
-@media (max-width: 768px) {
-  .wrapped {
-      display: flex;
-      height: 100vh;
-      align-items: center;
-      justify-content: center;
-      padding: 1.5rem;
-  }
-  .form2 {
-      width: 100%;
-      padding: 1rem;
-  }
-  .form2 input {
-      width: 100%;
-  }
-}
-
-@media (max-width: 425px) {
-  .main {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 20px;
-  }
-
-  /* Hide the image on smaller screens */
-  .main3 {
-      display: none;
-  }
-
-  .form2 {
-      width: 100%;
-  }
-}
-
-@media (max-width: 680px) {
-  /* Optional: You can add further adjustments here */
+  cursor: pointer;
 }
 
 button:hover {
@@ -138,4 +78,78 @@ button:hover {
 
 button:active {
   transform: scale(0.98);
+}
+
+p {
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+p a {
+  color: #232b2b;
+  text-decoration: none;
+}
+
+p a:hover {
+  text-decoration: underline;
+}
+
+/* Media Queries for Responsiveness */
+
+/* For screens less than or equal to 768px */
+@media (max-width: 768px) {
+  .main {
+    background: none;
+    flex-direction: column; /* Stack items vertically */
+    justify-content: center; /* Center the content */
+    align-items: center; /* Center the content horizontally */
+  }
+
+  .form2 {
+    width: 80%; /* Allow the form to be more fluid */
+    max-width: 400px; /* Set a max-width for the form */
+    padding: 1rem;
+    /* left: 300px; */
+
+    
+  }
+
+  .form2 .heading2 {
+    font-size: 1.2rem;
+  }
+
+  .input_container,
+  .input {
+    width: 100%; /* Make inputs fill the width of the form */
+  }
+}
+
+/* For screens less than or equal to 425px (Mobile Devices) */
+@media (max-width: 425px) {
+  .main {
+    padding: 10px; /* Add some padding around the main container */
+    background: none; /* Remove background image */
+  }
+
+  .form2 {
+    width: 100%;
+    max-width: 100%;
+    padding: 1rem;
+  }
+
+  .form2 .heading2 {
+    font-size: 1.1rem; /* Reduce font size for smaller screens */
+  }
+
+  .input {
+    padding: 10px; /* Adjust input padding for smaller screens */
+  }
+
+  button {
+    font-size: 0.9rem; /* Slightly reduce the button font size */
+  }
+
+  p {
+    font-size: 0.8rem;
+  }
 }
