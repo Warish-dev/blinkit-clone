@@ -6,6 +6,7 @@ import { FaArrowUpLong } from "react-icons/fa6";
 import styles from '../styles/home.module.css'
 import UserLogin from '../component/Home/UserLogin'
 import Review from '../component/Home/review';
+import Contact from '../component/Home/Contact';
 
 
 
@@ -41,7 +42,7 @@ const Home = () => {
 
 
   return (
-    <div>
+<div>
       {
         isLogin &&
         <UserLogin setIsLogin={setIsLogin}/>
@@ -50,6 +51,7 @@ const Home = () => {
         <HeroSection />
         <ProductSection />
        <Review />
+       <Contact />
 
         {
           showBtn &&
@@ -62,4 +64,4 @@ const Home = () => {
   )
 }
 
-export default Home
+export default Home    

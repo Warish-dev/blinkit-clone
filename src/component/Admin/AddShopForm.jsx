@@ -2,9 +2,24 @@ import React from 'react'
 import styles from '../../styles/shops.module.css';
 import { IoMdEye } from "react-icons/io";
 import { IoIosEyeOff } from "react-icons/io";
-function AddShopForm() {
+// import { RxCross2 } from "react-icons/rx";
+
+
+  
+function AddShopForm({setIsFormOpen}) {
+    
+    const toggleForm = () => {
+        setIsFormOpen(false);
+      };
+
+
+    
     return (
+        <div className={styles.main}>
         <div className={styles.box}>
+            {/* <RxCross2 className={styles.cross} /> */}
+            <p className={styles.cross} onClick={toggleForm} >X</p>
+
             <h1 className={styles.heading}>Add Shop</h1>
             <div className={styles.name}>
                 <label>Shop Owner Name  :</label>
@@ -62,12 +77,12 @@ function AddShopForm() {
                 <label>Password  :</label>
                 <div className={styles.pass1}>
                     <input
-                        type="text"
-                        id="address"
-                        name="address" />
+                        type="password"
+                        id="password"
+                        name="password" />
                     <div className={styles.icon}>
-                        <IoMdEye />
-                        <IoIosEyeOff />
+                        {/* <IoMdEye />
+                        <IoIosEyeOff /> */}
                     </div>
                 </div>
 
@@ -76,12 +91,11 @@ function AddShopForm() {
                 <label>Confirm Password  :</label>
                 <div className={styles.pass1}>
                     <input
-                        type="text"
-                        id="address"
-                        name="address" />
-                    <div className={styles.icon}>
-                        <IoMdEye />
-                        <IoIosEyeOff />
+                        type="password"
+                        id="password"
+                        name="password" />
+                    <div className={styles.icon1}>
+                        
                     </div>
                 </div>
 
@@ -90,7 +104,10 @@ function AddShopForm() {
             <button className={styles.bt} type='submit'>Submit</button>
 
         </div>
+        </div>
     )
 }
+
+
 
 export default AddShopForm

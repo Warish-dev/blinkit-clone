@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import styles from '../../styles/shops.module.css';
 import { IoSearch } from 'react-icons/io5';
 import { HiOutlineDotsVertical } from 'react-icons/hi';
-import AddShopForm from './AddShopForm';
-// import AddShopForm from './AddShopForm';
+import AddShopForm from '../Admin/AddShopForm';
 
 const initialShops = [
     { id: 1, name: 'Shop One', owner: 'Alice', email: 'alice@shopone.com', phone: '1111111111', totalProducts: 120, location: 'New York', registrationDate: '2023-01-12', status: 'Active', blocked: false },
@@ -41,6 +40,16 @@ const initialShops = [
 
 
 const Shops = () => {
+    
+//   const [showAddShopForm, setshowAddShopForm] = useState(false);
+
+const [isFormOpen, setIsFormOpen] = useState(false);
+
+// Function to toggle form visibility
+const toggleForm = () => {
+  setIsFormOpen(true);
+};
+ 
 
     const [shops, setShops] = useState(initialShops);
     const [searchTerm, setSearchTerm] = useState('');
@@ -116,6 +125,11 @@ const Shops = () => {
 
     return (
         <div className={styles.container}>
+              
+              {
+        isFormOpen &&
+        <AddShopForm setIsFormOpen={setIsFormOpen}/>
+      }
 
             <h2>Shops List</h2>
 
@@ -131,7 +145,7 @@ const Shops = () => {
                     />
                 </div>
 
-                <button onClick={addShopForm}>Add Shop</button>
+                <button onClick={toggleForm }>Add Shop</button>
             </div>
 
             {/* Add New Shop Form */}
@@ -210,7 +224,7 @@ const Shops = () => {
                 ))}
             </div>
 
-            <AddShopForm/>
+            {/* <AddShopForm/> */}
         </div>
     )
 }
