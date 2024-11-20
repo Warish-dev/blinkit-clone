@@ -6,6 +6,7 @@ import bgHomeImg from '../../assets/bghome.svg'
 const HeroSection = () => {
     return (
         <div className={styles.wrapper}>
+        
 
             <div className={styles.heroContainer}>
 

@@ -1,0 +1,357 @@
+.boxBody
+{
+   height: auto;
+   width: 1300px;
+   margin-top: 40px;
+   border-top: 5px solid lightblue;
+   border-bottom: 5px solid lightblue;
+   margin-left: 70px;
+   margin-bottom: 50px;
+   
+
+}
+.heading1
+{
+    /* font-weight: 100; */
+    margin: 10px;
+    margin-left: 80px;
+    text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+    letter-spacing: 2px;
+}
+.formGroup label {
+    font-size: 20px;
+    display: block;
+    padding-bottom: 10px;
+    font-weight: 100;
+    
+}
+.row
+{
+    
+    display: flex;
+    gap: 100px;
+    margin-left: 50px;
+    padding: 10px;
+}
+.formGroup
+{
+    width: 300px;
+}
+.formGroup input
+{
+    width: 300px;
+    height: 40px;
+    border: .5px solid grey;
+    border-radius: 8px;
+     padding-left: 8px;
+     padding-right: 8px;
+    background-color: rgb(243, 243, 243);
+}
+.formGroup textarea
+{
+    width: 300px;
+    height: 100px;
+    border: .5px solid grey;
+    border-radius: 8px;
+    padding: 8px;
+    background-color: rgb(243, 243, 243);
+}
+.formGroup select
+{
+    width: 300px;
+    height: 40px;
+    border: .5px solid grey;
+    border-radius: 8px;
+    padding: 10px;
+    background-color: rgb(243, 243, 243);
+}
+.formGroup .formConrol1
+{
+    width: 500px;
+    
+}
+.but
+{
+    width: 80px;
+    height: 40px;
+    border: none;
+    border-radius: 8px;
+    margin-left: 60px;
+    margin-top: 20px;
+    background-color: blue;
+    color: white;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+.but1
+{
+    width: 80px;
+    height: 40px;
+    border: none;
+    border-radius: 8px;
+    margin-left: 30px;
+    margin-top: 20px;
+    background-color: orange;
+    color: white;
+    font-size: 1.2rem;   
+}
+.cross
+{
+    cursor: pointer;
+}
+.formGroup input:hover
+{
+    border: 3px solid #A6AEBF;
+} 
+ 
+@media (max-width: 768px) {
+    .boxBody {
+       width: 100%; /* Use full width on smaller screens */
+       margin: 10px auto; /* Adjust margin for compact screens */
+       padding: 15px;
+       height: auto;
+    }
+ 
+    .row {
+       flex-direction: column; /* Stack rows vertically */
+       gap: 20px; /* Reduce gap between elements */
+       margin-left: 0; /* Remove extra margin */
+    }
+ 
+    .formGroup {
+       width: 100%; /* Take full width of the parent */
+       max-width: 100%; /* Prevent horizontal overflow */
+    }
+ 
+    .formGroup input,
+    .formGroup textarea,
+    .formGroup select {
+       width: 100%; /* Make inputs responsive */
+    }
+ 
+    .but,
+    .but1 {
+       width: 100%; /* Buttons take full width */
+       max-width: 300px; /* Add a sensible max-width */
+       margin: 10px auto; /* Center the buttons */
+    }
+ }
+ 
+ @media (max-width: 480px) {
+    .boxBody {
+       padding: 10px;
+       height: auto;
+    }
+ 
+    .heading {
+       font-size: 1.5rem; /* Adjust font size for smaller screens */
+       text-align: center; /* Center the heading */
+       margin: 10px 0;
+    }
+ }
+
+ 
+ .container {
+    height: 100vh;
+    grid-area: main;
+    width: 100%;
+    max-width: 100%;
+    margin: auto;
+    padding: 20px;
+
+    overflow-y: auto;
+}
+
+.topContainer{
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.topContainer button {
+    max-height: max-content;
+    background-color: #28a745;
+    color: white;
+    font-size: 800;
+    font-size: 1rem;
+    padding: 0.7rem 1rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-wrap: nowrap;
+
+    box-shadow: 5px 5px 10px rgba(128, 128, 128, 0.5);
+}
+
+.topContainer button:hover {
+    background-color: #218838;
+}
+
+
+.container h2 {
+    font-size: 30px;
+    margin: 10px 0px;
+}
+
+.addShopForm {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.inputField {
+    flex: 1;
+    min-width: 180px;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+}
+
+.addButton {
+    padding: 8px 15px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+
+
+.searchContainer {
+    width: 500px;
+    max-width: 300px;
+    margin-bottom: 10px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 5px 10px;
+
+    font-size: 22px;
+}
+
+.searchBox {
+    width: 100%;
+    padding: 8px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    font-size: 16px;
+}
+
+.tableContainer {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.shopTable {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.shopTable th,
+.shopTable td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+.shopTable th{
+    text-wrap: nowrap;
+}
+
+.actionButton {
+    padding: 6px 10px;
+    border: none;
+    cursor: pointer;
+    margin-right: 5px;
+    border-radius: 10px;
+}
+
+.block {
+    background-color: #f44336;
+    color: white;
+}
+
+.unblock {
+    background-color: #4caf50;
+    color: white;
+}
+
+.deleteButton {
+    background-color: #ff5722;
+    color: white;
+    padding: 6px 10px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.pagination {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.pageButton {
+    padding: 8px;
+    margin: 0 5px;
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+    background-color: #ddd;
+}
+
+.activePage {
+    background-color: #4caf50;
+    color: white;
+}  
+
+.actionCell {
+    display: flex;
+    align-items: center;
+}
+
+.actionMenuButton {
+    position: relative;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.actionMenuButton:hover .actionMenu {
+    display: block;
+}
+
+.actionMenu {
+    display: none;
+    width: 150px;
+    position: absolute;
+    right: 15px;
+    bottom: 0;
+    background-color: white;
+    box-shadow: 0px 5px 25px 2px rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+.actionMenu ul {
+    list-style: none;
+}
+
+.actionMenu li {
+   padding: 5px 10px;
+    margin: 5px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.actionMenu li:hover {
+    background-color: rgb(212, 212, 212);
+}
+ 
+ 
+ 
