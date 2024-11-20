@@ -65,7 +65,7 @@ function AdminPanel() {
         <div className={styles.mainCards}>
             <div className={styles.card}>
                 <div className={styles.cardInner}>
-                    <h3>PRODUCTS</h3>
+                    <h3>SHOPS</h3>
                     <BsFillArchiveFill className={styles.cardIcon}/>
                 </div>
                 <h1>300</h1>
@@ -79,14 +79,14 @@ function AdminPanel() {
             </div>
             <div className={styles.card}>
                 <div className={styles.cardInner}>
-                    <h3>CUSTOMERS</h3>
+                    <h3>USERS</h3>
                     <BsPeopleFill className={styles.cardIcon}/>
                 </div>
                 <h1>33</h1>
             </div>
             <div className={styles.card}>
                 <div className={styles.cardInner}>
-                    <h3>ALERTS</h3>
+                    <h3>DELIVERY BOYS</h3>
                     <BsFillBellFill className={styles.cardIcon}/>
                 </div>
                 <h1>42</h1>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import styles from '../../styles/userLogin.module.css'
-import logo from '../../assets/logo.png'
+import logo from '../../assets/images/logo.png'
 import { BiLeftArrowAlt } from 'react-icons/bi'
 
 

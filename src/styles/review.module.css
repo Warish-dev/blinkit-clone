@@ -60,13 +60,15 @@
     color: orange;
     
 }
-.swiperContainer{
-    width: 100%; /* Ensure the swiper container takes full width */
-    height: 300px;
-}
+
+
 .fix p
 {
     color: rgb(173, 168, 168);
     font-size: 12px;
 }
 
+.swiperContainer{
+    width: 100%; /* Ensure the swiper container takes full width */
+    height: 300px;
+}
