@@ -139,10 +139,10 @@
     cursor: pointer;
     overflow: hidden;
 }
-
 .backBtnContainer:hover .backBtn{
     animation: 1s 1 backBtnAnimation;
 }
+
 
 @keyframes backBtnAnimation {
     from{
@@ -181,6 +181,10 @@
     .imgContainer {
         width: 100%;
     }
+    .detailContainer>strong{
+        font-weight: 300; 
+        color: black;
+    }
 }
 
 @media (max-width: 768px) {
@@ -198,6 +202,9 @@
         margin-right: 20px;
         margin-left: 00;
     }
+    .detailContainer>strong{
+        font-weight: 300; 
+    }
 }
 
 @media (max-width: 480px) {
@@ -207,6 +214,10 @@
     }
     .detailContainer > p {
         font-size: 14px;
+    }
+    .detailContainer>strong{
+        font-weight: bold; 
+        color: black;
     }
     
     

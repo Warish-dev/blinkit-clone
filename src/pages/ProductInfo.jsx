@@ -1,19 +1,28 @@
-import React, { useContext, useEffect, useState } from 'react'
-import { productData } from '../utils/cardData'
-import { useNavigate, useParams } from 'react-router-dom'
-import styles from '../styles/productInfo.module.css'
-import Layout from '../component/Sheared/Layout'
-import { BiLeftArrowAlt } from "react-icons/bi";
-import MyContext from '../context/MyContext'
+import React, { useContext, useEffect, useState } from 'react';
+import { productData } from '../utils/cardData';
+import { useNavigate, useParams } from 'react-router-dom';
+import styles from '../styles/productInfo.module.css';
+import Layout from '../component/Sheared/Layout';
+import { BiLeftArrowAlt, BiRightArrowAlt } from "react-icons/bi"; // import right arrow for forward navigation
+import MyContext from '../context/MyContext';
+import Rating from 'react-rating';
+import { FaStar } from 'react-icons/fa'; // Full star icon
+import { CiStar } from 'react-icons/ci'; // Empty star icon
+import war from '../assets/warish.jpg';
+import { SwiperSlide } from 'swiper/react';
+import ProductReview from '../component/ProductPage/ProductReview';
 
 
 const ProductInfo = () => {
+    // Dummy review data for demonstration
+    
 
     const { id } = useParams();
     const navigate = useNavigate();
     const [showProduct, setShowProduct] = useState();
+    
 
-    const {cart, setCart} = useContext(MyContext);
+    const { cart, setCart } = useContext(MyContext);
 
     useEffect(() => {
         (function () {
@@ -22,25 +31,26 @@ const ProductInfo = () => {
                     if (product.id == id) {
                         setShowProduct(product);
                     }
-                })
-            })
-        })()
+                });
+            });
+        })();
     }, [id]);
 
     useEffect(() => {
-        window.scrollTo(0,0);
-    },[]);
+        window.scrollTo(0, 0);
+    }, []);
 
+    const addToCart = () => {
+        setCart([...cart, showProduct]);
+    };
 
-    const addToCart = (e) => {
-        setCart([...cart, showProduct])
-    }
-
+    // Calculate which reviews to show based on currentPage
+    
     return (
         <Layout>
             <div className={styles.container}>
                 <div className={styles.imgContainer}>
-                    <img src={showProduct?.img} />
+                    <img src={showProduct?.img} alt={showProduct?.title} />
                 </div>
 
                 <div className={styles.productInfoContainer}>
@@ -71,15 +81,15 @@ const ProductInfo = () => {
                     </div>
                 </div>
 
-                <div onClick={() => {navigate(-1)}} className={styles.backBtnContainer}>
+                <div onClick={() => { navigate(-1); }} className={styles.backBtnContainer}>
                     <BiLeftArrowAlt className={styles.backBtn} />
                 </div>
-
             </div>
 
-           
+           <ProductReview/>
         </Layout>
-    )
-}
 
-export default ProductInfo
+);
+};
+
+export default ProductInfo;

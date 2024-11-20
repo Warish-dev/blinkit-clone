@@ -8,7 +8,7 @@ export const productData = [
             {
                 id:1,
                 img: productImg,
-                title: "Green Grocer’s Delight: Mixed Veggies & Juicy Fruits",
+                title: "Mixed Veggies & Juicy Fruits",
                 quantity: "5 kg",
                 price: "200",
                 
@@ -25,7 +25,7 @@ export const productData = [
             {
                 id: 2,
                 img: productImg,
-                title: "Green Grocer’s Delight: Mixed Veggies & Juicy Fruits",
+                title: "Mixed Veggies & Juicy Fruits",
                 quantity: "5 kg",
                 price: "200",
                 key: { 
@@ -39,7 +39,7 @@ export const productData = [
             {
                 id: 3,
                 img: productImg,
-                title: "Green Grocer’s Delight: Mixed Veggies & Juicy Fruits",
+                title: "Mixed Veggies & Juicy Fruits",
                 quantity: "5 kg",
                 price: "200",
                 key: { 
@@ -53,7 +53,7 @@ export const productData = [
             {
                 id: 4,
                 img: productImg,
-                title: "Green Grocer’s Delight: Mixed Veggies & Juicy Fruits",
+                title: "Mixed Veggies & Juicy Fruits",
                 quantity: "5 kg",
                 price: "200",
                 key: { 
@@ -67,7 +67,7 @@ export const productData = [
             {
                 id:5,
                 img: productImg,
-                title: "Green Grocer’s Delight: Mixed Veggies & Juicy Fruits",
+                title: "Mixed Veggies & Juicy Fruits",
                 quantity: "5 kg",
                 price: "200",
                 key: { 
@@ -81,7 +81,7 @@ export const productData = [
             {
                 id:6,
                 img: productImg,
-                title: "Green Grocer’s Delight: Mixed Veggies & Juicy Fruits",
+                title: "Mixed Veggies & Juicy Fruits",
                 quantity: "5 kg",
                 price: "200",
                 key: { 
@@ -95,7 +95,7 @@ export const productData = [
             {
                 id:7,
                 img: productImg,
-                title: "Green Grocer’s Delight: Mixed Veggies & Juicy Fruits",
+                title: "Mixed Veggies & Juicy Fruits",
                 quantity: "5 kg",
                 price: "200",
                 key: { 
@@ -109,7 +109,7 @@ export const productData = [
             {
                 id:8,
                 img: productImg,
-                title: "Green Grocer’s Delight: Mixed Veggies & Juicy Fruits",
+                title: "Mixed Veggies & Juicy Fruits",
                 quantity: "5 kg",
                 price: "200",
                 key: { 
@@ -123,7 +123,7 @@ export const productData = [
             {
                 id: 9,
                 img: productImg,
-                title: "Green Grocer’s Delight: Mixed Veggies & Juicy Fruits",
+                title: "Mixed Veggies & Juicy Fruits",
                 quantity: "5 kg",
                 price: "200",
                 key: { 
@@ -137,7 +137,7 @@ export const productData = [
             {
                 id:10,
                 img: productImg,
-                title: "Green Grocer’s Delight: Mixed Veggies & Juicy Fruits",
+                title: "Mixed Veggies & Juicy Fruits",
                 quantity: "5 kg",
                 price: "200",
                 key: { 
@@ -156,7 +156,7 @@ export const productData = [
             {
                 id:11,
                 img: product2,
-                title: "Green Grocer’s Delight: Mixed Veggies & Juicy Fruits",
+                title: "Mixed Veggies & Juicy Fruits",
                 quantity: "5 kg",
                 price: "200",
                 key: { 
@@ -170,7 +170,7 @@ export const productData = [
             {
                 id:12,
                 img: product2,
-                title: "Green Grocer’s Delight: Mixed Veggies & Juicy Fruits",
+                title: "Mixed Veggies & Juicy Fruits",
                 quantity: "5 kg",
                 price: "200",
                 key: { 
@@ -184,7 +184,7 @@ export const productData = [
             {
                 id:13,
                 img: product2,
-                title: "Green Grocer’s Delight: Mixed Veggies & Juicy Fruits",
+                title: "Mixed Veggies & Juicy Fruits",
                 quantity: "5 kg",
                 price: "200",
                 key: { 
@@ -198,7 +198,7 @@ export const productData = [
             {
                 id:14,
                 img: product2,
-                title: "Green Grocer’s Delight: Mixed Veggies & Juicy Fruits",
+                title: "Mixed Veggies & Juicy Fruits",
                 quantity: "5 kg",
                 price: "200",
                 key: { 
@@ -212,7 +212,7 @@ export const productData = [
             {
                 id:15,
                 img: product2,
-                title: "Green Grocer’s Delight: Mixed Veggies & Juicy Fruits",
+                title: "Mixed Veggies & Juicy Fruits",
                 quantity: "5 kg",
                 price: "200",
                 key: { 
@@ -226,7 +226,7 @@ export const productData = [
             {
                 id:16,
                 img: product2,
-                title: "Green Grocer’s Delight: Mixed Veggies & Juicy Fruits",
+                title: "Mixed Veggies & Juicy Fruits",
                 quantity: "5 kg",
                 price: "200",
                 key: { 
@@ -240,7 +240,7 @@ export const productData = [
             {
                 id:17,
                 img: product2,
-                title: "Green Grocer’s Delight: Mixed Veggies & Juicy Fruits",
+                title: "Mixed Veggies & Juicy Fruits",
                 quantity: "5 kg",
                 price: "200",
                 key: { 
@@ -254,7 +254,7 @@ export const productData = [
             {
                 id:18,
                 img: product2,
-                title: "Green Grocer’s Delight: Mixed Veggies & Juicy Fruits",
+                title: "Mixed Veggies & Juicy Fruits",
                 quantity: "5 kg",
                 price: "200",
                 key: { 
@@ -268,7 +268,7 @@ export const productData = [
             {
                 id:19,
                 img: product2,
-                title: "Green Grocer’s Delight: Mixed Veggies & Juicy Fruits",
+                title: "Mixed Veggies & Juicy Fruits",
                 quantity: "5 kg",
                 price: "200",
                 key: { 
@@ -282,7 +282,7 @@ export const productData = [
             {
                 id:20,
                 img: product2,
-                title: "Green Grocer’s Delight: Mixed Veggies & Juicy Fruits",
+                title: "Mixed Veggies & Juicy Fruits",
                 quantity: "5 kg",
                 price: "200",
                 key: { 
@@ -301,7 +301,7 @@ export const productData = [
             {
                 id:21,
                 img: productImg,
-                title: "Green Grocer’s Delight: Mixed Veggies & Juicy Fruits",
+                title: "Mixed Veggies & Juicy Fruits",
                 quantity: "5 kg",
                 price: "200",
                 key: { 
@@ -315,7 +315,7 @@ export const productData = [
             {
                 id:22,
                 img: productImg,
-                title: "Green Grocer’s Delight: Mixed Veggies & Juicy Fruits",
+                title: "Mixed Veggies & Juicy Fruits",
                 quantity: "5 kg",
                 price: "200",
                 key: { 
@@ -329,7 +329,7 @@ export const productData = [
             {
                 id:23,
                 img: productImg,
-                title: "Green Grocer’s Delight: Mixed Veggies & Juicy Fruits",
+                title: "Mixed Veggies & Juicy Fruits",
                 quantity: "5 kg",
                 price: "200",
                 key: { 
@@ -343,7 +343,7 @@ export const productData = [
             {
                 id:24,
                 img: productImg,
-                title: "Green Grocer’s Delight: Mixed Veggies & Juicy Fruits",
+                title: "Mixed Veggies & Juicy Fruits",
                 quantity: "5 kg",
                 price: "200",
                 key: { 
@@ -357,7 +357,7 @@ export const productData = [
             {
                 id:25,
                 img: productImg,
-                title: "Green Grocer’s Delight: Mixed Veggies & Juicy Fruits",
+                title: "Mixed Veggies & Juicy Fruits",
                 quantity: "5 kg",
                 price: "200",
                 key: { 
@@ -371,7 +371,7 @@ export const productData = [
             {
                 id:26,
                 img: productImg,
-                title: "Green Grocer’s Delight: Mixed Veggies & Juicy Fruits",
+                title: "Mixed Veggies & Juicy Fruits",
                 quantity: "5 kg",
                 price: "200",
                 key: { 
@@ -385,7 +385,7 @@ export const productData = [
             {
                 id:27,
                 img: productImg,
-                title: "Green Grocer’s Delight: Mixed Veggies & Juicy Fruits",
+                title: "Mixed Veggies & Juicy Fruits",
                 quantity: "5 kg",
                 price: "200",
                 key: { 
@@ -399,7 +399,7 @@ export const productData = [
             {
                 id:28,
                 img: productImg,
-                title: "Green Grocer’s Delight: Mixed Veggies & Juicy Fruits",
+                title: "Mixed Veggies & Juicy Fruits",
                 quantity: "5 kg",
                 price: "200",
                 key: { 
@@ -413,7 +413,7 @@ export const productData = [
             {
                 id:29,
                 img: productImg,
-                title: "Green Grocer’s Delight: Mixed Veggies & Juicy Fruits",
+                title: "Mixed Veggies & Juicy Fruits",
                 quantity: "5 kg",
                 price: "200",
                 key: { 
@@ -427,7 +427,7 @@ export const productData = [
             {
                 id:30,
                 img: productImg,
-                title: "Green Grocer’s Delight: Mixed Veggies & Juicy Fruits",
+                title: "Mixed Veggies & Juicy Fruits",
                 quantity: "5 kg",
                 price: "200",
                 key: { 
@@ -446,7 +446,7 @@ export const productData = [
             {
                 id:31,
                 img: productImg,
-                title: "Green Grocer’s Delight: Mixed Veggies & Juicy Fruits",
+                title: "Mixed Veggies & Juicy Fruits",
                 quantity: "5 kg",
                 price: "200",
                 key: { 
@@ -460,7 +460,7 @@ export const productData = [
             {
                 id:32,
                 img: productImg,
-                title: "Green Grocer’s Delight: Mixed Veggies & Juicy Fruits",
+                title: "Mixed Veggies & Juicy Fruits",
                 quantity: "5 kg",
                 price: "200",
                 key: { 
@@ -474,7 +474,7 @@ export const productData = [
             {
                 id:33,
                 img: productImg,
-                title: "Green Grocer’s Delight: Mixed Veggies & Juicy Fruits",
+                title: "Mixed Veggies & Juicy Fruits",
                 quantity: "5 kg",
                 price: "200",
                 key: { 
@@ -488,7 +488,7 @@ export const productData = [
             {
                 id:34,
                 img: productImg,
-                title: "Green Grocer’s Delight: Mixed Veggies & Juicy Fruits",
+                title: "Mixed Veggies & Juicy Fruits",
                 quantity: "5 kg",
                 price: "200",
                 key: { 
@@ -502,7 +502,7 @@ export const productData = [
             {
                 id: 35,
                 img: productImg,
-                title: "Green Grocer’s Delight: Mixed Veggies & Juicy Fruits",
+                title: "Mixed Veggies & Juicy Fruits",
                 quantity: "5 kg",
                 price: "200",
                 key: { 
@@ -516,7 +516,7 @@ export const productData = [
             {
                 id:36,
                 img: productImg,
-                title: "Green Grocer’s Delight: Mixed Veggies & Juicy Fruits",
+                title: "Mixed Veggies & Juicy Fruits",
                 quantity: "5 kg",
                 price: "200",
                 key: { 
@@ -530,7 +530,7 @@ export const productData = [
             {
                 id:37,
                 img: productImg,
-                title: "Green Grocer’s Delight: Mixed Veggies & Juicy Fruits",
+                title: "Mixed Veggies & Juicy Fruits",
                 quantity: "5 kg",
                 price: "200",
                 key: { 
@@ -544,7 +544,7 @@ export const productData = [
             {
                 id:38,
                 img: productImg,
-                title: "Green Grocer’s Delight: Mixed Veggies & Juicy Fruits",
+                title: "Mixed Veggies & Juicy Fruits",
                 quantity: "5 kg",
                 price: "200",
                 key: { 
@@ -558,7 +558,7 @@ export const productData = [
             {
                 id:39,
                 img: productImg,
-                title: "Green Grocer’s Delight: Mixed Veggies & Juicy Fruits",
+                title: "Mixed Veggies & Juicy Fruits",
                 quantity: "5 kg",
                 price: "200",
                 key: { 
@@ -572,7 +572,7 @@ export const productData = [
             {
                 id:40,
                 img: productImg,
-                title: "Green Grocer’s Delight: Mixed Veggies & Juicy Fruits",
+                title: "Mixed Veggies & Juicy Fruits",
                 quantity: "5 kg",
                 price: "200",
                 key: { 
@@ -591,7 +591,7 @@ export const productData = [
             {
                 id:41,
                 img: productImg,
-                title: "Green Grocer’s Delight: Mixed Veggies & Juicy Fruits",
+                title: "Mixed Veggies & Juicy Fruits",
                 quantity: "5 kg",
                 price: "200",
                 key: { 
@@ -606,7 +606,7 @@ export const productData = [
             {
                 id:42,
                 img: productImg,
-                title: "Green Grocer’s Delight: Mixed Veggies & Juicy Fruits",
+                title: "Mixed Veggies & Juicy Fruits",
                 quantity: "5 kg",
                 price: "200",
                 key: { 
@@ -620,7 +620,7 @@ export const productData = [
             {
                 id:43,
                 img: productImg,
-                title: "Green Grocer’s Delight: Mixed Veggies & Juicy Fruits",
+                title: "Mixed Veggies & Juicy Fruits",
                 quantity: "5 kg",
                 price: "200",
                 key: { 
@@ -634,7 +634,7 @@ export const productData = [
             {
                 id:44,
                 img: productImg,
-                title: "Green Grocer’s Delight: Mixed Veggies & Juicy Fruits",
+                title: "Mixed Veggies & Juicy Fruits",
                 quantity: "5 kg",
                 price: "200",
                 key: { 
@@ -648,7 +648,7 @@ export const productData = [
             {
                 id:45,
                 img: productImg,
-                title: "Green Grocer’s Delight: Mixed Veggies & Juicy Fruits",
+                title: "Mixed Veggies & Juicy Fruits",
                 quantity: "5 kg",
                 price: "200",
                 key: { 
@@ -662,7 +662,7 @@ export const productData = [
             {
                 id:46,
                 img: productImg,
-                title: "Green Grocer’s Delight: Mixed Veggies & Juicy Fruits",
+                title: "Mixed Veggies & Juicy Fruits",
                 quantity: "5 kg",
                 price: "200",
                 key: { 
@@ -676,7 +676,7 @@ export const productData = [
             {
                 id:47,
                 img: productImg,
-                title: "Green Grocer’s Delight: Mixed Veggies & Juicy Fruits",
+                title: "Mixed Veggies & Juicy Fruits",
                 quantity: "5 kg",
                 price: "200",
                 key: { 
@@ -690,7 +690,7 @@ export const productData = [
             {
                 id:48,
                 img: productImg,
-                title: "Green Grocer’s Delight: Mixed Veggies & Juicy Fruits",
+                title: "Mixed Veggies & Juicy Fruits",
                 quantity: "5 kg",
                 price: "200",
                 key: { 
@@ -704,7 +704,7 @@ export const productData = [
             {
                 id:49,
                 img: productImg,
-                title: "Green Grocer’s Delight: Mixed Veggies & Juicy Fruits",
+                title: "Mixed Veggies & Juicy Fruits",
                 quantity: "5 kg",
                 price: "200",
                 key: { 
@@ -718,7 +718,7 @@ export const productData = [
             {
                 id:50,
                 img: productImg,
-                title: "Green Grocer’s Delight: Mixed Veggies & Juicy Fruits",
+                title: "Mixed Veggies & Juicy Fruits",
                 quantity: "5 kg",
                 price: "200",
                 key: { 
