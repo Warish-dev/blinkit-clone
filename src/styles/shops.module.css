@@ -2,7 +2,7 @@
     height: 100%;
     grid-area: main;
     width: 100%;
-    max-width: 1200px;
+    max-width: 100%;
     margin: auto;
     padding: 20px;
 
@@ -53,7 +53,7 @@
     min-width: 180px;
     padding: 8px;
     border: 1px solid #ddd;
-    border-radius: 4px;
+    border-radius: 10px;
 }
 
 .addButton {
@@ -61,7 +61,7 @@
     background-color: #4caf50;
     color: white;
     border: none;
-    border-radius: 4px;
+    border-radius: 10px;
     cursor: pointer;
 }
 
@@ -117,7 +117,7 @@
     border: none;
     cursor: pointer;
     margin-right: 5px;
-    border-radius: 4px;
+    border-radius: 10px;
 }
 
 .block {
@@ -135,7 +135,7 @@
     color: white;
     padding: 6px 10px;
     border: none;
-    border-radius: 4px;
+    border-radius: 10px;
     cursor: pointer;
 }
 
@@ -149,7 +149,7 @@
     margin: 0 5px;
     cursor: pointer;
     border: none;
-    border-radius: 4px;
+    border-radius: 10px;
     background-color: #ddd;
 }
 
@@ -190,7 +190,7 @@
 }
 
 .actionMenu li {
-    padding: 5px 10px;
+   padding: 5px 10px;
     margin: 5px;
     border-radius: 6px;
     cursor: pointer;
@@ -199,4 +199,212 @@
 .actionMenu li:hover {
     background-color: rgb(212, 212, 212);
 }
+   /* Add Shop Form */
+.box
+{
+    height: 1100px;
+    width: 700px;
+    border: none;
+    border-radius: 8px;
+    margin: auto;
+    box-shadow: 0px 5px 25px 2px rgba(183, 121, 121, 0.6);
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 30px;
+    
+    
+}
 
+.heading
+{
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    
+}
+label
+{
+    
+    font-size: 20px;
+    margin-right: 8px;
+    
+}
+.ShopName
+{
+    padding-left: 80px;
+}
+.Address
+{
+    padding-left: 35px;
+}
+.Address1
+{
+    padding-left: 130px;
+}
+.Address2
+{
+    padding-left: 120px;
+}
+.Address3
+{
+    padding-left: 80px;
+}
+.Id
+{
+    padding-left: 140px;
+}
+.password
+{
+    display: flex;
+    padding-left: 70px;
+
+    
+}
+.ConfirmPassword
+{
+    display: flex;
+    padding-right: 25x;
+    
+
+}
+.name input
+{
+    border: 2px solid grey;
+    background-color: rgb(255, 251, 251);
+    width: 300px;
+    height: 40px;
+    border-radius: 10px;
+}
+.email input
+{
+    border: 2px solid grey;
+    background-color: rgb(255, 251, 251);
+    width: 300px;
+    height: 40px;
+    border-radius: 10px;
+}
+.ShopName input
+{
+    border: 2px solid grey;
+    background-color: rgb(255, 251, 251);
+    width: 300px;
+    height: 40px;
+    border-radius: 10px;
+    
+}
+.Address input
+{
+    border: 2px solid grey;
+    background-color: rgb(255, 251, 251);
+    width: 300px;
+    height: 40px;
+    border-radius: 10px;
+}
+.Address1 input
+{
+    border: 2px solid grey;
+    background-color: rgb(255, 251, 251);
+    width: 300px;
+    height: 40px;
+    border-radius: 10px;
+}
+.Address2 input
+{
+    border: 2px solid grey;
+    background-color: rgb(255, 251, 251);
+    width: 300px;
+    height: 40px;
+    border-radius: 10px;
+}
+.Address3 input
+{
+    border: 2px solid grey;
+    background-color: rgb(255, 251, 251);
+    width: 300px;
+    height: 40px;
+    border-radius: 10px;
+}
+.Id input
+{
+    border: 2px solid grey;
+    background-color: rgb(255, 251, 251);
+    width: 300px;
+    height: 40px;
+    border-radius: 10px;
+
+}
+.password input
+{
+    border: 2px solid grey;
+    background-color: rgb(255, 251, 251);
+    width: 300px;
+    height: 40px;
+    border-radius: 10px;
+    
+}
+.ConfirmPassword input
+{
+    border: 2px solid grey;
+    background-color: rgb(255, 251, 251);
+    width: 300px;
+    height: 40px;
+   
+    border-radius: 10px;
+    padding-right: 5px;
+    position: absolute;
+    
+}
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+.icon
+{
+    /* background-color: #218838; */
+    font-size: 1.2rem;
+    position: relative;
+    transform: translate(-110%);
+    top: 10px;
+    z-index: 5;
+}
+.icon1
+{
+    /* background-color: #218838; */
+    font-size: 1.2rem;
+    position: relative; 
+     transform: translate(670%);
+    top: 10px;
+    z-index: 5;
+}
+.bt
+{
+    width: 500px;
+    height: 2.5rem;
+    margin-left: 40px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.5rem;
+    color: white;
+    background-color: #28a745;
+    transition: .5s ease-in-out;
+
+}
+.bt:hover
+{
+    transform: scale(1.1);
+    background-color: #218838;
+}
+.pass1
+{
+    display: flex;
+    position: relative;
+}
+.cross
+{
+    color: black;
+    display: flex;
+    justify-content: flex-end;
+    cursor: pointer;
+}
