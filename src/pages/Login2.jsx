@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from "../styles/login_signup.module.css";
+
 // import { AiOutlineEyeInvisible } from 'react-icons/ai';
 // import resturant from '../assets/logo3.png'
 
@@ -16,9 +17,13 @@ export default function Login() {
 					
 					<div className={styles.form2}>
 						<div className={styles.heading2}>LOGIN</div>
+						<button className={styles.btn2} type=''>Admin</button>
+						<button className={styles.btn2} type=''>Warehouse</button>
+
 						<form>
 							<div className={styles.input_container}>
-								<label htmlFor="name">Name</label>
+								<label htmlFor="name">
+								</label>
 								<input className={styles.input} type="text" id="name" placeholder="Enter your name" />
 							</div>
 							<div>
