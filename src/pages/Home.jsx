@@ -12,6 +12,7 @@ import Contact from '../component/Home/Contact';
 
 import Review from '../component/Home/Review';
 import CategoryComponent from '../component/Home/CategoryComponent';
+import PosterSection from '../component/Home/PosterSection';
 
 
 
@@ -20,6 +21,7 @@ const Home = () => {
   const [showBtn, setShowBtn] = useState(false);
   const [isLogin, setIsLogin] = useState(true);
 
+  
 
   useEffect(() => {
     const handleVisibilityOfBtn = () => {
@@ -53,11 +55,15 @@ const Home = () => {
         <UserLogin setIsLogin={setIsLogin}/>
       }
       <Layout>
+        
         <HeroSection />
+        <PosterSection />
         <CategoryComponent/>
+       
         <ProductSection />
        <Review />
-       <Contact />
+
+           <Contact />
 
         {
           showBtn &&
@@ -66,6 +72,11 @@ const Home = () => {
           </div>
         }
       </Layout>
+      
+
+
+
+
     </div>
   )
 }

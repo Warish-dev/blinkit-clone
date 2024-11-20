@@ -1,12 +1,12 @@
 import React from 'react'
 import styles from '../styles/searchProduct.module.css'
 import { Link } from 'react-router-dom'
-import logo from '../assets/logo.png'
+import logo from '../assets/images/logo.png'
 import { FaCartShopping } from "react-icons/fa6";
 
 
 const SearchProduct = () => {
-  return (
+  return ( 
     <div className={styles.wrapper}>
       <div className={styles.header}>
 

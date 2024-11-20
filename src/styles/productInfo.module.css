@@ -22,11 +22,48 @@
 
 .productInfoContainer{
     margin-top: 50px;
+    
 }
+
+
 
 .productInfoContainer>p{
     font-size: 30px;
     font-weight: 700;
+    
+}
+
+.headingContainer>p{
+    font-size: 23px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.detailContainer>p{
+    font-size: 14px;
+    margin-top: 9px;
+    margin-right: 210px;
+    margin-left: 20px; 
+}
+.detailContainer>strong{
+    font-size: 14px;
+    margin-top: 9px;
+    margin-right: 210px;
+    margin-left: 20px; 
+}
+.detailContainer>p>span{
+    display:block;
+    max-width: 400px;
+    margin-top:5px ;
+    margin-left: 7px;
+    color:grey;
+    font-weight: 100;
+}
+.detailContainer>strong{
+    font-weight: 300; 
+}
+.headingContainer>strong{
+    font-weight: 550;
 }
 
 .priceContainer{
@@ -139,9 +176,49 @@
 @media screen and (max-width: 750px) {
     .container{
         flex-direction: column;
+        padding: 10px;
     }
     .imgContainer {
         width: 100%;
     }
+    .detailContainer>strong{
+        font-weight: 300; 
+        color: black;
+    }
+}
 
+@media (max-width: 768px) {
+    .headingContainer > p {
+        font-size: 18px;
+    }
+    .detailContainer > p {
+        font-size: 12px;
+        margin-right: 20px;
+        margin-left: 3px;
+        
+    }
+    .detailContainer > strong{
+        font-size: 12.5px;
+        margin-right: 20px;
+        margin-left: 00;
+    }
+    .detailContainer>strong{
+        font-weight: 300; 
+    }
+}
+
+@media (max-width: 480px) {
+    .headingContainer > p {
+        font-size: 16px;
+        
+    }
+    .detailContainer > p {
+        font-size: 14px;
+    }
+    .detailContainer>strong{
+        font-weight: bold; 
+        color: black;
+    }
+    
+    
 }

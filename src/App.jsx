@@ -18,6 +18,8 @@ import ProductByCategory from './pages/ProductByCategory'
 // import Error from './component/Error2'
 // import Login2 from './component/Admin/Login2'
 // import Error2 from './component/Admin/Error2'
+import PosterItem from './pages/PosterItem'
+
 
 import DeliveryBoy from './component/Admin/DeliveryBoy'
 import Category from './component/Admin/Category'
@@ -38,6 +40,7 @@ const App = () => {
         <Route path={'/category/:id'} element={<ProductByCategory/>} />
 
         
+        <Route path={'/PosterItem'} element={<PosterItem />} />
         <Route path={'/admin/'} element={<Admin />}>
           <Route path={'dashboard'} element={<AdminPanel />} />
           <Route path={'users'} element={<Users />} />
@@ -48,6 +51,9 @@ const App = () => {
           <Route path={'Subcategory'} element={<Subcategory />} />
             
               {/* <Route path={'Error2'} element={<Error2/>} /> */}
+
+
+          
 
         </Route>
 
