@@ -1,5 +1,5 @@
 import React from 'react'
-import logo from '../../assets/conlogo.jpeg'
+import logo from '../../assets/conlogo2.jpeg'
 import styles from '../../styles/Contact.module.css'
 function Contact() {
   return (

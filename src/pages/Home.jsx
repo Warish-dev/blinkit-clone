@@ -67,7 +67,8 @@ const Home = () => {
         <CategoryComponent />
 
         <ProductSection />
-        <Review />
+
+ {/* <Review /> */}
 
         <Contact />
 

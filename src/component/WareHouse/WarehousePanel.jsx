@@ -5,7 +5,7 @@ import
  import 
  { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, LineChart, Line } 
  from 'recharts';
-import styles from '../../styles/admin.module.css'
+import styles from '../../styles/warehouse.module.css'
 
 
 function AdminPanel() {
