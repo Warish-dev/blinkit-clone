@@ -209,25 +209,31 @@ footer.main {
   .footertop {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    /* max-width: 1px; */
+    /* justify-content: space-between; */
     gap: 20px;
     margin-bottom: 30px;
   }
   
   .footeroutintro {
     flex: 1 1 30%;
-    max-width: 300px;
+    max-width: 500px;
+    margin-top: -20px;
+
   }
   
   .footeroutintro img {
     width: 100px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
   }
   
   .footeroutintro p {
     font-size: 14px;
     color: #666;
     margin-bottom: 15px;
+    margin-right:50px;
+    margin-left: 30px;
+    text-align:justify;
   }
   
   .socialicons {
@@ -302,13 +308,13 @@ footer.main {
     .footertop {
       flex-wrap: wrap;
       justify-content: space-around;
-      text-align: center;
+      /* text-align: center; */
     }
   
     .footeroutintro {
       flex: 1 1 100%;
       max-width: 100%;
-      text-align: center;
+      /* text-align: center; */
       margin-bottom: 20px;
     }
   
@@ -414,12 +420,12 @@ footer.main {
   
   /* For screens 480px and below */
   @media (max-width: 480px) {
-    .footersection {
+    /* .footersection {
         justify-content: center;
-      /* flex: 1 1 100%;
+      flex: 1 1 100%;
       max-width: 100%;
-      margin-bottom: 20px; */
-    }
+      margin-bottom: 20px;
+    } */
   
     .footeroutintro {
       flex: 1 1 100%;
