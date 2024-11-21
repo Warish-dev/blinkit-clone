@@ -272,7 +272,9 @@ a {
   
   .actionButton:hover {
     
-    box-shadow: 0 4px 10px rgba(12, 12, 12, 0.3);
+    box-shadow: 2px 4px 10px rgba(12, 12, 12, 0.3);
+    background-color: transparent;
+    color: #4caf50;
   }
   
 

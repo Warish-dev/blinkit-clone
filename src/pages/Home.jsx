@@ -6,11 +6,13 @@ import { FaArrowUpLong } from "react-icons/fa6";
 import styles from '../styles/home.module.css'
 import UserLogin from '../component/Home/UserLogin'
 
+
 import Contact from '../component/Home/Contact';
 
 import Review from '../component/Home/Review';
 import CategoryComponent from '../component/Home/CategoryComponent';
 import PosterSection from '../component/Home/PosterSection';
+import GetUserLocation from '../component/Home/GetUserLocation';
 
 
 
@@ -18,8 +20,9 @@ const Home = () => {
 
   const [showBtn, setShowBtn] = useState(false);
   const [isLogin, setIsLogin] = useState(true);
+  const [isLocation, setIsLocation] = useState(true);
 
-  
+
 
   useEffect(() => {
     const handleVisibilityOfBtn = () => {
@@ -47,21 +50,27 @@ const Home = () => {
 
 
   return (
-<div>
+    <div>
       {
         isLogin &&
-        <UserLogin setIsLogin={setIsLogin}/>
+        <UserLogin setIsLogin={setIsLogin} />
       }
+
+      {!isLogin && isLocation &&
+        <GetUserLocation setIsLocation={setIsLocation} />
+      }
+     
       <Layout>
-        
+
         <HeroSection />
         <PosterSection />
-        <CategoryComponent/>
-       
-        <ProductSection />
-       {/* <Review /> */}
+        <CategoryComponent />
 
-           <Contact />
+        <ProductSection />
+
+ {/* <Review /> */}
+
+        <Contact />
 
         {
           showBtn &&
@@ -70,7 +79,7 @@ const Home = () => {
           </div>
         }
       </Layout>
-      
+
 
 
 
