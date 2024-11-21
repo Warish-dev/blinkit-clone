@@ -101,7 +101,7 @@ function ProductByCategory() {
       <div className={styles.wrapper}>
 
         {/* Menubar */}
-        <div className={styles.menubar}>
+        <div  className={styles.menubar}>
           {menuItem.map((item, index) => (
             <div key={index} className={styles.linkname}>
               <p>{item.name}</p>
