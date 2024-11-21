@@ -68,9 +68,12 @@ const Home = () => {
 
         <ProductSection />
 
+<<<<<<< HEAD
         {/* <Review /> */}
 
            
+=======
+>>>>>>> ae163e560752e068c6952b611607df83d77f6c8e
 
         {
           showBtn &&
