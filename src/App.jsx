@@ -11,6 +11,7 @@ import Admin from './pages/Admin'
 import AdminPanel from './component/Admin/AdminPanel'
 import Users from './component/Admin/Users'
 import Shops from './component/Admin/Shops'
+import Contact from'./component/Home/Contact'
 
 
 import Login from './pages/Login'
@@ -38,6 +39,9 @@ const App = () => {
         <Route path={'/search'} element={<SearchProduct/>}/>
         <Route path={'/Login2'} element={<Login2/>} />
         <Route path={'/category/:id'} element={<ProductByCategory/>} />
+        <Route path={'/contact'} element={<Contact/>}/>
+
+
 
         
         <Route path={'/PosterItem'} element={<PosterItem />} />

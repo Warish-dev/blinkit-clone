@@ -7,7 +7,6 @@ import styles from '../styles/home.module.css'
 import UserLogin from '../component/Home/UserLogin'
 
 
-import Review from '../component/Home/review';
 import Contact from '../component/Home/Contact';
 
 import Review from '../component/Home/Review';
@@ -63,7 +62,7 @@ const Home = () => {
         <ProductSection />
        <Review />
 
-           <Contact />
+           
 
         {
           showBtn &&

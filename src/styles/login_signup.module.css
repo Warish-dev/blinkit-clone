@@ -28,10 +28,13 @@
 
 .form2 {
   padding: 1.5rem;
-  width: 350px;
+  width: 400px;
   background: rgba(255, 255, 255, 0.8); /* Optional: Add background to form */
   border-radius: 8px;
   margin-left: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center form content */
 }
 
 .form2 .heading2 {
@@ -49,6 +52,7 @@
   height: 20px;
   width: 100%;
   padding: 15px;
+  margin-left: 10px;
   background-color: transparent;
   border-left: none;
   border-right: none;
@@ -59,7 +63,7 @@
 
 .btn {
   height: 40px;
-  width: 100%;
+  width: 100%; /* Ensure button takes full width */
   background-color: #232b2b;
   color: white;
   text-transform: uppercase;
@@ -71,25 +75,48 @@
   border-radius: 8px;
   cursor: pointer;
 }
-.btn2{
-  height: 40px;
-  width:30%;
-  font-size: 12px;
-  display: flex;
-  /* float: left; */
-  text-wrap: wrap;
-  background-color: #232b2b;
-  color: white;
-  /* text-transform: uppercase; */
-  letter-spacing: 1px;
-  border: none;
-  display: block;
-  /* text-align: center; */
-  margin: 1.5rem 0;
-  /* font-weight: bold; */
-  border-radius: 8px;
-  cursor: pointer;
 
+.btnbox {
+  display: flex;
+  width: 70%;
+  /* gap: 20px; */
+  justify-content: space-between;
+  margin-bottom: 1rem; /* Add some space between buttons and inputs */
+}
+
+.btnbox p {
+  width: 48%; /* Ensure buttons are smaller and aligned side-by-side */
+  /* padding: 10px; */
+  margin:10px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.btn2 {
+  padding: 10px 0px;
+  transition: background-color 0.3s ease;
+  font-weight: bold;
+}
+
+.selected {
+  background-color: #e9a70b; /* Dark yellow for selected */
+  color: white;
+}
+
+.unselected {
+  background-color: #d3d3d3; /* Light gray for unselected */
+  color: black;
+}
+
+.selected,
+.unselected {
+  border-radius: 5px;
+  margin: 0 5px; /* Adjust margin for spacing between buttons */
+}
+
+label {
+  position: relative;
+  top: 30px;
 }
 
 button:hover {
@@ -129,9 +156,15 @@ p a:hover {
     width: 80%; /* Allow the form to be more fluid */
     max-width: 400px; /* Set a max-width for the form */
     padding: 1rem;
-    /* left: 300px; */
+    margin-left: 0; /* Remove left margin on mobile */
+    box-shadow: 0px 0px 10px 10px gray;
 
-    
+  }
+
+  .logo {
+    display: block; /* Show the logo */
+    width: 100px; /* Adjust logo size as needed */
+    margin: 0 auto; /* Center logo */
   }
 
   .form2 .heading2 {
@@ -142,34 +175,54 @@ p a:hover {
   .input {
     width: 100%; /* Make inputs fill the width of the form */
   }
+
+  .btnbox {
+    width: 100%; /* Make button container take full width */
+    justify-content: space-between; /* Make buttons evenly spaced */
+  }
+
+  .btnbox p {
+    width: 48%; /* Ensure buttons are smaller and aligned side-by-side */
+    padding: 10px;
+  }
 }
 
 /* For screens less than or equal to 425px (Mobile Devices) */
 @media (max-width: 425px) {
   .main {
-    padding: 10px; /* Add some padding around the main container */
-    background: none; /* Remove background image */
+    background-image: none; /* Remove background image on phone view */
+  }
+
+  .btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #e9a70b;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+  }
+
+  .btn:hover {
+    background-color:#e9a70b;
+    /* opacity: .5; */
   }
 
   .form2 {
     width: 100%;
     max-width: 100%;
     padding: 1rem;
+    box-shadow: 0px 0px 10px 10px gray;
+
+  }
+
+  .logo {
+    display: block; /* Show the logo */
+    width: 100px; /* Adjust logo size as needed */
+    margin: 0 auto; /* Center logo */
   }
 
   .form2 .heading2 {
-    font-size: 1.1rem; /* Reduce font size for smaller screens */
-  }
-
-  .input {
-    padding: 10px; /* Adjust input padding for smaller screens */
-  }
-
-  button {
-    font-size: 0.9rem; /* Slightly reduce the button font size */
-  }
-
-  p {
-    font-size: 0.8rem;
+    font-size: 1.1rem
   }
 }

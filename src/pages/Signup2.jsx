@@ -42,7 +42,7 @@ export default function Signup() {
               placeholder="Enter you password"
             />
           </div>
-          <button type="submit">Submit</button>
+          <button className={styles.btn} type="submit">Submit</button>
           {/* <h2 align="center" class="or">
             OR
           </h2> */}

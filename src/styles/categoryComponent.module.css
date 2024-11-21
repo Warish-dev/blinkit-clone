@@ -1,7 +1,10 @@
 /* Main container for categories */
 .maincategory {
+    max-width: min-content;
     display: flex;
     flex-direction: column;
+    margin: 0px auto;
+
     gap: 30px;
     /* Add space between the subcategories */
     box-shadow: -1px -80px 100px white;

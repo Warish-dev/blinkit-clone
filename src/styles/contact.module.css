@@ -84,7 +84,7 @@ textarea::placeholder
     font-weight: 500;
     cursor: pointer;
 }
-input:hover
+.input:hover
 {
     border: 2px solid #28a745;
 }
@@ -92,7 +92,7 @@ textarea:hover
 {
     border: 2px solid #28a745;
 }
-button:hover
+.button:hover
 {
     background-color: black;
     color: white;
