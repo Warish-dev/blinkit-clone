@@ -23,6 +23,7 @@ import PosterItem from './pages/PosterItem';
 
 import Warehouse from './pages/Warehouse';
 import WarehousePanel from './component/WareHouse/WarehousePanel';
+import Product from './component/WareHouse/Product';
 
 const App = () => {
   return (
@@ -52,6 +53,7 @@ const App = () => {
         {/* Warehouse Routes */}
         <Route path="/WareHouse" element={<Warehouse />}>
           <Route path="dashboard" element={<WarehousePanel />} />
+          <Route path="product" element={<Product />} />
         </Route>
       </Routes>
     </div>

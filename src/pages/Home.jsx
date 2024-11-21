@@ -70,7 +70,6 @@ const Home = () => {
 
  {/* <Review /> */}
 
-        <Contact />
 
         {
           showBtn &&
