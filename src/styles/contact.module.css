@@ -57,7 +57,7 @@
     border-radius: 8px;
     cursor: pointer;
 }
- input::placeholder
+ .input::placeholder
 {
     padding: 8px;
 }
@@ -69,7 +69,7 @@
     border-radius: 8px;
     cursor: pointer;
 }
-textarea::placeholder
+.text::placeholder
 {
     padding: 8px;
 }
@@ -85,11 +85,11 @@ textarea::placeholder
     font-weight: 500;
     cursor: pointer;
 }
-input:hover
+.input:hover
 {
     border: 2px solid #28a745;
 }
-textarea:hover
+.textarea:hover
 {
     border: 2px solid #28a745;
 }

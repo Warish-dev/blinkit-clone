@@ -2,10 +2,8 @@
 {
     height: auto;
     width: 600px;
-    /* box-shadow: 15px 15px 15px rgba(0, 0, 0, 0.3); */
-  
     margin-left: 350px;
-    margin-top: 200px;
+    margin-top: 100px;
     border-top: 5px solid lightblue;
     border-bottom: 5px solid lightblue;
     padding-left: 20px;
@@ -26,8 +24,6 @@
 {
     height: 50px;
     width: 100%;
-    border: 3px solid grey;
-    /* background-color: rgb(242, 236, 236); */
    border-radius: 8px;
    padding: 10px;
    margin-top: 20px;
@@ -37,8 +33,17 @@
     background-color: green;
     color: white;
     border-radius: 8px;
-
 }
+input:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  }
+  select:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  }
 .formGroup
 {
     margin-top: 40px;
@@ -47,8 +52,6 @@
 {
     height: 50px;
     width: 100%;
-    border: 3px solid grey;
-    /* background-color: rgb(242, 236, 236); */
    border-radius: 8px;
    padding: 10px;
    margin-top: 20px;
@@ -81,23 +84,28 @@
     font-weight: 600;
     
 }
-.bt:hover
+.cross
 {
-    background-color: black;
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-left: 560px;
 }
 
-
+    
 /* Table CSS */
 
 .container {
     height: 100vh;
     grid-area: main;
-    width: 100%;
+    width: 1200px;
     max-width: 100%;
-    margin: auto;
+    /* margin: auto; */
     padding: 20px;
-
+    margin-top: 30px;
+    margin-left: 90px;
     overflow-y: auto;
+
 }
 
 .topContainer{
@@ -105,7 +113,13 @@
     justify-content: space-between;
     gap: 20px;
 }
-
+.img
+{
+     width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 4px;
+}
 .topContainer button {
     max-height: max-content;
     background-color: #28a745;

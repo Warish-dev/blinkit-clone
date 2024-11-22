@@ -5,9 +5,17 @@ import styles from '../../styles/category.module.css';
 
 function CategoryForm({ setIsFormOpen }) {
   // Define the toggleForm function outside the JSX return statement
-  const toggleForm = () => {
-    setIsFormOpen(false);
+  // const toggleForm = () => {
+  //   setIsFormOpen(false);
+  // };
+       
+  const navigate = useNavigate(); // Initialize the hook
+
+  const [searchTerm, setSearchTerm] = useState('');
+  const handleSearch = (e) => {
+    setSearchTerm(e.target.value);
   };
+
 
   return (
     <div>

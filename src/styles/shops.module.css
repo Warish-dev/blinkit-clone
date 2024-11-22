@@ -200,7 +200,7 @@
     background-color: rgb(212, 212, 212);
 }
    /* Add Shop Form */
-.box
+/* .box
 {
     height: 1100px;
     width: 700px;
@@ -362,7 +362,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 .icon
 {
-    /* background-color: #218838; */
+   
     font-size: 1.2rem;
     position: relative;
     transform: translate(-110%);
@@ -371,7 +371,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 .icon1
 {
-    /* background-color: #218838; */
+   
     font-size: 1.2rem;
     position: relative; 
      transform: translate(670%);
@@ -407,4 +407,162 @@ input[type=number]::-webkit-outer-spin-button {
     display: flex;
     justify-content: flex-end;
     cursor: pointer;
+} */
+
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    /* background-color: #f9f9f9; */
+    padding: 20px;
+  }
+  
+  .box {
+    width: 100%;
+    max-width: 500px;
+    background-color: #fff;
+    padding: 20px;
+    margin-top: 50px;
+    border-top: 5px solid lightblue;
+    border-bottom: 5px solid lightblue;
+    /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); */
+    position: relative;
+  }
+  
+  .cross {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 20px;
+    color: #333;
+    cursor: pointer;
+  }
+  
+  .heading {
+    font-size: 22px;
+    font-weight: bold;
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .name,
+  .email,
+  .ShopName,
+  .Address,
+  .Address1,
+  .Address2,
+  .Address3,
+  .password,
+  .ConfirmPassword {
+    margin-bottom: 15px;
+  }
+  input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
 }
+  label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 5px;
+    display: inline-block;
+  }
+  
+  input {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  input:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  }
+  
+  .pass1 {
+    display: flex;
+    align-items: center;
+  }
+  
+  .icon,
+  .icon1 {
+    font-size: 18px;
+    color: #777;
+    margin-left: 10px;
+    cursor: pointer;
+  }
+  
+  .bt {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .bt:hover {
+    background-color: #0056b3;
+  }
+  
+  .bt:active {
+    background-color: #003d7a;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .box {
+      width: 90%;
+      padding: 15px;
+    }
+  
+    .heading {
+      font-size: 20px;
+    }
+  
+    label {
+      font-size: 13px;
+    }
+  
+    input {
+      padding: 8px;
+      font-size: 13px;
+    }
+  
+    .bt {
+      font-size: 14px;
+      padding: 8px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .heading {
+      font-size: 18px;
+    }
+  
+    label {
+      font-size: 12px;
+    }
+  
+    input {
+      padding: 7px;
+      font-size: 12px;
+    }
+  
+    .bt {
+      font-size: 12px;
+      padding: 7px;
+    }
+  }
+  
