@@ -5,7 +5,7 @@ import { Toaster } from 'react-hot-toast';
 
 import Home from './pages/Home';
 import ProductInfo from './pages/ProductInfo';
-import Cart from './pages/Cart';
+// import Cart from './pages/Cart';
 import Login2 from './pages/Login2';
 import Signup2 from './pages/Signup2';
 import SearchProduct from './pages/SearchProduct';
@@ -37,7 +37,7 @@ const App = () => {
       <Toaster />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/cart" element={<Cart />} />
+        {/* <Route path="/cart" element={<Cart />} /> */}
         <Route path="/productInfo/:id" element={<ProductInfo />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup2" element={<Signup2 />} />

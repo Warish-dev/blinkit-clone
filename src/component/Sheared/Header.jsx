@@ -12,6 +12,7 @@ const Header = () => {
 
     const { cart } = useContext(MyContext);
 
+    const {isCartOpen, setIsCartOpen} = useContext(MyContext)
 
     const texts = [
         'Search "milk"',
@@ -75,18 +76,20 @@ const Header = () => {
                     </div>
                 </Link>
 
-                <Link to={'/cart'} className={styles.cartContainer}>
+                <div onClick={() => setIsCartOpen(!isCartOpen)} className={styles.cartContainer}>
                     <FaCartShopping />
                     {
                         cart?.length > 0 &&
                         <span className={styles.totalItems}>{cart?.length}</span>
                     }
-                </Link>
+                </div>
+                 
 
                 <div className={styles.profileIcon}>
                     <FaRegUserCircle />
                 </div>
             </div>
+           
         </header>
     )
 }
