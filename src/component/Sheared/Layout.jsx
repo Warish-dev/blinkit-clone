@@ -7,7 +7,9 @@ const Layout = ({ children }) => {
   return (
     <div>
       <Header />
-      {children}
+      <div style={{maxWidth: 1440, margin: "0 auto"}}>
+        {children}
+      </div>
       <Footer/>
     </div>
   )
