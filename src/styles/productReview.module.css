@@ -1,0 +1,94 @@
+.ratingdiv{
+    margin-left:20px;
+    width: 400px;
+    /* height: 100px; */
+    /* border: 2px solid red; */
+    display: flex;
+    border-radius: 10px;
+    /* box-shadow: 0 5px 25px 2px rgba(0, 0, 0, .2); */
+    flex-direction: column;
+    padding: 20px;
+   
+
+}
+.namediv{
+    
+        display: flex;
+        align-items: center;
+        gap: 25px;
+        /* border: 2px solid pink; */
+        font-size: small;
+        
+      
+      
+}
+.review1{
+    font-size: 12px;
+    /* row-gap: 20px; */
+    margin-top: 20px;
+}
+
+.rating
+{
+    color: orange;
+    
+}
+.image img
+{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+    position: relative;
+    left: 5px;
+    top: 5px;
+}
+.swiperContainer{
+    width: 100%; /* Ensure the swiper container takes full width */
+    height: 300px;
+}
+.paginationBtn {
+    padding: 10px 10px;
+    border-radius: 50%;
+    background-color: #eeeeee;
+    color: #18b649;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-left:40px;
+    margin-bottom: 10px;
+  }
+  .paginationBtn{
+    padding: 10px 10px;
+    background-color: #eeeeee;
+    color: #18b649;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-left:40px;
+    margin-bottom: 10px;
+    outline: none;
+
+  }
+  .paginationBtn:hover{
+    background-color: #18b649;
+    color: #fff;
+
+
+  }
+  
+  
+  .paginationBtn:hover {
+    background-color: #18b649;
+    color: #fff;
+  }
+  
+
+
+
+
+
+
+

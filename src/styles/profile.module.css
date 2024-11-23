@@ -1,0 +1,137 @@
+.profileContainer {
+    font-family: Arial, sans-serif;
+    /* max-width: 1300px; */
+    width: 1300px;
+    margin: 0 auto;
+    padding: 20px;
+    margin-left: 50px;
+    /* background-color: #f9f9f9; */
+  }
+  
+  .title {
+    /* text-align: center; */
+
+    margin-bottom: 20px;
+  }
+  
+  .profileCard {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 14px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    
+  }
+  
+  .shopInfo {
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    margin-bottom: 20px;
+  }
+  
+  .shopHeader {
+    display: flex;
+    align-items: center;
+
+  }
+  
+  .logo img {
+    width: 160px;
+    height: 160px;
+    border-radius: 10px;
+  }
+  
+  .shopName {
+    width: 200px;
+    height: 150px;
+    margin-left: 25px;
+    /* margin-bottom: 10px; */
+    /* background-color: #dad3d3; */
+
+  }
+  
+  .shopName h2 {
+    margin: 0;
+    font-size: 24px;
+    color: #333;
+    letter-spacing: 2px;
+    margin-left: 30px;
+  }
+  .shopName p
+  {
+      margin-top: 10px;
+      margin-right: 40px;
+}
+  
+  .rating {
+    font-weight: bold;
+    color: #f39c12;
+    margin-right: 10px;
+    margin-top: 30px;
+    font-size: 15px;
+  }
+  .review
+  {
+    font-size: 15px;
+    padding-bottom: 10px;
+  }
+  .viewLiveBtn {
+    height: 40px;
+    width: 120px;
+    font-size: 20px;
+    padding: 8px 12px;
+    background-color: white;
+    color: #9694FF;
+    border: 2px solid #9694FF;
+    border-radius: 5px;
+    margin-top: 30px;
+    margin-left: 30px;
+    cursor: pointer;
+  }
+  
+  .viewLiveBtn:hover {
+    background-color: #45a049;
+  }
+  
+  .shopDetails {
+    text-align: center;
+    font-size: 16px;
+    color: #555;
+  }
+  
+  .userInfo {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .infoGroup {
+    width: 45%;
+    margin-bottom: 10px;
+  }
+  
+  .infoGroup p {
+    margin: 0;
+    color: #777;
+  }
+  
+  .infoGroup b {
+    color: #333;
+  }
+  
+  .editBtn {
+    display: block;
+    margin: 0 auto;
+    padding: 10px 15px;
+    background-color: #6c63ff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .editBtn:hover {
+    background-color: #5a54d6;
+  }
+  

@@ -1,0 +1,74 @@
+.box
+{
+    display: flex;
+    flex-direction: row;
+   justify-content: center;
+   align-items: center;
+   gap: 20px;
+   margin-top: 0px;
+   margin-bottom: 40px;
+   /* padding: 20px */
+   flex-wrap: wrap;
+  
+    
+
+}
+.head
+{
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 60px;
+    
+}
+.container
+{
+    width: 400px;
+    height: 200px;
+    /* border: 2px solid red; */
+    display: flex;
+    border-radius: 10px;
+    box-shadow: 0 5px 25px 2px rgba(0, 0, 0, .2);
+    flex-direction: column;
+    padding: 20px;
+    /* flex-wrap: wrap; */
+}
+.image img
+{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    position: relative;
+    left: 5px;
+    top: 5px;
+}
+.container2
+{
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  /* border: 2px solid pink; */
+  
+}
+.review1
+{
+    padding: 20px 0px;
+}
+
+.rating
+{
+    color: orange;
+    
+}
+
+
+.fix p
+{
+    color: rgb(173, 168, 168);
+    font-size: 12px;
+}
+
+.swiperContainer{
+    width: 100%; /* Ensure the swiper container takes full width */
+    height: 300px;
+}

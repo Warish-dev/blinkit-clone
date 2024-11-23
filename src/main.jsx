@@ -5,12 +5,13 @@ import App from './App.jsx'
 import { BrowserRouter } from 'react-router-dom'
 import MyState from './context/MyState.jsx'
 
+
 createRoot(document.getElementById('root')).render(
   <MyState>
     <BrowserRouter>
-      <StrictMode>
+      {/* <StrictMode> */}
         <App />
-      </StrictMode>
+      {/* </StrictMode> */}
     </BrowserRouter>
   </MyState>
 )

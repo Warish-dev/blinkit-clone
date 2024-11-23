@@ -1,0 +1,290 @@
+.row
+{
+    height: auto;
+    width: 600px;
+    /* box-shadow: 15px 15px 15px rgba(0, 0, 0, 0.3); */
+  
+    margin-left: 350px;
+    margin-top: 200px;
+    border-top: 5px solid lightblue;
+    border-bottom: 5px solid lightblue;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.heading
+{
+    margin-top: 10px;
+    text-shadow: 15px 15px 15px rgba(0, 0, 0, 0.3);
+}
+ label
+{
+    font-weight: 100;
+    margin-top: 20px;
+}
+.img
+{
+     width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+.formGroup
+{
+    margin-top: 40px;
+}
+.formGroup input
+{
+    height: 50px;
+    width: 100%;
+    /* border: 3px solid grey; */
+    /* background-color: rgb(242, 236, 236); */
+   border-radius: 8px;
+   padding: 10px;
+   margin-top: 20px;
+}
+textarea:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  }
+.bt
+{
+    height: 40px;
+    width: 90px;
+    margin-top: 30px;
+    margin-right: 20px;
+    border: none;
+    border-radius: 8px;
+    background-color: orange;
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+
+}
+.bt1
+{
+    height: 40px;
+    width: 90px;
+    margin-top: 30px;
+    border: none;
+    border-radius: 8px;
+    background-color: blue;
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    
+}
+.cross
+{
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-left: 560px;
+}
+
+
+/* Table CSS */
+
+.container {
+    height: 100vh;
+    grid-area: main;
+    width: 1200px;
+    max-width: 100%;
+    /* margin: auto; */
+    padding: 20px;
+    margin-top: 30px;
+    margin-left: 90px;
+    overflow-y: auto;
+}
+
+.topContainer{
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.topContainer button {
+    max-height: max-content;
+    background-color: #28a745;
+    color: white;
+    font-size: 800;
+    font-size: 1rem;
+    padding: 0.7rem 1rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-wrap: nowrap;
+
+    box-shadow: 5px 5px 10px rgba(128, 128, 128, 0.5);
+}
+
+.topContainer button:hover {
+    background-color: #218838;
+}
+
+
+.container h2 {
+    font-size: 30px;
+    margin: 10px 0px;
+}
+
+.addShopForm {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.inputField {
+    flex: 1;
+    min-width: 180px;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+}
+
+.addButton {
+    padding: 8px 15px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+
+
+.searchContainer {
+    width: 500px;
+    max-width: 300px;
+    margin-bottom: 10px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 5px 10px;
+
+    font-size: 22px;
+}
+
+.searchBox {
+    width: 100%;
+    padding: 8px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    font-size: 16px;
+}
+
+.tableContainer {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.shopTable {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.shopTable th,
+.shopTable td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+.shopTable th{
+    text-wrap: nowrap;
+}
+
+.actionButton {
+    padding: 6px 10px;
+    border: none;
+    cursor: pointer;
+    margin-right: 5px;
+    border-radius: 10px;
+}
+
+.block {
+    background-color: #f44336;
+    color: white;
+}
+
+.unblock {
+    background-color: #4caf50;
+    color: white;
+}
+
+.deleteButton {
+    background-color: #ff5722;
+    color: white;
+    padding: 6px 10px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.pagination {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.pageButton {
+    padding: 8px;
+    margin: 0 5px;
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+    background-color: #ddd;
+}
+
+.activePage {
+    background-color: #4caf50;
+    color: white;
+}  
+
+.actionCell {
+    display: flex;
+    align-items: center;
+}
+
+.actionMenuButton {
+    position: relative;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.actionMenuButton:hover .actionMenu {
+    display: block;
+}
+
+.actionMenu {
+    display: none;
+    width: 150px;
+    position: absolute;
+    right: 15px;
+    bottom: 0;
+    background-color: white;
+    box-shadow: 0px 5px 25px 2px rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+.actionMenu ul {
+    list-style: none;
+}
+
+.actionMenu li {
+   padding: 5px 10px;
+    margin: 5px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.actionMenu li:hover {
+    background-color: rgb(212, 212, 212);
+}

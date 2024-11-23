@@ -1,0 +1,568 @@
+.container {
+    height: 100%;
+    grid-area: main;
+    width: 100%;
+    max-width: 100%;
+    margin: auto;
+    padding: 20px;
+
+    overflow-y: auto;
+}
+
+.topContainer{
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.topContainer button {
+    max-height: max-content;
+    background-color: #28a745;
+    color: white;
+    font-size: 800;
+    font-size: 1rem;
+    padding: 0.7rem 1rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-wrap: nowrap;
+
+    box-shadow: 5px 5px 10px rgba(128, 128, 128, 0.5);
+}
+
+.topContainer button:hover {
+    background-color: #218838;
+}
+
+
+.container h2 {
+    font-size: 30px;
+    margin: 10px 0px;
+}
+
+.addShopForm {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.inputField {
+    flex: 1;
+    min-width: 180px;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+}
+
+.addButton {
+    padding: 8px 15px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+
+
+.searchContainer {
+    width: 500px;
+    max-width: 300px;
+    margin-bottom: 10px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 5px 10px;
+
+    font-size: 22px;
+}
+
+.searchBox {
+    width: 100%;
+    padding: 8px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    font-size: 16px;
+}
+
+.tableContainer {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.shopTable {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.shopTable th,
+.shopTable td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+.shopTable th{
+    text-wrap: nowrap;
+}
+
+.actionButton {
+    padding: 6px 10px;
+    border: none;
+    cursor: pointer;
+    margin-right: 5px;
+    border-radius: 10px;
+}
+
+.block {
+    background-color: #f44336;
+    color: white;
+}
+
+.unblock {
+    background-color: #4caf50;
+    color: white;
+}
+
+.deleteButton {
+    background-color: #ff5722;
+    color: white;
+    padding: 6px 10px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.pagination {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.pageButton {
+    padding: 8px;
+    margin: 0 5px;
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+    background-color: #ddd;
+}
+
+.activePage {
+    background-color: #4caf50;
+    color: white;
+}  
+
+.actionCell {
+    display: flex;
+    align-items: center;
+}
+
+.actionMenuButton {
+    position: relative;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.actionMenuButton:hover .actionMenu {
+    display: block;
+}
+
+.actionMenu {
+    display: none;
+    width: 150px;
+    position: absolute;
+    right: 15px;
+    bottom: 0;
+    background-color: white;
+    box-shadow: 0px 5px 25px 2px rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+.actionMenu ul {
+    list-style: none;
+}
+
+.actionMenu li {
+   padding: 5px 10px;
+    margin: 5px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.actionMenu li:hover {
+    background-color: rgb(212, 212, 212);
+}
+   /* Add Shop Form */
+/* .box
+{
+    height: 1100px;
+    width: 700px;
+    border: none;
+    border-radius: 8px;
+    margin: auto;
+    box-shadow: 0px 5px 25px 2px rgba(183, 121, 121, 0.6);
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 30px;
+    
+    
+}
+
+.heading
+{
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    
+}
+label
+{
+    
+    font-size: 20px;
+    margin-right: 8px;
+    
+}
+.ShopName
+{
+    padding-left: 80px;
+}
+.Address
+{
+    padding-left: 35px;
+}
+.Address1
+{
+    padding-left: 130px;
+}
+.Address2
+{
+    padding-left: 120px;
+}
+.Address3
+{
+    padding-left: 80px;
+}
+.Id
+{
+    padding-left: 140px;
+}
+.password
+{
+    display: flex;
+    padding-left: 70px;
+
+    
+}
+.ConfirmPassword
+{
+    display: flex;
+    padding-right: 25x;
+    
+
+}
+.name input
+{
+    border: 2px solid grey;
+    background-color: rgb(255, 251, 251);
+    width: 300px;
+    height: 40px;
+    border-radius: 10px;
+}
+.email input
+{
+    border: 2px solid grey;
+    background-color: rgb(255, 251, 251);
+    width: 300px;
+    height: 40px;
+    border-radius: 10px;
+}
+.ShopName input
+{
+    border: 2px solid grey;
+    background-color: rgb(255, 251, 251);
+    width: 300px;
+    height: 40px;
+    border-radius: 10px;
+    
+}
+.Address input
+{
+    border: 2px solid grey;
+    background-color: rgb(255, 251, 251);
+    width: 300px;
+    height: 40px;
+    border-radius: 10px;
+}
+.Address1 input
+{
+    border: 2px solid grey;
+    background-color: rgb(255, 251, 251);
+    width: 300px;
+    height: 40px;
+    border-radius: 10px;
+}
+.Address2 input
+{
+    border: 2px solid grey;
+    background-color: rgb(255, 251, 251);
+    width: 300px;
+    height: 40px;
+    border-radius: 10px;
+}
+.Address3 input
+{
+    border: 2px solid grey;
+    background-color: rgb(255, 251, 251);
+    width: 300px;
+    height: 40px;
+    border-radius: 10px;
+}
+.Id input
+{
+    border: 2px solid grey;
+    background-color: rgb(255, 251, 251);
+    width: 300px;
+    height: 40px;
+    border-radius: 10px;
+
+}
+.password input
+{
+    border: 2px solid grey;
+    background-color: rgb(255, 251, 251);
+    width: 300px;
+    height: 40px;
+    border-radius: 10px;
+    
+}
+.ConfirmPassword input
+{
+    border: 2px solid grey;
+    background-color: rgb(255, 251, 251);
+    width: 300px;
+    height: 40px;
+   
+    border-radius: 10px;
+    padding-right: 5px;
+    position: absolute;
+    
+}
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+.icon
+{
+   
+    font-size: 1.2rem;
+    position: relative;
+    transform: translate(-110%);
+    top: 10px;
+    z-index: 5;
+}
+.icon1
+{
+   
+    font-size: 1.2rem;
+    position: relative; 
+     transform: translate(670%);
+    top: 10px;
+    z-index: 5;
+}
+.bt
+{
+    width: 500px;
+    height: 2.5rem;
+    margin-left: 40px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.5rem;
+    color: white;
+    background-color: #28a745;
+    transition: .5s ease-in-out;
+
+}
+.bt:hover
+{
+    transform: scale(1.1);
+    background-color: #218838;
+}
+.pass1
+{
+    display: flex;
+    position: relative;
+}
+.cross
+{
+    color: black;
+    display: flex;
+    justify-content: flex-end;
+    cursor: pointer;
+} */
+
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    /* background-color: #f9f9f9; */
+    padding: 20px;
+  }
+  
+  .box {
+    width: 100%;
+    max-width: 500px;
+    background-color: #fff;
+    padding: 20px;
+    margin-top: 50px;
+    border-top: 5px solid lightblue;
+    border-bottom: 5px solid lightblue;
+    /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); */
+    position: relative;
+  }
+  
+  .cross {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 20px;
+    color: #333;
+    cursor: pointer;
+  }
+  
+  .heading {
+    font-size: 22px;
+    font-weight: bold;
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .name,
+  .email,
+  .ShopName,
+  .Address,
+  .Address1,
+  .Address2,
+  .Address3,
+  .password,
+  .ConfirmPassword {
+    margin-bottom: 15px;
+  }
+  input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+  label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 5px;
+    display: inline-block;
+  }
+  
+  input {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  input:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  }
+  
+  .pass1 {
+    display: flex;
+    align-items: center;
+  }
+  
+  .icon,
+  .icon1 {
+    font-size: 18px;
+    color: #777;
+    margin-left: 10px;
+    cursor: pointer;
+  }
+  
+  .bt {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .bt:hover {
+    background-color: #0056b3;
+  }
+  
+  .bt:active {
+    background-color: #003d7a;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .box {
+      width: 90%;
+      padding: 15px;
+    }
+  
+    .heading {
+      font-size: 20px;
+    }
+  
+    label {
+      font-size: 13px;
+    }
+  
+    input {
+      padding: 8px;
+      font-size: 13px;
+    }
+  
+    .bt {
+      font-size: 14px;
+      padding: 8px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .heading {
+      font-size: 18px;
+    }
+  
+    label {
+      font-size: 12px;
+    }
+  
+    input {
+      padding: 7px;
+      font-size: 12px;
+    }
+  
+    .bt {
+      font-size: 12px;
+      padding: 7px;
+    }
+  }
+  

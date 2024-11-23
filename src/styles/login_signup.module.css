@@ -1,0 +1,228 @@
+/* Basic reset and general styles */
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+.main {
+  height: 100vh;
+  background: url(../assets/login.jpeg) no-repeat center center fixed;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  object-fit: cover;
+  background-size: cover;
+}
+
+.wrapped {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.form2 {
+  padding: 1.5rem;
+  width: 400px;
+  background: rgba(255, 255, 255, 0.8); /* Optional: Add background to form */
+  border-radius: 8px;
+  margin-left: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center form content */
+}
+
+.form2 .heading2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.input_container {
+  width: 100%;
+}
+
+.input {
+  height: 20px;
+  width: 100%;
+  padding: 15px;
+  margin-left: 10px;
+  background-color: transparent;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  border-bottom: 1px solid #232b2b;
+  outline: none;
+}
+
+.btn {
+  height: 40px;
+  width: 100%; /* Ensure button takes full width */
+  background-color: #232b2b;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: none;
+  display: block;
+  margin: 1.5rem 0;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.btnbox {
+  display: flex;
+  width: 70%;
+  /* gap: 20px; */
+  justify-content: space-between;
+  margin-bottom: 1rem; /* Add some space between buttons and inputs */
+}
+
+.btnbox p {
+  width: 48%; /* Ensure buttons are smaller and aligned side-by-side */
+  /* padding: 10px; */
+  margin:10px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.btn2 {
+  padding: 10px 0px;
+  transition: background-color 0.3s ease;
+  font-weight: bold;
+}
+
+.selected {
+  background-color: #e9a70b; /* Dark yellow for selected */
+  color: white;
+}
+
+.unselected {
+  background-color: #d3d3d3; /* Light gray for unselected */
+  color: black;
+}
+
+.selected,
+.unselected {
+  border-radius: 5px;
+  margin: 0 5px; /* Adjust margin for spacing between buttons */
+}
+
+label {
+  position: relative;
+  top: 30px;
+}
+
+button:hover {
+  filter: brightness(95%);
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+p {
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+p a {
+  color: #232b2b;
+  text-decoration: none;
+}
+
+p a:hover {
+  text-decoration: underline;
+}
+
+/* Media Queries for Responsiveness */
+
+/* For screens less than or equal to 768px */
+@media (max-width: 768px) {
+  .main {
+    background: none;
+    flex-direction: column; /* Stack items vertically */
+    justify-content: center; /* Center the content */
+    align-items: center; /* Center the content horizontally */
+  }
+
+  .form2 {
+    width: 80%; /* Allow the form to be more fluid */
+    max-width: 400px; /* Set a max-width for the form */
+    padding: 1rem;
+    margin-left: 0; /* Remove left margin on mobile */
+    box-shadow: 0px 0px 10px 10px gray;
+
+  }
+
+  .logo {
+    display: block; /* Show the logo */
+    width: 100px; /* Adjust logo size as needed */
+    margin: 0 auto; /* Center logo */
+  }
+
+  .form2 .heading2 {
+    font-size: 1.2rem;
+  }
+
+  .input_container,
+  .input {
+    width: 100%; /* Make inputs fill the width of the form */
+  }
+
+  .btnbox {
+    width: 100%; /* Make button container take full width */
+    justify-content: space-between; /* Make buttons evenly spaced */
+  }
+
+  .btnbox p {
+    width: 48%; /* Ensure buttons are smaller and aligned side-by-side */
+    padding: 10px;
+  }
+}
+
+/* For screens less than or equal to 425px (Mobile Devices) */
+@media (max-width: 425px) {
+  .main {
+    background-image: none; /* Remove background image on phone view */
+  }
+
+  .btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #e9a70b;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+  }
+
+  .btn:hover {
+    background-color:#e9a70b;
+    /* opacity: .5; */
+  }
+
+  .form2 {
+    width: 100%;
+    max-width: 100%;
+    padding: 1rem;
+    box-shadow: 0px 0px 10px 10px gray;
+
+  }
+
+  .logo {
+    display: block; /* Show the logo */
+    width: 100px; /* Adjust logo size as needed */
+    margin: 0 auto; /* Center logo */
+  }
+
+  .form2 .heading2 {
+    font-size: 1.1rem
+  }
+}

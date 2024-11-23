@@ -1,0 +1,183 @@
+/* Main container for categories */
+.maincategory {
+    max-width: min-content;
+    display: flex;
+    flex-direction: column;
+    margin: 0px auto;
+
+    gap: 30px;
+    /* Add space between the subcategories */
+    box-shadow: -1px -80px 100px white;
+
+}
+
+/* Container for each group of category items */
+.subcategory,
+.subcategory2 {
+    display: flex;
+    margin-left: 30px;
+    /* cursor: alias; */
+    margin-top: 20px;
+    margin-right: 30px;
+    flex-wrap: nowrap;
+    /* Prevent wrapping, keep items in a single row */
+    gap: 20px;
+    /* Add space between category items */
+    overflow-x: auto;
+    /* Allow horizontal scrolling if items overflow */
+}
+
+/* Individual category item styling */
+.categoryDetails,
+.categoryDetails2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* text-decoration: none; */
+    /* text-wrap: wrap; */
+    height: 100%;
+    width: 150px;
+    /* Fixed width for category items */
+    margin-left: 20px;
+    box-sizing: border-box;
+    position: relative;
+    /* Needed for the image hover effect */
+}
+
+/* Image container for each category */
+.categoryDetails .image,
+.categoryDetails2 .image {
+    width: 100%;
+    height: 100px;
+    /* Fixed height for images */
+    overflow: hidden;
+    /* Prevent image overflow */
+    position: relative;
+    border-radius: 10px;
+}
+
+/* Image styling to ensure proper fit */
+.categoryDetails img,
+.categoryDetails2 img {
+    width: 100%;
+    height: 100%;
+    /* border-radius: 20px; */
+    /* background-color: transparent; */
+    /* mix-blend-mode:inherit; */
+    object-fit: cover;
+    /* Ensure images cover the container without distortion */
+    /* transition: transform 0.5s ease-in-out;  */
+}
+
+/* Apply zoom effect on hover */
+
+
+/* Text styling for category names */
+.fix {
+    text-align: center;
+    padding-top: 10px;
+    /* text-wrap: wrap; */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /* Truncate text if it overflows */
+}
+.fix p{
+    text-wrap: wrap;
+    color: gray;
+    
+    /* text-decoration: none; */
+}
+
+/* Optional: Add a bottom margin between subcategories */
+.subcategory+.subcategory2 {
+    margin-top: 20px;
+}
+
+/* --- Responsive Styles --- */
+
+/* For 768px screen width (Tablets) */
+@media (max-width: 768px) {
+
+    .subcategory,
+    .subcategory2 {
+        justify-content: center;
+        /* Center align items */
+    }
+
+    .categoryDetails,
+    .categoryDetails2 {
+        width: 130px;
+        /* Reduce the width of each item */
+    }
+
+    .categoryDetails .image,
+    .categoryDetails2 .image {
+        height: 90px;
+        /* Reduce the height of images */
+    }
+
+    .fix {
+        font-size: 12px;
+        /* Reduce font size on smaller screens */
+    }
+}
+
+/* For 525px screen width (Mobile devices) */
+@media (max-width: 525px) {
+
+    .subcategory,
+    .subcategory2 {
+        justify-content: center;
+        /* Center align items */
+        gap: 15px;
+        /* Reduce the gap between items */
+    }
+
+    .categoryDetails,
+    .categoryDetails2 {
+        width: 110px;
+        /* Further reduce the width of each item */
+    }
+
+    .categoryDetails .image,
+    .categoryDetails2 .image {
+        height: 80px;
+        /* Reduce the height of images */
+    }
+
+    .fix {
+        font-size: 10px;
+        /* Reduce font size on very small screens */
+    }
+}
+
+/* For 480px screen width (Smaller mobile devices) */
+@media (max-width: 480px) {
+
+    .subcategory,
+    .subcategory2 {
+        justify-content: center;
+        /* Center align items */
+        gap: 10px;
+        /* Further reduce the gap between items */
+    }
+
+    .categoryDetails,
+    .categoryDetails2 {
+        width: 100px;
+        /* Make items even smaller */
+    }
+
+    .categoryDetails .image,
+    .categoryDetails2 .image {
+        height: 70px;
+        /* Further reduce the height of images */
+    }
+
+    .fix {
+        font-size: 9px;
+        /* Reduce font size more for very small screens */
+    }
+}

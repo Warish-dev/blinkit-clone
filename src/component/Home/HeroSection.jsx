@@ -1,11 +1,13 @@
 import React from 'react'
 import styles from '../../styles/hero.module.css'
 import HeroSecImg from '../../assets/HeroSec.png'
+
 import bgHomeImg from '../../assets/bghome.svg'
 
 const HeroSection = () => {
     return (
         <div className={styles.wrapper}>
+        
 
             <div className={styles.heroContainer}>
 
@@ -36,9 +38,12 @@ const HeroSection = () => {
                         className={styles.heroImage}
                     />
                 </div>
+                
             </div>
 
             <img src={bgHomeImg} className={styles.bgImg}/>
+       
+            
 
         </div>
     )
