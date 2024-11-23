@@ -25,11 +25,15 @@ import Warehouse from './pages/Warehouse';
 import WarehousePanel from './component/WareHouse/WarehousePanel';
 
 import Contact from './pages/contact/Contact';
-<<<<<<< HEAD
+
 import AboutUs from './pages/AboutUs';
-=======
+
 import Product from './component/WareHouse/Product';
->>>>>>> 3dc8a3eec46053fd576f301e9bb5ddbcacde4b59
+
+import CategoryForm from './component/Admin/CategoryForm';
+import Profile from './component/WareHouse/Profile';
+
+
 
 const App = () => {
   return (
@@ -56,6 +60,7 @@ const App = () => {
           <Route path="users" element={<Users />} />
           <Route path="shops" element={<Shops />} />
           <Route path="category" element={<Category />} />
+          <Route path="categoryform" element={<CategoryForm />} />
           <Route path="deliveryboy" element={<DeliveryBoy />} />
           <Route path="subcategory" element={<Subcategory />} />
     
@@ -65,6 +70,7 @@ const App = () => {
         <Route path="/WareHouse" element={<Warehouse />}>
           <Route path="dashboard" element={<WarehousePanel />} />
           <Route path="product" element={<Product />} />
+          <Route path="profile" element={<Profile />} />
         </Route>
       </Routes>
     </div>
