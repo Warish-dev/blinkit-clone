@@ -5,7 +5,7 @@ import Styles from '../styles/aboutUs.module.css';
 import image from '../assets/aboutUs/img4.jpeg'
 import img1 from '../assets/aboutUs/phil1.jpeg';
 import img2 from '../assets/aboutUs/fil3.jpeg';
-import banner from '../assets/images/hero.png';
+import banner from '../assets/images/bannar.png';
 import Footer from '../component/Sheared/Footer.jsx';
 
 function AboutUs() {
