@@ -1,0 +1,115 @@
+.AboutUsnavbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 20px;
+    background-color: #f2da6e;
+    position: sticky;
+}
+
+.logo img {
+    width: 100px; /* Default width for larger screens */
+    height: auto;
+    mix-blend-mode: multiply; 
+    transition: transform 0.3s ease; 
+}
+
+.logo img:hover {
+    transform: scale(1.1);
+}
+
+/* Navbar styling */
+.navul {
+    display: flex;
+    gap: 20px;
+    position: relative;
+    justify-content: space-around;
+    list-style: none;
+}
+
+.navul li {
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.navul li a {
+    text-decoration: none;
+    color: #333; 
+    padding: 8px 16px;
+    border-radius: 5px; 
+    transition: all 0.3s ease;
+}
+
+.navul li a:hover {
+    background-color: #699e2a ;
+    color: white;
+    transform: scale(1.05);
+}
+
+.navul li a:active {
+    transform: scale(0.98); 
+}
+
+/* ........nav toggle ........ */
+
+.navToggle {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.navToggle span {
+    width: 30px;
+    height: 3px;
+    background-color: #333;
+    transition: transform 0.3s ease;
+}
+
+/* Toggle button animation when navbar is open */
+.navToggle span.open:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.navToggle span.open:nth-child(2) {
+    opacity: 0;
+}
+
+.navToggle span.open:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Media Queries for responsiveness */
+
+/* Tablet View (max-width: 768px) */
+
+
+@media (max-width: 768px) {
+    .navul {
+        display: none;
+        flex-direction: column;
+        gap: 15px;
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background-color: white;
+        width: 200px;
+        padding: 15px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        z-index: 10;
+    }
+    .navOpen {
+        display: flex; 
+    }
+
+    .navToggle {
+        display: flex; /* Show toggle button on mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    .navul li {
+        font-size: 14px; /* Smaller font size for navigation items */
+    }
+}
