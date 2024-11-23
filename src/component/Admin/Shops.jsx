@@ -125,11 +125,11 @@ const toggleForm = () => {
 
     return (
         <div className={styles.container}>
-              
+             
               {
         isFormOpen &&
         <AddShopForm setIsFormOpen={setIsFormOpen}/>
-      }
+      } 
 
             <h2>Shops List</h2>
 

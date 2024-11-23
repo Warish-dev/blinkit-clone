@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import HeroSection from '../component/Home/HeroSection'
+import Bannar from '../component/Home/Bannar'
 import ProductSection from '../component/Home/ProductSection'
 import Layout from '../component/Sheared/Layout'
 import { FaArrowUpLong } from "react-icons/fa6";
@@ -7,12 +8,14 @@ import styles from '../styles/home.module.css'
 import UserLogin from '../component/Home/UserLogin'
 
 
-import Contact from '../component/Home/Contact';
+import Contact from './contact/Contact';
 
 import Review from '../component/Home/Review';
 import CategoryComponent from '../component/Home/CategoryComponent';
 import PosterSection from '../component/Home/PosterSection';
 import GetUserLocation from '../component/Home/GetUserLocation';
+import MyContext from '../context/MyContext'
+import Cart from '../component/Home/Cart'
 
 
 
@@ -21,7 +24,9 @@ const Home = () => {
   const [showBtn, setShowBtn] = useState(false);
   const [isLogin, setIsLogin] = useState(true);
   const [isLocation, setIsLocation] = useState(true);
-
+  // const [isCartOpen, setIsCartOpen] = useState(false);
+  const {isCartOpen, setIsCartOpen} = useContext(MyContext)
+  
 
 
   useEffect(() => {
@@ -37,7 +42,7 @@ const Home = () => {
 
     return () => window.removeEventListener('scroll', handleVisibilityOfBtn)
 
-  }, []);
+  }, []);   
 
 
 
@@ -48,6 +53,7 @@ const Home = () => {
     });
   }
 
+ 
 
   return (
     <div>
@@ -59,19 +65,40 @@ const Home = () => {
       {!isLogin && isLocation &&
         <GetUserLocation setIsLocation={setIsLocation} />
       }
+
+
+      {
+        isCartOpen && 
+        <Cart setIsCartOpen={setIsCartOpen}/>
+      }
      
       <Layout>
 
         <HeroSection />
         <PosterSection />
         <CategoryComponent />
+        <Bannar/>
+
 
         <ProductSection />
 
- {/* <Review /> */}
+<<<<<<< HEAD
+{/* <<<<<<< HEAD
+        {/* <Review /> */}
 
+<<<<<<< HEAD
         {/* <Contact /> */}
+=======
+           
+{/* ======= */}
+ {/* >>>>>>> ae163e560752e068c6952b611607df83d77f6c8e  */}
+=======
+>>>>>>> bcb3538ce72003971f34cbefc0d4a7cb0fdf483d
 
+  {/* <Review /> */}
+>>>>>>> 3dc8a3eec46053fd576f301e9bb5ddbcacde4b59
+
+{/* .0 */} 
         {
           showBtn &&
           <div onClick={gotoTop} className={styles.moveToTopBtn}>

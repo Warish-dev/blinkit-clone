@@ -1,8 +1,10 @@
 import React from 'react'
 import logo from '../../assets/conlogo2.jpeg'
 import styles from '../../styles/Contact.module.css'
+import Layout from '../../component/Sheared/Layout'
 function Contact() {
   return (
+    <Layout>
     <div>
         <h1 className={styles.heading}>CONTACT US</h1>
         <hr className={styles.line}/>
@@ -19,6 +21,8 @@ function Contact() {
        </div>
     </div>
     </div>
+        </Layout>
+
   )
 }
 

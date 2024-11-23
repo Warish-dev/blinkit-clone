@@ -1,7 +1,10 @@
 /* Main container for categories */
 .maincategory {
+    max-width: min-content;
     display: flex;
     flex-direction: column;
+    margin: 0px auto;
+
     gap: 30px;
     /* Add space between the subcategories */
     box-shadow: -1px -80px 100px white;
@@ -12,10 +15,11 @@
 .subcategory,
 .subcategory2 {
     display: flex;
-    margin-left: 30px;
+    margin-left: 10px;
+    
     /* cursor: alias; */
     margin-top: 20px;
-    margin-right: 30px;
+    margin-right: 10px;
     flex-wrap: nowrap;
     /* Prevent wrapping, keep items in a single row */
     gap: 20px;
@@ -57,8 +61,9 @@
 /* Image styling to ensure proper fit */
 .categoryDetails img,
 .categoryDetails2 img {
-    width: 100%;
+    width:fit-content;
     height: 100%;
+    /* border-radius: 20px; */
     /* background-color: transparent; */
     /* mix-blend-mode:inherit; */
     object-fit: cover;
@@ -128,6 +133,8 @@
         justify-content: center;
         /* Center align items */
         gap: 15px;
+        scrollbar-width: none;
+
         /* Reduce the gap between items */
     }
 
@@ -140,6 +147,7 @@
     .categoryDetails .image,
     .categoryDetails2 .image {
         height: 80px;
+        width: 100%;
         /* Reduce the height of images */
     }
 
@@ -155,7 +163,7 @@
     .subcategory,
     .subcategory2 {
         justify-content: center;
-        /* Center align items */
+        align-items: center;
         gap: 10px;
         /* Further reduce the gap between items */
     }
