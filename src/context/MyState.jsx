@@ -6,10 +6,12 @@ const MyState = ({ children }) => {
 
     const [cart, setCart] = useState([]);
 
+    const [isCartOpen, setIsCartOpen] = useState(false);
+
 
 
     return (
-        <MyContext.Provider value={{ cart, setCart }}>
+        <MyContext.Provider value={{ cart, setCart, isCartOpen, setIsCartOpen }}>
             {children}
         </MyContext.Provider>
     )

@@ -1,16 +1,15 @@
 import React from 'react'
 import styles from '../../styles/hero.module.css'
-// import HeroSecImg from '../../assets/HeroSec.png'
-import hero from '../../assets/images/hero.png'
-import { Link } from 'react-router-dom'
-// import bgHomeImg from '../../assets/bghome.svg'
+import HeroSecImg from '../../assets/HeroSec.png'
+
+import bgHomeImg from '../../assets/bghome.svg'
 
 const HeroSection = () => {
     return (
         <div className={styles.wrapper}>
         
 
-            {/* <div className={styles.heroContainer}>
+            <div className={styles.heroContainer}>
 
                 <div className={styles.textSection}>
                     <h1 className={styles.heading}>
@@ -42,9 +41,8 @@ const HeroSection = () => {
                 
             </div>
 
-            <img src={bgHomeImg} className={styles.bgImg}/> */}
-            <Link to= {'category/7'} className={styles.bannar}> 
-            <img src={hero} alt="banner" /></Link>
+            <img src={bgHomeImg} className={styles.bgImg}/>
+       
             
 
         </div>
