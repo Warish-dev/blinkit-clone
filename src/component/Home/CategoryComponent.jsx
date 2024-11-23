@@ -18,6 +18,8 @@ import home from '../../assets/categoryimages/home.jpg'
 import cleaning from '../../assets/categoryimages/cleaning.jpg'
 import pharma from '../../assets/categoryimages/pharma.jpg'
 import pet from '../../assets/categoryimages/pet.jpg'
+import pc from '../../assets/categoryimages/pc.jpeg'
+
 
 
 
@@ -43,12 +45,12 @@ function CategoryComponent() {
     ];
 
     const data2 = [
-        { name2: 'groceries', image2: groceries },
+        { name2: 'Groceries', image2: groceries },
         { name2: 'Home & office', image2: home },
-        { name2: 'cleaning essentials', image2: cleaning },
+        { name2: 'Cleaning essentials', image2: cleaning },
         { name2: 'Pharma & wellness', image2: pharma },
-        { name2: 'pet care', image2: pet },
-        { name2: 'milk', image2: masala },
+        { name2: 'Pet care', image2: pet },
+        { name2: 'Electronics', image2: pc },
         { name2: 'milk', image2: masala },
         { name2: 'milk', image2: masala },
         { name2: 'milk', image2: masala },

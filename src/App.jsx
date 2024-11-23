@@ -23,6 +23,8 @@ import PosterItem from './pages/PosterItem';
 
 import Warehouse from './pages/Warehouse';
 import WarehousePanel from './component/WareHouse/WarehousePanel';
+
+import Contact from './pages/contact/Contact';
 import Product from './component/WareHouse/Product';
 
 const App = () => {
@@ -39,6 +41,7 @@ const App = () => {
         <Route path="/Login2" element={<Login2 />} />
         <Route path="/category/:id" element={<ProductByCategory />} />
         <Route path="/PosterItem" element={<PosterItem />} />
+        <Route path="/contact" element={<Contact/>} />
 
         {/* Admin Routes */}
         <Route path="/admin" element={<Admin />}>
