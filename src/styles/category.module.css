@@ -21,6 +21,13 @@
     font-weight: 100;
     margin-top: 20px;
 }
+.img
+{
+     width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 4px;
+}
 .formGroup
 {
     margin-top: 40px;
@@ -29,12 +36,17 @@
 {
     height: 50px;
     width: 100%;
-    border: 3px solid grey;
+    /* border: 3px solid grey; */
     /* background-color: rgb(242, 236, 236); */
    border-radius: 8px;
    padding: 10px;
    margin-top: 20px;
 }
+textarea:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  }
 .bt
 {
     height: 40px;
@@ -63,9 +75,12 @@
     font-weight: 600;
     
 }
-.bt:hover
+.cross
 {
-    background-color: black;
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-left: 560px;
 }
 
 
@@ -74,11 +89,12 @@
 .container {
     height: 100vh;
     grid-area: main;
-    width: 100%;
+    width: 1200px;
     max-width: 100%;
-    margin: auto;
+    /* margin: auto; */
     padding: 20px;
-
+    margin-top: 30px;
+    margin-left: 90px;
     overflow-y: auto;
 }
 

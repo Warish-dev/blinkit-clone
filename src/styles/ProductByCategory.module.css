@@ -15,9 +15,18 @@
       height: 50px;
       /* box-shadow: 2px gray; */
       background-color:none; /* Add a background color to the menubar */
-      padding: 20px 0;
+      padding: 10px 0;
+      align-items: center;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
       text-align: center;
+      /* display: flex; */
+      justify-content: space-around;  /* Distribute links evenly */
+      align-items: center;
+      /* padding: 10px; */
+      background-color: #f4f4f4;
+      position: sticky;
+      top: 0;
+      z-index: 10;
       position: relative;
       bottom: 0; /* Keeps the menubar below the wrapper */
   }
@@ -189,6 +198,9 @@
     .productImage {
       height: 130px; /* Slightly smaller image for tablets */
     }
+    .menubar{
+      display: none;
+    }
   }
   
   /* For mobile screens (max-width: 420px) */
@@ -202,6 +214,9 @@
       width: 120px; /* Narrow sidebar for mobile */
       margin-left: 10px; /* Reduce margin */
       display: inline-block;
+    }
+    .menubar{
+      display: none;
     }
   
     .productCard {

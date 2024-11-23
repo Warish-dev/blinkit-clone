@@ -172,19 +172,10 @@
         width: 100%; 
     }
 } */
-
-
-
-
-
-
-
-
-
 /* productCard.module.css */
 a {
     text-decoration: none;
-    color: inherit;
+    /* color: inherit; */
 }
 
 .container {

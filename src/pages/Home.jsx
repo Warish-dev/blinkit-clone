@@ -8,7 +8,7 @@ import styles from '../styles/home.module.css'
 import UserLogin from '../component/Home/UserLogin'
 
 
-import Contact from '../component/Home/Contact';
+import Contact from './contact/Contact';
 
 import Review from '../component/Home/Review';
 import CategoryComponent from '../component/Home/CategoryComponent';
@@ -82,9 +82,8 @@ const Home = () => {
 
         <ProductSection />
 
- {/* <Review /> */}
 
-        <Contact />
+  {/* <Review /> */}
 
         {
           showBtn &&
