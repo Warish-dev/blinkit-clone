@@ -1,6 +1,6 @@
 import React from 'react'
 import logo from '../../assets/conlogo2.jpeg'
-import styles from '../../styles/Contact.module.css'
+import styles from '../../styles/contact.module.css'
 import Layout from '../../component/Sheared/Layout'
 function Contact() {
   return (
