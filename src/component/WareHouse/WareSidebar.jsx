@@ -216,7 +216,7 @@ function Sidebar({ openSidebarToggle, OpenSidebar }) {
             <BsFillGrid3X3GapFill className={styles.icon} /> Product Manages
           </li>
         </Link>
-        <Link to={""}>
+        <Link to={"/WareHouse/profile"}>
           <li className={styles.sidebarListItem}>
             <BsPeopleFill className={styles.icon} /> Profile
           </li>

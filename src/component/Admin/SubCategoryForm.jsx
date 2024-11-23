@@ -38,6 +38,9 @@ function SubCategoryForm({ setIsFormOpen }) {
           <input type='text'
            className={styles.formControl}
            />
+            <input type='file'
+           className={styles.formControl}
+           />
           <button type="submit" className={styles.bt}>
             Add
           </button>
