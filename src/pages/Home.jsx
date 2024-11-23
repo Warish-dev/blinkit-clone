@@ -68,11 +68,15 @@ const Home = () => {
 
         <ProductSection />
 
-  {/* <Review /> */}
+
+
+        {
+          showBtn &&
 
           <div onClick={gotoTop} className={styles.moveToTopBtn}>
             <FaArrowUpLong className={styles.toTopBtn} />
           </div>
+}
         
       </Layout>
 

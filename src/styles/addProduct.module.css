@@ -89,12 +89,17 @@
     border-radius: 4px;
     cursor: pointer;
   }
+  .lable
+  {
+    display: block;
+    margin-bottom: 35px;
+ }
   .cross
 {
     font-size: 20px;
     font-weight: 600;
     cursor: pointer;
     margin-left: 1200px;
-    ;
+    
 }
   

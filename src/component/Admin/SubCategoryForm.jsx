@@ -14,7 +14,7 @@ function SubCategoryForm({ setIsFormOpen }) {
         </p>
         <h1 className={styles.heading}> Sub Category</h1>
         <div className={styles.formGroup}>
-          <label>Main Category</label>
+          <label className={styles.label}>Main Category</label>
           
            <select  className={styles.formControl} name="category">
            <option className={styles.option} value="cake">Select a Category</option>
@@ -28,13 +28,13 @@ function SubCategoryForm({ setIsFormOpen }) {
 
 
         <div className={styles.formGroup}>
-          <label>Sub Category Name</label>
+          <label className={styles.label}>Sub Category Name</label>
           <input
             type="text"
             className={styles.formControl}
             name="confirm_password"
           /> 
-           <label>Sub Category Title</label>
+           <label className={styles.label}>Sub Category Title</label>
           <input type='text'
            className={styles.formControl}
            />
