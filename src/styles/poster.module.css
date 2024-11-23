@@ -1,9 +1,12 @@
-
+/* display: flex; 
+justify-content: center; 
+align-items: center; */
 
 
 .main {
     display: flex;
-    justify-content: flex-start; 
+    justify-content: center; 
+    align-items: center;
     gap: 20px; 
     padding: 10px;
     overflow-x: auto; 
@@ -40,10 +43,10 @@
 }
 
 @media (max-width: 480px) {
-    .image {
+    /* .image {
         width: 200px; 
         height: 120px; 
-    }
+    } */
 
     .main {
         gap: 5px;

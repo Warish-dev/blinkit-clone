@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import HeroSection from '../component/Home/HeroSection'
+import Bannar from '../component/Home/Bannar'
 import ProductSection from '../component/Home/ProductSection'
 import Layout from '../component/Sheared/Layout'
 import { FaArrowUpLong } from "react-icons/fa6";
@@ -13,6 +14,8 @@ import Review from '../component/Home/Review';
 import CategoryComponent from '../component/Home/CategoryComponent';
 import PosterSection from '../component/Home/PosterSection';
 import GetUserLocation from '../component/Home/GetUserLocation';
+import MyContext from '../context/MyContext'
+import Cart from '../component/Home/Cart'
 
 
 
@@ -21,7 +24,9 @@ const Home = () => {
   const [showBtn, setShowBtn] = useState(false);
   const [isLogin, setIsLogin] = useState(true);
   const [isLocation, setIsLocation] = useState(true);
-
+  // const [isCartOpen, setIsCartOpen] = useState(false);
+  const {isCartOpen, setIsCartOpen} = useContext(MyContext)
+  
 
 
   useEffect(() => {
@@ -37,7 +42,7 @@ const Home = () => {
 
     return () => window.removeEventListener('scroll', handleVisibilityOfBtn)
 
-  }, []);
+  }, []);   
 
 
 
@@ -48,6 +53,7 @@ const Home = () => {
     });
   }
 
+ 
 
   return (
     <div>
@@ -59,12 +65,20 @@ const Home = () => {
       {!isLogin && isLocation &&
         <GetUserLocation setIsLocation={setIsLocation} />
       }
+
+
+      {
+        isCartOpen && 
+        <Cart setIsCartOpen={setIsCartOpen}/>
+      }
      
       <Layout>
 
         <HeroSection />
         <PosterSection />
         <CategoryComponent />
+        <Bannar/>
+
 
         <ProductSection />
 
