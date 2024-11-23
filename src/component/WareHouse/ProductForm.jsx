@@ -66,9 +66,9 @@ const AddProduct = ({ setIsFormOpen }) => {
       <form className={styles.form} onSubmit={handleFormSubmit}>
         {/* Product Details */}
         <div className={styles.section}>
-          <label>Product Name:</label>
+          <label className={styles.lable}>Product Name:</label>
           <input type="text" className={styles.input} required />
-          <label>Product Description:</label>
+          <label className={styles.lable}>Product Description:</label>
           <textarea className={styles.textarea} required></textarea>
         </div>
 
@@ -77,7 +77,7 @@ const AddProduct = ({ setIsFormOpen }) => {
           <h3>General Information</h3>
           <div className={styles.grid}>
             <div>
-              <label>Category:</label>
+              <label className={styles.lable}>Category:</label>
               <select className={styles.select} required>
                 <option value="">Select Category</option>
                 <option value="electronics">Electronics</option>
@@ -85,7 +85,7 @@ const AddProduct = ({ setIsFormOpen }) => {
               </select>
             </div>
             <div>
-              <label>Brand:</label>
+              <label className={styles.lable}>Brand:</label>
               <select className={styles.select} required>
                 <option value="">Select Brand</option>
                 <option value="brandA">Brand A</option>
@@ -93,7 +93,7 @@ const AddProduct = ({ setIsFormOpen }) => {
               </select>
             </div>
             <div>
-              <label>SKU:</label>
+              <label className={styles.lable}>SKU:</label>
               <input type="text" className={styles.input} required />
             </div>
           </div>
@@ -104,11 +104,11 @@ const AddProduct = ({ setIsFormOpen }) => {
           <h3>Price Information</h3>
           <div className={styles.grid}>
             <div>
-              <label>Buying Price:</label>
+              <label className={styles.lable}>Buying Price:</label>
               <input type="number" className={styles.input} required />
             </div>
             <div>
-              <label>Selling Price:</label>
+              <label className={styles.lable}>Selling Price:</label>
               <input type="number" className={styles.input} required />
             </div>
           </div>
