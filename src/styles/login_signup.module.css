@@ -114,12 +114,12 @@
   margin: 0 5px; /* Adjust margin for spacing between buttons */
 }
 
-label {
+.lbl {
   position: relative;
   top: 30px;
 }
 
-button:hover {
+.btn:hover {
   filter: brightness(95%);
 }
 
