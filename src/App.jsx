@@ -31,6 +31,7 @@ import AboutUs from './pages/AboutUs';
 import Product from './component/WareHouse/Product';
 import CategoryForm from './component/Admin/CategoryForm';
 import Profile from './component/WareHouse/Profile';
+import Blog from './pages/Blog'
 
 const App = () => {
   return (
@@ -48,6 +49,9 @@ const App = () => {
         <Route path="/PosterItem" element={<PosterItem />} />
         <Route path="/contact" element={<Contact/>} />
         <Route path="/AboutUs" element={<AboutUs/>} />
+        <Route path="/Blog" element={<Blog/>} />
+
+
 
 
 

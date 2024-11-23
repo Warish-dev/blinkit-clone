@@ -1,42 +1,20 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import logo from '../assets/images/logo.png';
+// import { Link } from 'react-router-dom';
+// import logo from '../assets/images/logo.png';
 import Styles from '../styles/aboutUs.module.css';
 import image from '../assets/aboutUs/img4.jpeg'
 import img1 from '../assets/aboutUs/phil1.jpeg';
-import img2 from '../assets/aboutUs/fil3.jpeg';
+import img2 from '../assets/aboutUs/phil3.jpeg';
 import banner from '../assets/images/bannar.png';
+import TopBar from '../component/Sheared/TopBar.jsx'
 import Footer from '../component/Sheared/Footer.jsx';
 
 function AboutUs() {
-    const [isNavOpen, setIsNavOpen] = useState(false); // State for mobile menu toggle
-
-    // Function to toggle navbar visibility
-    const toggleNav = () => {
-        setIsNavOpen(!isNavOpen);
-    };
+    
 
     return (
         <div>
-            <div className={Styles.AboutUsnavbar}>
-                <Link to={'/'} className={Styles.logo}>
-                    <img src={logo} alt="Logo" />
-                </Link>
-
-                <div className={Styles.navToggle} onClick={toggleNav}>
-                    <span className={isNavOpen ? Styles.open : ''}></span>
-                    <span className={isNavOpen ? Styles.open : ''}></span>
-                    <span className={isNavOpen ? Styles.open : ''}></span>
-                </div>
-
-                <ul className={`${Styles.navul} ${isNavOpen ? Styles.navOpen : ''}`}>
-                    <li><Link to="/">Home</Link></li>
-                    <li><Link to="/about">About</Link></li>
-                    <li><Link to="/career">Career</Link></li>
-                    <li><Link to="/partner">Partner</Link></li>
-                    <li><Link to="/blog">Blog</Link></li>
-                </ul>
-            </div>
+           <TopBar/>
 
             <div className={Styles.aboutusHero}>
                 <img src={image} alt="" />
