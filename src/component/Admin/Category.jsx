@@ -102,10 +102,10 @@ function Category() {
     <div>
 
 
-{/* {
+ {
       isFormOpen &&
       <CategoryForm setIsFormOpen={setIsFormOpen}/>
-    } */}
+     } 
         
     
 
