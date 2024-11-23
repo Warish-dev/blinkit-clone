@@ -1,6 +1,8 @@
-import React from "react";
+
+import React, { useState } from 'react';
 import styles from "../../styles/ProductTable.module.css";
 import newImg from "../../assets/logo2.jpg"
+import ProductForm from "../WareHouse/ProductForm";
 const ProductTable = () => {
   const products = [
     {
@@ -78,8 +80,23 @@ const ProductTable = () => {
     // Add the remaining products here...
   ];
 
+  const [isFormOpen, setIsFormOpen] = useState(false);
+
+// Function to toggle form visibility
+const toggleForm = () => {
+  setIsFormOpen(true);
+};
+
   return (
+
     <div className={styles.tableContainer}>
+
+
+{
+      isFormOpen &&
+      <ProductForm setIsFormOpen={setIsFormOpen}/>
+    } 
+
       <div className={styles.tableHeader}>
         <input
           type="text"
@@ -87,7 +104,7 @@ const ProductTable = () => {
           className={styles.searchInput}
         />
         <button className={styles.searchButton}>Search</button>
-        <button className={styles.createButton}>+ Create New</button>
+        <button className={styles.createButton} onClick={toggleForm} >+ Create New</button>
       </div>
 
       <table className={styles.productTable}>
