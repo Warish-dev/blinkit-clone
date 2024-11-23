@@ -70,7 +70,7 @@ const Home = () => {
 
  {/* <Review /> */}
 
-        <Contact />
+        {/* <Contact /> */}
 
         {
           showBtn &&
