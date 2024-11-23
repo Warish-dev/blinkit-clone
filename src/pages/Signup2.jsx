@@ -31,7 +31,7 @@ export default function Signup() {
           <div>
             <label htmlFor="name"><IoMdMail />
             </label>
-            <input className={styles.input} type="text" id="name" placeholder="Enter your mail" />
+            <input className={styles.input} type="email" id="name" placeholder="Enter your mail" />
           </div>
           <div>
             <label  htmlFor="password"><RiLockPasswordFill />

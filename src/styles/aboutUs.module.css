@@ -1,0 +1,268 @@
+.AboutUsnavbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 20px;
+    background-color: #f2da6e;
+    position: sticky;
+}
+
+.logo img {
+    width: 100px; /* Default width for larger screens */
+    height: auto;
+    mix-blend-mode: multiply; 
+    transition: transform 0.3s ease; 
+}
+
+.logo img:hover {
+    transform: scale(1.1);
+}
+
+/* Navbar styling */
+.navul {
+    display: flex;
+    gap: 20px;
+    position: relative;
+    justify-content: space-around;
+    list-style: none;
+}
+
+.navul li {
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.navul li a {
+    text-decoration: none;
+    color: #333; 
+    padding: 8px 16px;
+    border-radius: 5px; 
+    transition: all 0.3s ease;
+}
+
+.navul li a:hover {
+    background-color: #699e2a ;
+    color: white;
+    transform: scale(1.05);
+}
+
+.navul li a:active {
+    transform: scale(0.98); 
+}
+
+/* About Hero Section */
+.aboutusHero {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.aboutusHero img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+    max-height: 100%;
+}
+
+.container1 {
+    height: auto;
+    width: 100%;
+    padding-top: 20px;
+}
+
+.namefield {
+    width: 70%;
+    margin: AUTO;
+}
+
+.namefield h2 {
+    font-size: 30px;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+.namefieldpara {
+    text-align: justify;
+    line-height: 30px;
+    font-size: medium;
+}
+
+.namefieldpara span {
+    color: darkgreen;
+    font-weight: bold;
+}
+
+.philosophy h2 {
+    font-weight: lighter;
+    font-size: 30px;
+}
+
+.philodiv {
+    display: flex;
+    width: 100%;
+}
+
+.philosophyimg {
+    height: 100%;
+    width: 48%;
+    margin-left: 1%;
+    margin-right: 1%;
+}
+
+.philosophyimg img {
+    height: 100%;
+    width: 100%;
+}
+
+.philosophyimg p {
+    text-align: justify;
+    margin-top: 20px;
+    font-size: 16px;
+    line-height: 30px;
+}
+
+.lastcontainer {
+    width: 100%;
+    max-width: 1200px;
+    box-sizing: border-box;
+}
+
+.lasthead {
+    margin-bottom: 20px;
+}
+
+.lasthead h2 {
+    font-size: 30px;
+    font-weight: 100;
+    text-align: left;
+}
+
+.lastcontainer img {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    margin-bottom: 50px;
+}
+
+.lastcontainer p {
+    font-size: 16px;
+    text-align: justify;
+    line-height: 1.6;
+    margin-bottom: 100px;
+}
+
+/* Navbar Toggle Button */
+.navToggle {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.navToggle span {
+    width: 30px;
+    height: 3px;
+    background-color: #333;
+    transition: transform 0.3s ease;
+}
+
+/* Toggle button animation when navbar is open */
+.navToggle span.open:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.navToggle span.open:nth-child(2) {
+    opacity: 0;
+}
+
+.navToggle span.open:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Media Queries for responsiveness */
+
+/* Tablet View (max-width: 768px) */
+@media (max-width: 768px) {
+    .navul {
+        display: none;
+        flex-direction: column;
+        gap: 15px;
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background-color: white;
+        width: 200px;
+        padding: 15px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        z-index: 10;
+    }
+
+    .logo img {
+        width: 50px; /* Reduced width for tablet screens */
+    }
+
+    .namefield h2 {
+        font-size: 24px; /* Smaller font size for tablet view */
+    }
+    .philosophyHeading h2{
+        font-size: 24px;
+    }
+    .philosophyHeading p{
+        font-size: 12px;
+    }
+
+    .namefieldpara {
+        font-size: 12px; /* Smaller font size for paragraph in tablet view */
+    }
+
+    .navOpen {
+        display: flex; 
+    }
+
+    .navToggle {
+        display: flex; /* Show toggle button on mobile */
+    }
+    .philosophyimg p{
+        font-size: 12px;
+    }
+    .lastcontainer p{
+        font-size: 12px;
+    }
+}
+
+/* Mobile View (max-width: 480px) */
+@media (max-width: 480px) {
+    .logo img {
+        width: 40px; /* Adjusted width for mobile screens */
+    }
+
+    .namefield h2 {
+        font-size: 24px; /* Smaller font size for phone view */
+    }
+
+    .namefieldpara {
+        font-size: 12px; /* Smaller font size for phone paragraph */
+    }
+    .philosophyHeading p{
+        font-size: 12px;
+    }
+    .philosophyHeading p{
+        font-size: 12px;
+    }
+
+    .navul li {
+        font-size: 14px; /* Smaller font size for navigation items */
+    }
+
+    .lasthead h2 {
+        font-size: 24px; /* Smaller font size for headings */
+    }
+
+    .lastcontainer p {
+        font-size:12px; /* Smaller font size for text */
+        line-height: 30px;
+        /* padding:0; */
+    }
+}
