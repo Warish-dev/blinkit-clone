@@ -4,7 +4,7 @@ import baked from '../assets/images/baked.png'
 import tomato from '../assets/images/tomato.png'
 import carrot from '../assets/images/carrot.png'
 import onion from '../assets/images/onion.png'
-import styles from "../styles/PosterItem.module.css"
+import styles from "../styles/posteritem.module.css"
 // import ProductCard from "../component/Home/ProductCard";
 
 
