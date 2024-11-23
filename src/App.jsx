@@ -27,21 +27,11 @@ import WarehousePanel from './component/WareHouse/WarehousePanel';
 import Contact from './pages/contact/Contact';
 
 import AboutUs from './pages/AboutUs';
-<<<<<<< HEAD
 
-import Product from './component/WareHouse/Product';
-
-import CategoryForm from './component/Admin/CategoryForm';
-import Profile from './component/WareHouse/Profile';
-
-
-
-=======
 import Product from './component/WareHouse/Product';
 import CategoryForm from './component/Admin/CategoryForm';
 import Profile from './component/WareHouse/Profile';
 
->>>>>>> 8c91e737837ed27b31cb4d41daa61be2ef5a2a37
 const App = () => {
   return (
     <div>
