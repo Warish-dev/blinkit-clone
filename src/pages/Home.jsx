@@ -82,19 +82,7 @@ const Home = () => {
 
         <ProductSection />
 
-<<<<<<< HEAD
-{/* <<<<<<< HEAD
-        {/* <Review /> */}
 
-           
-{/* ======= */}
- {/* >>>>>>> ae163e560752e068c6952b611607df83d77f6c8e  */}
-=======
-
-  {/* <Review /> */}
->>>>>>> 3dc8a3eec46053fd576f301e9bb5ddbcacde4b59
-
-{/* .0 */} 
         {
           showBtn &&
           <div onClick={gotoTop} className={styles.moveToTopBtn}>
