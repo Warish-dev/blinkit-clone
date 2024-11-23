@@ -25,11 +25,11 @@ import Warehouse from './pages/Warehouse';
 import WarehousePanel from './component/WareHouse/WarehousePanel';
 
 import Contact from './pages/contact/Contact';
+
+import AboutUs from './pages/AboutUs';
 import Product from './component/WareHouse/Product';
 import CategoryForm from './component/Admin/CategoryForm';
 import Profile from './component/WareHouse/Profile';
-
-
 
 const App = () => {
   return (
@@ -46,6 +46,9 @@ const App = () => {
         <Route path="/category/:id" element={<ProductByCategory />} />
         <Route path="/PosterItem" element={<PosterItem />} />
         <Route path="/contact" element={<Contact/>} />
+        <Route path="/AboutUs" element={<AboutUs/>} />
+
+
 
         {/* Admin Routes */}
         <Route path="/admin" element={<Admin />}>
@@ -56,6 +59,7 @@ const App = () => {
           <Route path="categoryform" element={<CategoryForm />} />
           <Route path="deliveryboy" element={<DeliveryBoy />} />
           <Route path="subcategory" element={<Subcategory />} />
+    
         </Route>
 
         {/* Warehouse Routes */}
