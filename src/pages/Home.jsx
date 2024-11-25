@@ -9,7 +9,7 @@ import UserLogin from '../component/Home/UserLogin'
 
 import Contact from './contact/Contact';
 
-import Review from '../component/Home/Review';
+// import Review from '../component/Home/Review';
 import CategoryComponent from '../component/Home/CategoryComponent';
 import PosterSection from '../component/Home/PosterSection';
 import GetUserLocation from '../component/Home/GetUserLocation';
@@ -59,7 +59,7 @@ const Home = () => {
       {!isLogin && isLocation &&
         <GetUserLocation setIsLocation={setIsLocation} />
       }
-     
+
       <Layout>
 
         <HeroSection />
@@ -68,12 +68,17 @@ const Home = () => {
 
         <ProductSection />
 
-  {/* <Review /> */}
+      
 
+        {
+          showBtn &&
           <div onClick={gotoTop} className={styles.moveToTopBtn}>
             <FaArrowUpLong className={styles.toTopBtn} />
           </div>
-        
+        }
+
+
+
       </Layout>
 
 
