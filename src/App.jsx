@@ -28,6 +28,7 @@ import Contact from './pages/contact/Contact';
 import Product from './component/WareHouse/Product';
 import CategoryForm from './component/Admin/CategoryForm';
 import Profile from './component/WareHouse/Profile';
+import PendingOrders from './component/WareHouse/PendingOrders';
 
 
 
@@ -63,6 +64,7 @@ const App = () => {
           <Route path="dashboard" element={<WarehousePanel />} />
           <Route path="product" element={<Product />} />
           <Route path="profile" element={<Profile />} />
+          <Route path="pendingorders" element={<PendingOrders />} />
         </Route>
       </Routes>
     </div>

@@ -189,6 +189,7 @@ function Sidebar({ openSidebarToggle, OpenSidebar }) {
         {isSublistVisible && (
           <ul className={styles.sublist}>
             {statuses.map((status, index) => (
+              <Link to={"/Warehouse/pendingorders"}>
               <li className={styles.subItem} key={index}>
                 <span>{status.label}</span>
                 <span
@@ -205,6 +206,7 @@ function Sidebar({ openSidebarToggle, OpenSidebar }) {
                   {status.count}
                 </span>
               </li>
+              </Link>
             ))}
           </ul>
         )}
