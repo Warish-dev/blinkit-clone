@@ -83,6 +83,7 @@ const Header = () => {
                         <span className={styles.totalItems}>{cart?.length}</span>
                     }
                 </div>
+                
                  
 
                 <div className={styles.profileIcon}>

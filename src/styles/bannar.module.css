@@ -36,14 +36,25 @@
 } 
 @media (max-width: 768px) {
     .bannar {
-        margin-top: -80px;
+        margin-top: -70px;
         margin-bottom: -80px;
         
     }
 
   
 }
-
+@media (max-width:425px) {
+    .bannar img{
+        border-radius:35px;
+        
+       
+    }
+    .bannar{
+        margin-top:-90px;
+        margin-bottom: -110px;
+        
+    }
+}
 
 
 
