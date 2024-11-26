@@ -29,7 +29,8 @@
 .form2 {
   padding: 1.5rem;
   width: 400px;
-  background: rgba(255, 255, 255, 0.8); /* Optional: Add background to form */
+  background: rgba(255, 255, 255, 0.8);
+  
   border-radius: 8px;
   margin-left: 300px;
   display: flex;
@@ -45,22 +46,35 @@
 }
 
 .input_container {
+  display: flex;
   width: 100%;
+  border-bottom: 1px solid black;
+  align-items: center;
+  /* border: 1px solid red; */
+  /* gap: 20px; */
+
 }
 
-.input {
+.input5 {
   height: 20px;
   width: 100%;
   padding: 15px;
   margin-left: 10px;
-  background-color: transparent;
+  background: transparent;
   border-left: none;
   border-right: none;
+  text-decoration: none;
+
   border-top: none;
   border-bottom: 1px solid #232b2b;
   outline: none;
+  border: none;
 }
-
+.input5:focus {
+  box-shadow: none; /* Remove the default box-shadow */
+  border-color: #a0a0a0; /* Optional: Change border color on focus */
+}
+/*  */
 .btn {
   height: 40px;
   width: 100%; /* Ensure button takes full width */
@@ -116,7 +130,12 @@
 
 .lbl {
   position: relative;
-  top: 30px;
+  margin-bottom:5px;
+  left: 12px; /* Adjust the icon position */
+  /* transform: translateY(-50%); */
+  font-size: 16px;
+  /* color: #ccc; */
+  pointer-events: none; /* Prevent the icon from interfering with input */
 }
 
 .btn:hover {
@@ -172,7 +191,7 @@ p a:hover {
   }
 
   .input_container,
-  .input {
+  .input5 {
     width: 100%; /* Make inputs fill the width of the form */
   }
 

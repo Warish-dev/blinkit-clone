@@ -13,8 +13,8 @@ const preventRefresh = (e) => {
 };
 
 export default function Login() {
-  // State to track selected button (Admin or Warehouse)
-  const [selectedRole, setSelectedRole] = useState('');
+  // Set initial state for selected role to 'Warehouse'
+  const [selectedRole, setSelectedRole] = useState('Warehouse');
   const [isMobile, setIsMobile] = useState(false);
 
   const handleRoleSelect = (role) => {
@@ -73,27 +73,26 @@ export default function Login() {
                 <IoMdMail />
               </label>
               <input 
-                className={styles.input} 
+                className={styles.input5} 
                 type="email" 
                 required  
                 id="name" 
                 placeholder="Enter your E-Mail" 
               />
             </div>
-            <div>
+            <div  className={styles.input_container}>
               <label className={styles.lbl} htmlFor="e-mail">
                 <RiLockPasswordFill />
               </label>
               <input 
-                className={styles.input} 
+                className={styles.input5} 
                 type="Password" 
                 required  
                 id="e-mail" 
                 placeholder="Enter your password" 
-                
               />
             </div>
-            <button className={styles.btn} type="submit"  onClick={preventRefresh}>
+            <button className={styles.btn} type="submit" onClick={preventRefresh}>
               Submit
             </button>
           </form>

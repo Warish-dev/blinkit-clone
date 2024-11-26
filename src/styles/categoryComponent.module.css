@@ -8,6 +8,8 @@
     gap: 30px;
     /* Add space between the subcategories */
     box-shadow: -1px -80px 100px white;
+    /* border: 1px solid red; */
+
 
 }
 .subcategory {
@@ -16,6 +18,7 @@
     gap: 20px;
     overflow: hidden; /* Removes horizontal/vertical scrollbars */
     scrollbar-width: none;  /* For Firefox */
+    /* border: 1px solid red; */
 }
 
 /* Container for each group of category items */
@@ -23,6 +26,8 @@
 .subcategory2 {
     display: flex;
     margin-left: 10px;
+    /* border: 1px solid red; */
+
     
     /* cursor: alias; */
     margin-top: 20px;
@@ -56,7 +61,7 @@
 /* Image container for each category */
 .categoryDetails .image,
 .categoryDetails2 .image {
-    width: 100%;
+    width: 100px;
     height: 100px;
     /* Fixed height for images */
     overflow: hidden;
@@ -158,7 +163,8 @@
     .subcategory2 {
         justify-content: center;
         /* Center align items */
-        gap: 15px;
+        /* gap: 10px; */
+        /* margin-left:5px; */
         scrollbar-width: none;
 
         /* Reduce the gap between items */
@@ -172,7 +178,7 @@
 
     .categoryDetails .image,
     .categoryDetails2 .image {
-        height: 80px;
+        height: 70px;
         width: 100%;
         /* Reduce the height of images */
     }
@@ -190,19 +196,20 @@
     .subcategory2 {
         justify-content: center;
         align-items: center;
-        gap: 10px;
+        /* gap: 10px; */
         /* Further reduce the gap between items */
     }
 
     .categoryDetails,
     .categoryDetails2 {
         width: 100px;
+        /* height: 100%; */
         /* Make items even smaller */
     }
 
     .categoryDetails .image,
     .categoryDetails2 .image {
-        height: 70px;
+        height:70px;
         /* Further reduce the height of images */
     }
 
