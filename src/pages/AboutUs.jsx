@@ -7,6 +7,7 @@ import img1 from '../assets/aboutUs/phil1.jpeg';
 import img2 from '../assets/aboutUs/phil3.jpeg';
 import banner from '../assets/images/bannar.png';
 import TopBar from '../component/Sheared/TopBar.jsx'
+
 import Footer from '../component/Sheared/Footer.jsx';
 
 function AboutUs() {

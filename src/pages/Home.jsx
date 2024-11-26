@@ -68,17 +68,29 @@ const Home = () => {
 
         <ProductSection />
 
+<<<<<<< HEAD
       
+=======
+
+
+        {
+          showBtn &&
+>>>>>>> 3b9744447ff11f1be7c2c7c36ecea74002fe3e0b
 
         {
           showBtn &&
           <div onClick={gotoTop} className={styles.moveToTopBtn}>
             <FaArrowUpLong className={styles.toTopBtn} />
           </div>
+<<<<<<< HEAD
         }
 
 
 
+=======
+}
+        
+>>>>>>> 3b9744447ff11f1be7c2c7c36ecea74002fe3e0b
       </Layout>
 
 

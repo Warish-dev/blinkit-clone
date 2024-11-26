@@ -145,7 +145,7 @@ const toggleForm = () => {
                     />
                 </div>
 
-                <button onClick={toggleForm }>Add Shop</button>
+                <button onClick={toggleForm}>Add Shop</button>
             </div>
 
             {/* Add New Shop Form */}
