@@ -51,30 +51,39 @@
 }
 
 .inputContainer{
-    width: 100%;
-    padding: 0px 30px;
+    width: 60%;
+    padding: 0px 10px;
     display: flex;
     flex-direction: row;
     align-items: center;
+    border: 1px solid lightgray;
     /* gap: 20px; */
 
 }
-.countryCode{
-    padding-left: 20px; 
-     /* margin-left: 10px; */
 
-}
+
 
 .inputContainer input {
     width: 90%;
     background-color: transparent;
-    padding:10px;
+    padding: 10px 2px;
     /* border: 2px solid rgb(177, 177, 177); */
     border-radius: 10px;
     font-size: 16px;
     font-weight: 600;
+    border: none;
     outline: none;
 }
+.inputContainer input:focus {
+    box-shadow: none; /* Remove the default box-shadow */
+    border-color: #a0a0a0; /* Optional: Change border color on focus */
+  }
+  .errorMessage {
+    color: red;
+    font-size:20px;
+    /* font-weight: lighter; */
+    margin-top:-5px;
+  }
 
 /* otp section for user login  */
 /* Container for OTP fields */
@@ -90,13 +99,20 @@
     gap: 10px;
   }
   
-  .otpInput {
+  /* .otpInput {
     width: 40px;
     height: 40px;
     text-align: center;
     font-size: 1.2rem;
     border: 1px solid #ccc;
     border-radius: 5px;
+  } */
+  .otpInput {
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    font-size: 20px;
+    margin: 0 5px;
   }
   
   .otpInput:focus {

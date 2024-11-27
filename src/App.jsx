@@ -32,6 +32,8 @@ import Product from './component/WareHouse/Product';
 import CategoryForm from './component/Admin/CategoryForm';
 import Profile from './component/WareHouse/Profile';
 import Blog from './pages/Blog'
+
+import Career from './pages/Career'
 import PendingOrders from './component/WareHouse/PendingOrders';
 import ConfirmOrder from './component/WareHouse/ConfirmOrder';
 import ProcessingOrder from './component/WareHouse/ProcessingOrder';
@@ -60,6 +62,8 @@ const App = () => {
         <Route path="/contact" element={<Contact/>} />
         <Route path="/AboutUs" element={<AboutUs/>} />
         <Route path="/Blog" element={<Blog/>} />
+        <Route path="/Career" element={<Career/>} />
+
 
 
 
