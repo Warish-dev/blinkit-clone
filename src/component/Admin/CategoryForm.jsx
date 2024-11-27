@@ -1,17 +1,17 @@
 
-
-import React from 'react';
+import React, { useState } from "react";
+import { BiLeftArrowAlt } from 'react-icons/bi';
 import styles from '../../styles/category.module.css';
 
 function CategoryForm({ setIsFormOpen }) {
   // Define the toggleForm function outside the JSX return statement
-  // const toggleForm = () => {
-  //   setIsFormOpen(false);
-  // };
+  const toggleForm = () => {
+    setIsFormOpen(false);
+  };
        
-  const navigate = useNavigate(); // Initialize the hook
+  
 
-  const [searchTerm, setSearchTerm] = useState('');
+  const [searchTerm, setSearchTerm] = useState('false');
   const handleSearch = (e) => {
     setSearchTerm(e.target.value);
   };
@@ -19,10 +19,11 @@ function CategoryForm({ setIsFormOpen }) {
 
   return (
     <div>
+       
       <div className={styles.row}>
-        <p className={styles.cross} onClick={toggleForm}>
+        {/* <p className={styles.cross} >
           X
-        </p>
+        </p> */}
         <h1 className={styles.heading}>Add Category</h1>
         <div className={styles.formGroup}>
           <label>Category Name</label>

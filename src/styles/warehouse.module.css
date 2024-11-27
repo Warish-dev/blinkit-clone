@@ -271,6 +271,71 @@
     height: 300px;
   }
   
+
+  /* box*/
+
+  .container {
+    margin-top: 40px;
+    padding: 20px;
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+  }
+  
+  .title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333333;
+  }
+  
+  .cards1 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .card1 {
+    flex: 1;
+    /* min-width: 120px; */
+    width: 150px;
+    text-align: center;
+    padding: 10px;
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition:  0.5s ease-in-out;
+  }
+  
+  .icon > span{
+    display: block;
+    font-size: 24px;
+    margin-bottom: 10px;
+    /* padding-left: 60px; */
+  }
+  
+  .label {
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    color: #333333;
+    /* margin-right: 40px; */
+    margin-bottom: 4px;
+  }
+  
+  .count {
+    font-size: 18px;
+    font-weight: bold;
+    color: black;
+  }
+
+  .card1:hover
+  {
+    transform: scale(1.1);
+  }
+  
+
   /* End Main  */
   
   
