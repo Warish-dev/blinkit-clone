@@ -128,8 +128,8 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 export default function Login() {
-  // State variables
-  const [selectedRole, setSelectedRole] = useState('');
+
+  const [selectedRole, setSelectedRole] = useState('Warehouse');
   const [isMobile, setIsMobile] = useState(false);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -241,7 +241,7 @@ export default function Login() {
               <label className={styles.lbl} htmlFor="email">
                 <IoMdMail />
               </label>
-              <input
+               <input
                 className={styles.input}
                 type="email"
                 id="email"
@@ -250,7 +250,7 @@ export default function Login() {
                 onChange={(e) => setEmail(e.target.value)}
                 required
               />
-            </div>
+           </div>
             <div>
               <label className={styles.lbl} htmlFor="password">
                 <RiLockPasswordFill />
