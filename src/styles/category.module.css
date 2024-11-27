@@ -68,7 +68,7 @@ textarea:focus {
 
 }
 
-/* .bt1
+.bt1
 {
     height: 40px;
     width: 90px;
@@ -80,7 +80,9 @@ textarea:focus {
     font-size: 20px;
     font-weight: 600;
     
-} */
+}
+
+
 .cross {
     font-size: 20px;
     font-weight: 600;
@@ -108,8 +110,27 @@ textarea:focus {
     justify-content: space-between;
     gap: 20px;
 }
-
 .topContainer button {
+    max-height: max-content;
+    background-color: #28a745;
+    color: white;
+    font-size: 800;
+    font-size: 1rem;
+    padding: 0.7rem 1rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-wrap: nowrap;
+
+    box-shadow: 5px 5px 10px rgba(128, 128, 128, 0.5);
+}
+
+.topContainer button:hover {
+    background-color: #218838;
+}
+
+.topContainer a {
     max-height: max-content;
     background-color: #28a745;
     color: white;
