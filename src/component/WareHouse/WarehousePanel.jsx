@@ -10,6 +10,16 @@ import styles from '../../styles/warehouse.module.css'
 
 function AdminPanel() {
 
+  const data1 = [
+    { label: "Pending", count: 2, icon: "⏳" },
+    { label: "Confirm", count: 0, icon: "✅" },
+    { label: "Processing", count: 0, icon: "🔄" },
+    { label: "Pickup", count: 0, icon: "🚴" },
+    { label: "On The Way", count: 0, icon: "🚴‍♀️" },
+    { label: "Delivered", count: 0, icon: "📦" },
+    { label: "Cancelled", count: 0, icon: "❌" },
+  ];
+
     const data = [
         {
           name: 'Page A',
@@ -92,6 +102,7 @@ function AdminPanel() {
                 <h1>42</h1>
             </div>
         </div>
+       
 
         <div className={styles.charts}>
             <ResponsiveContainer width="100%" height="100%">
@@ -138,8 +149,25 @@ function AdminPanel() {
                 </LineChart>
             </ResponsiveContainer>
 
+
+            
+
         </div>
+        <div className={styles.container}>
+      <h2 className={styles.title}>Order Analytics</h2>
+      <div className={styles.cards1}>
+        {data1.map((item, index) => (
+          <div key={index} className={styles.card1}>
+            <span className={styles.icon}>{item.icon}</span>
+            <span className={styles.label}>{item.label}</span>
+            <span className={styles.count}>{item.count}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+
     </main>
+     
   )
 }
 

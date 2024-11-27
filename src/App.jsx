@@ -31,7 +31,18 @@ import Product from './component/WareHouse/Product';
 import CategoryForm from './component/Admin/CategoryForm';
 import Profile from './component/WareHouse/Profile';
 import Blog from './pages/Blog'
+
 import Career from './pages/Career'
+import PendingOrders from './component/WareHouse/PendingOrders';
+import ConfirmOrder from './component/WareHouse/ConfirmOrder';
+import ProcessingOrder from './component/WareHouse/ProcessingOrder';
+import PickupOrder from './component/WareHouse/PickupOrder';
+import OnTheWay from './component/WareHouse/OnTheWay';
+import Delivered from './component/WareHouse/Delivered';
+import Cancelled from './component/WareHouse/Cancelled';
+import Withdraw from './component/WareHouse/Withdraw';
+import OrderRecipt from './component/WareHouse/OrderRecipt';
+// import OrderDetails from './component/WareHouse/OrderDetails';
 
 const App = () => {
   return (
@@ -58,7 +69,7 @@ const App = () => {
 
 
         {/* Admin Routes */}
-        <Route path="/admin" element={<Admin />}>
+        <Route path="/admin/" element={<Admin />}>
           <Route path="dashboard" element={<AdminPanel />} />
           <Route path="users" element={<Users />} />
           <Route path="shops" element={<Shops />} />
@@ -70,10 +81,21 @@ const App = () => {
         </Route>
 
         {/* Warehouse Routes */}
-        <Route path="/WareHouse" element={<Warehouse />}>
+        <Route path="/wareHouse/" element={<Warehouse />}>
           <Route path="dashboard" element={<WarehousePanel />} />
           <Route path="product" element={<Product />} />
           <Route path="profile" element={<Profile />} />
+          <Route path="pendingOrders" element={<PendingOrders />} />
+          <Route path="confirmOrder" element={<ConfirmOrder />} />
+          <Route path="processingOrder" element={<ProcessingOrder />} />
+          <Route path="pickupOrder" element={<PickupOrder />} />
+          <Route path="onTheWay" element={<OnTheWay />} />
+          <Route path="delivered" element={<Delivered />} />
+          <Route path="cancelled" element={<Cancelled />} />
+          <Route path="withdraw" element={<Withdraw />} />
+          <Route path="orderRecipt" element={<OrderRecipt />} />
+          {/* <Route path="" element={<OrderDetails setIsFormOpen={() => {}} />} />
+          <Route path="orderReceipt" element={<OrderRecipt />} /> */}
         </Route>
       </Routes>
     </div>

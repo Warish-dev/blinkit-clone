@@ -5,6 +5,7 @@ import pic from '../../assets/product2.jpg'
 import { IoSearch } from 'react-icons/io5';
 import { HiOutlineDotsVertical } from 'react-icons/hi';
 import CategoryForm from './CategoryForm';
+// import { Link, useNavigate } from "react-router-dom";
 
 
   const initialShops = [
@@ -50,6 +51,13 @@ function Category() {
   const toggleForm = () => {
     setIsFormOpen(true);
   };
+
+  // const navigate = useNavigate();
+
+  // const goToNextPage = () => {
+  //   navigate("/categoryform");
+  // };
+
 
 
   const [shops, setShops] = useState(initialShops);
@@ -107,7 +115,7 @@ function Category() {
       <CategoryForm setIsFormOpen={setIsFormOpen}/>
      } 
         
-    
+      
 
       <h1 className={styles.heading}>Category Table</h1>
       <div className={styles.container}>
@@ -122,9 +130,10 @@ function Category() {
               onChange={handleSearch}
             />
           </div>
-          <button onClick={() => navigate('/categoryform')}>Add Form
+          <button onClick={() => setIsFormOpen(true)}>Add Form
             
           </button>
+          
         </div>
 
         <div className={styles.tableContainer}>
@@ -141,7 +150,7 @@ function Category() {
             </thead>
             <tbody>
   {currentShops.map((shop, index) => (
-    <tr key={shop.id}>
+    <tr key={index}>
       <td>{index + 1 + (currentPage - 1) * shopsPerPage}</td>
       <td>{shop.name}</td>
       <td>{shop.title}</td>
