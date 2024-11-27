@@ -126,10 +126,15 @@ import { RiLockPasswordFill } from "react-icons/ri";
 import image from '../assets/images/logo.png';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { callAPI } from '../services/callAPIFunction';
+import { adminEndPoints } from '../services/apiEndPoints';
+
+const { VITE_API_BASE_URL } = import.meta.env;
+
 
 export default function Login() {
 
-  const [selectedRole, setSelectedRole] = useState('Warehouse');
+  const [selectedRole, setSelectedRole] = useState('Admin');
   const [isMobile, setIsMobile] = useState(false);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -159,50 +164,82 @@ export default function Login() {
     };
   }, []);
 
+
+
+
   // Login function
+  // const login = async (e) => {
+  //   e.preventDefault();
+
+  //   // Validation
+  //   if (!email || !password || !selectedRole) {
+  //     alert('Please fill in all fields and select a role.');
+  //     return;
+  //   }
+
+  //   // Determine API endpoint
+  //   const endpoint =
+  //     selectedRole === 'Admin'
+  //       ? 'https://bijlimart-backend.onrender.com/api/admin/login'
+  //       : 'https://bijlimart-backend.onrender.com/api/warehouse/login'; // Replace with Warehouse endpoint if different.
+
+  //   setLoading(true);
+  //   try {
+  //     const response = await axios.post(
+  //       endpoint,
+  //       { email, password },
+  //       { withCredentials: true } // Send cookies to the server
+  //     );
+
+  //     console.log(`${selectedRole} login successful:`, response.data);
+  //     //store the response in localStorage
+  //     localStorage.setItem('userData',JSON.stringify(response.data.admin));
+  //     alert (`${selectedRole} login successful`);
+      
+  //     //Redirect to admin dashboard after successful login
+  //     if (selectedRole == 'Admin'){
+  //       navigate('/admin/dashboard');
+  //     }else {
+  //       navigate('/warehouse/dashboard');
+  //     }
+
+  //     // Redirect logic or further processing can go here.
+  //   } catch (error) {
+  //     console.error(`${selectedRole} login failed:`, error.response?.data || error.message);
+  //     alert(`${selectedRole} login failed. Please check your credentials.`);
+  //   } finally {
+  //     setLoading(false);
+  //   }
+  // };
+
+
   const login = async (e) => {
     e.preventDefault();
-
-    // Validation
-    if (!email || !password || !selectedRole) {
-      alert('Please fill in all fields and select a role.');
-      return;
-    }
-
-    // Determine API endpoint
-    const endpoint =
-      selectedRole === 'Admin'
-        ? 'https://bijlimart-backend.onrender.com/api/admin/login'
-        : 'https://bijlimart-backend.onrender.com/api/warehouse/login'; // Replace with Warehouse endpoint if different.
-
-    setLoading(true);
     try {
-      const response = await axios.post(
-        endpoint,
-        { email, password },
-        { withCredentials: true } // Send cookies to the server
-      );
 
-      console.log(`${selectedRole} login successful:`, response.data);
-      //store the response in localStorage
-      localStorage.setItem('userData',JSON.stringify(response.data.admin));
-      alert (`${selectedRole} login successful`);
-      
-      //Redirect to admin dashboard after successful login
-      if (selectedRole == 'Admin'){
-        navigate('/admin/dashboard');
-      }else {
-        navigate('/warehouse/dashboard');
+      const data = {
+        email,
+        password
       }
 
-      // Redirect logic or further processing can go here.
+      if (selectedRole === 'Admin'){
+        const response = await callAPI('post', `${VITE_API_BASE_URL}${adminEndPoints.login}`, data)
+
+        if(response.status == 200){
+          navigate('/admin/dashboard');
+        }
+
+      }else{
+
+      }
+      
     } catch (error) {
-      console.error(`${selectedRole} login failed:`, error.response?.data || error.message);
-      alert(`${selectedRole} login failed. Please check your credentials.`);
-    } finally {
-      setLoading(false);
+      console.log(error)
     }
-  };
+  }
+
+
+
 
   return (
     <div className={styles.main}>
