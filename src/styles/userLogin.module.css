@@ -57,6 +57,7 @@
     flex-direction: row;
     align-items: center;
     border: 1px solid lightgray;
+    border-radius: 10px;
     /* gap: 20px; */
 
 }
@@ -77,6 +78,7 @@
 .inputContainer input:focus {
     box-shadow: none; /* Remove the default box-shadow */
     border-color: #a0a0a0; /* Optional: Change border color on focus */
+    /* border-radius: 5px; */
   }
   .errorMessage {
     color: red;

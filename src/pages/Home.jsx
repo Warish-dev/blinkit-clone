@@ -7,8 +7,7 @@ import styles from '../styles/home.module.css'
 import UserLogin from '../component/Home/UserLogin'
 
 
-import Contact from './contact/Contact';
-
+import contact from '../pages/Contact'
 // import Review from '../component/Home/Review';
 import CategoryComponent from '../component/Home/CategoryComponent';
 import PosterSection from '../component/Home/PosterSection';
