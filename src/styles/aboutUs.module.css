@@ -1,0 +1,170 @@
+
+
+/* About Hero Section */
+.aboutusHero {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.aboutusHero img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+    max-height: 100%;
+}
+
+.container1 {
+    height: auto;
+    width: 100%;
+    padding-top: 20px;
+}
+
+.namefield {
+    width: 70%;
+    margin: AUTO;
+}
+
+.namefield h2 {
+    font-size: 30px;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+.namefieldpara {
+    text-align: justify;
+    line-height: 30px;
+    font-size: medium;
+}
+
+.namefieldpara span {
+    color: darkgreen;
+    font-weight: bold;
+}
+
+.philosophy h2 {
+    font-weight: lighter;
+    font-size: 30px;
+}
+
+.philodiv {
+    display: flex;
+    width: 100%;
+}
+
+.philosophyimg {
+    height: 100%;
+    width: 48%;
+    margin-left: 1%;
+    margin-right: 1%;
+}
+
+.philosophyimg img {
+    height: 100%;
+    width: 100%;
+}
+
+.philosophyimg p {
+    text-align: justify;
+    margin-top: 20px;
+    font-size: 16px;
+    line-height: 30px;
+}
+
+.lastcontainer {
+    width: 100%;
+    max-width: 1200px;
+    box-sizing: border-box;
+}
+
+.lasthead {
+    margin-bottom: 20px;
+}
+
+.lasthead h2 {
+    font-size: 30px;
+    font-weight: 100;
+    text-align: left;
+}
+
+.lastcontainer img {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    margin-bottom: 50px;
+}
+
+.lastcontainer p {
+    font-size: 16px;
+    text-align: justify;
+    line-height: 1.6;
+    margin-bottom: 100px;
+}
+
+/* Navbar Toggle Button */
+
+
+/* Media Queries for responsiveness */
+
+/* Tablet View (max-width: 768px) */
+@media (max-width: 768px) {
+
+
+    .logo img {
+        width: 50px; /* Reduced width for tablet screens */
+    }
+
+    .namefield h2 {
+        font-size: 24px; /* Smaller font size for tablet view */
+    }
+    .philosophyHeading h2{
+        font-size: 24px;
+    }
+    .philosophyHeading p{
+        font-size: 12px;
+    }
+
+    .namefieldpara {
+        font-size: 12px; /* Smaller font size for paragraph in tablet view */
+    }
+    .philosophyimg p{
+        font-size: 12px;
+    }
+    .lastcontainer p{
+        font-size: 12px;
+    }
+}
+
+/* Mobile View (max-width: 480px) */
+@media (max-width: 480px) {
+    .logo img {
+        width: 40px; /* Adjusted width for mobile screens */
+    }
+
+    .namefield h2 {
+        font-size: 24px; /* Smaller font size for phone view */
+    }
+
+    .namefieldpara {
+        font-size: 12px; /* Smaller font size for phone paragraph */
+    }
+    .philosophyHeading p{
+        font-size: 12px;
+    }
+    .philosophyHeading p{
+        font-size: 12px;
+    }
+
+    
+
+    .lasthead h2 {
+        font-size: 24px; /* Smaller font size for headings */
+    }
+
+    .lastcontainer p {
+        font-size:12px; /* Smaller font size for text */
+        line-height: 30px;
+        /* padding:0; */
+    }
+}

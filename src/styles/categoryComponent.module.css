@@ -10,15 +10,23 @@
     box-shadow: -1px -80px 100px white;
 
 }
+.subcategory {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    overflow: hidden; /* Removes horizontal/vertical scrollbars */
+    scrollbar-width: none;  /* For Firefox */
+}
 
 /* Container for each group of category items */
 .subcategory,
 .subcategory2 {
     display: flex;
-    margin-left: 30px;
+    margin-left: 10px;
+    
     /* cursor: alias; */
     margin-top: 20px;
-    margin-right: 30px;
+    margin-right: 10px;
     flex-wrap: nowrap;
     /* Prevent wrapping, keep items in a single row */
     gap: 20px;
@@ -60,7 +68,7 @@
 /* Image styling to ensure proper fit */
 .categoryDetails img,
 .categoryDetails2 img {
-    width: 100%;
+    width:fit-content;
     height: 100%;
     /* border-radius: 20px; */
     /* background-color: transparent; */
@@ -68,6 +76,17 @@
     object-fit: cover;
     /* Ensure images cover the container without distortion */
     /* transition: transform 0.5s ease-in-out;  */
+}
+/* .subcategory2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    overflow: hidden; 
+    scrollbar-width: none;  
+} */
+.subcategory::-webkit-scrollbar,
+.subcategory2::-webkit-scrollbar {
+    display: none;
 }
 
 /* Apply zoom effect on hover */
@@ -96,6 +115,13 @@
 }
 
 /* --- Responsive Styles --- */
+/* for more than 768px size  */
+@media (max-width: 768px) {
+    .subcategory,
+    .subcategory2{
+        scrollbar-width: none;
+    }
+}
 
 /* For 768px screen width (Tablets) */
 @media (max-width: 768px) {
@@ -103,6 +129,7 @@
     .subcategory,
     .subcategory2 {
         justify-content: center;
+        scrollbar-width: none;
         /* Center align items */
     }
 
@@ -132,6 +159,8 @@
         justify-content: center;
         /* Center align items */
         gap: 15px;
+        scrollbar-width: none;
+
         /* Reduce the gap between items */
     }
 
@@ -144,6 +173,7 @@
     .categoryDetails .image,
     .categoryDetails2 .image {
         height: 80px;
+        width: 100%;
         /* Reduce the height of images */
     }
 
@@ -159,7 +189,7 @@
     .subcategory,
     .subcategory2 {
         justify-content: center;
-        /* Center align items */
+        align-items: center;
         gap: 10px;
         /* Further reduce the gap between items */
     }

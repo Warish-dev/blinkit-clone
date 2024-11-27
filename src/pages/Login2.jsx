@@ -56,20 +56,20 @@ export default function Login() {
               className={`${styles.btn2} ${selectedRole === 'Admin' ? styles.selected : styles.unselected}`} 
               onClick={() => handleRoleSelect('Admin')}
             >
-              Admin
+              Warehouse
             </p>
             {/* Warehouse button */}
             <p 
               className={`${styles.btn2} ${selectedRole === 'Warehouse' ? styles.selected : styles.unselected}`} 
               onClick={() => handleRoleSelect('Warehouse')}
             >
-              Warehouse
+              Admin
             </p>
           </div>
 
           <form>
             <div className={styles.input_container}>
-              <label htmlFor="name">
+              <label className={styles.lbl} htmlFor="name">
                 <IoMdMail />
               </label>
               <input 
@@ -81,7 +81,7 @@ export default function Login() {
               />
             </div>
             <div>
-              <label htmlFor="e-mail">
+              <label className={styles.lbl} htmlFor="e-mail">
                 <RiLockPasswordFill />
               </label>
               <input 
@@ -90,9 +90,10 @@ export default function Login() {
                 required  
                 id="e-mail" 
                 placeholder="Enter your password" 
+                
               />
             </div>
-            <button className={styles.btn} type="submit" onClick={preventRefresh}>
+            <button className={styles.btn} type="submit"  onClick={preventRefresh}>
               Submit
             </button>
           </form>

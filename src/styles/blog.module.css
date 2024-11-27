@@ -1,0 +1,70 @@
+/* Hero Section */
+.BlogHero {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+  }
+  
+  .heroImage {
+    width: 100%;
+    height: 100%;
+    
+    object-fit: cover;
+    /* filter: brightness(70%); */
+  }
+  
+  /* Blog Container */
+  .container2 {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .blogContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+  .blogdiv{
+    display: flex;
+    height: auto;
+    width: 100%;
+  }
+  
+  /* Blog Post Item */
+  .blogItem {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background-color: #f9f9f9;  
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .blogImage {
+    width: 100%;
+    height: 50%;
+    border-radius: 8px;
+  }
+  
+  .blogTitle {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-top: 10px;
+  }
+  
+  .blogDescription {
+    font-size: 1rem;
+    color: #333;
+    text-align: justify;
+    line-height: 30px;
+  }
+  
+  /* Add responsive styles if necessary */
+  @media (max-width: 768px) {
+    .blogContainer {
+      flex-direction: column;
+    }
+  }
+  
