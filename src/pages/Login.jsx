@@ -274,10 +274,10 @@ export default function Login() {
           </div>
 
           <form onSubmit={login}>
-            <div className={styles.input_container}>
-              <label className={styles.lbl} htmlFor="email">
-                <IoMdMail />
-              </label>
+            <div className={styles.input_container}><IoMdMail />
+
+              {/* <label className={styles.lbl} htmlFor="email">
+              </label> */}
                <input
                 className={styles.input}
                 type="email"
@@ -288,10 +288,10 @@ export default function Login() {
                 required
               />
            </div>
-            <div>
-              <label className={styles.lbl} htmlFor="password">
-                <RiLockPasswordFill />
-              </label>
+            <div className={styles.input_container}><RiLockPasswordFill />
+
+              {/* <label className={styles.lbl} htmlFor="password">
+              </label> */}
               <input
                 className={styles.input}
                 type="password"
@@ -306,9 +306,7 @@ export default function Login() {
               {loading ? 'Loading...' : 'Submit'}
             </button>
           </form>
-          <p>
-            Don't have an account? <Link to="/signup2">Sign up</Link>
-          </p>
+         
         </div>
       </div>
     </div>

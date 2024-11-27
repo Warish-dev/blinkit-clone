@@ -1,7 +1,10 @@
+
 .CareerHero {
     position: relative;
     height: 100%;
     overflow: hidden;
+    z-index: 10;
+    height: 400px;
   }
   
   .CareerImage {
@@ -15,22 +18,29 @@
     height: auto;
     width: 100%;
     /* border: 1px solid red; */
-    padding: 20px;
+    /* padding: 20px; */
     /* max-width: 1200px; */
-    margin: 0 auto;
+    /* margin-left: 10%; ;
+    margin-right: 10%; ; */
+    /* margin-left: ; */
+
     
+  }
+  .careerheading {
+    margin-top: 50px;
+
   }
   .section1{
     height: auto;
     width:70%;
-    margin-left: 10%;
-    margin-right: 10%;
+    margin: auto;
+    margin-top: 50px;
 
-    /* border: red; */
+    /* border:1px solid red; */
   }
   .section1 h2{
     /* padding: 9px; */
-    padding-bottom: 5px;
+    margin-bottom:10px;
   }
   .section1 p{
     font-size: 16px;
@@ -39,13 +49,62 @@
     
   }
   .youtubesection{
+    padding-top: 20px;
+    padding-bottom: 20px;
     height: auto;
-    width:70%;
-    margin-left: 10%;
-    margin-right: 10%;
+    /* width:70%; */
+    /* margin-left: 10%; */
+    /* margin-right: 10%; */
+    /* border: 1px solid red; */
 
   }
-  .youtubesection h2{
+  /* .youtubesection h2{
     padding-bottom: 5px;
+   
+
+  } */
+  .video{
+    padding-bottom:20px;
+    height: 400px;
+    margin-top: 50px;
+    width: 100%;
+    /* border: 1px solid black; */
 
   }
+  .philodiv {
+    display: flex;
+    width: 100%;
+}
+.philosophy h2 {
+  font-weight: lighter;
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+.philosophy h2 {
+  font-weight: lighter;
+  font-size: 30px;
+}
+.philosophyimg {
+  height: 100%;
+  width: 48%;
+  margin-left: 1%;
+  margin-right: 1%;
+}
+
+.philosophyimg img {
+  height: 100%;
+  width: 100%;
+}
+
+.philosophyimg p {
+  text-align: justify;
+  margin-top: 20px;
+  font-size: 16px;
+  line-height: 30px;
+}
+.careerBanner{
+  
+  margin-top: 80px;
+  width: 100%;
+  background-size: cover;
+}
