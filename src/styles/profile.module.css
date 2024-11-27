@@ -1,137 +1,175 @@
-.profileContainer {
-    font-family: Arial, sans-serif;
-    /* max-width: 1300px; */
-    width: 1300px;
-    margin: 0 auto;
-    padding: 20px;
-    margin-left: 50px;
-    /* background-color: #f9f9f9; */
-  }
-  
-  .title {
-    /* text-align: center; */
+ 
 
-    margin-bottom: 20px;
-  }
-  
-  .profileCard {
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 2px 14px rgba(0, 0, 0, 0.1);
-    padding: 20px;
+    .profileContainer {
+      font-family: Arial, sans-serif;
+      margin-top: 40px;
+      margin-left: 70px;
+      width: 1300px;
+      /* max-width: 900px; */
+      padding: 20px;
+      /* background-color: #f9f9f9; */
+    }
     
-  }
-  
-  .shopInfo {
-    display: flex;
-    flex-direction: column;
-    /* align-items: center; */
-    margin-bottom: 20px;
-  }
-  
-  .shopHeader {
-    display: flex;
-    align-items: center;
-
-  }
-  
-  .logo img {
-    width: 160px;
-    height: 160px;
-    border-radius: 10px;
-  }
-  
-  .shopName {
-    width: 200px;
-    height: 150px;
-    margin-left: 25px;
-    /* margin-bottom: 10px; */
-    /* background-color: #dad3d3; */
-
-  }
-  
-  .shopName h2 {
-    margin: 0;
-    font-size: 24px;
-    color: #333;
-    letter-spacing: 2px;
-    margin-left: 30px;
-  }
-  .shopName p
-  {
-      margin-top: 10px;
-      margin-right: 40px;
-}
-  
-  .rating {
-    font-weight: bold;
-    color: #f39c12;
-    margin-right: 10px;
-    margin-top: 30px;
-    font-size: 15px;
-  }
-  .review
-  {
-    font-size: 15px;
-    padding-bottom: 10px;
-  }
-  .viewLiveBtn {
-    height: 40px;
-    width: 120px;
-    font-size: 20px;
-    padding: 8px 12px;
-    background-color: white;
-    color: #9694FF;
-    border: 2px solid #9694FF;
-    border-radius: 5px;
-    margin-top: 30px;
-    margin-left: 30px;
-    cursor: pointer;
-  }
-  
-  .viewLiveBtn:hover {
-    background-color: #45a049;
-  }
-  
-  .shopDetails {
-    text-align: center;
-    font-size: 16px;
-    color: #555;
-  }
-  
-  .userInfo {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin-bottom: 20px;
-  }
-  
-  .infoGroup {
-    width: 45%;
-    margin-bottom: 10px;
-  }
-  
-  .infoGroup p {
-    margin: 0;
-    color: #777;
-  }
-  
-  .infoGroup b {
-    color: #333;
-  }
-  
-  .editBtn {
-    display: block;
+    .title {
+      font-size: 24px;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    
+    .profileCard {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+    }
+    
+    .shopInfo {
+      margin-bottom: 20px;
+    }
+    
+    .shopHeader {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    
+    .logo img {
+      width: 80px;
+      height: 80px;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+    
+    .shopName {
+      margin-left: 20px;
+    }
+    
+    .shopName h2 {
+      font-size: 20px;
+      margin: 0;
+      color: #333;
+    }
+    
+    .shopName p {
+      font-size: 14px;
+      color: #666;
+      margin: 5px 0 0;
+    }
+    
+    .rating {
+      color: #f39c12;
+      font-weight: bold;
+    }
+    
+    .review {
+      color: #999;
+      font-size: 15px;
+    }
+    
+    .viewLiveBtn {
+      display: block;
     margin: 0 auto;
     padding: 10px 15px;
     background-color: #6c63ff;
     color: white;
+    font-size: 17px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-  }
-  
-  .editBtn:hover {
-    background-color: #5a54d6;
-  }
-  
+    margin-top: 10px;
+    }
+    
+    .viewLiveBtn:hover {
+      background: #0056b3;
+    }
+    
+    .line {
+      margin: 20px 0;
+      border: none;
+      border-top: 1px solid #ddd;
+    }
+    
+    .shopDetails {
+      display: flex;
+      justify-content: space-between;
+      font-size: 14px;
+    }
+    
+    .product p {
+      margin: 5px 0;
+      color: #333;
+    }
+    
+    .userInfo {
+      margin-top: 20px;
+    }
+    
+    .infoGroup {
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 14px;
+      color: #333;
+    }
+    
+    .infoGroup b {
+      font-weight: bold;
+    }
+    
+    .editBtn {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 14px;
+      background: white;
+      color: #6c63ff;
+      font-size: 15px;
+
+      border: 2px solid #6c63ff;
+      border-radius: 4px;
+      cursor: pointer;
+      display: block;
+      margin-left: auto;
+    }
+    
+    .editBtn:hover {
+      background: #6c63ff;
+      color: white;
+    }
+    
+    .profileContainer1
+    {
+      margin-top: 40px;
+      /* margin-left: 60px; */
+      width: 1270px;
+      
+    }
+    .profileCard1
+    {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      display: flex;
+      /* justify-content: space-between; */
+      gap: 50px;
+    }
+    .logo1 img
+    {
+      width: 225px;
+      height: 150px;
+      border-radius: 8px;
+      object-fit: cover;
+      
+      /* margin-left: 40px; */
+
+    }
+    .logo1
+    {
+      display: flex;
+      gap: 24px;
+    }
+
+    

@@ -10,6 +10,13 @@
     box-shadow: -1px -80px 100px white;
 
 }
+.subcategory {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    overflow: hidden; /* Removes horizontal/vertical scrollbars */
+    scrollbar-width: none;  /* For Firefox */
+}
 
 /* Container for each group of category items */
 .subcategory,
@@ -70,6 +77,17 @@
     /* Ensure images cover the container without distortion */
     /* transition: transform 0.5s ease-in-out;  */
 }
+/* .subcategory2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    overflow: hidden; 
+    scrollbar-width: none;  
+} */
+.subcategory::-webkit-scrollbar,
+.subcategory2::-webkit-scrollbar {
+    display: none;
+}
 
 /* Apply zoom effect on hover */
 
@@ -97,6 +115,13 @@
 }
 
 /* --- Responsive Styles --- */
+/* for more than 768px size  */
+@media (max-width: 768px) {
+    .subcategory,
+    .subcategory2{
+        scrollbar-width: none;
+    }
+}
 
 /* For 768px screen width (Tablets) */
 @media (max-width: 768px) {
@@ -104,6 +129,7 @@
     .subcategory,
     .subcategory2 {
         justify-content: center;
+        scrollbar-width: none;
         /* Center align items */
     }
 

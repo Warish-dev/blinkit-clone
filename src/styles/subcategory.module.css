@@ -10,15 +10,18 @@
     padding-right: 20px;
 }
 .heading
-{
-    margin-top: 10px;
+{   
+    position: sticky;
+    margin-left: 100px;
+    margin-top: 40px;
     text-shadow: 15px 15px 15px rgba(0, 0, 0, 0.3);
 }
- label
+ .label
 {
     display: block;
     font-weight: 100;
-    margin-top: 20px;
+   
+    margin-bottom: 25px;
 }
 .formGroup select
 {

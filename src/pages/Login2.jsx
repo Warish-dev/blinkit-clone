@@ -124,6 +124,7 @@ import styles from "../styles/login_signup.module.css";
 import { IoMdMail } from "react-icons/io";
 import { RiLockPasswordFill } from "react-icons/ri";
 import image from '../assets/images/logo.png';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 export default function Login() {
@@ -134,6 +135,7 @@ export default function Login() {
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
 
+  const navigate = useNavigate();
   // Handle role selection
   const handleRoleSelect = (role) => {
     setSelectedRole(role);
@@ -182,7 +184,17 @@ export default function Login() {
       );
 
       console.log(`${selectedRole} login successful:`, response.data);
+      //store the response in localStorage
+      localStorage.setItem('userData',JSON.stringify(response.data.admin));
       alert (`${selectedRole} login successful`);
+      
+      //Redirect to admin dashboard after successful login
+      if (selectedRole == 'Admin'){
+        navigate('/admin/dashboard');
+      }else {
+        navigate('/warehouse/dashboard');
+      }
+
       // Redirect logic or further processing can go here.
     } catch (error) {
       console.error(`${selectedRole} login failed:`, error.response?.data || error.message);
