@@ -5,17 +5,23 @@
     flex-direction: column;
     margin: 0px auto;
 
-    gap: 30px;
+    /* gap: 30px; */
     /* Add space between the subcategories */
     box-shadow: -1px -80px 100px white;
     /* border: 1px solid red; */
 
 
 }
+.categoryImage {
+    width: 100%;  /* Ensure image takes up full container width */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Ensure image doesn't stretch */
+    max-width: 300px; /* Optionally limit the max width */
+  }
 .subcategory {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 20px;
+    gap: 10px;
     overflow: hidden; /* Removes horizontal/vertical scrollbars */
     scrollbar-width: none;  /* For Firefox */
     /* border: 1px solid red; */
@@ -75,49 +81,40 @@
 .categoryDetails2 img {
     width:fit-content;
     height: 100%;
-    /* border-radius: 20px; */
-    /* background-color: transparent; */
-    /* mix-blend-mode:inherit; */
+    
     object-fit: cover;
-    /* Ensure images cover the container without distortion */
-    /* transition: transform 0.5s ease-in-out;  */
+    
 }
-/* .subcategory2 {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 20px;
-    overflow: hidden; 
-    scrollbar-width: none;  
-} */
+
 .subcategory::-webkit-scrollbar,
 .subcategory2::-webkit-scrollbar {
     display: none;
 }
 
-/* Apply zoom effect on hover */
 
-
-/* Text styling for category names */
 .fix {
     text-align: center;
     padding-top: 10px;
-    /* text-wrap: wrap; */
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    /* Truncate text if it overflows */
 }
 .fix p{
     text-wrap: wrap;
     color: gray;
     
-    /* text-decoration: none; */
 }
 
 /* Optional: Add a bottom margin between subcategories */
 .subcategory+.subcategory2 {
     margin-top: 20px;
 }
+.categoryImageContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px; /* Adjust padding for larger screens */
+  }
 
 /* --- Responsive Styles --- */
 /* for more than 768px size  */
@@ -155,6 +152,17 @@
         /* Reduce font size on smaller screens */
     }
 }
+@media (max-width: 600px) {
+    .categoryImageContainer {
+      padding: 10px; /* Reduced padding on smaller screens */
+    }
+  
+    .categoryImage {
+      width: 100%; /* Image should still fill the container */
+      height: auto; /* Maintain aspect ratio */
+      object-fit: cover; /* Ensure no stretching */
+    }
+  }
 
 /* For 525px screen width (Mobile devices) */
 @media (max-width: 525px) {

@@ -8,10 +8,50 @@ const UserLogin = ({ setIsLogin }) => {
   const [showOtpSection, setShowOtpSection] = useState(false);
   const [otp, setOtp] = useState(['', '', '', '']);
   const [otpSubmitted, setOtpSubmitted] = useState(false);
-  const [errorMessage, setErrorMessage] = useState('');
+  const [errorMessage, setErrorMessage] = useState(''); // State for error message
 
   // Refs for OTP inputs
   const otpRefs = [useRef(null), useRef(null), useRef(null), useRef(null)];
+
+  // Function to generate a 6-digit OTP
+  const generateOtp = () => {
+    const otp = Math.floor(1000 + Math.random() * 9000); // Random 6-digit OTP
+    sessionStorage.setItem('otp', otp); // Store OTP in sessionStorage
+    console.log('OTP Generated:', otp); // You can log it for testing or simulate sending it
+    sendOtpToWhatsApp(otp); // Send OTP via WhatsApp after generation
+    return otp;
+  };
+
+  // Function to send OTP via WhatsApp API
+  const sendOtpToWhatsApp = async (otp) => {
+    const mobileNumber = phoneNumber; // Using entered phone number
+    const message = `Your OTP is: ${otp}`; // OTP message content
+  
+    // Ensure that the mobile number entered does not contain any spaces or extra characters
+    const formattedNumber = mobileNumber.replace(/\s+/g, '').replace(/^0+/, ''); // Remove spaces and leading zeros
+  
+    // WhatsApp API URL: using the correct number format
+    const whatsappApiUrl = `https://i.4sd.in/send-message?/send?api_key=pHtA3oH7QTMs0Eta4oSLxijjkjfoAE&sender=917982856964&number=91${formattedNumber}&message=${encodeURIComponent(message)}`;
+  
+    try {
+      const response = await fetch(whatsappApiUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+  
+      const data = await response.json();
+      if (response.ok) {
+        console.log('OTP sent to WhatsApp successfully:', data);
+      } else {
+        console.error('Failed to send OTP via WhatsApp:', data);
+      }
+    } catch (error) {
+      console.error('Error sending OTP via WhatsApp:', error);
+    }
+  };
+  
 
   const handleOtpChange = (e, index) => {
     const value = e.target.value;
@@ -38,6 +78,9 @@ const UserLogin = ({ setIsLogin }) => {
     if (phoneNumber.length === 10 && /^[0-9]{10}$/.test(phoneNumber)) {
       setShowOtpSection(true);
       setErrorMessage('');
+      
+      // Generate OTP and store it in sessionStorage
+      generateOtp();
     } else {
       setErrorMessage('Please enter a correct mobile number');
     }
@@ -45,23 +88,25 @@ const UserLogin = ({ setIsLogin }) => {
 
   const handleConfirmOtp = () => {
     const otpEntered = otp.join('');
-    console.log('OTP Entered: ', otpEntered);
+    const storedOtp = sessionStorage.getItem('otp'); // Retrieve OTP from sessionStorage
 
-    // Simulate OTP confirmation
-    setOtpSubmitted(true);
+    if (otpEntered === storedOtp) {
+      console.log('OTP Verified:', otpEntered);
 
-    // Simulate successful OTP verification and close login
-    setIsLogin(false); // Close login page after successful OTP
+      // Simulate OTP confirmation
+      setOtpSubmitted(true);
+      setIsLogin(false); // Close login page after successful OTP
+    } else {
+      setErrorMessage('Incorrect OTP entered. Please try again.'); // Show error if OTP is incorrect
+    }
   };
 
   const handleGoBack = () => {
-    // If on the OTP page, go back to the phone number page
     if (showOtpSection) {
       setShowOtpSection(false);
-      setOtp(['', '', '', '']); // Reset OTP inputs
+      setOtp(['', '', '', '']);
     } else {
-      // If on the phone number page, close the login modal or page
-      setIsLogin(false); // Close the login page
+      setIsLogin(false);
     }
   };
 
@@ -71,6 +116,7 @@ const UserLogin = ({ setIsLogin }) => {
     setOtp(['', '', '', '']);
     setOtpSubmitted(false);
     setErrorMessage('');
+    sessionStorage.removeItem('otp'); // Clear OTP from sessionStorage when resetting form
   };
 
   return (
@@ -108,7 +154,6 @@ const UserLogin = ({ setIsLogin }) => {
           </>
         ) : showOtpSection && !otpSubmitted ? (
           <div className={styles.otpContainer}>
-            {/* Display OTP message along with the entered phone number */}
             <p className={styles.otpSentMessage}>
               OTP has been sent on your WhatsApp No: <strong>({phoneNumber})</strong>
             </p>
@@ -131,6 +176,9 @@ const UserLogin = ({ setIsLogin }) => {
             <button className={styles.actionButton} onClick={handleConfirmOtp}>
               Confirm OTP
             </button>
+
+            {/* Conditionally render the error message for incorrect OTP */}
+            {errorMessage && <p className={styles.errorMessage}>{errorMessage}</p>}
           </div>
         ) : (
           <div className={styles.otpSubmitted}>
