@@ -18,8 +18,13 @@ function Career() {
                 <h2>Better lives for more people </h2>
                 <p>To actualize our vision of better lives for more people, we use proprietary technology to empower Indians – by creating increased convenience, more savings, flourishing businesses, and stronger communities. All this, while making everyday shopping a smoother, happier experience for India. We are always looking for driven individuals to join us in making instant commerce indistinguishable from magic. 
 
+
 </p>
 
+            </div>
+            <div className={styles.youtubesection}>
+              <h2>What sets us apart</h2>
+              <div className={styles.video}></div>
             </div>
         </div>
 

@@ -14,7 +14,7 @@
   .mainSection{
     height: auto;
     width: 100%;
-    border: 1px solid red;
+    /* border: 1px solid red; */
     padding: 20px;
     /* max-width: 1200px; */
     margin: 0 auto;
@@ -26,13 +26,26 @@
     margin-left: 10%;
     margin-right: 10%;
 
-    border: red;
+    /* border: red; */
   }
   .section1 h2{
-    padding: 10px;
+    /* padding: 9px; */
+    padding-bottom: 5px;
   }
   .section1 p{
-    font-size: 18px;
+    font-size: 16px;
     text-align: justify;
+    line-height: 25px;
     
+  }
+  .youtubesection{
+    height: auto;
+    width:70%;
+    margin-left: 10%;
+    margin-right: 10%;
+
+  }
+  .youtubesection h2{
+    padding-bottom: 5px;
+
   }
