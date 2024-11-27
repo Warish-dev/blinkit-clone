@@ -64,9 +64,11 @@
     border-radius: 7px;
     padding: 9px 9px;
     cursor: pointer;
-    /* display: flex; */
+    display: inine-flex;
     text-align: center;
-    /* margin-left: 5px; */
+    white-space: nowrap;
+    justify-content: center;
+    margin-left: 5px;
     font-size: 15px;
   }
   
