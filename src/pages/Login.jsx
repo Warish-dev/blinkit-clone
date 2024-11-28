@@ -110,14 +110,6 @@
 
 
 
-
-
-
-
-
-
-
-
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import styles from "../styles/login_signup.module.css";
@@ -127,9 +119,11 @@ import image from '../assets/images/logo.png';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { callAPI } from '../services/callAPIFunction';
-import { adminEndPoints } from '../services/apiEndPoints';
+import { adminEndPoints, warehouseEndPoints } from '../services/apiEndPoints';
+import toast from 'react-hot-toast';
 
 const { VITE_API_BASE_URL } = import.meta.env;
+
 
 
 export default function Login() {
@@ -216,7 +210,6 @@ export default function Login() {
   const login = async (e) => {
     e.preventDefault();
     try {
-
       const data = {
         email,
         password
@@ -224,23 +217,31 @@ export default function Login() {
 
       if (selectedRole === 'Admin'){
         const response = await callAPI('post', `${VITE_API_BASE_URL}${adminEndPoints.login}`, data)
-
         if(response.status == 200){
+          localStorage.setItem("user", JSON.stringify(response?.data?.admin));
+          toast.success('Login Succesful', {
+            duration: 1500
+          });
           navigate('/admin/dashboard');
         }
 
       }else{
-
-        
-
+        const response = await callAPI('post', `${VITE_API_BASE_URL}${warehouseEndPoints.warehouseLogin}`, data);
+        console.log(response)
+        if (response.status == 200){
+          localStorage.setItem("user", JSON.stringify(response?.data?.user));
+          toast.success('Login Succesfull', {
+            duration: 1500
+          });
+          navigate('/warehouse/dashboard');
+        }
       }
       
     } catch (error) {
       console.log(error)
+      console.log(error.message);
     }
   }
-
-
 
 
   return (
