@@ -4,73 +4,35 @@ import styles from '../../styles/userLogin.module.css';
 import logo from '../../assets/images/logo.png';
 import { BiLeftArrowAlt } from 'react-icons/bi';
 
+import OtpInput from 'react-otp-input';
+import { callAPI } from '../../services/callAPIFunction';
+import { otpEndPoints } from '../../services/apiEndPoints';
+const { VITE_API_BASE_URL } = import.meta.env;
+
 const UserLogin = ({ setIsLogin }) => {
   const [phoneNumber, setPhoneNumber] = useState('');
   const [showOtpSection, setShowOtpSection] = useState(false);
-  const [otp, setOtp] = useState(['', '', '', '']);
+  const [otp, setOtp] = useState('');
   const [otpSubmitted, setOtpSubmitted] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
 
-  const otpRefs = [useRef(null), useRef(null), useRef(null), useRef(null)];
 
-  // Function to generate a 6-digit OTP
-  const generateOtp = () => {
-    const otp = Math.floor(1000 + Math.random() * 9000); // Random 6-digit OTP
-    sessionStorage.setItem('otp', otp); // Store OTP in sessionStorage
-    console.log('OTP Generated:', otp); // Log OTP for testing purposes
-    sendOtpToWhatsApp(otp); // Send OTP via WhatsApp
-    return otp;
-  };
-
-  // Function to send OTP via WhatsApp API using Axios
-  const sendOtpToWhatsApp = async (otp) => {
-    const mobileNumber = phoneNumber;
-    const message = `Your OTP is: ${otp}`; // OTP message content
-
-    const formattedNumber = mobileNumber.replace(/\s+/g, '').replace(/^0+/, ''); // Clean up phone number
-
-    const whatsappApiUrl = ` https://i.4sd.in/send-message?api_key=pHtA3oH7QTMs0Eta4oSLxijjkjfoAE=917982856964& number=91${formattedNumber}&message=${encodeURIComponent(message)}`;
-
-    try {
-      const response = await axios.post(whatsappApiUrl);
-
-      // Check if the OTP was sent successfully
-      if (response.status === 200) {
-        console.log('OTP sent to WhatsApp successfully:', response.data);
-      } else {
-        console.error('Failed to send OTP via WhatsApp:', response.data);
-      }
-    } catch (error) {
-      console.error('Error sending OTP via WhatsApp:', error);
-    }
-  };
-
-  const handleOtpChange = (e, index) => {
-    const value = e.target.value;
-    if (/^[0-9]$/.test(value) || value === '') {
-      const newOtp = [...otp];
-      newOtp[index] = value;
-      setOtp(newOtp);
-
-      if (value !== '' && index < otp.length - 1) {
-        otpRefs[index + 1].current.focus();
-      }
-    }
-  };
-
-  const handleKeyDown = (e, index) => {
-    if (e.key === 'Backspace' && otp[index] === '') {
-      if (index > 0) {
-        otpRefs[index - 1].current.focus();
-      }
-    }
-  };
-
-  const handleContinue = () => {
+  const handleContinue = async () => {
     if (phoneNumber.length === 10 && /^[0-9]{10}$/.test(phoneNumber)) {
-      setShowOtpSection(true);
-      setErrorMessage('');
-      generateOtp(); // Generate OTP and send it
+
+      const data = {
+        phone : phoneNumber
+      }
+      
+      const response = await callAPI('post', `${VITE_API_BASE_URL}${otpEndPoints.sendOtpOnWhatsapp}`, data);
+
+      console.log(response)
+
+      if(response.status == 200){
+        setShowOtpSection(true);
+        setErrorMessage('');
+      }
+
     } else {
       setErrorMessage('Please enter a correct mobile number');
     }
@@ -92,20 +54,13 @@ const UserLogin = ({ setIsLogin }) => {
   const handleGoBack = () => {
     if (showOtpSection) {
       setShowOtpSection(false);
-      setOtp(['', '', '', '']);
+      setOtp('');
     } else {
       setIsLogin(false);
     }
   };
 
-  const resetForm = () => {
-    setPhoneNumber('');
-    setShowOtpSection(false);
-    setOtp(['', '', '', '']);
-    setOtpSubmitted(false);
-    setErrorMessage('');
-    sessionStorage.removeItem('otp');
-  };
+
 
   return (
     <div className={styles.wraper}>
@@ -147,7 +102,7 @@ const UserLogin = ({ setIsLogin }) => {
             </p>
 
             <div className={styles.otpFields}>
-              {otp.map((digit, index) => (
+              {/* {otp.map((digit, index) => (
                 <input
                   key={index}
                   ref={otpRefs[index]}
@@ -158,7 +113,15 @@ const UserLogin = ({ setIsLogin }) => {
                   maxLength="1"
                   className={styles.otpInput}
                 />
-              ))}
+              ))} */}
+
+                <OtpInput
+                  value={otp}
+                  onChange={setOtp}
+                  numInputs={4}
+                  renderSeparator={<span></span>}
+                  renderInput={(props) => <input {...props} className={styles.otpInput}/>}
+                />
             </div>
 
             <button className={styles.actionButton} onClick={handleConfirmOtp}>
