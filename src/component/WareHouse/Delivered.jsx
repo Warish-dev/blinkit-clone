@@ -1,7 +1,18 @@
-import React from 'react';
+// import React from 'react';
+import React, {  useState } from 'react'
 import styles from '../../styles/ordersummary.module.css';
+import OrderRecipt from '../WareHouse/OrderRecipt'
+import Invoice from '../WareHouse/Invoice';
 
 const OrdersSummary = () => {
+
+  const [isFormOpen, setIsFormOpen] = useState(false);
+  // const [isFormOpen1, setIsFormOpen1] = useState(false);
+
+  const toggleForm = () => {
+    setIsFormOpen(true);
+  };
+
   const orders = [
     {
       id: "RC000006",
@@ -52,6 +63,17 @@ const OrdersSummary = () => {
 
   return (
     <div className={styles.container}>
+
+{
+      isFormOpen &&
+      <OrderRecipt  setIsFormOpen={setIsFormOpen}/>
+    }
+    
+    {
+      isFormOpen &&
+      <Invoice  setIsFormOpen={setIsFormOpen}/>
+    }
+
       <h2 className={styles.title}>Orders Summary</h2>
       <table className={styles.table}>
         <thead>
@@ -80,8 +102,8 @@ const OrdersSummary = () => {
               <td>{order.paymentMethod}</td>
               <td>{order.status}</td>
               <td className={styles.actions}>
-                <button className={styles.viewButton}>👁️</button>
-                <button className={styles.downloadButton}>⬇️</button>
+                <button className={styles.viewButton} onClick={() => setIsFormOpen(true)}>👁️</button>
+                {/* <button className={styles.downloadButton}>⬇️</button> */}
               </td>
             </tr>
           ))}

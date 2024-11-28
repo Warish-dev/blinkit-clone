@@ -1,9 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import styles from '../../styles/categoryComponent.module.css'
-// import masala from '../assets/logo3.png'
-// import masalas2 from '../assets/logo2.png'
-// import masala from '../assets/logo2.jpg'
 import masala from '../../assets/categoryimages/masala.jpeg'
 import paan from '../../assets/categoryimages/paan.jpg'
 import fruits from '../../assets/categoryimages/fruits.jpg'
@@ -20,15 +17,6 @@ import pharma from '../../assets/categoryimages/pharma.jpg'
 import pet from '../../assets/categoryimages/pet.jpg'
 import pc from '../../assets/categoryimages/pc.jpeg'
 
-
-
-
-
-
-
-
-
-
 function CategoryComponent() {
     const data = [
         { name: 'masala,oil and more', image: masala },
@@ -40,8 +28,6 @@ function CategoryComponent() {
         { name: 'breakfast & instant food', image: breakfast },
         { name: 'sweet tooth', image:sweet  },
         { name: 'Bakery and biscuits', image: bakery },
-        
-
     ];
 
     const data2 = [

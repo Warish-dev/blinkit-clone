@@ -6,8 +6,8 @@ import { Toaster } from 'react-hot-toast';
 import Home from './pages/Home';
 import ProductInfo from './pages/ProductInfo';
 // import Cart from './pages/Cart';
-import Login2 from './pages/Login2';
-import Signup2 from './pages/Signup2';
+import Login from './pages/Login';
+// import Signup2 from './pages/Signup2';
 import SearchProduct from './pages/SearchProduct';
 import Admin from './pages/Admin';
 import AdminPanel from './component/Admin/AdminPanel';
@@ -17,15 +17,14 @@ import DeliveryBoy from './component/Admin/DeliveryBoy';
 import Category from './component/Admin/Category';
 import Subcategory from './component/Admin/Subcategory';
 
-import Login from './pages/Login';
+// import Login from './pages/Login';
 import ProductByCategory from './pages/ProductByCategory';
 import PosterItem from './pages/PosterItem';
 
 import Warehouse from './pages/Warehouse';
 import WarehousePanel from './component/WareHouse/WarehousePanel';
 
-import Contact from './pages/contact/Contact';
-
+import Contact from './pages/Contact'
 import AboutUs from './pages/AboutUs';
 
 import Product from './component/WareHouse/Product';
@@ -54,9 +53,8 @@ const App = () => {
         {/* <Route path="/cart" element={<Cart />} /> */}
         <Route path="/productInfo/:id" element={<ProductInfo />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/signup2" element={<Signup2 />} />
+        {/* <Route path="/signup2" element={<Signup2 />} /> */}
         <Route path="/search" element={<SearchProduct />} />
-        <Route path="/Login2" element={<Login2 />} />
         <Route path="/category/:id" element={<ProductByCategory />} />
         <Route path="/PosterItem" element={<PosterItem />} />
         <Route path="/contact" element={<Contact/>} />

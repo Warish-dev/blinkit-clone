@@ -1,4 +1,5 @@
 import React, { useState, useRef } from 'react';
+import axios from 'axios'; // Importing axios
 import styles from '../../styles/userLogin.module.css';
 import logo from '../../assets/images/logo.png';
 import { BiLeftArrowAlt } from 'react-icons/bi';
@@ -8,50 +9,41 @@ const UserLogin = ({ setIsLogin }) => {
   const [showOtpSection, setShowOtpSection] = useState(false);
   const [otp, setOtp] = useState(['', '', '', '']);
   const [otpSubmitted, setOtpSubmitted] = useState(false);
-  const [errorMessage, setErrorMessage] = useState(''); // State for error message
+  const [errorMessage, setErrorMessage] = useState('');
 
-  // Refs for OTP inputs
   const otpRefs = [useRef(null), useRef(null), useRef(null), useRef(null)];
 
   // Function to generate a 6-digit OTP
   const generateOtp = () => {
     const otp = Math.floor(1000 + Math.random() * 9000); // Random 6-digit OTP
     sessionStorage.setItem('otp', otp); // Store OTP in sessionStorage
-    console.log('OTP Generated:', otp); // You can log it for testing or simulate sending it
-    sendOtpToWhatsApp(otp); // Send OTP via WhatsApp after generation
+    console.log('OTP Generated:', otp); // Log OTP for testing purposes
+    sendOtpToWhatsApp(otp); // Send OTP via WhatsApp
     return otp;
   };
 
-  // Function to send OTP via WhatsApp API
+  // Function to send OTP via WhatsApp API using Axios
   const sendOtpToWhatsApp = async (otp) => {
-    const mobileNumber = phoneNumber; // Using entered phone number
+    const mobileNumber = phoneNumber;
     const message = `Your OTP is: ${otp}`; // OTP message content
-  
-    // Ensure that the mobile number entered does not contain any spaces or extra characters
-    const formattedNumber = mobileNumber.replace(/\s+/g, '').replace(/^0+/, ''); // Remove spaces and leading zeros
-  
-    // WhatsApp API URL: using the correct number format
-    const whatsappApiUrl = `https://i.4sd.in/send-message?/send?api_key=pHtA3oH7QTMs0Eta4oSLxijjkjfoAE&sender=917982856964&number=91${formattedNumber}&message=${encodeURIComponent(message)}`;
-  
+
+    const formattedNumber = mobileNumber.replace(/\s+/g, '').replace(/^0+/, ''); // Clean up phone number
+
+    const whatsappApiUrl = ` https://i.4sd.in/send-message?api_key=pHtA3oH7QTMs0Eta4oSLxijjkjfoAE=917982856964& number=91${formattedNumber}&message=${encodeURIComponent(message)}`;
+
     try {
-      const response = await fetch(whatsappApiUrl, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      });
-  
-      const data = await response.json();
-      if (response.ok) {
-        console.log('OTP sent to WhatsApp successfully:', data);
+      const response = await axios.post(whatsappApiUrl);
+
+      // Check if the OTP was sent successfully
+      if (response.status === 200) {
+        console.log('OTP sent to WhatsApp successfully:', response.data);
       } else {
-        console.error('Failed to send OTP via WhatsApp:', data);
+        console.error('Failed to send OTP via WhatsApp:', response.data);
       }
     } catch (error) {
       console.error('Error sending OTP via WhatsApp:', error);
     }
   };
-  
 
   const handleOtpChange = (e, index) => {
     const value = e.target.value;
@@ -78,9 +70,7 @@ const UserLogin = ({ setIsLogin }) => {
     if (phoneNumber.length === 10 && /^[0-9]{10}$/.test(phoneNumber)) {
       setShowOtpSection(true);
       setErrorMessage('');
-      
-      // Generate OTP and store it in sessionStorage
-      generateOtp();
+      generateOtp(); // Generate OTP and send it
     } else {
       setErrorMessage('Please enter a correct mobile number');
     }
@@ -92,12 +82,10 @@ const UserLogin = ({ setIsLogin }) => {
 
     if (otpEntered === storedOtp) {
       console.log('OTP Verified:', otpEntered);
-
-      // Simulate OTP confirmation
       setOtpSubmitted(true);
       setIsLogin(false); // Close login page after successful OTP
     } else {
-      setErrorMessage('Incorrect OTP entered. Please try again.'); // Show error if OTP is incorrect
+      setErrorMessage('Incorrect OTP entered. Please try again.');
     }
   };
 
@@ -116,7 +104,7 @@ const UserLogin = ({ setIsLogin }) => {
     setOtp(['', '', '', '']);
     setOtpSubmitted(false);
     setErrorMessage('');
-    sessionStorage.removeItem('otp'); // Clear OTP from sessionStorage when resetting form
+    sessionStorage.removeItem('otp');
   };
 
   return (
@@ -177,12 +165,13 @@ const UserLogin = ({ setIsLogin }) => {
               Confirm OTP
             </button>
 
-            {/* Conditionally render the error message for incorrect OTP */}
             {errorMessage && <p className={styles.errorMessage}>{errorMessage}</p>}
           </div>
         ) : (
           <div className={styles.otpSubmitted}>
             <p>OTP Verified Successfully!</p>
+           
+
             <button className={styles.actionButton} onClick={resetForm}>
               Go Back
             </button>
