@@ -141,19 +141,19 @@
   .sidebar {
     position: fixed;
     top: 0;
-    right: -100%; /* Hidden by default */
+    right: -400%; /* Hidden by default */
     width: 400px;
     height: 100%;
     background-color: white;
     box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
     transition: right 0.3s ease-in-out;
-    z-index: 999; /* Higher than overlay */
+    z-index: 999; /*Higher than overlay*/
     overflow-y:auto;
     scrollbar-width: none;
   }
   
   .show {
-    right: 0; /* Show sidebar */
+    right: 0 !important; /* Show sidebar */
   }
   
   /* Sidebar Header */
@@ -301,5 +301,9 @@
 
 
 
+
+
+
+  
 
   

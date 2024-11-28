@@ -12,6 +12,7 @@ import contact from '../pages/Contact'
 import CategoryComponent from '../component/Home/CategoryComponent';
 import PosterSection from '../component/Home/PosterSection';
 import GetUserLocation from '../component/Home/GetUserLocation';
+import Cart from '../component/Home/Cart';
 
 
 
@@ -73,6 +74,8 @@ const Home = () => {
             <FaArrowUpLong className={styles.toTopBtn} />
           </div>
         }
+
+        <Cart/>
 
       </Layout>
 

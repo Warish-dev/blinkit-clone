@@ -169,7 +169,7 @@ const Cart = () => {
           )}
       
           <div
-            className={`${styles.sidebar} ${isCartOpen ? styles.show : ""}`}
+            className={`${styles.sidebar} ${isCartOpen ? (styles.show) : ""}`}
           >
             <div className={styles.sidebarHeader}>
               <h3>My Cart</h3>
@@ -261,29 +261,4 @@ const Cart = () => {
 
 
 
-// import React from 'react';
-// import styles from './CartSidebar.module.css';
-
-// const Cart = ({ isOpen, onClose }) => {
-//   return (
-//     <div
-//       className={`${styles.cartSidebar} ${isOpen ? styles.cartOpen : ''}`}
-//     >
-      
-//       <button
-//         onClick={onClose}
-//         className={styles.closeButton}
-//       >
-//         &times;
-//       </button>
-
-    
-//       <div className="p-4">
-//         <h2 className={styles.cartHeader}>My Cart</h2>
-//         <p className={styles.emptyMessage}>Your cart is empty.</p>
-//       </div>
-//     </div>
-//   );
-// };
-              
 

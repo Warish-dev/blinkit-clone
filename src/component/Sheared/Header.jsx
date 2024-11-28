@@ -12,7 +12,7 @@ const Header = () => {
 
     const { cart } = useContext(MyContext);
 
-    const {isCartOpen, setIsCartOpen} = useContext(MyContext)
+    const {isCartOpen, setIsCartOpen} = useContext(MyContext);
 
     const texts = [
         'Search "milk"',
@@ -72,7 +72,7 @@ const Header = () => {
                 <Link to={'./search'} className={styles.search}>
                     <IoSearch />
                     <div>
-                        <p key={animateKey}>{texts[currentIndex]}</p>
+                        <p style={{textAlign: "start"}} key={animateKey}>{texts[currentIndex]}</p>
                     </div>
                 </Link>
 
