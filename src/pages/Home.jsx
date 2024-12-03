@@ -5,7 +5,7 @@ import Layout from '../component/Sheared/Layout'
 import { FaArrowUpLong } from "react-icons/fa6";
 import styles from '../styles/home.module.css'
 import UserLogin from '../component/Home/UserLogin'
-
+import Bannar from '../component/Home/Bannar'
 
 import contact from '../pages/Contact'
 // import Review from '../component/Home/Review';
@@ -13,6 +13,7 @@ import CategoryComponent from '../component/Home/CategoryComponent';
 import PosterSection from '../component/Home/PosterSection';
 import GetUserLocation from '../component/Home/GetUserLocation';
 import Cart from '../component/Home/Cart';
+
 
 
 
@@ -66,8 +67,9 @@ const Home = () => {
         <HeroSection />
         <PosterSection />
         <CategoryComponent />
-
+        <Bannar/>
         <ProductSection />
+        
 
         {
           showBtn &&
