@@ -1,11 +1,13 @@
  .container1 {
-    max-width: 1200px;
+    max-width: 1000px;
     margin: auto;
-
     padding: 20px;
     background-color: #f9f9f9;
     border: 1px solid #ddd;
     border-radius: 8px;
+    margin-left: 160px;
+    margin-top: 15px;
+    
  } 
   
   .header {
@@ -32,7 +34,7 @@
     font-size: 15px;
     font-weight: 600;
     cursor: pointer;
-    margin-left: 1120px;
+    margin-left: 950px;
     margin-bottom: 15px;
 }
 

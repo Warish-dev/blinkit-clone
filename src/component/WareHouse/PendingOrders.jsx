@@ -7,10 +7,24 @@ import Invoice from '../WareHouse/Invoice';
 const OrdersSummary = () => {
 
   const [isFormOpen, setIsFormOpen] = useState(false);
+  // const [isFormOpen2, setIsFormOpen2] = useState(false);
+  const [showInvoices, setShowInvoices] = useState(false);
 
-  const toggleForm = () => {
+
+
+  const toggleOrderRecipt = () => {
     setIsFormOpen(true);
+    // setIsFormOpen2(false);
+    setShowInvoices(false);
+
   };
+
+  const toggleInvoice = () => {
+    setShowInvoices(true);
+    
+    // setIsFormOpen(false)
+
+  }
 
   const orders = [
     {
@@ -77,74 +91,61 @@ const OrdersSummary = () => {
   };
 
   return (
-
-
-
-
     <div className={styles.container}>
-
-      {/* {
-      isFormOpen &&
-      <OrderRecipt  setIsFormOpen={setIsFormOpen}/>
-    }
-    
-    {
-      isFormOpen &&
-      <Invoice  setIsFormOpen={setIsFormOpen}/>
-    } */}
-
-      {
-        isFormOpen ? (
-          <div>
-            <OrderRecipt setIsFormOpen={setIsFormOpen} />
-            <Invoice setIsFormOpen={setIsFormOpen} />
-          </div>
-        ) : (
-          <div>
-
-
-
-            <h2 className={styles.title}>Orders Summary</h2>
-            <table className={styles.table}>
-              <thead>
-                <tr>
-                  <th>Order ID</th>
-                  <th>Order Date</th>
-                  <th>Customer</th>
-                  <th>Total Amount</th>
-                  <th>Payment Method</th>
-                  <th>Status</th>
-                  <th>Action</th>
+      {isFormOpen && <OrderRecipt setIsFormOpen={setIsFormOpen} />}
+      {/* {isFormOpen2 && <Invoice setIsFormOpen2={setIsFormOpen2} />} */}
+      {showInvoices && (
+        <div>
+          
+          <Invoice setIsFormOpen2={setShowInvoices} />
+          <p>This is for electronics</p>
+          <Invoice setIsFormOpen2={setShowInvoices} />
+          
+        </div>
+      )}
+      {!isFormOpen && !showInvoices && (
+        <div>
+          <h2 className={styles.title}>Orders Summary</h2>
+          <table className={styles.table}>
+            <thead>
+              <tr>
+                <th>Order ID</th>
+                <th>Order Date</th>
+                <th>Customer</th>
+                <th>Total Amount</th>
+                <th>Payment Method</th>
+                <th>Status</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              {orders.map((order, index) => (
+                <tr key={index}>
+                  <td>{order.id}</td>
+                  <td>{order.date}</td>
+                  <td>{order.customer}</td>
+                  <td>
+                    {order.amount}{" "}
+                    <span className={`${styles.badge} ${getStatusClass(order.status)}`}>
+                      {order.status}
+                    </span>
+                  </td>
+                  <td>{order.paymentMethod}</td>
+                  <td>{order.status}</td>
+                  <td className={styles.actions}>
+                    <button className={styles.viewButton} onClick={toggleOrderRecipt}>
+                      👁️
+                    </button>
+                    <button className={styles.downloadButton} onClick={toggleInvoice}>
+                      ⬇️
+                    </button>
+                  </td>
                 </tr>
-              </thead>
-              <tbody>
-                {orders.map((order, index) => (
-                  <tr key={index}>
-                    <td>{order.id}</td>
-                    <td>{order.date}</td>
-                    <td>{order.customer}</td>
-                    <td>
-                      {order.amount}{" "}
-                      <span className={`${styles.badge} ${getStatusClass(order.status)}`}>
-                        {order.status}
-                      </span>
-                    </td>
-                    <td>{order.paymentMethod}</td>
-                    <td>{order.status}</td>
-                    <td className={styles.actions}>
-                      <button className={styles.viewButton} onClick={() => setIsFormOpen(false)}>👁️</button>
-                      <button className={styles.downloadButton} onClick={() => setIsFormOpen(true)}>⬇️</button>
-                      {/* <button className={styles.downloadButton} onClick={() => window.open(`${window.location.origin}/invoice`, '_blank')} > ⬇️</button> */}
-                    </td>
-
-                  </tr>
-                ))}
-              </tbody>
-            </table>     
-
-          </div>
-        )
-      }
+              ))}
+            </tbody>
+          </table>
+        </div>
+      )}
     </div>
   );
 };
