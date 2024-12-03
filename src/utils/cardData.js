@@ -9,8 +9,8 @@ export const productData = [
                 id:1,
                 img: productImg,
                 title: "Mixed Veggies & Juicy Fruits",
-                weight: "5 kg",
-                quantity:0,
+                quantity: "5 kg",
+               
                
                 
                 price: "200",

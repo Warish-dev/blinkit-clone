@@ -138,7 +138,7 @@ const Cart = () => {
   useEffect(() => {
     let tempTotal = 0;
     cart.forEach((item) => {
-      tempTotal += Number(item.price);
+      tempTotal += Number(item.price); 
     });
 
     setTotal(tempTotal);

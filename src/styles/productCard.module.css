@@ -334,7 +334,7 @@ a {
     .container {
       width: 150px; 
       padding: 12px; 
-      margin: 8px;
+      margin: 0px;
     }
   
     .imgContainer {
@@ -359,7 +359,7 @@ a {
     }
   }
   
-  @media (max-width: 480px) {
+  /* @media (max-width: 480px) {
     .container {
       width: 120px;
       padding: 8px;
@@ -377,7 +377,7 @@ a {
       font-size: 10px;
       padding: 4px 0;
     }
-  }
+  } */
   
 
   @media (max-width: 768px) {
@@ -394,25 +394,25 @@ a {
     }
 
     .quantityControl span {
-        font-size: 14px; /* Adjust text size */
+        font-size: 14px; 
         padding: 4px 0;
     }
 }
 
 @media (max-width: 480px) {
     .quantityControl {
-        width: 120px; /* Matches the `.container` width */
-        margin: 6px 0; /* Further reduced spacing */
+        width: 120px;
+        margin: 6px 0;
     }
 
     .decrement, .increment {
         width: 24px;
         height: 24px;
-        font-size: 16px; /* Smaller font size */
+        font-size: 16px;
     }
 
     .quantityControl span {
-        font-size: 12px; /* Even smaller text for compact view */
+        font-size: 12px;
         padding: 2px 0;
     }
 }

@@ -11,6 +11,24 @@
     box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.1);
   }  */
   
+  .container{
+    /* width:100%px; */
+    /* max-width: 1200px; */
+    margin-left: -30px ;
+    /* overflow: hidden; */
+    /* background-color: #007bff; */
+  }
+  .table{
+    max-width:1140px;
+    margin-left: 100px;
+
+    
+    /* overflow-x:scroll; */
+    /* align-items: center; */
+  }
+ 
+
+
   .title {
     font-size: 18px;
     font-weight: bold;
@@ -103,12 +121,12 @@
     .downloadButton {
       font-size: 14px;
     }
-  }
+  } 
   
-  @media (max-width: 480px) {
+  /* @media (max-width: 480px) {
     .title {
       font-size: 20px;
-    }
+    } 
   
     .table th,
     .table td {
@@ -132,4 +150,4 @@
     .table td {
       text-align: left;
     }
-  }
+  } */
