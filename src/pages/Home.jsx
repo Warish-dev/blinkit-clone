@@ -66,6 +66,7 @@ const Home = () => {
 
         <HeroSection />
         <PosterSection />
+        
         <CategoryComponent />
         <Bannar/>
         <ProductSection />

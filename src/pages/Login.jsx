@@ -1,123 +1,11 @@
-// import React, { useState, useEffect } from 'react';
-// import { Link } from 'react-router-dom';
-// import styles from "../styles/login_signup.module.css";
-// import { IoMdMail } from "react-icons/io";
-// import { RiLockPasswordFill } from "react-icons/ri";
-// import image from'../assets/images/logo.png';
-// import axios from 'axios'
-
-
-
-// const preventRefresh = (e) => {
-//   e.preventDefault();
-// };
-
-// export default function Login() {
- 
-//   const [selectedRole, setSelectedRole] = useState('');
-//   const [isMobile, setIsMobile] = useState(false);
-
-//   const handleRoleSelect = (role) => {
-//     setSelectedRole(role);
-//   };
-
-  
-//   useEffect(() => {
-//     const handleResize = () => {
-//       setIsMobile(window.innerWidth <= 768);
-//     };
-
-   
-//     handleResize();
-
-    
-//     window.addEventListener('resize', handleResize);
-
-   
-//     return () => {
-//       window.removeEventListener('resize', handleResize);
-//     };
-//   }, []);
-
-//   return (
-//     <div className={styles.main}>
-//       <div className={`${styles.wrapped} ${styles.signIn}`}>
-//         <div className={styles.form2}>
-          
-//           {isMobile ? (
-//             <img src={image} alt="Logo" className={styles.logo} />
-//           ) : (
-//             <div className={styles.heading2}>LOGIN</div>
-//           )}
-
-//           <div className={styles.btnbox}>
-           
-//             <p 
-//               className={`${styles.btn2} ${selectedRole === 'Admin' ? styles.selected : styles.unselected}`} 
-//               onClick={() => handleRoleSelect('Admin')}
-//             >
-//               Warehouse
-//             </p>
-            
-//             <p 
-//               className={`${styles.btn2} ${selectedRole === 'Warehouse' ? styles.selected : styles.unselected}`} 
-//               onClick={() => handleRoleSelect('Warehouse')}
-//             >
-//               Admin
-//             </p>
-//           </div>
-
-//           <form>
-//             <div className={styles.input_container}>
-//               <label className={styles.lbl} htmlFor="name">
-//                 <IoMdMail />
-//               </label>
-//               <input 
-//                 className={styles.input} 
-//                 type="email" 
-//                 required  
-//                 id="name" 
-//                 placeholder="Enter your E-Mail" 
-//               />
-//             </div>
-//             <div>
-//               <label className={styles.lbl} htmlFor="e-mail">
-//                 <RiLockPasswordFill />
-//               </label>
-//               <input 
-//                 className={styles.input} 
-//                 type="Password" 
-//                 required  
-//                 id="e-mail" 
-//                 placeholder="Enter your password" 
-                
-//               />
-//             </div>
-//             <button className={styles.btn} type="submit"  onClick={preventRefresh}>
-//               Submit
-//             </button>
-//           </form>
-//           <p>
-//             Don't have an account? <Link to="/signup2">Sign up</Link>
-//           </p>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// }
-
-
-
-
-
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import styles from "../styles/login_signup.module.css";
 import { IoMdMail } from "react-icons/io";
 import { RiLockPasswordFill } from "react-icons/ri";
-import image from '../assets/images/logo.png';
+import image from '../assets/login.jpeg';
 import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
+// import axios from 'axios';
 import { callAPI } from '../services/callAPIFunction';
 import { adminEndPoints, warehouseEndPoints } from '../services/apiEndPoints';
 import toast from 'react-hot-toast';
@@ -157,55 +45,6 @@ export default function Login() {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
-
-
-
-
-  // Login function
-  // const login = async (e) => {
-  //   e.preventDefault();
-
-  //   // Validation
-  //   if (!email || !password || !selectedRole) {
-  //     alert('Please fill in all fields and select a role.');
-  //     return;
-  //   }
-
-  //   // Determine API endpoint
-  //   const endpoint =
-  //     selectedRole === 'Admin'
-  //       ? 'https://bijlimart-backend.onrender.com/api/admin/login'
-  //       : 'https://bijlimart-backend.onrender.com/api/warehouse/login'; // Replace with Warehouse endpoint if different.
-
-  //   setLoading(true);
-  //   try {
-  //     const response = await axios.post(
-  //       endpoint,
-  //       { email, password },
-  //       { withCredentials: true } // Send cookies to the server
-  //     );
-
-  //     console.log(`${selectedRole} login successful:`, response.data);
-  //     //store the response in localStorage
-  //     localStorage.setItem('userData',JSON.stringify(response.data.admin));
-  //     alert (`${selectedRole} login successful`);
-      
-  //     //Redirect to admin dashboard after successful login
-  //     if (selectedRole == 'Admin'){
-  //       navigate('/admin/dashboard');
-  //     }else {
-  //       navigate('/warehouse/dashboard');
-  //     }
-
-  //     // Redirect logic or further processing can go here.
-  //   } catch (error) {
-  //     console.error(`${selectedRole} login failed:`, error.response?.data || error.message);
-  //     alert(`${selectedRole} login failed. Please check your credentials.`);
-  //   } finally {
-  //     setLoading(false);
-  //   }
-  // };
-
 
   const login = async (e) => {
     e.preventDefault();
@@ -277,12 +116,12 @@ export default function Login() {
           </div>
 
           <form onSubmit={login}>
-            <div className={styles.input_container}><IoMdMail />
+            <div className={styles.input_container}><IoMdMail className={styles.logo1}/>
 
               {/* <label className={styles.lbl} htmlFor="email">
               </label> */}
                <input
-                className={styles.input}
+                className={styles.input1}
                 type="email"
                 id="email"
                 placeholder="Enter your E-Mail"
@@ -291,7 +130,7 @@ export default function Login() {
                 required
               />
            </div>
-            <div className={styles.input_container}><RiLockPasswordFill />
+            <div className={styles.input_container}><RiLockPasswordFill className={styles.logo}/>
 
               {/* <label className={styles.lbl} htmlFor="password">
               </label> */}
