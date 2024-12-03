@@ -1,5 +1,8 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import axios from 'axios'; // Importing axios
+// import react,{Route,Routes}
+// import { Route, Routes } from 'react-router-dom';
+
 import styles from '../../styles/userLogin.module.css';
 import logo from '../../assets/images/logo.png';
 import { BiLeftArrowAlt } from 'react-icons/bi';
@@ -8,10 +11,15 @@ import OtpInput from 'react-otp-input';
 import { callAPI } from '../../services/callAPIFunction';
 import { otpEndPoints } from '../../services/apiEndPoints';
 import FullScreenLoader from './FullScreenLoader.jsx';
+import toast from 'react-hot-toast';
+import { useNavigate } from 'react-router-dom';
 // import { error } from 'console';
 const { VITE_API_BASE_URL } = import.meta.env;
 
 const UserLogin = ({ setIsLogin }) => {
+
+  const navigate = useNavigate();
+
   const [phoneNumber, setPhoneNumber] = useState('');
   const [showOtpSection, setShowOtpSection] = useState(false);
   const [otp, setOtp] = useState('');
@@ -20,43 +28,64 @@ const UserLogin = ({ setIsLogin }) => {
   const [loading, setLoading] = useState(false); // State to control loader visibility
 
 
+  useEffect(() => {
+    const isLoggedIn = localStorage.getItem('user');
+    if (isLoggedIn) {
+      setIsLogin(false);
+    }
+  }, []);
+  
+  
+  
+  const handleLoginLogout = () => {
+    if (isLoggedIn) {
+        // Handle logout logic here (e.g., clearing auth data, tokens, etc.)
+        setIsLoggedIn(false);
+    } else {
+        // Handle login logic here
+        setIsLoggedIn(true);
+    }
+};
+
 
   const handleContinue = async () => {
     if (phoneNumber.length === 10 && /^[0-9]{10}$/.test(phoneNumber)) {
-      setLoading(true); // Show loader
-      const data = { phone: phoneNumber };
-      
-      try {
-        const response = await callAPI('post', `${VITE_API_BASE_URL}${otpEndPoints.sendOtpOnWhatsapp}`, data);
-        console.log(response);
-
-        if (response.status === 200) {
-          setShowOtpSection(true);
-          setErrorMessage('');
-        } else {
-          setErrorMessage('Failed to send OTP. Try again!');
-        }
-      } catch (error) {
-        setErrorMessage('Error sending OTP. Please try again.');
-      } finally {
-        setLoading(false); // Hide loader after request is done
+      setLoading(true);
+ 
+      const data = {
+        phone : phoneNumber
       }
+      
+      const response = await callAPI('post', `${VITE_API_BASE_URL}${otpEndPoints.sendOtpOnWhatsapp}`, data);
+
+      if(response.status == 200){
+        const data ={phone:phoneNumber}
+        sessionStorage.setItem('otp', response.data.otp);
+        setShowOtpSection(true);
+        setErrorMessage('');
+        setLoading(false);
+      }
+
     } else {
       setErrorMessage('Please enter a correct mobile number');
+      setLoading(false);
     }
   };
 
-  const handleConfirmOtp = async () => {
-    const otpEntered = otp.join('');
-    const storedOtp = sessionStorage.getItem('otp'); // Retrieve OTP from sessionStorage
+  const handleConfirmOtp = () => {
 
-    if (otpEntered === storedOtp) {
-      console.log('OTP Verified:', otpEntered);
-      setOtpSubmitted(true);
+    console.log("object")
+    const storedOtp = sessionStorage.getItem('otp') // Retrieve OTP from sessionStorage
+    
+    if(storedOtp === otp){
+      toast.success("Login Successful")
+      setErrorMessage('')
       setIsLogin(false); // Close login page after successful OTP
     } else {
-      setErrorMessage('Incorrect OTP entered. Please try again.');
+      // setErrorMessage('Incorrect OTP entered. Please try again.');
+      toast.error("incorrect OTP")
     }
+
   };
 
   const handleGoBack = () => {
@@ -123,20 +152,20 @@ const UserLogin = ({ setIsLogin }) => {
                 renderInput={(props) => <input {...props} className={styles.otpInput} />}
               />
             </div>
+            {/* {errorMessage && <p className={styles.otperrorMessage}>{errorMessage}</p>} */}
 
             <button className={styles.actionButton} onClick={handleConfirmOtp}>
               Confirm OTP
             </button>
 
-            {errorMessage && <p className={styles.errorMessage}>{errorMessage}</p>}
           </div>
         ) : (
           <div className={styles.otpSubmitted}>
             <p>OTP Verified Successfully!</p>
 
-            <button className={styles.actionButton} onClick={handleGoBack}>
+            {/* <button className={styles.actionButton} onClick={handleGoBack}>
               Go Back
-            </button>
+            </button> */}
           </div>
         )}
       </div>
