@@ -75,9 +75,7 @@ const OrdersSummary = () => {
       paymentMethod: "Cash Payment",
       status: "Delivered",
     },
-
-
-
+    {
         id: "RC000004",
         date: "05 Oct 2024, 03:18 PM",
         customer: "User",
@@ -100,10 +98,7 @@ const OrdersSummary = () => {
         amount: "Rs.1800",
         paymentMethod: "Cash Payment",
         status: "Delivered",
-      },
-     
-      
-
+      }
   ];
 
   const getStatusClass = (status) => {
