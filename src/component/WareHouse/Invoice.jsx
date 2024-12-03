@@ -1,120 +1,3 @@
-// import React from "react";
-// import styles from "../../styles/invoice.module.css";
-// import Blogo from '../../assets/Blogo.jpeg';
-
-// const Invoice = ({setIsFormOpen}) => {
-
-//     const toggleForm = () => {
-//         setIsFormOpen(false);
-//     };
-
-//   return (
-//     <div className={styles.invoiceContainer}>
-//         <p className={styles.cross} onClick={toggleForm}>
-//           X
-//         </p>
-//       <header className={styles.header}>
-//         <div>
-//             <img src={Blogo} className={styles.Blogo}/>
-//           <h1 className={styles.companyName}>Bijli Mart</h1>
-//           <a href="https://demo.bijlimart.app" className={styles.link}>
-//             https://demo.bijlimart.app
-//           </a>
-//           <p>Shyamoli, Muhammadpur, Dhaka</p>
-//         </div>
-//         <div className={styles.invoiceInfo}>
-//           <h2>Invoice of (Rs.)</h2>
-//           <h2 className={styles.totalAmount}>Rs.1800</h2>
-//         </div>
-//       </header>
-
-//       <section className={styles.billToSection}>
-//         <h3>Bill To:</h3>
-//         <div className={styles.address}>
-//         <p>User</p>
-//         <p>Address: Shekertek, Adabor Thana, Shymoli</p>
-//         <p>Email: user@gmail.com</p>
-//         </div>
-//       </section>
-
-//       <section className={styles.paymentSection}>
-//         <div>
-//           <div className={styles.details}>
-//           <p>Payment Method:</p>
-//           <b> Cash Payment</b>
-//           </div>
-//           <div className={styles.details}>
-//           <p>Invoice Number:</p>
-//           <b>#RC000006</b>
-//           </div>
-//           <div className={styles.details}>
-//           <p>Invoice Date:</p>
-//           <b> 27 November, 2024</b>
-//           </div>
-//           <div className={styles.details}>
-//           <p>Order Date: </p>
-//           <b>05 October, 2024</b>
-//           </div>
-//         </div>
-//       </section>
-
-//       <table className={styles.invoiceTable}>
-//         <thead>
-//           <tr>
-//             <th>Item</th>
-//             <th>Item Name</th>
-//             <th>Rate</th>
-//             <th>Quantity</th>
-//             <th>Size</th>
-//             <th>Color</th>
-//             <th>Price</th>
-//           </tr>
-//         </thead>
-//         <tbody>
-//           <tr>
-//             <td>1.</td>
-//             <td>
-//               Sony A6400 Mirrorless Camera With 18-135mm Lens
-//               <p className={styles.itemDescription}>
-//                 Key Features: Model: A6400 24.2MP APS-C Exmor CMOS Sensor...
-//               </p>
-//             </td>
-//             <td>Rs.1800</td>
-//             <td>1</td>
-//             <td>N/A</td>
-//             <td>Black</td>
-//             <td>Rs.1800</td>
-//           </tr>
-//         </tbody>
-//       </table>
-
-//       <section className={styles.totalSection}>
-//       <div className={styles.details}>
-//         <p>Subtotal: </p>
-//         <b>Rs.1800</b>
-//         </div>
-//         <div className={styles.details}>
-//         <p>Discount: </p>
-//         <b>Rs.0</b>
-//         </div>
-//         <div className={styles.details}>
-//         <p>Delivery Charge: </p>
-//         <b>Rs.0</b>
-//         </div>
-//         <h3>Total: <span>Rs.1800</span></h3>
-//       </section>
-
-//       <footer className={styles.footer}>
-//       <div className={styles.details}>
-//         <p>Thanks for the business.</p>
-//         <b>Signature</b>
-//         </div>
-//       </footer>
-//     </div>
-//   );
-// };
-
-// export default Invoice;
 
 
 import React, { useRef } from "react";
@@ -123,11 +6,11 @@ import { jsPDF } from "jspdf";
 import styles from "../../styles/invoice.module.css";
 import Blogo from "../../assets/Blogo.jpeg";
 
-const Invoice = ({ setIsFormOpen }) => {
+const Invoice = ({ setIsFormOpen2 }) => {
   const invoiceRef = useRef();
 
   const toggleForm = () => {
-    setIsFormOpen(false);
+    setIsFormOpen2(false);
   };
 
   const downloadPDF = async () => {

@@ -1,12 +1,15 @@
  .container1 {
-    max-width: 1150px;
+
+    max-width: 1000px;
     margin: auto;
-    margin-left: 45px;
-    margin-top: 20px;
+
     padding: 20px;
     background-color: #f9f9f9;
     border: 1px solid #ddd;
     border-radius: 8px;
+    margin-left: 160px;
+    margin-top: 15px;
+    
  } 
   
   .header {
@@ -33,7 +36,8 @@
     font-size: 15px;
     font-weight: 600;
     cursor: pointer;
-    margin-left: 1100px;
+    margin-left: 950px;
+
     margin-bottom: 15px;
 }
 
