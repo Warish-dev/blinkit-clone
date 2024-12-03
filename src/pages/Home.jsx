@@ -16,6 +16,7 @@ import Cart from '../component/Home/Cart';
 
 
 
+
 const Home = () => {
 
   const [showBtn, setShowBtn] = useState(false);
@@ -67,6 +68,7 @@ const Home = () => {
         <CategoryComponent />
         <Bannar/>
         <ProductSection />
+        
 
         {
           showBtn &&

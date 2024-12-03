@@ -1,8 +1,7 @@
 // import React from 'react';
 import React, { useState } from 'react'
 import styles from '../../styles/ordersummary.module.css';
-import OrderRecipt from '../WareHouse/OrderRecipt'
-import Invoice from '../WareHouse/Invoice';
+
 
 const OrdersSummary = () => {
 
@@ -31,7 +30,7 @@ const OrdersSummary = () => {
       id: "RC0000067",
       date: "05 Oct 2024, 03:24 PM",
       customer: "User",
-      amount: "$1800",
+      amount: "Rs.1800",
       paymentMethod: "Cash Payment",
       status: "Pending",
     },
@@ -39,7 +38,7 @@ const OrdersSummary = () => {
       id: "RC000005",
       date: "05 Oct 2024, 03:20 PM",
       customer: "User",
-      amount: "$1800",
+      amount: "Rs.1800",
       paymentMethod: "Cash Payment",
       status: "Pending",
     },
@@ -47,11 +46,12 @@ const OrdersSummary = () => {
       id: "RC000004",
       date: "05 Oct 2024, 03:18 PM",
       customer: "User",
-      amount: "$1800",
+      amount: "Rs.1800",
       paymentMethod: "Cash Payment",
       status: "Delivered",
     },
     {
+
       id: "RC000004",
       date: "05 Oct 2024, 03:18 PM",
       customer: "User",
@@ -76,6 +76,33 @@ const OrdersSummary = () => {
       status: "Delivered",
     },
 
+
+
+        id: "RC000004",
+        date: "05 Oct 2024, 03:18 PM",
+        customer: "User",
+        amount: "Rs.1800",
+        paymentMethod: "Cash Payment",
+        status: "Delivered",
+      },
+      {
+        id: "RC000004",
+        date: "05 Oct 2024, 03:18 PM",
+        customer: "User",
+        amount: "Rs.1800",
+        paymentMethod: "Cash Payment",
+        status: "Delivered",
+      },
+      {
+        id: "RC000004",
+        date: "05 Oct 2024, 03:18 PM",
+        customer: "User",
+        amount: "Rs.1800",
+        paymentMethod: "Cash Payment",
+        status: "Delivered",
+      },
+     
+      
 
   ];
 
@@ -92,6 +119,7 @@ const OrdersSummary = () => {
 
   return (
     <div className={styles.container}>
+
       {isFormOpen && <OrderRecipt setIsFormOpen={setIsFormOpen} />}
       {/* {isFormOpen2 && <Invoice setIsFormOpen2={setIsFormOpen2} />} */}
       {showInvoices && (
@@ -146,6 +174,8 @@ const OrdersSummary = () => {
           </table>
         </div>
       )}
+
+
     </div>
   );
 };

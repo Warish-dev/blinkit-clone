@@ -130,6 +130,7 @@ function CategoryForm({ setIsFormOpen }) {
   return (
     <div>
       <div className={styles.row}>
+
         <h1 className={styles.heading}>Add Category</h1>
         <form onSubmit={handleSubmit}>
           <div className={styles.formGroup}>

@@ -17,12 +17,17 @@
   }
   .Blogo
   {
-    height: 70px;
+    height: 90px;
+    /* margin-bottom: 20px; */
+    /* position: absolute;
+    top: 930px; */
+
   }
   
   .companyName {
     font-size: 24px;
     color: yellowgreen;
+    /* margin-bottom: 20px; */
   }
   
   .link {
@@ -117,4 +122,5 @@
   .downloadButton
   {
     margin-left: 250px;
+
   }

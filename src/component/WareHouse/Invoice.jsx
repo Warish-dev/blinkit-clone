@@ -1,4 +1,5 @@
 
+
 import React, { useRef } from "react";
 import html2canvas from "html2canvas";
 import { jsPDF } from "jspdf";
@@ -55,8 +56,8 @@ const Invoice = ({ setIsFormOpen2 }) => {
             <p>Shyamoli, Muhammadpur, Dhaka</p>
           </div>
           <div className={styles.invoiceInfo}>
-            <h2>Invoice of ($)</h2>
-            <h2 className={styles.totalAmount}>$1800</h2>
+            <h2>Invoice of (Rs.)</h2>
+            <h2 className={styles.totalAmount}>Rs.1800</h2>
           </div>
         </header>
 
@@ -111,11 +112,11 @@ const Invoice = ({ setIsFormOpen2 }) => {
                   Key Features: Model: A6400 24.2MP APS-C Exmor CMOS Sensor...
                 </p>
               </td>
-              <td>$1800</td>
+              <td>Rs.1800</td>
               <td>1</td>
               <td>N/A</td>
               <td>Black</td>
-              <td>$1800</td>
+              <td>Rs.1800</td>
             </tr>
           </tbody>
         </table>
@@ -123,18 +124,18 @@ const Invoice = ({ setIsFormOpen2 }) => {
         <section className={styles.totalSection}>
           <div className={styles.details}>
             <p>Subtotal:</p>
-            <b>$1800</b>
+            <b>Rs.1800</b>
           </div>
           <div className={styles.details}>
             <p>Discount:</p>
-            <b>$0</b>
+            <b>Rs.0</b>
           </div>
           <div className={styles.details}>
             <p>Delivery Charge:</p>
-            <b>$0</b>
+            <b>Rs.0</b>
           </div>
           <h3>
-            Total: <span>$1800</span>
+            Total: <span>Rs.1800</span>
           </h3>
         </section>
 
@@ -144,10 +145,11 @@ const Invoice = ({ setIsFormOpen2 }) => {
             <b>Signature</b>
           </div>
         </footer>
-      </div>
-      <button onClick={downloadPDF} className={styles.downloadButton}>
+        <button onClick={downloadPDF} className={styles.downloadButton}>
         Download PDF
       </button>
+      </div>
+     
     </div>
   );
 };
