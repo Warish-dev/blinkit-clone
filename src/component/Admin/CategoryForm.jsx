@@ -21,9 +21,9 @@ function CategoryForm({ setIsFormOpen }) {
     <div>
        
       <div className={styles.row}>
-        {/* <p className={styles.cross} >
+        <p className={styles.cross} >
           X
-        </p> */}
+        </p>
         <h1 className={styles.heading}>Add Category</h1>
         <div className={styles.formGroup}>
           <label>Category Name</label>

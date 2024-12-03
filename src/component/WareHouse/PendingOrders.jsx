@@ -1,23 +1,20 @@
 // import React from 'react';
 import React, {  useState } from 'react'
 import styles from '../../styles/ordersummary.module.css';
-import OrderRecipt from '../WareHouse/OrderRecipt'
-import Invoice from '../WareHouse/Invoice';
+
 
 const OrdersSummary = () => {
 
-  const [isFormOpen, setIsFormOpen] = useState(false);
+  
 
-  const toggleForm = () => {
-    setIsFormOpen(true);
-  };
+ 
 
   const orders = [
     {
       id: "RC000006",
       date: "05 Oct 2024, 03:24 PM",
       customer: "User",
-      amount: "$1800",
+      amount: "Rs.1800",
       paymentMethod: "Cash Payment",
       status: "Pending",
     },
@@ -25,7 +22,7 @@ const OrdersSummary = () => {
       id: "RC000005",
       date: "05 Oct 2024, 03:20 PM",
       customer: "User",
-      amount: "$1800",
+      amount: "Rs.1800",
       paymentMethod: "Cash Payment",
       status: "Pending",
     },
@@ -33,7 +30,7 @@ const OrdersSummary = () => {
       id: "RC000004",
       date: "05 Oct 2024, 03:18 PM",
       customer: "User",
-      amount: "$1800",
+      amount: "Rs.1800",
       paymentMethod: "Cash Payment",
       status: "Delivered",
     },
@@ -41,7 +38,7 @@ const OrdersSummary = () => {
         id: "RC000004",
         date: "05 Oct 2024, 03:18 PM",
         customer: "User",
-        amount: "$1800",
+        amount: "Rs.1800",
         paymentMethod: "Cash Payment",
         status: "Delivered",
       },
@@ -49,7 +46,7 @@ const OrdersSummary = () => {
         id: "RC000004",
         date: "05 Oct 2024, 03:18 PM",
         customer: "User",
-        amount: "$1800",
+        amount: "Rs.1800",
         paymentMethod: "Cash Payment",
         status: "Delivered",
       },
@@ -57,7 +54,7 @@ const OrdersSummary = () => {
         id: "RC000004",
         date: "05 Oct 2024, 03:18 PM",
         customer: "User",
-        amount: "$1800",
+        amount: "Rs.1800",
         paymentMethod: "Cash Payment",
         status: "Delivered",
       },
@@ -83,15 +80,7 @@ const OrdersSummary = () => {
 
     <div className={styles.container}>
 
-{
-      isFormOpen &&
-      <OrderRecipt  setIsFormOpen={setIsFormOpen}/>
-    }
-    
-    {
-      isFormOpen &&
-      <Invoice  setIsFormOpen={setIsFormOpen}/>
-    }
+
 
       <h2 className={styles.title}>Orders Summary</h2>
       <table className={styles.table}>
@@ -114,15 +103,15 @@ const OrdersSummary = () => {
               <td>{order.customer}</td>
               <td>
                 {order.amount}{" "}
-                <span className={`${styles.badge} ${getStatusClass(order.status)}`}>
+                <span className={`Rs.{styles.badge} Rs.{getStatusClass(order.status)}`}>
                   {order.status}
                 </span>
               </td>
               <td>{order.paymentMethod}</td>
               <td>{order.status}</td>
               <td className={styles.actions}>
-                <button className={styles.viewButton} onClick={() => setIsFormOpen(false)}>👁️</button>
-                <button className={styles.downloadButton}  onClick={() => setIsFormOpen(true)}>⬇️</button>
+                <button className={styles.viewButton} >👁️</button>
+                {/* <button className={styles.downloadButton}  onClick={() => setIsFormOpen(true)}>⬇️</button> */}
               </td>
             </tr>
           ))}
