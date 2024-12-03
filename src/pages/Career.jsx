@@ -6,7 +6,7 @@ import img1 from '../assets/aboutUs/pic1.jpeg'
 import img2 from '../assets/aboutUs/pic2.jpeg'
 
 import image2 from '../assets/aboutUs/img4.jpeg'
-import banner from '../assets/aboutUs/banner2.jpeg'
+import banner from '../assets/images/banner2.jpeg'
 
 
 function Career() {
@@ -28,7 +28,7 @@ function Career() {
           </div>
           <div className={styles.youtubesection}>
             <h2>What sets us apart</h2>
-            <div className={styles.video}><iframe width="100%" height="100%" src="https://www.youtube.com/embed/DxDU7QBNEbM?si=IzRozMOnPkDpxaCg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+            <div className={styles.video}><iframe width="100%" height="100%" src="https://www.youtube.com/embed/DxDU7QBNEbM?si=IzRozMOnPkDpxaCg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"  allowfullscreen></iframe></div>
           </div>
         <div className={styles.philosophy}>
           <div className={styles.philosophyHeading}><h2>Our shared philosophy</h2></div>

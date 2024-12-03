@@ -26,7 +26,7 @@ function TopBar() {
 
         <ul className={`${styles.navul} ${isNavOpen ? styles.navOpen : ''}`}>
             <li><Link to="/">Home</Link></li>
-            <li><Link to="/about">About</Link></li>
+            <li><Link to="/aboutUs">About</Link></li>
             <li><Link to="/career">Career</Link></li>
             <li><Link to="/partner">Partner</Link></li>
             <li><Link to="/blog">Blog</Link></li>

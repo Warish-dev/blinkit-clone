@@ -7,11 +7,11 @@ import { jsPDF } from "jspdf";
 import styles from "../../styles/invoice.module.css";
 import Blogo from "../../assets/Blogo.jpeg";
 
-const Invoice = ({ setIsFormOpen }) => {
+const Invoice = ({ setIsFormOpen2 }) => {
   const invoiceRef = useRef();
 
   const toggleForm = () => {
-    setIsFormOpen(false);
+    setIsFormOpen2(false);
   };
 
   const downloadPDF = async () => {
