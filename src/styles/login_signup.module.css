@@ -28,11 +28,14 @@
 
 .form2 {
   padding: 1.5rem;
-  width: 400px;
-  background: rgba(255, 255, 255, 0.8);
-  
+  height: 500px;
+  width: 500px;
+  background-color: rgb(255, 250, 250);
+  border: 0.5px solid rgb(234, 232, 232);
+  /* background: rgba(255, 255, 255, 0.8); */
+  /* box-shadow: 2px 2px 5px 5px rgba(0, 0, 0, 0.2); */
   border-radius: 8px;
-  margin-left: 300px;
+  /* margin-left: 300px; */
   display: flex;
   flex-direction: column;
   align-items: center; /* Center form content */
@@ -42,50 +45,31 @@
   font-size: 1.5rem;
   font-weight: bold;
   text-align: center;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
+  text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+}
+.input_container .input1{
+  margin-top: 20px;
+  width: 400px;
+  height: 45px;
+  margin-bottom: 50px;
 }
 
-.input_container {
-  display: flex;
-  width: 100%;
-  border-bottom: 1px solid black;
-  align-items: center;
-  /* border: 1px solid red; */
-  /* gap: 20px; */
-
+.input_container .input{
+  
+  width: 400px;
+  height: 45px;
+  margin-bottom: 50px;
 }
-
-.input5 {
-  height: 20px;
-  width: 100%;
-  padding: 15px;
-  /* padding-bottom: 10px; */
-  margin-left: 10px;
-  background: transparent;
-  border-left: none;
-  border-right: none;
-  text-decoration: none;
-  /* gap: 50; */
-
-  border-top: none;
-  border-bottom: 1px solid #232b2b;
-  outline: none;
-  border: none;
-}
-.input5:focus {
-  box-shadow: none; /* Remove the default box-shadow */
-  border-color: #a0a0a0; /* Optional: Change border color on focus */
-}
-/*  */
 .btn {
   height: 40px;
   width: 100%; /* Ensure button takes full width */
-  background-color: #232b2b;
+  background-color: #386565;
   color: white;
   text-transform: uppercase;
   letter-spacing: 1px;
   border: none;
-  display: block;
+  /* display: block; */
   margin: 1.5rem 0;
   font-weight: bold;
   border-radius: 8px;
@@ -94,14 +78,14 @@
 
 .btnbox {
   display: flex;
-  width: 70%;
-  /* gap: 20px; */
+  width: 90%;
+  
   justify-content: space-between;
-  margin-bottom: 1rem; /* Add some space between buttons and inputs */
+  margin-bottom: 1rem; 
 }
 
 .btnbox p {
-  width: 48%; /* Ensure buttons are smaller and aligned side-by-side */
+  width: 48%; 
   /* padding: 10px; */
   margin:10px;
   text-align: center;
@@ -115,7 +99,7 @@
 }
 
 .selected {
-  background-color: #e9a70b; /* Dark yellow for selected */
+  background-color: #386565; /* Dark yellow for selected */
   color: white;
 }
 
@@ -147,45 +131,59 @@
 button:active {
   transform: scale(0.98);
 }
+.logo
+{
+  position: absolute;
+  transform: translate(-50%);
+  left: 61.5%;
+  top: 55%;
+}
+.logo1
+{
+  position: absolute;
+  transform: translate(-50%);
+  left: 61.5%;
+  top: 42%;
+}
 
-p {
+/* p {
   font-size: 0.85rem;
   text-align: center;
-}
+} */
 
-p a {
+/* p a {
   color: #232b2b;
   text-decoration: none;
-}
+} */
 
-p a:hover {
+/* p a:hover {
   text-decoration: underline;
-}
+} */
 
 /* Media Queries for Responsiveness */
 
 /* For screens less than or equal to 768px */
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   .main {
     background: none;
-    flex-direction: column; /* Stack items vertically */
-    justify-content: center; /* Center the content */
-    align-items: center; /* Center the content horizontally */
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
   }
 
   .form2 {
-    width: 80%; /* Allow the form to be more fluid */
-    max-width: 400px; /* Set a max-width for the form */
+    
+    max-width: 400px; 
     padding: 1rem;
-    margin-left: 0; /* Remove left margin on mobile */
+    margin-left: 0; 
     box-shadow: 0px 0px 10px 10px gray;
 
   }
 
   .logo {
-    display: block; /* Show the logo */
-    width: 100px; /* Adjust logo size as needed */
-    margin: 0 auto; /* Center logo */
+    display: block; 
+    width: 100px; 
+    margin: 0 auto; 
   }
 
   .form2 .heading2 {
@@ -194,24 +192,24 @@ p a:hover {
 
   .input_container,
   .input5 {
-    width: 100%; /* Make inputs fill the width of the form */
+    width: 100%; 
   }
 
   .btnbox {
-    width: 100%; /* Make button container take full width */
-    justify-content: space-between; /* Make buttons evenly spaced */
+    width: 100%; 
+    justify-content: space-between; 
   }
 
   .btnbox p {
-    width: 48%; /* Ensure buttons are smaller and aligned side-by-side */
+    width: 48%; 
     padding: 10px;
   }
 }
 
-/* For screens less than or equal to 425px (Mobile Devices) */
+
 @media (max-width: 425px) {
   .main {
-    background-image: none; /* Remove background image on phone view */
+    background-image: none; 
   }
 
   .btn {
@@ -226,7 +224,7 @@ p a:hover {
 
   .btn:hover {
     background-color:#e9a70b;
-    /* opacity: .5; */
+   
   }
 
   .form2 {
@@ -238,12 +236,12 @@ p a:hover {
   }
 
   .logo {
-    display: block; /* Show the logo */
-    width: 100px; /* Adjust logo size as needed */
-    margin: 0 auto; /* Center logo */
+    display: block;
+    width: 100px; 
+    margin: 0 auto;
   }
 
   .form2 .heading2 {
     font-size: 1.1rem
   }
-}
+} */

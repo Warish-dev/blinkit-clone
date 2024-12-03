@@ -21,7 +21,7 @@ function CategoryForm({ setIsFormOpen }) {
     <div>
        
       <div className={styles.row}>
-        <p className={styles.cross} >
+        <p className={styles.cross} onClick={toggleForm} >
           X
         </p>
         <h1 className={styles.heading}>Add Category</h1>
