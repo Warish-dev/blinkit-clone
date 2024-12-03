@@ -1,5 +1,5 @@
  .container1 {
-    max-width: 1200px;
+    max-width: 1150px;
     margin: auto;
     margin-left: 45px;
     margin-top: 20px;
@@ -33,7 +33,7 @@
     font-size: 15px;
     font-weight: 600;
     cursor: pointer;
-    margin-left: 1120px;
+    margin-left: 1100px;
     margin-bottom: 15px;
 }
 
@@ -73,12 +73,7 @@
     border-radius: 4px;
   }
   
-  .check
-  {
-    /* position: absolute;
-    left: 650px;
-    bottom: 230px; */
-  }
+  
   .grandTotal {
     font-size: 18px;
     color: #000;
@@ -110,6 +105,14 @@
   .customerInfo h5
   {
     color: #555;
+  }
+  .cross
+  {
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-left: 1000px;
+    margin-bottom: 15px;
   }
   @media (max-width: 768px) {
     .header {

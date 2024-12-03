@@ -100,7 +100,7 @@
       //   </div>
       //   <div className={styles.details}>
       //   <p>Road No.:</p>
-      //   <b>Flat No.: 19</b>
+      //   <b>Flat No.: 19</b>  
       //   </div>
       //   <div className={styles.details}>
       //   <p>Post Code:</p>

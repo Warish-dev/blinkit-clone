@@ -3,6 +3,7 @@ import React, {  useState } from 'react'
 import styles from '../../styles/ordersummary.module.css';
 import OrderRecipt from '../WareHouse/OrderRecipt'
 import Invoice from '../WareHouse/Invoice';
+import ElectronicBill from '../WareHouse/ElectronicBill';
 
 const OrdersSummary = () => {
 
@@ -64,15 +65,7 @@ const OrdersSummary = () => {
   return (
     <div className={styles.container}>
 
-{
-      isFormOpen &&
-      <OrderRecipt  setIsFormOpen={setIsFormOpen}/>
-    }
-    
-    {
-      isFormOpen &&
-      <Invoice  setIsFormOpen={setIsFormOpen}/>
-    }
+
 
       <h2 className={styles.title}>Orders Summary</h2>
       <table className={styles.table}>
@@ -103,12 +96,26 @@ const OrdersSummary = () => {
               <td>{order.status}</td>
               <td className={styles.actions}>
                 <button className={styles.viewButton} onClick={() => setIsFormOpen(true)}>👁️</button>
-                {/* <button className={styles.downloadButton}>⬇️</button> */}
+                <button className={styles.downloadButton}  onClick={() => setIsFormOpen(true)}>⬇️</button>
               </td>
             </tr>
           ))}
         </tbody>
       </table>
+      {
+      isFormOpen &&
+      <OrderRecipt  setIsFormOpen={setIsFormOpen}/>
+    }
+    
+    {
+      isFormOpen &&
+      <Invoice  setIsFormOpen={setIsFormOpen}/>
+    }
+
+{
+      isFormOpen &&
+      <ElectronicBill  setIsFormOpen={setIsFormOpen}/>
+    }
     </div>
   );
 };

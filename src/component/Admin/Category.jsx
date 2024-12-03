@@ -5,6 +5,7 @@ import pic from '../../assets/product2.jpg'
 import { IoSearch } from 'react-icons/io5';
 import { HiOutlineDotsVertical } from 'react-icons/hi';
 import CategoryForm from './CategoryForm';
+
 // import { Link, useNavigate } from "react-router-dom";
 
 
@@ -114,7 +115,7 @@ function Category() {
       isFormOpen &&
       <CategoryForm setIsFormOpen={setIsFormOpen}/>
      } 
-        
+       
       
 
       <h1 className={styles.heading}>Category Table</h1>

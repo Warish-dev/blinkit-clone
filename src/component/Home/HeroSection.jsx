@@ -2,7 +2,7 @@ import React from 'react'
 import styles from '../../styles/hero.module.css'
 import HeroSecImg from '../../assets/HeroSec.png'
 
-import bgHomeImg from '../../assets/bghome.svg'
+import bgHomeImg from '../../assets/mussu2.jpeg'
 
 const HeroSection = () => {
     return (
@@ -11,7 +11,7 @@ const HeroSection = () => {
 
             <div className={styles.heroContainer}>
 
-                <div className={styles.textSection}>
+                {/* <div className={styles.textSection}>
                     <h1 className={styles.heading}>
                         Get groceries delivered in minutes!
                     </h1>
@@ -29,15 +29,15 @@ const HeroSection = () => {
                     <button className={styles.actionButton}>
                         Order Now
                     </button>
-                </div>
+                </div> */}
 
-                <div className={styles.imageSection}>
+                {/* <div className={styles.imageSection}>
                     <img
                         src={HeroSecImg}
                         alt="Groceries"
                         className={styles.heroImage}
                     />
-                </div>
+                </div> */}
                 
             </div>
 
