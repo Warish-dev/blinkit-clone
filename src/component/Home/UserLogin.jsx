@@ -7,6 +7,8 @@ import { BiLeftArrowAlt } from 'react-icons/bi';
 import OtpInput from 'react-otp-input';
 import { callAPI } from '../../services/callAPIFunction';
 import { otpEndPoints } from '../../services/apiEndPoints';
+import FullScreenLoader from './FullScreenLoader.jsx';
+// import { error } from 'console';
 const { VITE_API_BASE_URL } = import.meta.env;
 
 const UserLogin = ({ setIsLogin }) => {
@@ -15,30 +17,36 @@ const UserLogin = ({ setIsLogin }) => {
   const [otp, setOtp] = useState('');
   const [otpSubmitted, setOtpSubmitted] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
+  const [loading, setLoading] = useState(false); // State to control loader visibility
+
 
 
   const handleContinue = async () => {
     if (phoneNumber.length === 10 && /^[0-9]{10}$/.test(phoneNumber)) {
-
-      const data = {
-        phone : phoneNumber
-      }
+      setLoading(true); // Show loader
+      const data = { phone: phoneNumber };
       
-      const response = await callAPI('post', `${VITE_API_BASE_URL}${otpEndPoints.sendOtpOnWhatsapp}`, data);
+      try {
+        const response = await callAPI('post', `${VITE_API_BASE_URL}${otpEndPoints.sendOtpOnWhatsapp}`, data);
+        console.log(response);
 
-      console.log(response)
-
-      if(response.status == 200){
-        setShowOtpSection(true);
-        setErrorMessage('');
+        if (response.status === 200) {
+          setShowOtpSection(true);
+          setErrorMessage('');
+        } else {
+          setErrorMessage('Failed to send OTP. Try again!');
+        }
+      } catch (error) {
+        setErrorMessage('Error sending OTP. Please try again.');
+      } finally {
+        setLoading(false); // Hide loader after request is done
       }
-
     } else {
       setErrorMessage('Please enter a correct mobile number');
     }
   };
 
-  const handleConfirmOtp = () => {
+  const handleConfirmOtp = async () => {
     const otpEntered = otp.join('');
     const storedOtp = sessionStorage.getItem('otp'); // Retrieve OTP from sessionStorage
 
@@ -60,12 +68,15 @@ const UserLogin = ({ setIsLogin }) => {
     }
   };
 
-
-
   return (
+    
     <div className={styles.wraper}>
+              {/* <FullScreenLoader/> */}
+
       <div className={styles.container}>
+
         <div className={styles.topContainer}>
+
           <div onClick={handleGoBack} className={styles.backBtnContainer}>
             <BiLeftArrowAlt className={styles.backBtn} />
           </div>
@@ -74,6 +85,8 @@ const UserLogin = ({ setIsLogin }) => {
 
         <h3>India's last minute app</h3>
         <p>Log in or Sign up</p>
+
+        {loading && <FullScreenLoader />} {/* Display loader when loading */}
 
         {!showOtpSection && !otpSubmitted ? (
           <>
@@ -102,26 +115,13 @@ const UserLogin = ({ setIsLogin }) => {
             </p>
 
             <div className={styles.otpFields}>
-              {/* {otp.map((digit, index) => (
-                <input
-                  key={index}
-                  ref={otpRefs[index]}
-                  type="text"
-                  value={digit}
-                  onChange={(e) => handleOtpChange(e, index)}
-                  onKeyDown={(e) => handleKeyDown(e, index)}
-                  maxLength="1"
-                  className={styles.otpInput}
-                />
-              ))} */}
-
-                <OtpInput
-                  value={otp}
-                  onChange={setOtp}
-                  numInputs={4}
-                  renderSeparator={<span></span>}
-                  renderInput={(props) => <input {...props} className={styles.otpInput}/>}
-                />
+              <OtpInput
+                value={otp}
+                onChange={setOtp}
+                numInputs={4}
+                renderSeparator={<span></span>}
+                renderInput={(props) => <input {...props} className={styles.otpInput} />}
+              />
             </div>
 
             <button className={styles.actionButton} onClick={handleConfirmOtp}>
@@ -133,9 +133,8 @@ const UserLogin = ({ setIsLogin }) => {
         ) : (
           <div className={styles.otpSubmitted}>
             <p>OTP Verified Successfully!</p>
-           
 
-            <button className={styles.actionButton} onClick={resetForm}>
+            <button className={styles.actionButton} onClick={handleGoBack}>
               Go Back
             </button>
           </div>

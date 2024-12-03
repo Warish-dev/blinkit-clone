@@ -7,6 +7,7 @@ import Home from './pages/Home';
 import ProductInfo from './pages/ProductInfo';
 // import Cart from './pages/Cart';
 import Login from './pages/Login';
+
 // import Signup2 from './pages/Signup2';
 import SearchProduct from './pages/SearchProduct';
 import Admin from './pages/Admin';
@@ -42,6 +43,7 @@ import Delivered from './component/WareHouse/Delivered';
 import Cancelled from './component/WareHouse/Cancelled';
 import Withdraw from './component/WareHouse/Withdraw';
 import OrderRecipt from './component/WareHouse/OrderRecipt';
+// import FullScreenLoader from './component/Home/FullScreenLoader';
 // import OrderDetails from './component/WareHouse/OrderDetails';
 
 const App = () => {
@@ -61,6 +63,7 @@ const App = () => {
         <Route path="/AboutUs" element={<AboutUs/>} />
         <Route path="/Blog" element={<Blog/>} />
         <Route path="/Career" element={<Career/>} />
+        {/* <Route path='/FullScreenLoader' element={<FullScreenLoader/>}></Route> */}
 
 
 
