@@ -31,6 +31,7 @@ import AboutUs from './pages/AboutUs';
 import Product from './component/WareHouse/Product';
 import CategoryForm from './component/Admin/CategoryForm';
 import Profile from './component/WareHouse/Profile';
+import DeliveryBoyForm from './component/Admin/DeliveryBoyForm';
 import Blog from './pages/Blog'
 
 import Career from './pages/Career'
@@ -45,6 +46,7 @@ import Withdraw from './component/WareHouse/Withdraw';
 import OrderRecipt from './component/WareHouse/OrderRecipt';
 // import FullScreenLoader from './component/Home/FullScreenLoader';
 // import OrderDetails from './component/WareHouse/OrderDetails';
+import UserSignUp from './component/Home/UserSignUp';
 
 const App = () => {
   return (
@@ -64,6 +66,9 @@ const App = () => {
         <Route path="/Blog" element={<Blog/>} />
         <Route path="/Career" element={<Career/>} />
         {/* <Route path='/FullScreenLoader' element={<FullScreenLoader/>}></Route> */}
+        <Route path="/UserSignUp" element={<UserSignUp/>} />
+
+
 
 
 
@@ -79,6 +84,7 @@ const App = () => {
           <Route path="categoryform" element={<CategoryForm />} />
           <Route path="deliveryboy" element={<DeliveryBoy />} />
           <Route path="subcategory" element={<Subcategory />} />
+          <Route path ="DeliveryBoyForm" element={<DeliveryBoyForm/>}/>
     
         </Route>
 

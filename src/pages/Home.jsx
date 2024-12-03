@@ -32,6 +32,7 @@ const Home = () => {
         setShowBtn(false);
       }
     }
+    
 
     window.addEventListener('scroll', handleVisibilityOfBtn);
 

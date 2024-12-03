@@ -1,121 +1,152 @@
-
-
-.container{
+/* General Container Layout */
+.container {
     width: 100%;
     display: flex;
     flex-direction: row;
     gap: 20px;
     padding: 30px;
-    
-    
 }
 
-.imgContainer{
+.imgContainer {
     width: 50%;
-    /* height: 600px; */
-    
-   
 }
 
-.imgContainer img{
-    width: 50%;
-    position: relative;
-
-    left: 100px;
+.imgContainer img {
+    width: 100%; /* Make image take full width */
+    max-width: 400px; /* Keep it consistent with the layout */
     object-fit: cover;
     border-radius: 10px;
-    
+    margin: 0 auto;
+    display: block;
+}
+/* .smallImg{
+    height: 100px;
+    width: 100%;
+    border: 1PX SOLID RED;
+    margin-bottom: 20PX;
+} */
 
+.smallImgContainer {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    height: 100px;
+    /* border: 1px solid red; */
+    justify-content: center;
+}
+
+.smallImg {
+    /* width: 50px;
+    height: 50px; */
+    cursor: pointer;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    transition: border-color 0.3s ease;
+}
+
+.smallImg:hover {
+    border-color: #007bff;
+}
+
+.activeThumbnail {
+    border-color: #ff9900; /* Highlight active thumbnail */
 }
 
 
-.productInfoContainer{
+/* Product Info Section */
+.productInfoContainer {
     width: 50%;
     margin-top: 50px;
-    position: sticky;
-    
 }
 
-
-
-.productInfoContainer>p{
+.productInfoContainer > p {
     font-size: 30px;
     font-weight: 700;
     text-align: left;
-    
 }
-.detailContainer{
+
+/* Detail container */
+.detailContainer {
     display: grid;
-    float: left;
 }
 
-.headingContainer>p{
-    font-size: 23px;
-    margin-top: 15px;
-    margin-bottom: 15px;
-    text-align: left;
+/* ........................///////////////MRP///////////////////........ */
+.mrp {
+    /* margin-top: 10px;
+    padding-top: 10px; */
+    height: 70px;
+    width: 100px;
+    margin-top: 30px;
+    display: flex;
+    width: 100px;
+    /* text-align: center; */
+    align-items: center;
+    font-size: 12px;
+
+    text-align: center;
+    /* background-color: #007bff; */
+    border: 1px solid lightgray;
+    color: #000;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    /* transition: background-color 0.3s ease; */
 }
 
-.detailContainer>p{
+.mrp:hover {
+    border:1px solid #28a745;
+}
+
+
+.detailContainer > p {
     font-size: 14px;
     margin-top: 9px;
-    margin-right: 210px;
-    margin-left: 20px; 
+    margin-left: 20px;
 }
-.detailContainer>strong{
+
+.detailContainer > strong {
     font-size: 14px;
     margin-top: 9px;
-    margin-right: 210px;
-    margin-left: 20px; 
+    margin-left: 20px;
 }
-.detailContainer>p>span{
-    display:block;
+
+.detailContainer > p > span {
+    display: block;
     max-width: 400px;
-    margin-top:5px ;
+    margin-top: 5px;
     margin-left: 7px;
-    color:grey;
+    color: grey;
     font-weight: 100;
     text-align: left;
 }
-.detailContainer>strong{
-    font-weight: 300; 
-}
-.headingContainer>strong{
-    font-weight: 550;
-}
 
-.priceContainer{
+.priceContainer {
     display: flex;
     flex-direction: row;
-    align-items: center;
     justify-content: space-between;
-
     font-size: 18px;
     font-weight: 600;
     padding: 10px 0px;
     margin: 10px 0px;
-
     border-top: 2px solid rgb(226, 226, 226);
 }
 
-.btnContainer{
-    display: flex;
+.btnContainer {
+    /* display: flex; */
     flex-direction: row;
+    
     gap: 10px;
 }
 
 .buyBtn {
     background-color: #28a745;
     color: white;
-    font-size: 800;
     font-size: 1rem;
     padding: 0.75rem 2rem;
     border: none;
     border-radius: 10px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-
-    box-shadow: 5px 5px 10px rgba(128, 128, 128, 0.5);
 }
 
 .buyBtn:hover {
@@ -125,139 +156,213 @@
 .addCartBtn {
     background-color: rgb(231, 231, 38);
     color: white;
-    font-size: 800;
     font-size: 1rem;
     padding: 0.75rem 2rem;
     border: none;
     border-radius: 10px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-
-    box-shadow: 5px 5px 10px rgba(128, 128, 128, 0.5);
 }
 
 .addCartBtn:hover {
     background-color: rgb(221, 221, 23);
 }
 
-
-.backBtnContainer{
+/* Back Button */
+.backBtnContainer {
     position: absolute;
     border-radius: 100%;
     background-color: rgb(228, 228, 228);
     padding: 10px;
     font-size: 25px;
-    
-
     color: #28a745;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     cursor: pointer;
-    overflow: hidden;
 }
-.backBtnContainer:hover .backBtn{
-    animation: 1s 1 backBtnAnimation;
-}
-.suggestion{
-    margin-top:50px;   
-    height: 500px;
+
+/* Suggestion Section */
+.suggestion {
+    margin-top: 50px;
+    height: 400px;
     width: 100%;
+    display: flex;
     flex-direction: column;
-    /* border: 1px solid green; */
-    /* display: flex;
-    flex-wrap: inherit;
-    align-items: center; */
-    /* margin: auto; */
+    align-items: center;
+    margin: auto;
 }
-.suggestion h4{
-    /* text-align: center; */
+
+.suggestion h4 {
     margin-left: 20px;
     margin-bottom: 20px;
-    /* display: flex; */
 }
-.suggestedItems{
+
+.suggestedItems {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
-
-@keyframes backBtnAnimation {
-    from{
-        transform: translateX(30px);
-    }
-    to{
-        transform: translateX(0px);
-    }
+/* Why Bijli Section */
+.desc {
+    margin-top: 200px;
 }
 
-@media screen and (max-width: 1100px) {
-    .productInfoContainer>p{
-        font-size: 22px;
-    }
+.desc h3 {
+    font-size: 16px;
+    font-weight: bold;
 }
 
-@media screen and (max-width: 850px) {
-    .productInfoContainer>p {
-        font-size: 18px;
-    }
-
-    .priceContainer{
-        font-size: 14px;
-    }
-    .buyBtn, .addCartBtn{
-        font-size: 14px;
-        padding: 0.5rem 1.2rem;
-    }
+.descContainer {
+    display: flex;
+    flex-direction: column;
 }
 
-@media screen and (max-width: 750px) {
-    .container{
+.descCard {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 1rem;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.descCard:hover {
+    transform: translateY(-5px);
+}
+
+.descImg {
+    flex-shrink: 0;
+    width: 80px;
+    height: 80px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.descImg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.descContent {
+    display: grid;
+    gap: 0.5rem;
+}
+
+.descContent h5 {
+    font-size: 16px;
+    color: #333;
+    font-weight: 100;
+}
+
+.descContent p {
+    font-size: 12px;
+    color: #555;
+    text-align: justify;
+}
+
+/* Responsive Styles for Tablets and Phones */
+@media (max-width: 768px) {
+    .container {
         flex-direction: column;
         padding: 10px;
     }
+
     .imgContainer {
         width: 100%;
+        text-align: center;
     }
-    .detailContainer>strong{
-        font-weight: 300; 
-        color: black;
-    }
-}
 
-@media (max-width: 768px) {
-    .headingContainer > p {
-        font-size: 18px;
+    .imgContainer img {
+        max-width: 300px;
     }
-    .detailContainer > p {
-        font-size: 12px;
-        margin-right: 20px;
-        margin-left: 3px;
-        
+
+    .productInfoContainer {
+        width: 100%;
+        margin-top: 20px;
     }
-    .detailContainer > strong{
-        font-size: 12.5px;
-        margin-right: 20px;
-        margin-left: 00;
+
+    .productInfoContainer > p {
+        font-size: 1.8rem;
+        text-align: center;
     }
-    .detailContainer>strong{
-        font-weight: 300; 
+
+    /* Price Container */
+    .priceContainer {
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+        font-size: 1.2rem;
+    }
+
+    /* Buttons */
+    .btnContainer {
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+    }
+
+    /* Suggestion Section */
+    .suggestedItems {
+        justify-content: center;
+    }
+
+    .descContainer {
+        gap: 10px;
+    }
+
+    .descCard {
+        padding: 10px;
+        gap: 10px;
+    }
+
+    .descImg {
+        width: 50px;
+        height: 50px;
     }
 }
 
 @media (max-width: 480px) {
-    .headingContainer > p {
-        font-size: 16px;
-        
+    .productInfoContainer > p {
+        font-size: 1.5rem;
+        text-align: center;
     }
-    .detailContainer > p {
-        font-size: 14px;
+
+    .priceContainer {
+        font-size: 1rem;
+        text-align: center;
     }
-    .detailContainer>strong{
-        font-weight: bold; 
-        color: black;
+
+    .btnContainer {
+        gap: 5px;
+        align-items: center;
     }
-    
-    
+
+    .addCartBtn,
+    .buyBtn {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+
+    .descCard {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+
+    .descImg {
+        width: 40px;
+        height: 40px;
+    }
+
+    .descContent h5 {
+        font-size: 0.9rem;
+    }
+
+    .descContent p {
+        font-size: 0.8rem;
+    }
 }

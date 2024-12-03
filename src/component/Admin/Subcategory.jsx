@@ -1,57 +1,40 @@
-// import React from 'react'
-import styles from '../../styles/subcategory.module.css';
 import React, { useState } from 'react';
+import styles from '../../styles/subcategory.module.css';
 import Img from '../../assets/product2.jpg';
 import { IoSearch } from 'react-icons/io5';
 import { HiOutlineDotsVertical } from 'react-icons/hi';
 import SubCategoryForm from './SubCategoryForm';
 
+const initialShops = [
+  { id: 1, name: 'cake',   subName: 'brownie',        title: 'cake',   img: Img, status: 'Active', blocked: false },
+  { id: 2, name: 'pie',    subName: 'apple',          title: 'pie',    img: Img, status: 'Active', blocked: false },
+  { id: 3, name: 'cookie', subName: 'chocolate chip', title: 'cookie', img: Img, status: 'Active', blocked: false },
+  { id: 4, name: 'cookie', subName: 'chocolate chip', title: 'cookie', img: Img, status: 'Active', blocked: false },
+  { id: 5, name: 'cookie', subName: 'chocolate chip', title: 'cookie', img: Img, status: 'Active', blocked: false },
+  { id: 6, name: 'cookie', subName: 'chocolate chip', title: 'cookie', img: Img, status: 'Active', blocked: false },
+  { id: 7, name: 'cookie', subName: 'chocolate chip', title: 'cookie', img: Img, status: 'Active', blocked: false },
+  { id: 8, name: 'cookie', subName: 'chocolate chip', title: 'cookie', img: Img, status: 'Active', blocked: false },
+  { id: 9, name: 'cookie', subName: 'chocolate chip', title: 'cookie', img: Img, status: 'Active', blocked: false },
+  { id: 10, name: 'cookie', subName: 'chocolate chip', title: 'cookie', img: Img, status: 'Active', blocked: false },
+  { id: 11, name: 'cookie', subName: 'chocolate chip', title: 'cookie', img: Img, status: 'Active', blocked: false },
+  { id: 12, name: 'cookie', subName: 'chocolate chip', title: 'cookie', img: Img, status: 'Active', blocked: false },
+  { id: 13, name: 'cookie', subName: 'chocolate chip', title: 'cookie', img: Img, status: 'Active', blocked: false },
+  { id: 14, name: 'cookie', subName: 'chocolate chip', title: 'cookie', img: Img, status: 'Active', blocked: false },
+  { id: 15, name: 'cookie', subName: 'chocolate chip', title: 'cookie', img: Img, status: 'Active', blocked: false },
+  { id: 16, name: 'cookie', subName: 'chocolate chip', title: 'cookie', img: Img, status: 'Active', blocked: false },
+  { id: 17, name: 'cookie', subName: 'chocolate chip', title: 'cookie', img: Img, status: 'Active', blocked: false },
+  { id: 18, name: 'cookie', subName: 'chocolate chip', title: 'cookie', img: Img, status: 'Active', blocked: false },
+  { id: 19, name: 'cookie', subName: 'chocolate chip', title: 'cookie', img: Img, status: 'Active', blocked: false },
+  { id: 20, name: 'cookie', subName: 'chocolate chip', title: 'cookie', img: Img, status: 'Active', blocked: false },
+  { id: 21, name: 'cookie', subName: 'chocolate chip', title: 'cookie', img: Img, status: 'Active', blocked: false },
+  { id: 22, name: 'cookie', subName: 'chocolate chip', title: 'cookie', img: Img, status: 'Active', blocked: false },
+  { id: 23, name: 'cookie', subName: 'chocolate chip', title: 'cookie', img: Img, status: 'Active', blocked: false },
+  { id: 24, name: 'cookie', subName: 'chocolate chip', title: 'cookie', img: Img, status: 'Active', blocked: false },
+  { id: 25, name: 'cookie', subName: 'chocolate chip', title: 'cookie', img: Img, status: 'Active', blocked: false },
 
-
-  const initialShops = [
-    { id: 1, name: 'cake', subName: 'brownie', title: 'cake', img:Img, status: 'Active', blocked: false },
-    { id: 1, name: 'cake', subName: 'brownie', title: 'cake', img:Img, status: 'Active', blocked: false },
-    { id: 1, name: 'cake', subName: 'brownie', title: 'cake', img:Img, status: 'Active', blocked: false },
-    { id: 1, name: 'cake', subName: 'brownie', title: 'cake', img:Img, status: 'Active', blocked: false },
-    { id: 1, name: 'cake', subName: 'brownie', title: 'cake', img:Img, status: 'Active', blocked: false },
-    { id: 1, name: 'cake', subName: 'brownie', title: 'cake', img:Img, status: 'Active', blocked: false },
-    { id: 1, name: 'cake', subName: 'brownie', title: 'cake', img:Img, status: 'Active', blocked: false },
-    { id: 1, name: 'cake', subName: 'brownie', title: 'cake', img:Img, status: 'Active', blocked: false },
-    { id: 1, name: 'cake', subName: 'brownie', title: 'cake', img:Img, status: 'Active', blocked: false },
-    { id: 1, name: 'cake', subName: 'brownie', title: 'cake', img:Img, status: 'Active', blocked: false },
-    { id: 1, name: 'cake', subName: 'brownie', title: 'cake', img:Img, status: 'Active', blocked: false },
-    { id: 1, name: 'cake', subName: 'brownie', title: 'cake', img:Img, status: 'Active', blocked: false },
-    { id: 1, name: 'cake', subName: 'brownie', title: 'cake', img:Img, status: 'Active', blocked: false },
-    { id: 1, name: 'cake', subName: 'brownie', title: 'cake', img:Img, status: 'Active', blocked: false },
-    { id: 1, name: 'cake', subName: 'brownie', title: 'cake', img:Img, status: 'Active', blocked: false },
-    { id: 1, name: 'cake', subName: 'brownie', title: 'cake', img:Img, status: 'Active', blocked: false },
-    { id: 1, name: 'cake', subName: 'brownie', title: 'cake', img:Img, status: 'Active', blocked: false },
-    { id: 1, name: 'cake', subName: 'brownie', title: 'cake', img:Img, status: 'Active', blocked: false },
-    { id: 1, name: 'cake', subName: 'brownie', title: 'cake', img:Img, status: 'Active', blocked: false },
-    { id: 1, name: 'cake', subName: 'brownie', title: 'cake', img:Img, status: 'Active', blocked: false },
-    { id: 1, name: 'cake', subName: 'brownie', title: 'cake', img:Img, status: 'Active', blocked: false },
-    { id: 1, name: 'cake', subName: 'brownie', title: 'cake', img:Img, status: 'Active', blocked: false },
-    { id: 1, name: 'cake', subName: 'brownie', title: 'cake', img:Img, status: 'Active', blocked: false },
-    { id: 1, name: 'cake', subName: 'brownie', title: 'cake', img:Img, status: 'Active', blocked: false },
-    { id: 1, name: 'cake', subName: 'brownie', title: 'cake', img:Img, status: 'Active', blocked: false },
-    { id: 1, name: 'cake', subName: 'brownie', title: 'cake', img:Img, status: 'Active', blocked: false },
-    { id: 1, name: 'cake', subName: 'brownie', title: 'cake', img:Img, status: 'Active', blocked: false },
-    { id: 1, name: 'cake', subName: 'brownie', title: 'cake', img:Img, status: 'Active', blocked: false },
-    { id: 1, name: 'cake', subName: 'brownie', title: 'cake', img:Img, status: 'Active', blocked: false },
-    { id: 1, name: 'cake', subName: 'brownie', title: 'cake', img:Img, status: 'Active', blocked: false },
 ];
 
-
 function Category() {
-
-  // const [isFormOpen, setIsFormOpen] = useState(false);
-
-  // Function to toggle form visibility
-  const toggleForm = () => {
-    setIsFormOpen(true);
-  };
-
-
   const [shops, setShops] = useState(initialShops);
   const [searchTerm, setSearchTerm] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
@@ -96,18 +79,8 @@ function Category() {
   };
 
   return (
-
-   
-
     <div>
-
-
-{
-      isFormOpen &&
-      < SubCategoryForm setIsFormOpen={setIsFormOpen}/>
-    }
-        
-    
+      {isFormOpen && <SubCategoryForm setIsFormOpen={setIsFormOpen} />}
 
       <h1 className={styles.heading}>Sub Category Table</h1>
       <div className={styles.container}>
@@ -122,9 +95,7 @@ function Category() {
               onChange={handleSearch}
             />
           </div>
-          <button onClick={() => setIsFormOpen(true)}>Add Form
-            
-          </button>
+          <button onClick={() => setIsFormOpen(true)}>Add Form</button>
         </div>
 
         <div className={styles.tableContainer}>
@@ -148,11 +119,7 @@ function Category() {
                   <td>{shop.subName}</td>
                   <td>{shop.title}</td>
                   <td>
-                  <img 
-                     src={shop.img} 
-                     alt={shop.name} 
-                     className={styles.img}
-        />
+                    <img src={shop.img} alt={shop.name} className={styles.img} />
                   </td>
                   <td>{shop.status}</td>
                   <td className={styles.actionCell}>

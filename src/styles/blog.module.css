@@ -33,6 +33,9 @@
   
   /* Blog Post Item */
   .blogItem {
+    /* height: auto; */
+    /* width:400px; */
+    /* margin: auto; */
     display: flex;
     flex-direction: column;
     gap: 15px;
@@ -40,6 +43,7 @@
     padding: 30px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* overflow-y: 50; */
   }
   
   .blogImage {
