@@ -13,6 +13,8 @@ import CategoryComponent from '../component/Home/CategoryComponent';
 import PosterSection from '../component/Home/PosterSection';
 import GetUserLocation from '../component/Home/GetUserLocation';
 import Cart from '../component/Home/Cart';
+import Offer from '../pages/Offer'
+
 
 
 
@@ -66,6 +68,7 @@ const Home = () => {
 
         <HeroSection />
         <PosterSection />
+        <Offer/>
         <CategoryComponent />
         <Bannar/>
         <ProductSection />

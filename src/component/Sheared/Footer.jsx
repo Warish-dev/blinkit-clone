@@ -76,7 +76,8 @@ const Footer = () => {
       <div className={styles.footerbottom}>
         <p>
           &copy; 2024 - Bijli by BCLOUD <a href="/terms">Terms & Conditions</a>{" "}
-          | <a href="/privacy">Privacy Policy</a>
+          | <a href="/privacy">Privacy Policy</a> 
+          |<a href="/login"> Admin </a>
         </p>
       </div>
     </footer>
