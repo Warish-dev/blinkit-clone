@@ -166,7 +166,7 @@ function Category() {
       <td className={styles.actionCell}>
         <button
           onClick={() => toggleBlockShop(shop.id)}
-          className={`${styles.actionButton} ${shop.blocked ? styles.unblock : styles.block}`}
+            className={`${styles.actionButton} ${shop.blocked ? styles.unblock : styles.block}`}
         >
           {shop.blocked ? 'Unblock' : 'Block'}
         </button>
