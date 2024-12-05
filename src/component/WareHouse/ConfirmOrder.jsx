@@ -1,5 +1,8 @@
 import React from 'react';
 import styles from '../../styles/ordersummary.module.css';
+import OrderRecipt from '../WareHouse/OrderRecipt';
+import Invoice from '../WareHouse/Invoice';
+
 
 const OrdersSummary = () => {
   const orders = [
