@@ -1,9 +1,10 @@
 // import React from 'react';
 import React, { useState } from 'react'
 import styles from '../../styles/ordersummary.module.css';
+import OrderRecipt from '../WareHouse/OrderRecipt';
+import Invoice from '../WareHouse/Invoice';
 
-
-const OrdersSummary = () => {
+const OrdersSummary = () => {   
 
   const [isFormOpen, setIsFormOpen] = useState(false);
   // const [isFormOpen2, setIsFormOpen2] = useState(false);
@@ -14,7 +15,7 @@ const OrdersSummary = () => {
   const toggleOrderRecipt = () => {
     setIsFormOpen(true);
     // setIsFormOpen2(false);
-    setShowInvoices(false);
+    // setShowInvoices(false);
 
   };
 
@@ -27,7 +28,7 @@ const OrdersSummary = () => {
 
   const orders = [
     {
-      id: "RC0000067",
+      id: "RC000006",
       date: "05 Oct 2024, 03:24 PM",
       customer: "User",
       amount: "Rs.1800",
@@ -75,9 +76,7 @@ const OrdersSummary = () => {
       paymentMethod: "Cash Payment",
       status: "Delivered",
     },
-
-
-{
+    {
         id: "RC000004",
         date: "05 Oct 2024, 03:18 PM",
         customer: "User",
@@ -100,10 +99,7 @@ const OrdersSummary = () => {
         amount: "Rs.1800",
         paymentMethod: "Cash Payment",
         status: "Delivered",
-      },
-     
-      
-
+      }
   ];
 
   const getStatusClass = (status) => {
@@ -123,10 +119,10 @@ const OrdersSummary = () => {
       {isFormOpen && <OrderRecipt setIsFormOpen={setIsFormOpen} />}
       {/* {isFormOpen2 && <Invoice setIsFormOpen2={setIsFormOpen2} />} */}
       {showInvoices && (
-        <div>
+        <div className={styles.open2}>
           
           <Invoice setIsFormOpen2={setShowInvoices} />
-          <p>This is for electronics</p>
+          <p className={styles.para}>This invoice is for electronic bill</p>
           <Invoice setIsFormOpen2={setShowInvoices} />
           
         </div>

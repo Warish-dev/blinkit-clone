@@ -5,7 +5,8 @@
     bottom: 20px;
     right: 20px;
 
-    max-width: min-content;
+    /* max-width: min-content; */
+    
     display: flex;
     align-items: center;
     justify-content: end;
@@ -25,7 +26,14 @@
 
     overflow: hidden;
 }
+.offer
+{
+    width: 90%;
+    height: 600px;    
+    margin-left: 80px;
+    border-radius: 10px;
 
+}
 
 .moveToTopBtn:hover .toTopBtn{
     animation: 1s 1 toTopBtnAnimation;

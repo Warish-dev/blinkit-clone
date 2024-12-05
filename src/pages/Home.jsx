@@ -7,14 +7,14 @@ import styles from '../styles/home.module.css'
 import UserLogin from '../component/Home/UserLogin'
 import Bannar from '../component/Home/Bannar'
 
-import contact from '../pages/Contact'
+// import contact from '../pages/Contact'
 // import Review from '../component/Home/Review';
 import CategoryComponent from '../component/Home/CategoryComponent';
 import PosterSection from '../component/Home/PosterSection';
 import GetUserLocation from '../component/Home/GetUserLocation';
 import Cart from '../component/Home/Cart';
-import Offer from '../pages/Offer'
-
+// import stationary from '../assets/stationary.jpeg';
+import fruits from '../assets/fruits.jpeg';
 
 
 
@@ -68,8 +68,10 @@ const Home = () => {
 
         <HeroSection />
         <PosterSection />
-        <Offer/>
+        <img src={fruits} className={styles.offer}/>
+        {/* <img src={stationary} className={styles.offer}/> */}
         <CategoryComponent />
+        
         <Bannar/>
         <ProductSection />
         
@@ -81,7 +83,7 @@ const Home = () => {
           </div>
         }
 
-        <Cart/>
+<Cart/>
 
       </Layout>
 

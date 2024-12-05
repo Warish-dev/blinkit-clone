@@ -1,5 +1,6 @@
 
 
+
 import React, { useRef } from "react";
 import html2canvas from "html2canvas";
 import { jsPDF } from "jspdf";
@@ -145,13 +146,12 @@ const Invoice = ({ setIsFormOpen2 }) => {
             <b>Signature</b>
           </div>
         </footer>
-        <button onClick={downloadPDF} className={styles.downloadButton}>
+       
+      </div>
+      <button onClick={downloadPDF} className={styles.downloadButton}>
         Download PDF
       </button>
-      </div>
-     
     </div>
   );
 };
-
 export default Invoice;
