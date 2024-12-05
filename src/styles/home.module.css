@@ -26,7 +26,14 @@
 
     overflow: hidden;
 }
+.offer
+{
+    width: 90%;
+    height: 600px;    
+    margin-left: 80px;
+    border-radius: 10px;
 
+}
 
 .moveToTopBtn:hover .toTopBtn{
     animation: 1s 1 toTopBtnAnimation;
