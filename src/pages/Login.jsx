@@ -9,6 +9,7 @@ import { useNavigate } from 'react-router-dom';
 import { callAPI } from '../services/callAPIFunction';
 import { adminEndPoints, warehouseEndPoints } from '../services/apiEndPoints';
 import toast from 'react-hot-toast';
+import Blogo from '../assets/images/logo.png';
 
 const { VITE_API_BASE_URL } = import.meta.env;
 
@@ -85,6 +86,7 @@ export default function Login() {
 
   return (
     <div className={styles.main}>
+      <img src={Blogo} className={styles.Blogo}/>
       <div className={`${styles.wrapped} ${styles.signIn}`}>
         <div className={styles.form2}>
           {/* Conditional rendering of the logo or heading */}
@@ -116,7 +118,8 @@ export default function Login() {
           </div>
 
           <form onSubmit={login}>
-            <div className={styles.input_container}><IoMdMail className={styles.logo1}/>
+            <div className={styles.input_container}>
+          
 
               {/* <label className={styles.lbl} htmlFor="email">
               </label> */}
@@ -130,8 +133,7 @@ export default function Login() {
                 required
               />
            </div>
-            <div className={styles.input_container}><RiLockPasswordFill className={styles.logo}/>
-
+            <div className={styles.input_container}>
               {/* <label className={styles.lbl} htmlFor="password">
               </label> */}
               <input

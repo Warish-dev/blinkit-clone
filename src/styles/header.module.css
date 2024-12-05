@@ -39,11 +39,11 @@
     align-items: center;
     gap: 10px;
 }
-
+/* 
 .logo img {
     width: 100px;
     mix-blend-mode: multiply;
-}
+} */
 
 .location {
     display: flex;
