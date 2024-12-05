@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import styles from '../../styles/categoryComponent.module.css'
+
 import masala from '../../assets/categoryimages/masala.jpeg'
 import paan from '../../assets/categoryimages/paan.jpg'
 import fruits from '../../assets/categoryimages/fruits.jpg'
