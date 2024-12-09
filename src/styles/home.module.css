@@ -1,4 +1,8 @@
-
+body {
+    transition: none;
+    animation: none;
+    transform: none;
+  }
 
 .moveToTopBtn{
     position: fixed;

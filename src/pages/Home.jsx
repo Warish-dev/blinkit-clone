@@ -15,6 +15,7 @@ import GetUserLocation from '../component/Home/GetUserLocation';
 import Cart from '../component/Home/Cart';
 // import stationary from '../assets/stationary.jpeg';
 import fruits from '../assets/fruits.jpeg';
+import Offer from './Offer';
 
 
 
@@ -70,6 +71,8 @@ const Home = () => {
         <PosterSection />
         <img src={fruits} className={styles.offer}/>
         {/* <img src={stationary} className={styles.offer}/> */}
+        <Offer/>
+
         <CategoryComponent />
         
         <Bannar/>
