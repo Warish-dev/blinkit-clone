@@ -26,7 +26,7 @@
 }
 
 .firstContainer {
-    width: 100%;
+    width:100%;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -96,7 +96,9 @@
     border-radius: 4px;
     background:transparent;
     font-size: 14px;
+    outline: none;
   }
+  
   .dropdown {
     position: absolute;
     top: 100%;

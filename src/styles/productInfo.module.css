@@ -28,28 +28,36 @@
 
 .smallImgContainer {
     display: flex;
+    object-fit: cover;
+
     gap: 10px;
     margin-top: 10px;
-    height: 100px;
+    height: auto;
+    width: 100%;
     /* border: 1px solid red; */
     justify-content: center;
+    align-items: center;
+
 }
 
 .smallImg {
-    /* width: 50px;
-    height: 50px; */
+    width: 50px;
+    height: 50px;
     cursor: pointer;
     border: 2px solid transparent;
+    /* border: 1px solid red; */
+    object-fit: cover;
+
     border-radius: 5px;
     transition: border-color 0.3s ease;
 }
 
-.smallImg:hover {
+/* .smallImg:hover {
     border-color: #007bff;
-}
+} */
 
 .activeThumbnail {
-    border-color: #ff9900; /* Highlight active thumbnail */
+    border-color: #ff9900; 
 }
 
 
@@ -68,6 +76,12 @@
 /* Detail container */
 .detailContainer {
     display: grid;
+}
+.headingContainer p{
+    margin-top: 50px;
+    margin-left: 20px;
+    margin-bottom: 50px;
+    text-decoration: underline;
 }
 
 /* ........................///////////////MRP///////////////////........ */
@@ -211,7 +225,9 @@
 
 .desc h3 {
     font-size: 16px;
+    text-align: center;
     font-weight: bold;
+    text-decoration: underline;
 }
 
 .descContainer {
@@ -226,12 +242,12 @@
     background-color: #ffffff;
     border-radius: 8px;
     padding: 1rem;
-    transition: transform 0.3s, box-shadow 0.3s;
+    /* transition: transform 0.3s, box-shadow 0.3s; */
 }
 
-.descCard:hover {
+/* .descCard:hover {
     transform: translateY(-5px);
-}
+} */
 
 .descImg {
     flex-shrink: 0;
@@ -262,6 +278,7 @@
     font-size: 12px;
     color: #555;
     text-align: justify;
+
 }
 
 /* Responsive Styles for Tablets and Phones */
