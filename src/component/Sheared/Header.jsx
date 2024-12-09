@@ -92,7 +92,7 @@ const Header = () => {
     <header className={styles.header}>
       <div className={styles.firstContainer}>
         <div className={styles.logo}>
-          <img src={logo} alt="Logo" />
+        <a href="/">  <img src={logo} alt="Logo" /> </a>
         </div>
         <div className={styles.location}>
           <p>Delivery in 10 minutes</p>

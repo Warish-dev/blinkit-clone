@@ -9,7 +9,6 @@ body {
     bottom: 20px;
     right: 20px;
 
-    /* max-width: min-content; */
     
     display: flex;
     align-items: center;
@@ -30,25 +29,83 @@ body {
 
     overflow: hidden;
 }
-.offer
-{
+.offer {
     width: 90%;
-    height: 600px;    
-    margin-left: 80px;
+    height: 600px;
+    margin-left :5%; 
+    margin-right: 5%;
     border-radius: 10px;
-
-}
-
-.moveToTopBtn:hover .toTopBtn{
+    overflow: hidden; 
+    position: relative; 
+  }
+  
+  .offer img {
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+  }
+  
+  /* Mobile View (Phone view) */
+  @media screen and (max-width: 768px) {
+    .offer {
+      width: 90%;
+      height: 300px; 
+      
+      margin: 5%;
+    }
+  
+    .offer img {
+      width: 100%; 
+      height: 100%; 
+      object-fit: cover; 
+     
+    }
+  }
+  @media screen and (max-width: 425px) {
+    .offer {
+      width: 90%; 
+      height: 300px; 
+      
+      margin: 5%;
+    }
+  
+    .offer img {
+      width: 100%;
+      height: 100%; 
+      object-fit: cover; 
+      
+    }
+  }
+  
+  /* Button Styles */
+  .moveToTopBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    background-color: rgb(218, 218, 218);
+    padding: 15px;
+    border-radius: 100%;
+    font-size: 20px;
+    color: #28a745;
+    cursor: pointer;
+    box-shadow: 5px 5px 10px gray;
+    transition: all;
+    transition-duration: 300ms;
+    overflow: hidden;
+  }
+  
+  .moveToTopBtn:hover .toTopBtn {
     animation: 1s 1 toTopBtnAnimation;
-}
-
-@keyframes toTopBtnAnimation {
+  }
+  
+  @keyframes toTopBtnAnimation {
     from {
-        transform: translateY(30px);
+      transform: translateY(30px);
     }
-
     to {
-        transform: translateY(0px);
+      transform: translateY(0px);
     }
-}
+  }
