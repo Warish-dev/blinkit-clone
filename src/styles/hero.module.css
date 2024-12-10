@@ -140,9 +140,9 @@
 }
 
 @media screen and (max-width: 500px) {
-    .imageSection{
+    /* .imageSection{
         display: none;
-    }
+    } */
     .bgImg {
         content: url('../assets//phoneview3.jpeg'); /* This is the image for smaller screens */
     }

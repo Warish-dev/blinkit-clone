@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from '../../styles/hero.module.css'
-import HeroSecImg from '../../assets/HeroSec.png'
+// import HeroSecImg from '../../assets/HeroSec.png'
 
 // import bgHomeImg from '../../assets/mussu2.jpeg'
 import bgHomeImg from '../../assets/mussu2.jpeg'
