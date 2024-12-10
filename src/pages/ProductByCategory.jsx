@@ -4,10 +4,6 @@ import { useParams } from 'react-router-dom'
 // import { useLocation } from 'react-router-dom'
 import Layout from '../component/Sheared/Layout'
 import styles from '../styles/ProductByCategory.module.css'
-// import masala5 from '../assets/categoryimages/masala5.jpeg'
-// import masala3 from '../assets/categoryimages/masala3.jpeg'
-// import masala4 from '../assets/categoryimages/masala4.jpeg'
-// import masala from '../assets/categoryimages/masala.jpg'
 import masala from '../assets/categoryimages/masala.jpeg'
 import ProductCard from '../component/Home/ProductCard'
 
@@ -111,12 +107,20 @@ function ProductByCategory() {
 
   return (
     <Layout>
-      <div className={styles.wrapper}>
 
-        
+
+      <div className={styles.wrapper}>
+        {/* Menubar */}
+        <div  className={styles.menubar}>
+          {menuItem.map((item, index) => (
+            <div key={index} className={styles.linkname}>
+              <p>{item.name}</p>
+            </div>
+          ))}
+        </div>
+
 
         <div className={styles.container}>
-
           {/* Sidebar */}
           <div className={styles.sidebar}>
             {data.map((item, index) => (
@@ -133,6 +137,10 @@ function ProductByCategory() {
 
           {/* Product Section */}
           <div className={styles.productsSection}>
+
+            {products.map((product) => (
+              <ProductCard product={product} />
+
              {products.map((products) => (
               // <div key={product.id} className={styles.productCard}>
               //   <div className={styles.productImage}>
@@ -146,9 +154,9 @@ function ProductByCategory() {
 
               <ProductCard product={products} />
 
+
             ))}
           </div>
-
         </div>
       </div>
     </Layout>
