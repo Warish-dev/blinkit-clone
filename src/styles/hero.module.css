@@ -134,10 +134,16 @@
     .description {
         font-size: 0.8rem;
     }
+    .bgImg {
+        content: url('../assets//phoneview3.jpeg'); /* This is the image for smaller screens */
+    }
 }
 
 @media screen and (max-width: 500px) {
     .imageSection{
         display: none;
+    }
+    .bgImg {
+        content: url('../assets//phoneview3.jpeg'); /* This is the image for smaller screens */
     }
 }

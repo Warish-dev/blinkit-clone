@@ -5,32 +5,16 @@ import { IoSearch } from "react-icons/io5";
 import { FaRegUserCircle } from "react-icons/fa";
 import { FaCartShopping } from "react-icons/fa6";
 import MyContext from '../../context/MyContext';
+import { useNavigate } from 'react-router-dom';
 
 const Header = () => {
   const { cart } = useContext(MyContext);
   const { isCartOpen, setIsCartOpen } = useContext(MyContext);
 
   const texts = [
-    "milk",
-    "bread",
-    "eggs",
-    "butter",
-    "cheese",
-    "coffee",
-    "tea",
-    "sugar",
-    "rice",
-    "pasta",
-    "cereal",
-    "flour",
-    "yogurt",
-    "honey",
-    "toothpaste",
-    "shampoo",
-    "soap",
-    "toilet paper",
-    "laundry detergent",
-    "dish soap"
+    "milk", "bread", "eggs", "butter", "cheese", "coffee", "tea",
+    "sugar", "rice", "pasta", "cereal", "flour", "yogurt", "honey",
+    "toothpaste", "shampoo", "soap", "toilet paper", "laundry detergent", "dish soap"
   ];
 
   const [searchInput, setSearchInput] = useState('');
@@ -39,13 +23,12 @@ const Header = () => {
   const [animateKey, setAnimateKey] = useState(0);
   const [isInputFocused, setIsInputFocused] = useState(false);
 
-  // State to manage popup visibility
   const [isPopupOpen, setIsPopupOpen] = useState(false);
-
-  // State to store the phone number fetched from local storage
   const [phoneNumber, setPhoneNumber] = useState('');
 
-  // Handle input change and dropdown visibility
+  // Using navigate for redirecting to the relevant page
+  const navigate = useNavigate();
+
   const handleInputChange = (e) => {
     setSearchInput(e.target.value);
     setShowDropdown(true);
@@ -54,6 +37,10 @@ const Header = () => {
   const handleDropdownClick = (item) => {
     setSearchInput(item);
     setShowDropdown(false);
+
+    // Redirect to a relevant page when an item is selected
+    // Assuming a route '/category/:id' for each item, or you can modify as per your routing
+    navigate(`/category/${item}`);
   };
 
   const handleInputFocus = () => {
@@ -69,19 +56,16 @@ const Header = () => {
     if (e.key === 'Enter' && filteredTexts.length > 0) {
       setSearchInput(filteredTexts[0]);
       setShowDropdown(false);
+
+      // Optionally navigate or filter products
+      navigate(`/category/${filteredTexts[0]}`);
     }
   };
 
-  // Fetch phone number from local storage on component mount
   useEffect(() => {
     const storedPhoneNumber = localStorage.getItem('phoneNumber');
-    setPhoneNumber(storedPhoneNumber || 'Not logged in'); // Default to "Not logged in" if not found
+    setPhoneNumber(storedPhoneNumber || 'Not logged in');
   }, []);
-
-  // Handle popup toggle (open/close)
-  const handlePopupToggle = () => {
-    setIsPopupOpen(!isPopupOpen);
-  };
 
   useEffect(() => {
     const filtered = texts.filter(text =>
@@ -108,7 +92,7 @@ const Header = () => {
     <header className={styles.header}>
       <div className={styles.firstContainer}>
         <div className={styles.logo}>
-          <img src={logo} alt="Logo" />
+        <a href="/">  <img src={logo} alt="Logo" /> </a>
         </div>
         <div className={styles.location}>
           <p>Delivery in 10 minutes</p>
@@ -149,7 +133,7 @@ const Header = () => {
           {cart?.length > 0 && <span className={styles.totalItems}>{cart?.length}</span>}
         </div>
 
-        <div className={styles.profileIcon} onClick={handlePopupToggle}>
+        <div className={styles.profileIcon} onClick={() => setIsPopupOpen(!isPopupOpen)}>
           <FaRegUserCircle />
         </div>
 
@@ -158,7 +142,7 @@ const Header = () => {
           <div className={styles.profilePopup}>
             <h3>Login Details</h3>
             <p>Phone Number: {phoneNumber}</p>
-            <button onClick={handlePopupToggle}>Close</button>
+            <button onClick={() => setIsPopupOpen(false)}>Close</button>
           </div>
         )}
       </div>

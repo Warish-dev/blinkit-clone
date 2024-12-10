@@ -1,5 +1,7 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
+// import { useEffect } from 'react'
+// import { useLocation } from 'react-router-dom'
 import Layout from '../component/Sheared/Layout'
 import styles from '../styles/ProductByCategory.module.css'
 import masala from '../assets/categoryimages/masala.jpeg'
@@ -78,22 +80,34 @@ function ProductByCategory() {
     { id: 46, title: 'Mozzarella', price: '4.20', img: masala },
 
   ]
-  const menuItem = [
-    { name: 'Vegetables & Fruits' },
-    { name: 'Cold Drinks' },
-    { name: 'Munchies' },
-    { name: 'Vegetables & Fruits' },
-    { name: 'Cold Drinks' },
-    { name: 'Munchies' },
-    { name: 'Vegetables & Fruits' },
-    { name: 'Cold Drinks' },
-    { name: 'Munchies' },
-  ];
+  // const menuItem = [
+  //   { name: 'Vegetables & Fruits' },
+  //   { name: 'Cold Drinks' },
+  //   { name: 'Munchies' },
+  //   { name: 'Vegetables & Fruits' },
+  //   { name: 'Cold Drinks' },
+  //   { name: 'Munchies' },
+  //   { name: 'Vegetables & Fruits' },
+  //   { name: 'Cold Drinks' },
+  //   { name: 'Munchies' },
+  // ];
 
   const { id } = useParams();
 
+
+
+  // const ScrollToTop=()=>{
+  //   const location=useLocation();
+
+  //   useEffect(()=>{
+  //     Window.ScrollToT(0,0)
+  //   },[location]);
+  //   return null;
+  // }
+
   return (
     <Layout>
+
 
       <div className={styles.wrapper}>
         {/* Menubar */}
@@ -104,6 +118,7 @@ function ProductByCategory() {
             </div>
           ))}
         </div>
+
 
         <div className={styles.container}>
           {/* Sidebar */}
@@ -122,8 +137,24 @@ function ProductByCategory() {
 
           {/* Product Section */}
           <div className={styles.productsSection}>
+
             {products.map((product) => (
               <ProductCard product={product} />
+
+             {products.map((products) => (
+              // <div key={product.id} className={styles.productCard}>
+              //   <div className={styles.productImage}>
+              //     <img src={product.image || '/default-image.jpg'} alt={product.name} />
+              //   </div>
+              //   <div className={styles.productInfo}>
+              //     <p className={styles.productName}>{product.title}</p>
+              //     <p className={styles.productPrice}>{product.price}</p>
+              //   </div>
+              // </div> 
+
+              <ProductCard product={products} />
+
+
             ))}
           </div>
         </div>
@@ -133,3 +164,7 @@ function ProductByCategory() {
 }
 
 export default ProductByCategory;
+
+
+
+
