@@ -40,95 +40,61 @@ const initialShops = [
 
 
 const Shops = () => {
-    
-//   const [showAddShopForm, setshowAddShopForm] = useState(false);
-
-const [isFormOpen, setIsFormOpen] = useState(false);
-
-// Function to toggle form visibility
-const toggleForm = () => {
-  setIsFormOpen(true);
-};
- 
-
+    const [isFormOpen, setIsFormOpen] = useState(false);
     const [shops, setShops] = useState(initialShops);
     const [searchTerm, setSearchTerm] = useState('');
-    const [shopName, setShopName] = useState('');
-    const [ownerName, setOwnerName] = useState('');
-    const [email, setEmail] = useState('');
-    const [phone, setPhone] = useState('');
-    const [totalProducts, setTotalProducts] = useState('');
-    const [location, setLocation] = useState('');
     const [currentPage, setCurrentPage] = useState(1);
     const shopsPerPage = 10;
 
-    const addShop = () => {
-        if (shopName && ownerName && email && phone && totalProducts && location) {
-            const newShop = {
-                id: shops.length + 1,
-                name: shopName,
-                owner: ownerName,
-                email,
-                phone,
-                totalProducts: parseInt(totalProducts, 10),
-                location,
-                registrationDate: new Date().toISOString().split('T')[0],
-                status: 'Active',
-                blocked: false,
-            };
-            setShops([...shops, newShop]);
-            setShopName('');
-            setOwnerName('');
-            setEmail('');
-            setPhone('');
-            setTotalProducts('');
-            setLocation('');
-        }
-    };
+// Function to toggle form visibility
+const toggleForm = () => {
+setIsFormOpen(true);
+};
 
-    const toggleBlockShop = (id) => {
-        setShops((prevShops) =>
-            prevShops.map((shop) =>
-                shop.id === id ? { ...shop, blocked: !shop.blocked } : shop
-            )
-        );
-    };
+// Function to add a new shop from the form
+const addShopFromForm = (newShop) => {
+setShops((prevShops) => [...prevShops, newShop]);
+};
 
-    const deleteShop = (id) => {
-        setShops((prevShops) => prevShops.filter((shop) => shop.id !== id));
-    };
+const toggleBlockShop = (id) => {
+setShops((prevShops) =>
+prevShops.map((shop) =>
+shop.id === id ? { ...shop, blocked: !shop.blocked } : shop
+)
+);
+};
 
-    const handleSearch = (e) => {
-        setSearchTerm(e.target.value);
-        setCurrentPage(1); // Reset to first page on search
-    };
+const deleteShop = (id) => {
+setShops((prevShops) => prevShops.filter((shop) => shop.id !== id));
+};
 
-    const filteredShops = shops.filter((shop) =>
-        shop.name.toLowerCase().includes(searchTerm.toLowerCase())
-    );
+const handleSearch = (e) => {
+setSearchTerm(e.target.value);
+setCurrentPage(1); // Reset to first page on search
+};
 
-    const indexOfLastShop = currentPage * shopsPerPage;
-    const indexOfFirstShop = indexOfLastShop - shopsPerPage;
-    const currentShops = filteredShops.slice(indexOfFirstShop, indexOfLastShop);
+const filteredShops = shops.filter((shop) =>
+shop.name.toLowerCase().includes(searchTerm.toLowerCase())
+);
 
-    const totalPages = Math.ceil(filteredShops.length / shopsPerPage);
+const indexOfLastShop = currentPage * shopsPerPage;
+const indexOfFirstShop = indexOfLastShop - shopsPerPage;
+const currentShops = filteredShops.slice(indexOfFirstShop, indexOfLastShop);
 
-    const goToPage = (pageNumber) => {
-        setCurrentPage(pageNumber);
-    };
-    
+const totalPages = Math.ceil(filteredShops.length / shopsPerPage);
+
+const goToPage = (pageNumber) => {
+setCurrentPage(pageNumber);
+};
     
 
-     const addShopForm = () =>{
-        
-     }
 
     return (
         <div className={styles.container}>
              
               {
         isFormOpen &&
-        <AddShopForm setIsFormOpen={setIsFormOpen}/>
+        <AddShopForm setIsFormOpen={setIsFormOpen} addShopFromForm={addShopFromForm}/>
       } 
 
             <h2>Shops List</h2>
@@ -148,18 +114,7 @@ const toggleForm = () => {
                 <button onClick={toggleForm}>Add Shop</button>
             </div>
 
-            {/* Add New Shop Form */}
-            {/* <div className={styles.addShopForm}>
-                <input type="text" placeholder="Shop Name" value={shopName} onChange={(e) => setShopName(e.target.value)} className={styles.inputField} />
-                <input type="text" placeholder="Owner Name" value={ownerName} onChange={(e) => setOwnerName(e.target.value)} className={styles.inputField} />
-                <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} className={styles.inputField} />
-                <input type="text" placeholder="Phone Number" value={phone} onChange={(e) => setPhone(e.target.value)} className={styles.inputField} />
-                <input type="number" placeholder="Total Products" value={totalProducts} onChange={(e) => setTotalProducts(e.target.value)} className={styles.inputField} />
-                <input type="text" placeholder="Location" value={location} onChange={(e) => setLocation(e.target.value)} className={styles.inputField} />
-                <button onClick={addShop} className={styles.addButton}>Add Shop</button>
-            </div> */}
-
-            {/* Search and Table */}
+            
 
             <div className={styles.tableContainer}>
                 <table className={styles.shopTable}>
@@ -229,6 +184,376 @@ const toggleForm = () => {
     )
 }
 
-export default Shops
+export default Shops;
+
+ 
 
 
+
+
+
+
+
+// import React, { useState, useEffect } from 'react';
+// import styles from '../../styles/shops.module.css';
+// import { IoSearch } from 'react-icons/io5';
+// import { HiOutlineDotsVertical } from 'react-icons/hi';
+// import AddShopForm from '../Admin/AddShopForm';
+// // import { callAPI } from '../../utils/api'; // Assuming this is where the API call function resides
+
+// const Shops = () => {
+//     const [isFormOpen, setIsFormOpen] = useState(false);
+//     const [shops, setShops] = useState([]);
+//     const [searchTerm, setSearchTerm] = useState('');
+//     const [currentPage, setCurrentPage] = useState(1);
+//     const shopsPerPage = 10;
+
+//     // Fetch shops from the API on component mount
+//     useEffect(() => {
+//         const fetchShops = async () => {
+//             try {
+//                 const response = await callAPI('/shops', 'GET');
+//                 setShops(response.data || []);
+//             } catch (error) {
+//                 console.error('Error fetching shops:', error);
+//             }
+//         };
+
+//         fetchShops();
+//     }, []);
+
+//     // Function to toggle form visibility
+//     const toggleForm = () => {
+//         setIsFormOpen(true);
+//     };
+
+//     // Function to add a new shop from the form
+//     const addShopFromForm = async (newShop) => {
+//         try {
+//             const response = await callAPI('/shops', 'POST', newShop);
+//             setShops((prevShops) => [...prevShops, response.data]);
+//         } catch (error) {
+//             console.error('Error adding shop:', error);
+//         }
+//     };
+
+//     const toggleBlockShop = async (id) => {
+//         try {
+//             const shop = shops.find((shop) => shop.id === id);
+//             const updatedShop = { ...shop, blocked: !shop.blocked };
+
+//             await callAPI(`/shops/${id}`, 'PUT', updatedShop);
+
+//             setShops((prevShops) =>
+//                 prevShops.map((shop) =>
+//                     shop.id === id ? { ...shop, blocked: !shop.blocked } : shop
+//                 )
+//             );
+//         } catch (error) {
+//             console.error('Error toggling block status:', error);
+//         }
+//     };
+
+//     const deleteShop = async (id) => {
+//         try {
+//             await callAPI(`/shops/${id}`, 'DELETE');
+//             setShops((prevShops) => prevShops.filter((shop) => shop.id !== id));
+//         } catch (error) {
+//             console.error('Error deleting shop:', error);
+//         }
+//     };
+
+//     const handleSearch = (e) => {
+//         setSearchTerm(e.target.value);
+//         setCurrentPage(1); // Reset to first page on search
+//     };
+
+//     const filteredShops = shops.filter((shop) =>
+//         shop.name.toLowerCase().includes(searchTerm.toLowerCase())
+//     );
+
+//     const indexOfLastShop = currentPage * shopsPerPage;
+//     const indexOfFirstShop = indexOfLastShop - shopsPerPage;
+//     const currentShops = filteredShops.slice(indexOfFirstShop, indexOfLastShop);
+
+//     const totalPages = Math.ceil(filteredShops.length / shopsPerPage);
+
+//     const goToPage = (pageNumber) => {
+//         setCurrentPage(pageNumber);
+//     };
+
+//     return (
+//         <div className={styles.container}>
+//             {isFormOpen && (
+//                 <AddShopForm setIsFormOpen={setIsFormOpen} addShopFromForm={addShopFromForm} />
+//             )}
+
+//             <h2>Shops List</h2>
+
+//             <div className={styles.topContainer}>
+//                 <div className={styles.searchContainer}>
+//                     <IoSearch />
+//                     <input
+//                         type="text"
+//                         placeholder="Search by shop name"
+//                         className={styles.searchBox}
+//                         value={searchTerm}
+//                         onChange={handleSearch}
+//                     />
+//                 </div>
+
+//                 <button onClick={toggleForm}>Add Shop</button>
+//             </div>
+
+//             <div className={styles.tableContainer}>
+//                 <table className={styles.shopTable}>
+//                     <thead>
+//                         <tr>
+//                             <th>Sr No.</th>
+//                             <th>Shop Name</th>
+//                             <th>Owner</th>
+//                             <th>Email</th>
+//                             <th>Phone</th>
+//                             <th>Total Products</th>
+//                             <th>Location</th>
+//                             <th>Registration Date</th>
+//                             <th>Status</th>
+//                             <th>Actions</th>
+//                         </tr>
+//                     </thead>
+//                     <tbody>
+//                         {currentShops.map((shop, index) => (
+//                             <tr key={shop.id}>
+//                                 <td>{index + 1 + (currentPage - 1) * shopsPerPage}</td>
+//                                 <td>{shop.name}</td>
+//                                 <td>{shop.owner}</td>
+//                                 <td>{shop.email}</td>
+//                                 {/* <td>{shop.phone}</td> */}
+//                                 {/* <td>{shop.totalProducts}</td> */}
+//                                 <td>{shop.location}</td>
+//                                 <td>{shop.registrationDate}</td>
+//                                 <td>{shop.status}</td>
+//                                 <td className={styles.actionCell}>
+//                                     <button
+//                                         onClick={() => toggleBlockShop(shop.id)}
+//                                         className={`${styles.actionButton} ${shop.blocked ? styles.unblock : styles.block}`}
+//                                     >
+//                                         {shop.blocked ? 'Unblock' : 'Block'}
+//                                     </button>
+//                                     <button onClick={() => deleteShop(shop.id)} className={styles.deleteButton}>
+//                                         Delete
+//                                     </button>
+//                                     <span className={styles.actionMenuButton}>
+//                                         <HiOutlineDotsVertical />
+//                                         <div className={styles.actionMenu}>
+//                                             <ul>
+//                                                 <li onClick={() => toggleBlockShop(shop.id)}>
+//                                                     {shop.blocked ? 'Unblock' : 'Block'}
+//                                                 </li>
+//                                                 <li onClick={() => deleteShop(shop.id)}>Delete</li>
+//                                             </ul>
+//                                         </div>
+//                                     </span>
+//                                 </td>
+//                             </tr>
+//                         ))}
+//                     </tbody>
+//                 </table>
+//             </div>
+
+//             {/* Pagination */}
+//             <div className={styles.pagination}>
+//                 {Array.from({ length: totalPages }, (_, i) => (
+//                     <button
+//                         key={i + 1}
+//                         onClick={() => goToPage(i + 1)}
+//                         className={`${styles.pageButton} ${currentPage === i + 1 ? styles.activePage : ''}`}
+//                     >
+//                         {i + 1}
+//                     </button>
+//                 ))}
+//             </div>
+//         </div>
+//     );
+// };
+
+// export default Shops;
+
+
+
+
+
+
+
+// import React, { useState } from 'react';
+// import styles from '../../styles/shops.module.css';
+// import { IoSearch } from 'react-icons/io5';
+// import { HiOutlineDotsVertical } from 'react-icons/hi';
+// import AddShopForm from '../Admin/AddShopForm';
+
+// const initialShops = [
+//     {
+//         id: 1,
+//         name: 'Shop One',
+//         owner: 'Alice',
+//         email: 'alice@shopone.com',
+//         phone: '1111111111',
+//         totalProducts: 120,
+//         location: 'New York',
+//         registrationDate: '2023-01-12',
+//         status: 'Active',
+//         blocked: false,
+//     },
+// ];
+
+// const Shops = () => {
+//     const [isFormOpen, setIsFormOpen] = useState(false);
+//     const [shops, setShops] = useState(initialShops);
+//     const [searchTerm, setSearchTerm] = useState('');
+//     const [currentPage, setCurrentPage] = useState(1);
+//     const shopsPerPage = 10;
+
+//     // Function to toggle form visibility
+//     const toggleForm = () => {
+//         setIsFormOpen(true);
+//     };
+
+//     // Function to add a new shop from the form
+//     const addShopFromForm = (newShop) => { 
+//         setShops((prevShops) => [...prevShops, newShop]);
+//     };
+
+//     const toggleBlockShop = (id) => {
+//         setShops((prevShops) =>
+//             prevShops.map((shop) =>
+//                 shop.id === id ? { ...shop, blocked: !shop.blocked } : shop
+//             )
+//         );
+//     };
+
+//     const deleteShop = (id) => {
+//         setShops((prevShops) => prevShops.filter((shop) => shop.id !== id));
+//     };
+
+//     const handleSearch = (e) => {
+//         setSearchTerm(e.target.value);
+//         setCurrentPage(1); // Reset to first page on search
+//     };
+
+//     const filteredShops = shops.filter((shop) =>
+//         shop.name.toLowerCase().includes(searchTerm.toLowerCase())
+//     );
+
+//     const indexOfLastShop = currentPage * shopsPerPage;
+//     const indexOfFirstShop = indexOfLastShop - shopsPerPage;
+//     const currentShops = filteredShops.slice(indexOfFirstShop, indexOfLastShop);
+
+//     const totalPages = Math.ceil(filteredShops.length / shopsPerPage);
+
+//     const goToPage = (pageNumber) => {
+//         setCurrentPage(pageNumber);
+//     };
+
+//     return (
+//         <div className={styles.container}>
+//             {isFormOpen && (
+//                 <AddShopForm setIsFormOpen={setIsFormOpen} addShopFromForm={addShopFromForm} />
+//             )}
+
+//             <h2>Shops List</h2>
+
+//             <div className={styles.topContainer}>
+//                 <div className={styles.searchContainer}>
+//                     <IoSearch />
+//                     <input
+//                         type="text"
+//                         placeholder="Search by shop name"
+//                         className={styles.searchBox}
+//                         value={searchTerm}
+//                         onChange={handleSearch}
+//                     />
+//                 </div>
+
+//                 <button onClick={toggleForm}>Add Shop</button>
+//             </div>
+
+//             <div className={styles.tableContainer}>
+//                 <table className={styles.shopTable}>
+//                     <thead>
+//                         <tr>
+//                             <th>Sr No.</th>
+//                             <th>Shop Name</th>
+//                             <th>Owner</th>
+//                             <th>Email</th>
+//                             <th>Phone</th>
+//                             <th>Total Products</th>
+//                             <th>Location</th>
+//                             <th>Registration Date</th>
+//                             <th>Status</th>
+//                             <th>Actions</th>
+//                         </tr>
+//                     </thead>
+//                     <tbody>
+//                         {currentShops.map((shop, index) => (
+//                             <tr key={shop.id}>
+//                                 <td>{index + 1}</td>
+//                                 <td>{shop.name}</td>
+//                                 <td>{shop.owner}</td>
+//                                 <td>{shop.email}</td>
+//                                 <td>{shop.phone}</td>
+//                                 <td>{shop.totalProducts}</td>
+//                                 <td>{shop.location}</td>
+//                                 <td>{shop.registrationDate}</td>
+//                                 <td>{shop.status}</td>
+//                                 <td className={styles.actionCell}>
+//                                     <button
+//                                         onClick={() => toggleBlockShop(shop.id)}
+//                                         className={`${styles.actionButton} ${
+//                                             shop.blocked ? styles.unblock : styles.block
+//                                         }`}
+//                                     >
+//                                         {shop.blocked ? 'Unblock' : 'Block'}
+//                                     </button>
+//                                     <button
+//                                         onClick={() => deleteShop(shop.id)}
+//                                         className={styles.deleteButton}
+//                                     >
+//                                         Delete
+//                                     </button>
+//                                     <span className={styles.actionMenuButton}>
+//                                         <HiOutlineDotsVertical />
+
+//                                         <div className={styles.actionMenu}>
+//                                             <ul>
+//                                                 <li onClick={() => toggleBlockShop(shop.id)}>
+//                                                     {shop.blocked ? 'Unblock' : 'Block'}
+//                                                 </li>
+//                                                 <li onClick={() => deleteShop(shop.id)}>Delete</li>
+//                                             </ul>
+//                                         </div>
+//                                     </span>
+//                                 </td>
+//                             </tr>
+//                         ))}
+//                     </tbody>
+//                 </table>
+//             </div>
+
+//             <div className={styles.pagination}>
+//                 {Array.from({ length: totalPages }, (_, i) => (
+//                     <button
+//                         key={i + 1}
+//                         onClick={() => goToPage(i + 1)}
+//                         className={`${styles.pageButton} ${
+//                             currentPage === i + 1 ? styles.activePage : ''
+//                         }`}
+//                     >
+//                         {i + 1}
+//                     </button>
+//                 ))}
+//             </div>
+//         </div>
+//     );
+// };
+
+// export default Shops;

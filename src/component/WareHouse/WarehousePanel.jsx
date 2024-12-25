@@ -6,12 +6,12 @@ import
  { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, LineChart, Line } 
  from 'recharts';
 import styles from '../../styles/warehouse.module.css'
-
+import { Link }from "react-router-dom";
 
 function AdminPanel() {
 
   const data1 = [
-    { label: "Pending", count: 2, icon: "⏳" },
+    { label: "Pending", count: 2, icon: "⏳", lonk: "/OrdersSummary"},
     { label: "Confirm", count: 0, icon: "✅" },
     { label: "Processing", count: 0, icon: "🔄" },
     { label: "Pickup", count: 0, icon: "🚴" },

@@ -303,6 +303,37 @@ footer.main {
     text-decoration: underline;
   }
   
+/* Dark mode styles */
+.footer.dark-mode {
+  background-color: #333;
+  color: #fff;
+}
+
+.footer.dark-mode p {
+  color: #fff;
+}
+
+
+footer.dark-mode .footersection ul li a {
+  color: #fff;
+}
+
+.footer.dark-mode .socialicons a {
+  color: #fff;
+}
+
+.footersection h4 {
+  color: inherit;
+}
+
+.footerbottom a {
+  color: #4caf50;
+ 
+}
+
+
+
+
 /* Media Query for Responsiveness */
 
 /* For screens 1024px and below */

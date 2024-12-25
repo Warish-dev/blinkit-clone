@@ -50,6 +50,7 @@ function Category() {
 
   // Function to toggle form visibility
   const toggleForm = () => {
+    console.log("Add Form button")
     setIsFormOpen(true);
   };
 
@@ -132,8 +133,8 @@ function Category() {
             />
           </div>
           <button onClick={() => setIsFormOpen(true)}>Add Form
-            
           </button>
+        
           
         </div>
 

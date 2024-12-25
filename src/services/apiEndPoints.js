@@ -6,7 +6,7 @@ export const adminEndPoints = {
 export const warehouseEndPoints = {
     warehouseLogin: "/warehouse/warehouseLogin",
 
-    createWarehouse: "/warehouse/createWarehouse",
+    createWarehouse: "/warehouse/createwarehouse",
     findNearestWarehouse: "/warehouse/findNearestWarehouse",
     lowStockAlert: "/warehouse/lowStockAlert",
     updateStock: "/warehouse/updateStock",

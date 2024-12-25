@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import { useParams } from 'react-router-dom'
 // import { useEffect } from 'react'
 // import { useLocation } from 'react-router-dom'
@@ -7,7 +7,11 @@ import styles from '../styles/ProductByCategory.module.css'
 import masala from '../assets/categoryimages/masala.jpeg'
 import ProductCard from '../component/Home/ProductCard'
 
-function ProductByCategory() {
+// import { DarkModeContext} from '../component/Sheared/DarkModeContext'
+
+const ProductByCategory = () =>{
+  // const { isDarkMode} = useContext (DarkModeContext);
+
   const data = [
     { name: 'masala', img: masala },
     { name: 'cheese', img: masala },
@@ -80,17 +84,17 @@ function ProductByCategory() {
     { id: 46, title: 'Mozzarella', price: '4.20', img: masala },
 
   ]
-  // const menuItem = [
-  //   { name: 'Vegetables & Fruits' },
-  //   { name: 'Cold Drinks' },
-  //   { name: 'Munchies' },
-  //   { name: 'Vegetables & Fruits' },
-  //   { name: 'Cold Drinks' },
-  //   { name: 'Munchies' },
-  //   { name: 'Vegetables & Fruits' },
-  //   { name: 'Cold Drinks' },
-  //   { name: 'Munchies' },
-  // ];
+  const menuItem = [
+    { name: 'Vegetables & Fruits' },
+    { name: 'Cold Drinks' },
+    { name: 'Munchies' },
+    { name: 'Vegetables & Fruits' },
+    { name: 'Cold Drinks' },
+    { name: 'Munchies' },
+    { name: 'Vegetables & Fruits' },
+    { name: 'Cold Drinks' },
+    { name: 'Munchies' },
+  ];
 
   const { id } = useParams();
 
@@ -106,10 +110,14 @@ function ProductByCategory() {
   // }
 
   return (
+    
     <Layout>
-
+      
+    
 
       <div className={styles.wrapper}>
+       {/* <div className= {`${styles.menubar} ${isDarkMode ? styles.darkMenubar : ""}`}>  */}
+       
         {/* Menubar */}
         <div  className={styles.menubar}>
           {menuItem.map((item, index) => (
@@ -122,6 +130,7 @@ function ProductByCategory() {
 
         <div className={styles.container}>
           {/* Sidebar */}
+          {/* <div className={`${styles.sidebar} ${isDarkMode ? styles.daekSidebar :  ""}`}> */}
           <div className={styles.sidebar}>
             {data.map((item, index) => (
               <div key={index} className={styles.categoryName}>
@@ -139,7 +148,9 @@ function ProductByCategory() {
           <div className={styles.productsSection}>
 
             {products.map((product) => (
-              <ProductCard product={product} />
+              <ProductCard key={product.id} product={product} />
+            ))}
+            
 
              {products.map((products) => (
               // <div key={product.id} className={styles.productCard}>
@@ -159,7 +170,11 @@ function ProductByCategory() {
           </div>
         </div>
       </div>
+      
+      {/* </div> */}
+      
     </Layout>
+    
   )
 }
 

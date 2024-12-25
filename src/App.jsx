@@ -2,7 +2,6 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
-
 import Home from './pages/Home';
 import ProductInfo from './pages/ProductInfo';
 import Cart from './pages/Cart';
@@ -45,21 +44,28 @@ import Cancelled from './component/WareHouse/Cancelled';
 import Withdraw from './component/WareHouse/Withdraw';
 import OrderRecipt from './component/WareHouse/OrderRecipt';
 // import FullScreenLoader from './component/Home/FullScreenLoader';
-// import OrderDetails from './component/WareHouse/OrderDetails';
+// import OrderDetails fr  om './component/WareHouse/OrderDetails';
 import UserSignUp from './component/Home/UserSignUp';
+
 
 const App = () => {
   return (
+     /*//Wrap the application in the provider*/
+    //<DarkModeProvider>
     <div>
       <Toaster />
+      
       <Routes>
+      
         <Route path="/" element={<Home />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/productInfo/:id" element={<ProductInfo />} />
         <Route path="/login" element={<Login />} />
         {/* <Route path="/signup2" element={<Signup2 />} /> */}
         <Route path="/search" element={<SearchProduct />} />
+        
         <Route path="/category/:id" element={<ProductByCategory />} />
+        
         <Route path="/PosterItem" element={<PosterItem />} />
         <Route path="/contact" element={<Contact/>} />
         <Route path="/AboutUs" element={<AboutUs/>} />
@@ -67,7 +73,7 @@ const App = () => {
         <Route path="/Career" element={<Career/>} />
         {/* <Route path='/FullScreenLoader' element={<FullScreenLoader/>}></Route> */}
         <Route path="/UserSignUp" element={<UserSignUp/>} />
-
+       
 
 
 
@@ -106,7 +112,9 @@ const App = () => {
           <Route path="orderReceipt" element={<OrderRecipt />} /> */}
         </Route>
       </Routes>
+      
     </div>
+    
   );
 };
 

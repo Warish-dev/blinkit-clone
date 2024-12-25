@@ -1,3 +1,24 @@
+.passwordInput {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.passwordInput input {
+  width: 100%;
+  padding-right: 30px; 
+}
+
+.eyeIcon {
+  position: absolute;
+  right: 10px;
+  cursor: pointer;
+  color: #555;
+  font-size: 18px;
+}
+
+
+
 .container {
     height: 100%;
     grid-area: main;
@@ -19,7 +40,7 @@
     max-height: max-content;
     background-color: #28a745;
     color: white;
-    font-size: 800;
+    font-size: 800; 
     font-size: 1rem;
     padding: 0.7rem 1rem;
     border: none;
@@ -239,7 +260,7 @@
   .heading {
     font-size: 22px;
     font-weight: bold;
-    position: absolute;
+    /* position: absolute; */
     /* text-align: center; */
     color: #333;
     /* margin-top: 20px; */
@@ -297,7 +318,8 @@ input[type=number]::-webkit-outer-spin-button {
   }
   
   .bt {
-    width: 100%;
+    
+    width: 90px;
     padding: 10px;
     font-size: 16px;
     font-weight: bold;

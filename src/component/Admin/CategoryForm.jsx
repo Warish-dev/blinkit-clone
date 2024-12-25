@@ -1,13 +1,8 @@
-
 import React, { useState } from "react";
 import styles from "../../styles/category.module.css";
-
 import { callAPI } from "../../services/callAPIFunction"; // Import API call function
-
 import { categoryEndPoints } from "../../services/apiEndPoints"; // Import endpoint config
-
 const {VITE_API_BASE_URL} = import.meta.env 
-
 function CategoryForm({ setIsFormOpen }) {
   const [formData, setFormData] = useState({
     categoryName: "",
@@ -58,9 +53,10 @@ function CategoryForm({ setIsFormOpen }) {
     <div>
       <div className={styles.row}>
 
-        <p className={styles.cross} onClick={toggleForm} >
+        {/* <p className={styles.cross} onClick={toggleForm} >
           X
-        </p>
+        </p> */}
+        <p className={styles.cross} onClick={()=> setIsFormOpen(false)}>X</p>
 
         <h1 className={styles.heading}>Add Category</h1>
         <form onSubmit={handleSubmit}>
