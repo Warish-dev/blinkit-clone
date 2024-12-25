@@ -1,19 +1,21 @@
-
 import React, { useState } from "react";
 import styles from "../../styles/category.module.css";
+import { callAPI } from "../../services/callAPIFunction";
+import { categoryEndPoints } from "../../services/apiEndPoints";
 
-import { callAPI } from "../../services/callAPIFunction"; // Import API call function
+const { VITE_API_BASE_URL } = import.meta.env;
 
-import { categoryEndPoints } from "../../services/apiEndPoints"; // Import endpoint config
 
-const {VITE_API_BASE_URL} = import.meta.env 
-
-function CategoryForm({ setIsFormOpen }) {
+function CategoryForm({ setIsFormOpen, addCategory }) {
   const [formData, setFormData] = useState({
-    categoryName: "",
-    categoryTitle: "",
+    name: "",
+    description: "",
     categoryImage: null,
   });
+
+  const toggleForm = () => {
+    setIsFormOpen(false);
+  };
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -27,24 +29,34 @@ function CategoryForm({ setIsFormOpen }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    console.log(formData)
-    const form = new FormData();
-    form.append("name", formData.categoryName);
-    form.append("description", formData.categoryTitle);
-    if (formData.categoryImage) form.append("categoryImage", formData.categoryImage);
+    const newCategory = {
+      id: Date.now(), // Generate a unique ID
+      name: formData.name,
+      description: formData.description,
+      image: formData.categoryImage ? URL.createObjectURL(formData.categoryImage) : null,
+    };
 
+    // Add the category locally
+    addCategory(newCategory);
+
+    // Optionally make an API call to save the category7
+    const form = new FormData();
+    form.append("name", formData.name);
+    form.append("description", formData.description);
+    if (formData.categoryImage) {
+      form.append("categoryImage", formData.categoryImage);
+    }
+    console.log("form",form)
+    
     try {
       const response = await callAPI(
         "POST",
         `${VITE_API_BASE_URL}${categoryEndPoints.createCategory}`,
-        form,
+        form
       );
-
-      console.log(response)
 
       if (response.status === 200 || response.status === 201) {
         alert("Category created successfully!");
-        console.log(response.data);
       } else {
         alert(`Error: ${response.statusText}`);
       }
@@ -52,67 +64,70 @@ function CategoryForm({ setIsFormOpen }) {
       console.error("Error:", error);
       alert("Failed to create category!");
     }
+
+    toggleForm(); // Close the form after submission
   };
 
   return (
-    <div>
-      <div className={styles.row}>
+    <div className={styles.row}>
+      <p className={styles.cross} onClick={toggleForm}>
+        X
+      </p>
+      <h1 className={styles.heading}>Add Category</h1>
+      <form onSubmit={handleSubmit}>
+        <div className={styles.formGroup}>
+          <label>Category Name</label>
+          <input
+            type="text"
+            className={styles.formControl1}
+            name="name"
+            value={formData.name}
+            onChange={handleInputChange}
+            required
+          />
+        </div>
 
-        <p className={styles.cross} onClick={toggleForm} >
-          X
-        </p>
+        <div className={styles.formGroup}>
+          <label>Category Title</label>
+          <input
+            type="text"
+            className={styles.formControl}
+            name="description"
+            value={formData.description}
+            onChange={handleInputChange}
+            required
+          />
+        </div>
 
-        <h1 className={styles.heading}>Add Category</h1>
-        <form onSubmit={handleSubmit}>
-          <div className={styles.formGroup}>
-            <label>Category Name</label>
-            <input
-              type="text"
-              className={styles.formControl1}
-              name="categoryName"
-              value={formData.categoryName}
-              onChange={handleInputChange}
-              required
-            />
-          </div>
+        <div className={styles.formGroup}>
+          <label>Category Image</label>
+          <input
+            type="file"
+            className={styles.formControl}
+            onChange={handleFileChange}
+          />
+        </div>
 
-          <div className={styles.formGroup}>
-            <label>Category Title</label>
-            <input
-              type="text"
-              className={styles.formControl}
-              name="categoryTitle"
-              value={formData.categoryTitle}
-              onChange={handleInputChange}
-              required
-            />
-          </div>
-
-          <div className={styles.formGroup}>
-            <label>Category Image</label>
-            <input
-              type="file"
-              className={styles.formControl}
-              onChange={handleFileChange}
-            />
-          </div>
-
-          <button type="submit" className={styles.bt}>
-            Add
-          </button>
-          <button
-            type="button"
-            className={styles.bt1}
-            onClick={() =>
-              setFormData({ categoryName: "", categoryTitle: "", categoryImage: null })
-            }
-          >
-            Clear
-          </button>
-        </form>
-      </div>
+        <button type="submit" className={styles.bt}>
+          Add
+        </button>
+        <button
+          type="button"
+          className={styles.bt1}
+          onClick={() =>
+            setFormData({ name: "", description: "", categoryImage: null })
+          }
+        >
+          Clear
+        </button>
+      </form>
     </div>
   );
 }
 
 export default CategoryForm;
+
+
+
+
+
