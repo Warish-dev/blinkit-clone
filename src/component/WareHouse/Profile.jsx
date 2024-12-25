@@ -26,7 +26,7 @@ const toggleForm = () => {
           <div className={styles.shopHeader}>
             <div className={styles.logo}>
               <img
-                src={profile} // Replace with your logo URL
+                src={profile} 
                 alt="Easy Life Logo"
               />
             </div>

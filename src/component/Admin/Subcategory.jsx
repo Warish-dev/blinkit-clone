@@ -1,64 +1,52 @@
-// import React from 'react'
+
+import React, { useState, useEffect } from 'react';
 import styles from '../../styles/subcategory.module.css';
-import React, { useState } from 'react';
-import Img from '../../assets/product2.jpg';
+import { callAPI } from '../../services/callAPIFunction';
+import { subCategoryEndPoints } from '../../services/apiEndPoints';
 import { IoSearch } from 'react-icons/io5';
 import { HiOutlineDotsVertical } from 'react-icons/hi';
 import SubCategoryForm from './SubCategoryForm';
 
-
-
-  const initialShops = [
-    { id: 1, name: 'cake', subName: 'brownie', title: 'cake', img:Img, status: 'Active', blocked: false },
-    { id: 1, name: 'cake', subName: 'brownie', title: 'cake', img:Img, status: 'Active', blocked: false },
-    { id: 1, name: 'cake', subName: 'brownie', title: 'cake', img:Img, status: 'Active', blocked: false },
-    { id: 1, name: 'cake', subName: 'brownie', title: 'cake', img:Img, status: 'Active', blocked: false },
-    { id: 1, name: 'cake', subName: 'brownie', title: 'cake', img:Img, status: 'Active', blocked: false },
-    { id: 1, name: 'cake', subName: 'brownie', title: 'cake', img:Img, status: 'Active', blocked: false },
-    { id: 1, name: 'cake', subName: 'brownie', title: 'cake', img:Img, status: 'Active', blocked: false },
-    { id: 1, name: 'cake', subName: 'brownie', title: 'cake', img:Img, status: 'Active', blocked: false },
-    { id: 1, name: 'cake', subName: 'brownie', title: 'cake', img:Img, status: 'Active', blocked: false },
-    { id: 1, name: 'cake', subName: 'brownie', title: 'cake', img:Img, status: 'Active', blocked: false },
-    { id: 1, name: 'cake', subName: 'brownie', title: 'cake', img:Img, status: 'Active', blocked: false },
-    { id: 1, name: 'cake', subName: 'brownie', title: 'cake', img:Img, status: 'Active', blocked: false },
-    { id: 1, name: 'cake', subName: 'brownie', title: 'cake', img:Img, status: 'Active', blocked: false },
-    { id: 1, name: 'cake', subName: 'brownie', title: 'cake', img:Img, status: 'Active', blocked: false },
-    { id: 1, name: 'cake', subName: 'brownie', title: 'cake', img:Img, status: 'Active', blocked: false },
-    { id: 1, name: 'cake', subName: 'brownie', title: 'cake', img:Img, status: 'Active', blocked: false },
-    { id: 1, name: 'cake', subName: 'brownie', title: 'cake', img:Img, status: 'Active', blocked: false },
-    { id: 1, name: 'cake', subName: 'brownie', title: 'cake', img:Img, status: 'Active', blocked: false },
-    { id: 1, name: 'cake', subName: 'brownie', title: 'cake', img:Img, status: 'Active', blocked: false },
-    { id: 1, name: 'cake', subName: 'brownie', title: 'cake', img:Img, status: 'Active', blocked: false },
-    { id: 1, name: 'cake', subName: 'brownie', title: 'cake', img:Img, status: 'Active', blocked: false },
-    { id: 1, name: 'cake', subName: 'brownie', title: 'cake', img:Img, status: 'Active', blocked: false },
-    { id: 1, name: 'cake', subName: 'brownie', title: 'cake', img:Img, status: 'Active', blocked: false },
-    { id: 1, name: 'cake', subName: 'brownie', title: 'cake', img:Img, status: 'Active', blocked: false },
-    { id: 1, name: 'cake', subName: 'brownie', title: 'cake', img:Img, status: 'Active', blocked: false },
-    { id: 1, name: 'cake', subName: 'brownie', title: 'cake', img:Img, status: 'Active', blocked: false },
-    { id: 1, name: 'cake', subName: 'brownie', title: 'cake', img:Img, status: 'Active', blocked: false },
-    { id: 1, name: 'cake', subName: 'brownie', title: 'cake', img:Img, status: 'Active', blocked: false },
-    { id: 1, name: 'cake', subName: 'brownie', title: 'cake', img:Img, status: 'Active', blocked: false },
-    { id: 1, name: 'cake', subName: 'brownie', title: 'cake', img:Img, status: 'Active', blocked: false },
-];
-
+const { VITE_API_BASE_URL } = import.meta.env;
 
 function Category() {
-
-  // const [isFormOpen, setIsFormOpen] = useState(false);
-
-  // Function to toggle form visibility
-  const toggleForm = () => {
-    setIsFormOpen(true);
-  };
-
-
-  const [shops, setShops] = useState(initialShops);
+  const [shops, setShops] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
   const [isFormOpen, setIsFormOpen] = useState(false);
   const [activeMenu, setActiveMenu] = useState(null);
 
   const shopsPerPage = 10;
+
+  // Load subcategories from localStorage or API on component mount
+  useEffect(() => {
+    const storedShops = localStorage.getItem('shops');
+    if (storedShops) {
+      setShops(JSON.parse(storedShops));
+    } else {
+      fetchSubCategories();
+    }
+  }, []);
+
+  // Save subcategories to localStorage whenever they are updated
+  useEffect(() => {
+    localStorage.setItem('shops', JSON.stringify(shops));
+  }, [shops]);
+
+  const fetchSubCategories = async () => {
+    const apiUrl = `${VITE_API_BASE_URL}${subCategoryEndPoints.getSubCategories}`;
+    try {
+      const response = await callAPI('GET', apiUrl);
+      if (response.status === 200) {
+        setShops(response.data); // Assuming the response data is an array of subcategories
+      } else {
+        alert(`Error fetching subcategories: ${response.statusText}`);
+      }
+    } catch (error) {
+      console.error('Error fetching subcategories:', error);
+      alert('Failed to fetch subcategories!');
+    }
+  };
 
   const toggleBlockShop = (id) => {
     setShops((prevShops) =>
@@ -69,7 +57,9 @@ function Category() {
   };
 
   const deleteShop = (id) => {
-    setShops((prevShops) => prevShops.filter((shop) => shop.id !== id));
+    const updatedShops = shops.filter((shop) => shop.id !== id);
+    setShops(updatedShops);
+    // No need to call API here since we're using localStorage
   };
 
   const handleSearch = (e) => {
@@ -95,19 +85,14 @@ function Category() {
     setActiveMenu(activeMenu === id ? null : id);
   };
 
+  const addSubCategory = (newSubCategory) => {
+    setShops((prevShops) => [newSubCategory, ...prevShops]);
+    setIsFormOpen(false);
+  };
+
   return (
-
-   
-
     <div>
-
-
-{
-      isFormOpen &&
-      < SubCategoryForm setIsFormOpen={setIsFormOpen}/>
-    }
-        
-    
+      {isFormOpen && <SubCategoryForm setIsFormOpen={setIsFormOpen} addSubCategory={addSubCategory} />}
 
       <h1 className={styles.heading}>Sub Category Table</h1>
       <div className={styles.container}>
@@ -122,9 +107,7 @@ function Category() {
               onChange={handleSearch}
             />
           </div>
-          <button onClick={() => setIsFormOpen(true)}>Add Form
-            
-          </button>
+          <button onClick={() => setIsFormOpen(true)}>Add Form</button>
         </div>
 
         <div className={styles.tableContainer}>
@@ -141,20 +124,16 @@ function Category() {
               </tr>
             </thead>
             <tbody>
-              {currentShops.map((shop) => (
+              {currentShops.map((shop, index) => (
                 <tr key={shop.id}>
-                  <td>{shop.id}</td>
+                  <td>{indexOfFirstShop + index + 1}</td>
                   <td>{shop.name}</td>
-                  <td>{shop.subName}</td>
-                  <td>{shop.title}</td>
+                  <td>{shop.categoryId}</td>
+                  <td>{shop.description}</td>
                   <td>
-                  <img 
-                     src={shop.img} 
-                     alt={shop.name} 
-                     className={styles.img}
-        />
+                    <img src={shop.images} alt={shop.name} className={styles.img} />
                   </td>
-                  <td>{shop.status}</td>
+                  <td>{shop.blocked ? 'Blocked' : 'Active'}</td>
                   <td className={styles.actionCell}>
                     <button
                       onClick={() => toggleBlockShop(shop.id)}

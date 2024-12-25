@@ -37,16 +37,9 @@
     color: white;
     border-radius: 8px;
 }
-input:focus {
-    outline: none;
-    border-color: #007bff;
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-  }
-  select:focus {
-    outline: none;
-    border-color: #007bff;
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-  }
+
+ 
+
 .formGroup
 {
     margin-top: 40px;
@@ -101,8 +94,8 @@ input:focus {
 .container {
     height: 100vh;
     grid-area: main;
-    width: 1200px;
-    max-width: 100%;
+    width: 1000px;
+    /* max-width: 100%; */
     /* margin: auto; */
     padding: 20px;
     margin-top: 30px;

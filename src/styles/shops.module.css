@@ -1,3 +1,24 @@
+.passwordInput {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.passwordInput input {
+  width: 100%;
+  padding-right: 30px; 
+}
+
+.eyeIcon {
+  position: absolute;
+  right: 10px;
+  cursor: pointer;
+  color: #555;
+  font-size: 18px;
+}
+
+
+
 .container {
     height: 100%;
     grid-area: main;
@@ -8,18 +29,56 @@
 
     overflow-y: auto;
 }
-
+.main
+{
+  height: auto;
+   width: 1300px;
+   margin-top: 40px;
+   border-top: 5px solid lightblue;
+   border-bottom: 5px solid lightblue;
+   /* margin-left: 70px; */
+   margin-bottom: 50px;
+}
 .topContainer{
     display: flex;
     justify-content: space-between;
     gap: 20px;
 }
 
+.but
+{
+    width: 80px;
+    height: 40px;
+    border: none;
+    border-radius: 8px;
+    margin-left: 60px;
+    margin-top: 90px;
+    background-color: blue;
+    color: white;
+    font-size: 1.2rem;
+    position: relative;
+    right: 80px;
+}
+.but1
+{
+    width: 80px;
+    height: 40px;
+    border: none;
+    border-radius: 8px;
+    margin-left: 30px;
+    margin-top: 20px;
+    background-color: orange;
+    color: white;
+    font-size: 1.2rem; 
+    position: relative;
+    right: 80px;  
+}
+
 .topContainer button {
     max-height: max-content;
     background-color: #28a745;
     color: white;
-    font-size: 800;
+    font-size: 800; 
     font-size: 1rem;
     padding: 0.7rem 1rem;
     border: none;
@@ -202,33 +261,21 @@
    /* Add Shop Form */
 
 
-.main {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: auto;
-    background-color: #f9f9f9;
-    padding: 20px;
-  }
+   
   
   .box {
     width: 100%;
-    max-width: 500px;
-    background-color: #fff;
-    height: auto;
-    padding: 20px;
-    /* margin-bottom: 60px; */
-    margin-top: 50px;
-    border-top: 5px solid lightblue;
-    border-bottom: 5px solid lightblue;
-    /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); */
-    position: relative;
+    max-width: 1200px;
+    display: flex;
+    gap: 200px;
+    padding: 10px;
   }
   
   .cross {
-    position: absolute;
-    top: 10px;
-    right: 15px;
+    /* position: absolute;
+    top: 130px;
+    right: 15px; */
+    left: 0;
     font-size: 20px;
     color: #333;
     cursor: pointer;
@@ -237,9 +284,11 @@
   .heading {
     font-size: 22px;
     font-weight: bold;
-    text-align: center;
+    /* position: absolute; */
+    /* text-align: center; */
     color: #333;
-    margin-bottom: 20px;
+    /* margin-top: 20px; */
+    /* margin-right: 100px; */
   }
   
   .name,
@@ -263,7 +312,8 @@ input[type=number]::-webkit-outer-spin-button {
     font-size: 14px;
     /* font-weight: 600; */
     color: #333;
-     padding-bottom: 35px; 
+     padding-bottom: 15px; 
+     margin-top: 5px;
    
   }
   
@@ -276,11 +326,7 @@ input[type=number]::-webkit-outer-spin-button {
     box-sizing: border-box;
   }
   
-  input:focus {
-    outline: none;
-    border-color: #007bff;
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-  }
+
   
   .pass1 {
     display: flex;
@@ -295,8 +341,14 @@ input[type=number]::-webkit-outer-spin-button {
     cursor: pointer;
   }
   
+
   .bt {
+    
+    width: 90px;
+  }
+  /* .bt {
     width: 100%;
+
     padding: 10px;
     font-size: 16px;
     font-weight: bold;
@@ -305,6 +357,7 @@ input[type=number]::-webkit-outer-spin-button {
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    margin-top: 20px;
     transition: background-color 0.3s ease;
   }
   
@@ -314,7 +367,7 @@ input[type=number]::-webkit-outer-spin-button {
   
   .bt:active {
     background-color: #003d7a;
-  }
+  } */
   
   /* Responsive Styles */
   @media (max-width: 768px) {

@@ -94,13 +94,13 @@
     color: white;
     font-size: 1.2rem;   
 }
-.cross
+/* .cross
 {
     font-size: 20px;
     font-weight: 600;
     cursor: pointer;
     margin-left: 1250px;
-}
+} */
 /* .formGroup input:hover
 {
     border: 3px solid #A6AEBF;
@@ -156,7 +156,7 @@
  .container {
     height: 100vh;
     grid-area: main;
-    width: 100%;
+    width: 1200px;
     max-width: 100%;
     margin: auto;
     padding: 20px;
@@ -166,6 +166,7 @@
 
 .topContainer{
     display: flex;
+    
     justify-content: space-between;
     gap: 20px;
 }

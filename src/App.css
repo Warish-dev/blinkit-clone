@@ -1,0 +1,34 @@
+/* Add styles for dark mode */
+body.dark-mode {
+    background-color: #1d2a35;
+    color: hsl(0, 0%, 100%);
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  /* body {
+    color: black;
+    background-color: white;
+  } */
+  /* Example button style when dark mode is active */
+  button {
+    /* transition: background-color 0.3s ease, color 0.3s ease; */
+  }
+/*   
+  body.dark-mode button {
+    background-color: #ffffff;
+    color: #121212;
+  }
+   */
+/* body.dark-mode .sidebar{
+  background-color: #1a1a1a;
+}
+
+body.dark-mode .menubar{
+  background-color: #1f1f1f;
+}
+
+body.dark-mode .productsSection{
+  background-color: #242424;
+} */
+
+
+   

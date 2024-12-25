@@ -1,11 +1,5 @@
 /* Basic reset and general styles */
-* {
-  margin: 0;
-  padding: 0;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  font-family: sans-serif;
-}
+
 
 .main {
   height: 100vh;
@@ -28,48 +22,50 @@
 
 .form2 {
   padding: 1.5rem;
-  width: 400px;
-  background: rgba(255, 255, 255, 0.8); /* Optional: Add background to form */
+  height: 500px;
+  width: 500px;
+  background-color: rgb(255, 250, 250);
+  border: 0.5px solid rgb(234, 232, 232);
   border-radius: 8px;
-  margin-left: 300px;
   display: flex;
   flex-direction: column;
-  align-items: center; /* Center form content */
+  align-items: center; 
 }
+.Blogo
+{
+  height: 60px;
+  
 
+}
 .form2 .heading2 {
   font-size: 1.5rem;
   font-weight: bold;
   text-align: center;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
+  text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+}
+.input_container .input1{
+  margin-top: 20px;
+  width: 400px;
+  height: 45px;
+  margin-bottom: 50px;
 }
 
-.input_container {
-  width: 100%;
+.input_container .input{
+  
+  width: 400px;
+  height: 45px;
+  margin-bottom: 50px;
 }
-
-.input {
-  height: 20px;
-  width: 100%;
-  padding: 15px;
-  margin-left: 10px;
-  background-color: transparent;
-  border-left: none;
-  border-right: none;
-  border-top: none;
-  border-bottom: 1px solid #232b2b;
-  outline: none;
-}
-
 .btn {
   height: 40px;
   width: 100%; /* Ensure button takes full width */
-  background-color: #232b2b;
+  background-color: #386565;
   color: white;
   text-transform: uppercase;
   letter-spacing: 1px;
   border: none;
-  display: block;
+  /* display: block; */
   margin: 1.5rem 0;
   font-weight: bold;
   border-radius: 8px;
@@ -78,14 +74,14 @@
 
 .btnbox {
   display: flex;
-  width: 70%;
-  /* gap: 20px; */
+  width: 90%;
+  
   justify-content: space-between;
-  margin-bottom: 1rem; /* Add some space between buttons and inputs */
+  margin-bottom: 1rem; 
 }
 
 .btnbox p {
-  width: 48%; /* Ensure buttons are smaller and aligned side-by-side */
+  width: 48%; 
   /* padding: 10px; */
   margin:10px;
   text-align: center;
@@ -99,7 +95,7 @@
 }
 
 .selected {
-  background-color: #e9a70b; /* Dark yellow for selected */
+  background-color: #386565; /* Dark yellow for selected */
   color: white;
 }
 
@@ -116,7 +112,12 @@
 
 .lbl {
   position: relative;
-  top: 30px;
+  margin-bottom:5px;
+  left: 12px; /* Adjust the icon position */
+  /* transform: translateY(-50%); */
+  font-size: 16px;
+  /* color: #ccc; */
+  pointer-events: none; /* Prevent the icon from interfering with input */
 }
 
 .btn:hover {
@@ -127,102 +128,119 @@ button:active {
   transform: scale(0.98);
 }
 
-p {
-  font-size: 0.85rem;
-  text-align: center;
-}
-
-p a {
-  color: #232b2b;
-  text-decoration: none;
-}
-
-p a:hover {
-  text-decoration: underline;
-}
-
-/* Media Queries for Responsiveness */
-
-/* For screens less than or equal to 768px */
 @media (max-width: 768px) {
+ 
   .main {
-    background: none;
-    flex-direction: column; /* Stack items vertically */
-    justify-content: center; /* Center the content */
-    align-items: center; /* Center the content horizontally */
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 2rem 1rem;
+  }
+
+  .Blogo {
+    position: relative;
+    margin-bottom: 1rem;
+    height: 50px;
   }
 
   .form2 {
-    width: 80%; /* Allow the form to be more fluid */
-    max-width: 400px; /* Set a max-width for the form */
+    width: 90%;
     padding: 1rem;
-    margin-left: 0; /* Remove left margin on mobile */
-    box-shadow: 0px 0px 10px 10px gray;
-
-  }
-
-  .logo {
-    display: block; /* Show the logo */
-    width: 100px; /* Adjust logo size as needed */
-    margin: 0 auto; /* Center logo */
   }
 
   .form2 .heading2 {
     font-size: 1.2rem;
+    margin-bottom: 1rem;
   }
 
-  .input_container,
+  .input1,
   .input {
-    width: 100%; /* Make inputs fill the width of the form */
-  }
-
-  .btnbox {
-    width: 100%; /* Make button container take full width */
-    justify-content: space-between; /* Make buttons evenly spaced */
-  }
-
-  .btnbox p {
-    width: 48%; /* Ensure buttons are smaller and aligned side-by-side */
-    padding: 10px;
-  }
-}
-
-/* For screens less than or equal to 425px (Mobile Devices) */
-@media (max-width: 425px) {
-  .main {
-    background-image: none; /* Remove background image on phone view */
+    height: 35px;
+    font-size: 0.85rem;
   }
 
   .btn {
-    width: 100%;
-    padding: 12px;
-    background-color: #e9a70b;
-    color: white;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
+    height: 35px;
+    font-size: 0.85rem;
   }
 
-  .btn:hover {
-    background-color:#e9a70b;
-    /* opacity: .5; */
+  .btnbox {
+    flex-direction: row ;
+    gap: 0.5rem;
+  }
+
+  .btnbox p {
+    width: 100%;
+    margin: 0;
+    font-size: 0.85rem;
+  }
+}
+/* Media Queries for Small Mobile Screens (Max Width: 420px) */
+@media (max-width: 420px) {
+  .main {
+    width: 450px;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 2rem 1rem;
+  }
+
+  .Blogo {
+    position: relative;
+    height: 50px;
+    margin-bottom: 1rem;
+  }
+
+  .wrapped {
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: auto; /* Allow height to adjust to content */
+    padding: 1rem;
   }
 
   .form2 {
-    width: 100%;
-    max-width: 100%;
+    width: 90%; /* Adjust form width for smaller screens */
     padding: 1rem;
-    box-shadow: 0px 0px 10px 10px gray;
-
-  }
-
-  .logo {
-    display: block; /* Show the logo */
-    width: 100px; /* Adjust logo size as needed */
-    margin: 0 auto; /* Center logo */
+    height: auto; /* Allow dynamic height */
   }
 
   .form2 .heading2 {
-    font-size: 1.1rem
+    font-size: 1.2rem; /* Smaller heading font size */
+    margin-bottom: 1rem;
+  }
+
+  .input_container input{
+    width: 280px !important; /* Full width for inputs */
+    margin-bottom: 1rem;
+  }
+
+  /* .input1,
+  .input {
+    width: 160px !important; 
+    height: 40px;
+    font-size: 0.9rem; 
+  } */
+
+  .btn {
+    width: 100%; /* Full width button */
+    height: 40px;
+    font-size: 0.9rem; /* Adjust font size */
+  }
+
+  .btnbox {
+    flex-direction: column; /* Stack buttons vertically */
+    gap: 0.5rem; /* Add spacing between buttons */
+  }
+
+  .btnbox p {
+    width: 100%; /* Full width buttons */
+    padding: 0.8rem 0;
+    font-size: 0.9rem;
+  }
+
+  .selected,
+  .unselected {
+    margin: 0; /* Remove extra margins */
+    border-radius: 4px;
   }
 }

@@ -1,200 +1,120 @@
-// import React from 'react'
-import styles from '../../styles/category.module.css';
-import React, { useState } from 'react';
-import pic from '../../assets/product2.jpg'
-import { IoSearch } from 'react-icons/io5';
-import { HiOutlineDotsVertical } from 'react-icons/hi';
-import CategoryForm from './CategoryForm';
+import React, { useState } from "react";
+import styles from "../../styles/category.module.css";
 
+import { callAPI } from "../../services/callAPIFunction"; // Import API call function
 
-  const initialShops = [
-    { id: 1, name: 'Baby Needs', title: 'Baby Needs', img: pic, status: 'Active', blocked: false},
-    { id: 2, name: 'Baby Needs', title: 'Baby Needs', img: pic, status: 'Active', blocked: false},
-    { id: 3, name: 'Baby Needs', title: 'Baby Needs', img: pic, status: 'Active', blocked: false},
-    { id: 4, name: 'Baby Needs', title: 'Baby Needs', img: pic, status: 'Active', blocked: false},
-    { id: 5, name: 'Baby Needs', title: 'Baby Needs', img: pic, status: 'Active', blocked: false},
-    { id: 6, name: 'Baby Needs', title: 'Baby Needs', img: pic, status: 'Active', blocked: false},
-    { id: 7, name: 'Baby Needs', title: 'Baby Needs', img: pic, status: 'Active', blocked: false},
-    { id: 8, name: 'Baby Needs', title: 'Baby Needs', img: pic, status: 'Active', blocked: false},
-    { id: 9, name: 'Baby Needs', title: 'Baby Needs', img: pic, status: 'Active', blocked: false},
-    { id: 10, name: 'Baby Needs', title: 'Baby Needs', img: pic, status: 'Active', blocked: false},
-    { id: 11, name: 'Baby Needs', title: 'Baby Needs', img: pic, status: 'Active', blocked: false},
-    { id: 12, name: 'Baby Needs', title: 'Baby Needs', img: pic, status: 'Active', blocked: false},
-    { id: 13, name: 'Baby Needs', title: 'Baby Needs', img: pic, status: 'Active', blocked: false},
-    { id: 14, name: 'Baby Needs', title: 'Baby Needs', img: pic, status: 'Active', blocked: false},
-    { id: 15, name: 'Baby Needs', title: 'Baby Needs', img: pic, status: 'Active', blocked: false},
-    { id: 16, name: 'Baby Needs', title: 'Baby Needs', img: pic, status: 'Active', blocked: false},
-    { id: 17, name: 'Baby Needs', title: 'Baby Needs', img: pic, status: 'Active', blocked: false},
-    { id: 18, name: 'Baby Needs', title: 'Baby Needs', img: pic, status: 'Active', blocked: false},
-    { id: 19, name: 'Baby Needs', title: 'Baby Needs', img: pic, status: 'Active', blocked: false},
-    { id: 20, name: 'Baby Needs', title: 'Baby Needs', img: pic, status: 'Active', blocked: false},
-    { id: 21, name: 'Baby Needs', title: 'Baby Needs', img: pic, status: 'Active', blocked: false},
-    { id: 22, name: 'Baby Needs', title: 'Baby Needs', img: pic, status: 'Active', blocked: false},
-    { id: 23, name: 'Baby Needs', title: 'Baby Needs', img: pic, status: 'Active', blocked: false},
-    { id: 24, name: 'Baby Needs', title: 'Baby Needs', img: pic, status: 'Active', blocked: false},
-    { id: 25, name: 'Baby Needs', title: 'Baby Needs', img: pic, status: 'Active', blocked: false},
-    { id: 26, name: 'Baby Needs', title: 'Baby Needs', img: pic, status: 'Active', blocked: false},
-    { id: 27, name: 'Baby Needs', title: 'Baby Needs', img: pic, status: 'Active', blocked: false},
-    { id: 28, name: 'Baby Needs', title: 'Baby Needs', img: pic, status: 'Active', blocked: false},
-    { id: 29, name: 'Baby Needs', title: 'Baby Needs', img: pic, status: 'Active', blocked: false},
-    { id: 30, name: 'Baby Needs', title: 'Baby Needs', img: pic, status: 'Active', blocked: false},
-    { id: 31, name: 'Baby Needs', title: 'Baby Needs', img: pic, status: 'Active', blocked: false},
-];
+import { categoryEndPoints } from "../../services/apiEndPoints"; // Import endpoint config
 
+const {VITE_API_BASE_URL} = import.meta.env 
 
-function Category() {
-
-  // const [isFormOpen, setIsFormOpen] = useState(false);
-
-  // Function to toggle form visibility
+function CategoryForm({ setIsFormOpen }) {
+  const [formData, setFormData] = useState({
+    categoryName: "",
+    categoryTitle: "",
+    categoryImage: null,
+  });
   const toggleForm = () => {
-    setIsFormOpen(true);
+    setIsFormOpen(false);
   };
 
-
-  const [shops, setShops] = useState(initialShops);
-  const [searchTerm, setSearchTerm] = useState('');
-  const [currentPage, setCurrentPage] = useState(1);
-  const [isFormOpen, setIsFormOpen] = useState(false);
-  const [activeMenu, setActiveMenu] = useState(null);
-
-  const shopsPerPage = 10;
-
-  const toggleBlockShop = (id) => {
-    setShops((prevShops) =>
-      prevShops.map((shop) =>
-        shop.id === id ? { ...shop, blocked: !shop.blocked } : shop
-      )
-    );
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
   };
 
-  const deleteShop = (id) => {
-    setShops((prevShops) => prevShops.filter((shop) => shop.id !== id));
+  const handleFileChange = (e) => {
+    setFormData({ ...formData, categoryImage: e.target.files[0] });
   };
 
-  const handleSearch = (e) => {
-    setSearchTerm(e.target.value);
-    setCurrentPage(1);
-  };
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-  const filteredShops = shops.filter((shop) =>
-    shop.name.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+    console.log(formData)
+    const form = new FormData();
+    form.append("name", formData.categoryName);
+    form.append("description", formData.categoryTitle);
+    if (formData.categoryImage) form.append("categoryImage", formData.categoryImage);
 
-  const indexOfLastShop = currentPage * shopsPerPage;
-  const indexOfFirstShop = indexOfLastShop - shopsPerPage;
-  const currentShops = filteredShops.slice(indexOfFirstShop, indexOfLastShop);
+    try {
+      const response = await callAPI(
+        "POST",
+        `${VITE_API_BASE_URL}${categoryEndPoints.createCategory}`,
+        form,
+      );
 
-  const totalPages = Math.ceil(filteredShops.length / shopsPerPage);
+      console.log(response)
 
-  const goToPage = (pageNumber) => {
-    setCurrentPage(pageNumber);
-  };
-
-  const toggleMenu = (id) => {
-    setActiveMenu(activeMenu === id ? null : id);
+      if (response.status === 200 || response.status === 201) {
+        alert("Category created successfully!");
+        console.log(response.data);
+      } else {
+        alert(`Error: ${response.statusText}`);
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      alert("Failed to create category!");
+    }
   };
 
   return (
-
-   
-
     <div>
+      <div className={styles.row}>
 
+        <p className={styles.cross} onClick={toggleForm} >
+          X
+        </p>
 
- {
-      isFormOpen &&
-      <CategoryForm setIsFormOpen={setIsFormOpen}/>
-     } 
-        
-    
-
-      <h1 className={styles.heading}>Category Table</h1>
-      <div className={styles.container}>
-        <div className={styles.topContainer}>
-          <div className={styles.searchContainer}>
-            <IoSearch />
+        <h1 className={styles.heading}>Add Category</h1>
+        <form onSubmit={handleSubmit}>
+          <div className={styles.formGroup}>
+            <label>Category Name</label>
             <input
               type="text"
-              placeholder="Search by shop name"
-              className={styles.searchBox}
-              value={searchTerm}
-              onChange={handleSearch}
+              className={styles.formControl1}
+              name="categoryName"
+              value={formData.categoryName}
+              onChange={handleInputChange}
+              required
             />
           </div>
-          <button onClick={() => navigate('/categoryform')}>Add Form
-            
+
+          <div className={styles.formGroup}>
+            <label>Category Title</label>
+            <input
+              type="text"
+              className={styles.formControl}
+              name="categoryTitle"
+              value={formData.categoryTitle}
+              onChange={handleInputChange}
+              required
+            />
+          </div>
+
+          <div className={styles.formGroup}>
+            <label>Category Image</label>
+            <input
+              type="file"
+              className={styles.formControl}
+              onChange={handleFileChange}
+            />
+          </div>
+
+          <button type="submit" className={styles.bt}>
+            Add
           </button>
-        </div>
-
-        <div className={styles.tableContainer}>
-          <table className={styles.shopTable}>
-            <thead>
-              <tr>
-                <th>Sr No.</th>
-                <th> Name</th>
-                <th>Title</th>
-                <th>img</th>
-                <th>Status</th>
-                <th>Actions</th>
-              </tr>
-            </thead>
-            <tbody>
-  {currentShops.map((shop, index) => (
-    <tr key={shop.id}>
-      <td>{index + 1 + (currentPage - 1) * shopsPerPage}</td>
-      <td>{shop.name}</td>
-      <td>{shop.title}</td>
-      <td>
-        <img 
-          src={shop.img} 
-          alt={shop.name} 
-          className={styles.img}
-        />
-      </td>
-      <td>{shop.status}</td>
-      <td className={styles.actionCell}>
-        <button
-          onClick={() => toggleBlockShop(shop.id)}
-          className={`${styles.actionButton} ${shop.blocked ? styles.unblock : styles.block}`}
-        >
-          {shop.blocked ? 'Unblock' : 'Block'}
-        </button>
-        <button onClick={() => deleteShop(shop.id)} className={styles.deleteButton}>
-          Delete
-        </button>
-        <span className={styles.actionMenuButton} onClick={() => toggleMenu(shop.id)}>
-          <HiOutlineDotsVertical />
-          {activeMenu === shop.id && (
-            <div className={styles.actionMenu}>
-              <ul>
-                <li onClick={() => toggleBlockShop(shop.id)}>{shop.blocked ? 'Unblock' : 'Block'}</li>
-                <li onClick={() => deleteShop(shop.id)}>Delete</li>
-              </ul>
-            </div>
-          )}
-        </span>
-      </td>
-    </tr>
-  ))}
-</tbody>
-          </table>
-        </div>
-
-        <div className={styles.pagination}>
-          {Array.from({ length: totalPages }, (_, i) => (
-            <button
-              key={i + 1}
-              onClick={() => goToPage(i + 1)}
-              className={`${styles.pageButton} ${currentPage === i + 1 ? styles.activePage : ''}`}
-            >
-              {i + 1}
-            </button>
-          ))}
-        </div>
+          <button
+            type="button"
+            className={styles.bt1}
+            onClick={() =>
+              setFormData({ categoryName: "", categoryTitle: "", categoryImage: null })
+            }
+          >
+            Clear
+          </button>
+        </form>
       </div>
     </div>
   );
 }
 
-export default Category;
+export default CategoryForm;

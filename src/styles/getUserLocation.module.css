@@ -64,9 +64,38 @@
     border-radius: 7px;
     padding: 9px 9px;
     cursor: pointer;
-    /* display: flex; */
+    display: inine-flex;
     text-align: center;
-    /* margin-left: 5px; */
+    white-space: nowrap;
+    justify-content: center;
+    margin-left: 5px;
     font-size: 15px;
   }
   
+  @media (max-width:468px) {
+
+    .popupOverlay{
+     
+      transform: none;
+     
+    }
+
+    .popupContent {
+      width: 200px;
+    
+      margin:0 20px;
+    }
+
+    .popupButtons {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .manualBtn, .currentBtn {
+      width: 160px;
+      margin-bottom: 10px;
+    }
+
+    
+
+  }

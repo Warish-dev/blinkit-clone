@@ -11,6 +11,9 @@
     padding-right: 20px;
 }
 
+::-webkit-scrollbar {
+    display: none;
+}  
 .heading {
     margin-top: 10px;
     text-shadow: 15px 15px 15px rgba(0, 0, 0, 0.3);
@@ -68,7 +71,7 @@ textarea:focus {
 
 }
 
-/* .bt1
+.bt1
 {
     height: 40px;
     width: 90px;
@@ -80,7 +83,9 @@ textarea:focus {
     font-size: 20px;
     font-weight: 600;
     
-} */
+}
+
+
 .cross {
     font-size: 20px;
     font-weight: 600;
@@ -94,7 +99,7 @@ textarea:focus {
 .container {
     height: 100vh;
     grid-area: main;
-    width: 1200px;
+    width: 1100px;
     max-width: 100%;
     /* margin: auto; */
     padding: 20px;
@@ -108,8 +113,27 @@ textarea:focus {
     justify-content: space-between;
     gap: 20px;
 }
-
 .topContainer button {
+    max-height: max-content;
+    background-color: #28a745;
+    color: white;
+    font-size: 800;
+    font-size: 1rem;
+    padding: 0.7rem 1rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-wrap: nowrap;
+
+    box-shadow: 5px 5px 10px rgba(128, 128, 128, 0.5);
+}
+
+.topContainer button:hover {
+    background-color: #218838;
+}
+
+.topContainer a {
     max-height: max-content;
     background-color: #28a745;
     color: white;
