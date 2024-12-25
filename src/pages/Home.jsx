@@ -16,8 +16,15 @@ import Cart from '../component/Home/Cart';
 // import stationary from '../assets/stationary.jpeg';
 import fruits from '../assets/fruits.jpeg';
 import Offer from './Offer';
+
 // import DarkModeToggle from '../component/Sheared/DarkMode';
 // import '../App.css';
+
+import Brand from '../component/Sheared/Brand';
+
+
+
+
 
 const Home = () => {
 
@@ -87,6 +94,7 @@ const Home = () => {
 
 <Cart/>
 
+<Brand />
       </Layout>
 
 

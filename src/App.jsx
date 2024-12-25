@@ -46,6 +46,7 @@ import OrderRecipt from './component/WareHouse/OrderRecipt';
 // import FullScreenLoader from './component/Home/FullScreenLoader';
 // import OrderDetails fr  om './component/WareHouse/OrderDetails';
 import UserSignUp from './component/Home/UserSignUp';
+import TermsAndCondition from './pages/TermsAndCondition';
 
 
 const App = () => {
@@ -73,7 +74,10 @@ const App = () => {
         <Route path="/Career" element={<Career/>} />
         {/* <Route path='/FullScreenLoader' element={<FullScreenLoader/>}></Route> */}
         <Route path="/UserSignUp" element={<UserSignUp/>} />
-       
+
+        <Route path="/TermsAndCondition" element={<TermsAndCondition />} />
+
+
 
 
 

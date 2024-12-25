@@ -1,0 +1,81 @@
+.brand {
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    background-color: #F6F7C4;
+  }
+  
+  .marqueeWrapper {
+    width: 100%;
+    display: flex;
+    overflow: hidden; 
+  }
+  
+  
+  
+  .image {
+    height:170px;
+    width: 170px; 
+    margin-right: 100px;
+    object-fit: contain; 
+   
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  
+  .image:hover {
+    transform: scale(1.1); 
+  }
+  
+  
+  @keyframes marquee {
+    0% {
+      transform: translateX(0); 
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+  .marquee {
+    display: flex;
+    white-space: wrap; 
+    animation: marquee 30s linear infinite; 
+  }
+  
+  
+  @media (max-width: 480px) {
+    .brand {
+      height: 40px;
+      margin: 10px; 
+    }
+  
+    .image {
+      height: 100%;
+      width: 80px;
+      margin-right: 8px; 
+      margin-left: 20px; 
+      object-fit: contain;
+    }
+  }
+  
+ 
+  @media (max-width: 768px) {
+    .brand {
+      height: 45px; 
+      margin: 15px; 
+    }
+  
+    .image {
+      height: 100%;
+      width: 90px; 
+      margin-right: 10px; 
+      margin-left: 40px;
+    }
+  }
