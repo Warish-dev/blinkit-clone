@@ -1,4 +1,4 @@
-  import React, { useState } from 'react';
+import React, { useState } from 'react';
 import styles from '../../styles/addProduct.module.css';
 
 const AddProduct = ({ setIsFormOpen }) => {
@@ -77,23 +77,34 @@ const AddProduct = ({ setIsFormOpen }) => {
           <h3>General Information</h3>
           <div className={styles.grid}>
             <div>
-              <label className={styles.lable}>Category:</label>
-              <select className={styles.select} required>
+              <label className={styles.lable}>Category ID:</label>
+              <input type="text" className={styles.select}/>
+              {/* <select className={styles.select} required>
                 <option value="">Select Category</option>
                 <option value="electronics">Electronics</option>
                 <option value="clothing">Clothing</option>
-              </select>
+              </select> */}
             </div>
             <div>
-              <label className={styles.lable}>Brand:</label>
-              <select className={styles.select} required>
+              <label className={styles.lable}>SubCategory ID:</label>
+              <input type="text" className={styles.select} />
+              {/* <select className={styles.select} required>
                 <option value="">Select Brand</option>
                 <option value="brandA">Brand A</option>
                 <option value="brandB">Brand B</option>
-              </select>
+              </select> */}
+
             </div>
             <div>
-              <label className={styles.lable}>SKU:</label>
+              {/* <label className={styles.lable}>SKU:</label>
+              <input type="text" className={styles.input} required /> */}
+               <label className={styles.lable}>Unit ID:</label>
+              <input type="text" className={styles.input} required />
+            </div>
+            <div>
+              {/* <label className={styles.lable}>SKU:</label>
+              <input type="text" className={styles.input} required /> */}
+               <label className={styles.lable}>Stock:</label>
               <input type="text" className={styles.input} required />
             </div>
           </div>
@@ -104,11 +115,11 @@ const AddProduct = ({ setIsFormOpen }) => {
           <h3>Price Information</h3>
           <div className={styles.grid}>
             <div>
-              <label className={styles.lable}>Buying Price:</label>
+              <label className={styles.lable}>Price:</label>
               <input type="number" className={styles.input} required />
             </div>
             <div>
-              <label className={styles.lable}>Selling Price:</label>
+              <label className={styles.lable}>Weight:</label>
               <input type="number" className={styles.input} required />
             </div>
           </div>
@@ -158,4 +169,23 @@ const AddProduct = ({ setIsFormOpen }) => {
 };
 
 export default AddProduct;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

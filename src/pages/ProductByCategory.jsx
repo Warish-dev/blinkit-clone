@@ -1,4 +1,14 @@
 
+import React, {useContext} from 'react'
+import { useParams } from 'react-router-dom'
+// import { useEffect } from 'react'
+// import { useLocation } from 'react-router-dom'
+import Layout from '../component/Sheared/Layout'
+import styles from '../styles/ProductByCategory.module.css'
+import masala from '../assets/categoryimages/masala.jpeg'
+import ProductCard from '../component/Home/ProductCard'
+
+
 
 
 
@@ -9,7 +19,12 @@ import styles from '../styles/ProductByCategory.module.css';
 import masala from '../assets/categoryimages/masala.jpeg';
 import ProductCard from '../component/Home/ProductCard';
 
-function ProductByCategory() {
+
+// import { DarkModeContext} from '../component/Sheared/DarkModeContext'
+
+const ProductByCategory = () =>{
+  // const { isDarkMode} = useContext (DarkModeContext);
+
   const data = [
     { name: 'masala', img: masala },
     { name: 'cheese', img: masala },
@@ -40,6 +55,9 @@ function ProductByCategory() {
     { id: 7, title: 'Ghee', price: '5.00', img: masala },
   ];
 
+
+  ]
+
   const menuItem = [
     { name: 'Vegetables & Fruits' },
     { name: 'Cold Drinks' },
@@ -47,13 +65,28 @@ function ProductByCategory() {
     { name: 'Vegetables & Fruits' },
     { name: 'Cold Drinks' },
     { name: 'Munchies' },
+
+    { name: 'Vegetables & Fruits' },
+    { name: 'Cold Drinks' },
+    { name: 'Munchies' },
+
   ];
 
   const { id } = useParams();
 
   return (
+
+    
+    <Layout>
+      
+    
+
+
     <><Layout>
+
       <div className={styles.wrapper}>
+       {/* <div className= {`${styles.menubar} ${isDarkMode ? styles.darkMenubar : ""}`}>  */}
+       
         {/* Menubar */}
         <div className={styles.menubar}>
           {menuItem.map((item, index) => (
@@ -65,6 +98,7 @@ function ProductByCategory() {
 
         <div className={styles.container}>
           {/* Sidebar */}
+          {/* <div className={`${styles.sidebar} ${isDarkMode ? styles.daekSidebar :  ""}`}> */}
           <div className={styles.sidebar}>
             {data.map((item, index) => (
               <div key={index} className={styles.categoryName}>
@@ -82,13 +116,41 @@ function ProductByCategory() {
           <div className={styles.productsSection}>
             {products.map((product) => (
               <ProductCard key={product.id} product={product} />
+
+            ))}
+            
+
+             {products.map((products) => (
+              // <div key={product.id} className={styles.productCard}>
+              //   <div className={styles.productImage}>
+              //     <img src={product.image || '/default-image.jpg'} alt={product.name} />
+              //   </div>
+              //   <div className={styles.productInfo}>
+              //     <p className={styles.productName}>{product.title}</p>
+              //     <p className={styles.productPrice}>{product.price}</p>
+              //   </div>
+              // </div> 
+
+              <ProductCard product={products} />
+
+
+
+
             ))}
           </div>
         </div>
       </div>
+      
+      {/* </div> */}
+      
     </Layout>
+
+    
+  )
+
 </>
   );
+
 }
 
 export default ProductByCategory;

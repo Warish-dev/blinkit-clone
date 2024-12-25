@@ -5,7 +5,11 @@
   font-family: 'Roboto', sans-serif;
   margin: 0px;
   max-width: 100%;
+  /* background-color: #ffffff;
+  color: #000000; */
 }
+
+
 
 /* Menubar */
 .menubar {
@@ -14,11 +18,11 @@
   justify-content: space-around;
   background-color: #fff;
   padding: 10px 0px;
-  padding-right: 150px;
+ 
   padding-left: 40px;
   border-bottom: 1px solid #eaeaea;
   border-top: 1px solid #eaeaea;
-   z-index: 1000;
+   /* z-index: 1000; */
    position: sticky;
    top: 91px;
    width: 100%;
@@ -39,26 +43,36 @@
 
 /* Main Container */
 .container {
-
   display: flex;
   height: calc(100vh - 91px);
   margin: 0;
-  margin-top: 91px;
+  margin-top: -10px;
   flex-direction: row;
-  margin-top: 1px;
+  /* margin-top: 1px; */
   margin-left: 90px;
   margin-right: 50px;
 }
 
 /* Sidebar */
 .sidebar {
+
+  /* margin-top: -13px; */
+  margin: 0;
+ 
+  width: 240px; 
+  
+  margin-right: -10px;
+
   width: 240px; 
   background-color: #fff;
   margin-left: 30px;
+
   padding: 10px 0;
   height: 100%;
   overflow-y: auto;
   border-right: 1px solid #eaeaea;
+  background-color: #fff;
+  color: #333;
 }
 
 .sidebar .categoryName {
@@ -91,9 +105,11 @@
 
 .sidebar .categoryName .fix p {
   font-size: 15px;
-  color: #333;
+  /* color: #333; */
+  
   margin: 0;
 }
+
 
 /* Products Section */
 .productsSection {
@@ -102,12 +118,45 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 16px;
-  background-color: #f8f9fa;
-  /* height: 100%; */
-  
-  overflow-y: auto;
-  /* margin-left: 240px; */
+  /* background-color: #f8f9fa; */
+  overflow-y: auto; 
 }
+
+
+
+  /* Responsive Adjustments */
+  @media (max-width: 1025px) {
+    /* Remove Sidebar */
+    .sidebar {
+      display: none; /* Hide sidebar */
+    }
+  
+    /* Make Menubar Scrollable */
+    .menubar {
+      overflow-x: auto; /* Enable horizontal scrolling */
+      white-space: nowrap; /* Prevent wrapping of items */
+      justify-content: flex-start; /* Align items to the left */
+      padding-left: 10px; /* Adjust padding */
+    }
+  
+    .menubar .linkname {
+      display: inline-block; /* Keep menu items inline */
+      margin-right: 20px; /* Spacing between items */
+    }
+  
+    /* Adjust Products Section */
+    .productsSection {
+      
+      margin-left: 00px; /* Add margin to the left */
+      margin-right: 0; /* Add margin to the right */
+      gap: 20px; /* Adjust spacing between cards */
+    }
+    .container{
+      margin-left: 00;
+      /* margin-right: 00; */
+    }
+  }
+  
 
 
 
