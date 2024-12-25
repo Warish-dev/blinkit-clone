@@ -8,11 +8,49 @@
 
     overflow-y: auto;
 }
-
+.main
+{
+  height: auto;
+   width: 1300px;
+   margin-top: 40px;
+   border-top: 5px solid lightblue;
+   border-bottom: 5px solid lightblue;
+   /* margin-left: 70px; */
+   margin-bottom: 50px;
+}
 .topContainer{
     display: flex;
     justify-content: space-between;
     gap: 20px;
+}
+
+.but
+{
+    width: 80px;
+    height: 40px;
+    border: none;
+    border-radius: 8px;
+    margin-left: 60px;
+    margin-top: 90px;
+    background-color: blue;
+    color: white;
+    font-size: 1.2rem;
+    position: relative;
+    right: 80px;
+}
+.but1
+{
+    width: 80px;
+    height: 40px;
+    border: none;
+    border-radius: 8px;
+    margin-left: 30px;
+    margin-top: 20px;
+    background-color: orange;
+    color: white;
+    font-size: 1.2rem; 
+    position: relative;
+    right: 80px;  
 }
 
 .topContainer button {
@@ -202,35 +240,21 @@
    /* Add Shop Form */
 
 
-   /* .main {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: auto;
-    background-color: #f9f9f9;
-    padding: 20px;
-  } */
+   
   
   .box {
     width: 100%;
     max-width: 1200px;
-    background-color: #fff;
-    height: auto;
-    padding: 20px;
-    /* margin-bottom: 60px; */
-    margin-top: 50px;
-    border-top: 5px solid lightblue;
-    border-bottom: 5px solid lightblue;
-    /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); */
-    position: relative;
     display: flex;
-    justify-content: space-around;
+    gap: 200px;
+    padding: 10px;
   }
   
   .cross {
-    position: absolute;
-    top: 10px;
-    right: 15px;
+    /* position: absolute;
+    top: 130px;
+    right: 15px; */
+    left: 0;
     font-size: 20px;
     color: #333;
     cursor: pointer;
@@ -239,7 +263,7 @@
   .heading {
     font-size: 22px;
     font-weight: bold;
-    position: absolute;
+    /* position: absolute; */
     /* text-align: center; */
     color: #333;
     /* margin-top: 20px; */
@@ -296,7 +320,7 @@ input[type=number]::-webkit-outer-spin-button {
     cursor: pointer;
   }
   
-  .bt {
+  /* .bt {
     width: 100%;
     padding: 10px;
     font-size: 16px;
@@ -316,7 +340,7 @@ input[type=number]::-webkit-outer-spin-button {
   
   .bt:active {
     background-color: #003d7a;
-  }
+  } */
   
   /* Responsive Styles */
   @media (max-width: 768px) {
