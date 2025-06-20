@@ -7,7 +7,7 @@ import { categoryEndPoints } from "../../services/apiEndPoints"; // Import endpo
 
 const {VITE_API_BASE_URL} = import.meta.env 
 
-function CategoryForm({ setIsFormOpen }) {
+function CategoryForm({ setIsFormOpen , addCategory}) {
   const [formData, setFormData] = useState({
     categoryName: "",
     categoryTitle: "",
@@ -45,6 +45,15 @@ function CategoryForm({ setIsFormOpen }) {
       console.log(response)
 
       if (response.status === 200 || response.status === 201) {
+
+        addCategory({
+          id: Date.now(), // Simulate unique ID for now
+          // categoryId: formData.categoryId,
+          categoryName: formData.categoryName,
+          categoryTitle: formData.categoryTitle,
+          categoryImage: formData.categoryImage ? URL.createObjectURL(formData.categoryImage) : null,
+        });
+
         alert("Category created successfully!");
         console.log(response.data);
       } else {
@@ -64,7 +73,7 @@ function CategoryForm({ setIsFormOpen }) {
           X
         </p>
 
-        <h1 className={styles.heading}>Add Category</h1>
+        <h1 className={styles.heading}> Category</h1>
         <form onSubmit={handleSubmit}>
           <div className={styles.formGroup}>
             <label>Category Name</label>

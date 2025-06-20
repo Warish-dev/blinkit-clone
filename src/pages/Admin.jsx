@@ -2,8 +2,8 @@ import React from 'react'
 import { useState } from 'react'
 import Header from '../component/Admin/Header'
 import Sidebar from '../component/Admin/Sidebar'
-import AdminPanel from '../component/Admin/AdminPanel'
 import styles from '../styles/admin.module.css'
+import AdminPanel from '../component/Admin/AdminPanel'
 import { Outlet } from 'react-router-dom'
 
 const Admin = () => {

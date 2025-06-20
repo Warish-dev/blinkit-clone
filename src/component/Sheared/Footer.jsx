@@ -174,9 +174,9 @@ const Footer = () => {
       </div>
       <div className={styles.footerbottom}>
         <p>
-
+{/* 
           &copy; 2024 - Bijli by BCLOUD <a href="/terms">Terms & Conditions</a>
-          | <a href="/privacy">Privacy Policy</a> | <a href="/login">Login</a>
+          | <a href="/privacy">Privacy Policy</a> | <a href="/login">Login</a> */}
 
           &copy; 2024 - Bijli by BCLOUD <a href="/termsAndConditon">Terms & Conditions</a>
           {/* {" "} */}

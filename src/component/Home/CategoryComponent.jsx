@@ -75,3 +75,72 @@ function CategoryComponent() {
 }
 
 export default CategoryComponent;
+
+
+
+
+
+
+
+
+
+// import React, { useState, useEffect } from 'react';
+// import { Link } from 'react-router-dom';
+// import styles from '../../styles/categoryComponent.module.css';
+// import { callAPI } from "../../services/callAPIFunction"; // Import API call function
+// import { categoryEndPoints } from "../../services/apiEndPoints"; // Import endpoint config
+// const { VITE_API_BASE_URL } = import.meta.env;
+
+// function CategoryComponent() {
+//   const [categories, setCategories] = useState([]);
+
+//   // Fetch categories when the component mounts
+//   useEffect(() => {
+//     const fetchCategories = async () => {
+//       try {
+//         // Log the full API URL being requested
+//         const apiUrl = `${VITE_API_BASE_URL}${categoryEndPoints.getCategories}`;
+//         console.log("Fetching categories from URL: ", apiUrl);
+        
+//         const response = await callAPI('GET', apiUrl);
+        
+//         // Check if the response is successful
+//         if (response.status === 200) {
+//           setCategories(response.data); // Store categories in state
+//         } else {
+//           // Log the response status and alert user
+//           console.error("Error fetching categories, Status: ", response.status);
+//           alert("Error fetching categories");
+//         }
+//       } catch (error) {
+//         // Log error details to help with debugging
+//         console.error("Error in fetchCategories:", error);
+//         alert("Failed to fetch categories");
+//       }
+//     };
+
+//     fetchCategories();
+//   }, []); // Empty dependency array ensures this only runs once when the component mounts
+
+//   return (
+//     <div className={styles.maincategory}>
+//       <div className={styles.subcategory}>
+//         {categories.map((category, index) => (
+//           <Link to={`/category/${category.id}`} key={index} className={styles.categoryDetails}>
+//             <div className={styles.image}>
+//               {/* Log category details to check data structure */}
+//               <img src={category.categoryImage} alt={category.categoryName} />
+//             </div>
+//             <div className={styles.fix}>
+//               <p>{category.categoryName}</p>
+//             </div>
+//           </Link>
+//         ))}
+//       </div>
+//     </div>
+//   );
+// }
+
+// export default CategoryComponent;
+
+

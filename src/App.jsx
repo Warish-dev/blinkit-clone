@@ -51,29 +51,29 @@ import TermsAndCondition from './pages/TermsAndCondition';
 
 const App = () => {
   return (
-     /*//Wrap the application in the provider*/
+    /*//Wrap the application in the provider*/
     //<DarkModeProvider>
     <div>
       <Toaster />
-      
+
       <Routes>
-      
+
         <Route path="/" element={<Home />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/productInfo/:id" element={<ProductInfo />} />
         <Route path="/login" element={<Login />} />
         {/* <Route path="/signup2" element={<Signup2 />} /> */}
         <Route path="/search" element={<SearchProduct />} />
-        
+
         <Route path="/category/:id" element={<ProductByCategory />} />
-        
+
         <Route path="/PosterItem" element={<PosterItem />} />
-        <Route path="/contact" element={<Contact/>} />
-        <Route path="/AboutUs" element={<AboutUs/>} />
-        <Route path="/Blog" element={<Blog/>} />
-        <Route path="/Career" element={<Career/>} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/AboutUs" element={<AboutUs />} />
+        <Route path="/Blog" element={<Blog />} />
+        <Route path="/Career" element={<Career />} />
         {/* <Route path='/FullScreenLoader' element={<FullScreenLoader/>}></Route> */}
-        <Route path="/UserSignUp" element={<UserSignUp/>} />
+        <Route path="/UserSignUp" element={<UserSignUp />} />
 
         <Route path="/TermsAndCondition" element={<TermsAndCondition />} />
 
@@ -86,7 +86,7 @@ const App = () => {
 
 
         {/* Admin Routes */}
-      <Route path="/admin/" element={<Admin />}>
+        <Route path="/admin/" element={<Admin />}>
           <Route path="dashboard" element={<AdminPanel />} />
           <Route path="users" element={<Users />} />
           <Route path="shops" element={<Shops />} />
@@ -94,8 +94,8 @@ const App = () => {
           <Route path="categoryform" element={<CategoryForm />} />
           <Route path="deliveryboy" element={<DeliveryBoy />} />
           <Route path="subcategory" element={<Subcategory />} />
-          <Route path ="DeliveryBoyForm" element={<DeliveryBoyForm/>}/>
-    
+          <Route path="DeliveryBoyForm" element={<DeliveryBoyForm />} />
+
         </Route>
 
         {/* Warehouse Routes */}
@@ -116,9 +116,9 @@ const App = () => {
           <Route path="orderReceipt" element={<OrderRecipt />} /> */}
         </Route>
       </Routes>
-      
+
     </div>
-    
+
   );
 };
 
